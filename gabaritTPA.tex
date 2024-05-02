@@ -1,0 +1,486 @@
+%%
+%% This is file `gabaritTPA.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% dms.dtx  (with options: `TPA,gabarit')
+%% Example TeX file for the documentation
+%% of the jurabib package
+%% Copyright (C) 1999, 2000, 2001 Jens Berger
+%% See dms.ins  for the copyright details.
+%% 
+%%% ====================================================================
+%%%  @LaTeX-file{
+%%%     filename        = "dms.dtx",
+%%%     author    = "Nicolas Beauchemin, Damien Rioux-Lavoie, Victor Fardel, Jonathan Godin",
+%%%     copyright = "Copyright (C) 2000 , DMS
+%%%                  all rights reserved.  Copying of this file is
+%%%                  authorized only if either:
+%%%                  (1) you make absolutely no changes to your copy,
+%%%                  including name; OR
+%%%                  (2) if you do make changes, you first rename it
+%%%                  to some other name.",
+%%%     address   = "Département de Mathématiques et de Statistique",
+%%%     telephone = "514-343-6705",
+%%%     FAX       = "514-343-5700",
+%%%     email     = "aide@dms.umontreal.ca (Internet)",
+%%%     keywords  = "latex, amslatex, ams-latex, theorem",
+%%%     abstract  = " Ce fichier est un package conçu pour être
+%%%                  utilisé avec la version de LaTeX2e 1995/06/01. Il
+%%%                  est prévue pour la classe ``amsbook''. Il en
+%%%                  modifie le format des pages, l'entête des
+%%%                  sections, etc, afin d'être  conforme au modèle de
+%%%                  mémoire de maîtrise de l'Université de
+%%%                  Montréal. Finalement ce fichier est grandement
+%%%                  inspiré du fichier amsclass.dtx.",
+%%%     docstring = "The checksum field contains: CRC-16 checksum,
+%%%                  word count, line count, and character count, as
+%%%                  produced by Robert Solovay's checksum utility."}
+%%%  ====================================================================
+
+%% Pour voir les accents de ce fichier, assurez-vous que votre
+%% éditeur de texte lise le fichier en utf-8!
+
+%% La classe <dms> est construite au-dessus de <amsbook>, donc
+%% <amsmath>, <amsfonts> et <amsthm> sont automatiquement chargés.
+\documentclass[12pt,twoside,phd]{dms}
+\usepackage[utf8]{inputenc} %Obligatoires
+\usepackage[T1]{fontenc}    %
+
+%% <lmodern> incorpore les fontes en T1, pour
+%% faciliter le dépôt final. Ceci n'est pas la
+%% seule option :
+%%  1. Si cm-super est installé, vous pouvez enlever <lmodern>
+%%     (à ce moment, la police est un peu plus fidèle
+%%      au Computer Modern orginal);
+%%  2. Si vous avez une police préférée, par exemple,
+%%     <times> ou <euler> ou <mathpazo> (et bien d'autres),
+%%     alors vous pouvez remplacer <lmodern> ci-bas.
+%% Par contre, si vous faîtes face à un problème d'encapsulation
+%% lors dépôt final, il se peut que la solution soit d'utiliser <lmodern>.
+%% (Parfois le problème est au niveau de l'installation, donc
+%%  essayez de compiler sur un autre ordinateur sur lequel vous êtes
+%%  certain·e que l'installation est bonne.)
+\usepackage{lmodern}
+\DeclareSymbolFont{largesymbols}{OMX}{cmex}{m}{n}
+
+%% Il n'est pas nécessaire d'utiliser <babel>, car
+%% les commandes intégrées par la classe <dms>
+%% \francais et \anglais font le travail. Néanmoins,
+%% certains autres packages nécessitent <babel> (comme
+%% <natbib>), donc simplement enlever les % devant <babel>
+%% dans ce cas. Attention! Certains packages sont sensibles
+%% à l'ordre dans lequel ils sont chargés.
+\francais % or
+%%\anglais
+%%
+%%\usepackage[english,frenchb]{babel}
+
+ % ENGLISH OPTION
+ % If you call \anglais here before the \begin{document},
+ % all the chater's header will be in english, even if you
+ % call \francais. To change this, use
+ % \entetedynamique
+
+%% La commande \sloppy peut avoir des effets étranges sur les
+%% lignes de certains paragraphes.  Dans ce cas, essayez \fussy
+%% qui suppresse les effets de \sloppy.
+%% (\fussy est normalement le comportement par défaut.)
+%% On redéfinit \sloppy, pour tenter de réduire les comportements
+%% étranges. Le seul changement apporté à la version originale
+%% est la valeur de \tolerance.
+\def\sloppy{%
+  \tolerance 500%  %9999 dans LaTeX ordinaire, mauvaise idée.
+  \emergencystretch 3em%
+  \hfuzz .5pt
+  \vfuzz\hfuzz}
+\sloppy   %appel de \sloppy pour le document
+%%\fussy  %ou \fussy
+
+%% Packages utiles.
+\usepackage{graphicx,amssymb,subfigure,icomma}
+%% icomma       permet d'écrire les nombres décimaux en
+%%                  français (p.ex. 1,23 plutôt que 1.23)
+%% subfigure    simplifie l'inclusion de figures côtes-à-côtes
+
+%% Packages parfois utiles.
+%%\usepackage{dsfont,mathrsfs,color,url,verbatim,booktabs}
+%% dsfont       symboles mathématiques \mathds
+%% mathrsfs     plus de symboles mathématiques \mathscr
+%% color        pour utiliser des couleurs (comparer avec <xcolor>)
+%% url          permet l'écriture d'url
+%% verbatim     pour écrire du code ou du texte tel quel
+%% booktabs     plus de macros pour faire les tableaux
+%%                  (voir documentation du package)
+
+%% pour que la largeur de la légende des figures soit = \textwidth
+\usepackage[labelfont=bf, width=\linewidth]{caption}
+
+%% les 3 lignes suivante servent à l'affichage de l'index
+%% dans le visionneur de pdf. <hyperref> et <bookmark>
+%% devraient être les dernier package a être chargé,
+%% donc chargez vos packages avant.
+\usepackage{hyperref}  % Ajoute les hyperlien
+\hypersetup{colorlinks=true,allcolors=black}
+\usepackage{hypcap}   % Corrige la position du lien pour les images
+\usepackage{bookmark} % Remédie à des petits problème
+                      % de <hyperref> (important qu'il
+                      % apparaisse APRÈS <hyperref>)
+
+  % Enlever les commentaires du prochaine \hypersetup et
+  % le remplir avec l'information pertinente.
+  % Ceci ajoute des « méta-données » au pdf.  C'est optionnel,
+  % mais recommandé. Vous pouvez voir ces méta-données en
+  % ouvrant un visionneur de pdf et en cherchant les propriétés
+  % du pdf. (Vous pouvez aussi tapez ' pdfinfo <nom-du-pdf> '
+  % dans un terminal.) Ces données sont utiles, par exemple,
+  % pour augmenter les chances qu'un algorithme de recherche
+  % trouve votre document sur Internet, une fois diffusé.
+%%\hypersetup{
+%%  pdftitle = {Titre de la thèse / du mémoire},
+%%  pdfauthor = {auteur·e},
+%%  pdfsubject = {Ex: Transformation de Fourier ; régressions linéaires ; ... },
+%%  pdfkeywords = {Ex: mathématiques, statistiques, groupes, variables aléatoires,...}
+%%}
+
+%% Définition des environnements utiles pour un mémoire scientifique.
+%% La numérotation est laissée à la discrétion de l'auteur·e. L'exemple
+%% illustré ici produit « Définition x.y.z » à l'extérieur d'un article
+%%   x = no. chapitre
+%%   y = no. section
+%%   z = no. définition
+%% et « Définition x » à l'intérieur d'un article
+%%   x = no. définition
+%% Les numérotations des corollaires, définitions, etc.
+%% se font de façon successive.
+%%
+%% Les macros \<type>name sont telles qu'ils suivent
+%% la langue actuelle. (P.ex. si \francais est utilisé,
+%% alors \begin{theo} va faire un Théorème et si \anglais
+%% est utilisé, \begin{theorem} fera un Theorem.)
+%%
+  % Environnement à utiliser à l'extérieur des articles
+\newtheorem{cor}{\corollaryname}[section]
+\newtheorem{deff}[cor]{\definitionname}
+\newtheorem{ex}[cor]{\examplename}
+\newtheorem{lem}[cor]{\lemmaname}
+\newtheorem{prop}[cor]{Proposition}
+\newtheorem{rem}[cor]{\remarkname}
+\newtheorem{theo}[cor]{\theoremname}
+
+  % Environnement à utiliser à l'intérieur des articles
+\newtheorem{corA}{\corollaryname}
+\newtheorem{deffA}[corA]{\definitionname}
+\newtheorem{exA}  [corA]{\examplename}
+\newtheorem{lemA} [corA]{\lemmaname}
+\newtheorem{propA}[corA]{Proposition}
+\newtheorem{remA} [corA]{\remarkname}
+\newtheorem{theoA}[corA]{\theoremname}
+%% IMPORTANT : Il faut faire \setcounter{corA}{0}
+%% au début d'un article pour recommancer à compter à 1.
+%%
+%% NOTE : Il peut être commode de redéfinir \the<type> pour
+%% obtenir la numérotation désirée. Par exemple, pour
+%% que les corollaires soit numérotés #article.#section.#sous-section,
+%% on fait
+%% \renewcommand\thecorA{\thepart.\thesubsection.\arabic{corA}}
+
+%%%
+%%% Si vous préférez que les corollaires, définitions, théorèmes,
+%%% etc. soient numérotés séparément, utilisez plutôt un bloc de
+%%% commandes de la forme :
+%%%
+
+%%\newtheorem{cor}{\corollaryname}[section]
+%%\newtheorem{deff}{\definitionname}[section]
+%%\newtheorem{ex}{\examplename}[section]
+%%\newtheorem{lem}{\lemmaname}[section]
+%%\newtheorem{prop}{Proposition}[section]
+%%\newtheorem{rem}{\remarkname}[section]
+%%\newtheorem{theo}{\theoremname}[section]
+
+%%
+%% Numérotation des équations par section
+%% et des  tableaux et figures par chapitre.
+%% Ceci peut être modifié selon les préférences de l'utilisateur.
+\numberwithin{equation}{section}
+\numberwithin{table}{chapter}
+\numberwithin{figure}{chapter}
+
+%%
+%% Si on veut faire un index, il faut décommenter la ligne
+%% suivante. Ajouter des mots à l'index avec la commande \index{mot cle} au
+%% fur et à mesure dans le texte.  Compiler, puis taper la commande
+%% makeindex pour creer les indexs.  Après une nouvelle compilation,
+%% vous aurez votre index.
+%%
+
+%%\makeindex
+
+%% Il est obligatoire d'écrire à double interligne
+%% ou à interligne et demi. On peut soit utiliser
+%% le package <setspace> ou \baselinestretch.
+%% Le package a tendance a créé des grands blancs,
+%% le gabarit décourage son utilisation, mais il en
+%% reste à la discrétion de l'utilisateur·e.
+%% \usepackage[onehalfspacing]{setspace}
+ % ou
+\renewcommand{\baselinestretch}{1.286} %Interligne et demi (environ 18pt (12pt+6pt) entre les lignes)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%                                     %%%%%%%%%%%%%
+%%%%%%%%%% D é b u t    d u    d o c u m e n t %%%%%%%%%%%%%
+%%%%%%%%%%                                     %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%
+%% Voici des options pour annoter les différentes versions de votre
+%% mémoire. La commande \brouillon imprime, au bas de chacune des pages, la
+%% date ainsi que l'heure de la dernière compilation de votre fichier.
+%%
+%%\brouillon
+%%
+%%
+%% \version est la version de votre manuscrit
+%%
+\version{1}
+\pagenumbering{roman}
+
+%%------------------------------------------------- %
+%%              pages i et ii                       %
+%%------------------------------------------------- %
+
+%%%
+%%% Voici les variables à définir pour les deux premières pages de votre
+%%% mémoire.
+%%%
+
+\title{Titre du mémoire ou de la thèse}
+
+\author{Nom du candidat}
+
+\copyrightyear{Année de la thèse}
+
+\department{Département de mathématiques et de statistique}
+
+\date{\today} %Date du DÉPÔT INITIAL (ou du 2e dépôt s'il y a corrections majeures)
+
+\sujet{Discipline}
+%%\orientation{orientation}%Ce champ est optionnel
+%%
+%% Voici les disciplines possibles (voir avec votre directeur):
+%% \sujet{statistique},
+%% \sujet{mathématiques}, \orientation{mathématiques appliquées},
+%% \orientation{mathématiques fondamentales}
+%% \orientation{mathématiques de l'ingénieur} et
+%% \orientation{mathématiques appliquées}
+
+\president{Nom du président du jury}
+
+\directeur{Nom du directeur de recherche}
+
+%%\codirecteur{Nom du 1er codirecteur}         % s'il y a lieu
+%%\codirecteurs{Nom du 2e codirecteur}         % s'il y a lieu
+
+\membrejury{Nom du membre de jury}
+
+%%\examinateur{Nom de l'examinateur externe}   %obligatoire pour la these
+
+%% \membresjury{Deuxième membre du jury}  % s'il y a lieu
+
+%%  \plusmembresjury{Troisième membre du jury}    % s'il y a lieu
+
+ % Cette option existe encore, mais elle n'a plus sa place
+ % dans la page titre. L'utiliser seulement si le directeur
+ % insiste...
+%%\repdoyen{Nom du représentant du doyen} %(thèse seulement)
+
+%%
+%% Fin des variables à définir. La commande \maketitle créera votre
+%% page titre.
+
+%% Pour mettre bouton qui mène à la page titre
+%% dans le visionneur de pdf. Peut être enlever.
+\pdfbookmark[chapter]{Couverture}{PageUn}
+
+\maketitle
+
+ % Pour générer la deuxième page titre, il faut appeler à nouveau \maketitle
+ % Cette page est obligatoire.
+\maketitle
+
+%%------------------------------------------------- %
+%%              pages iii                           %
+%%------------------------------------------------- %
+
+ % Les articles peuvent être en anglais, mais
+ % les autres parties du document doivent être
+ % en français. Il faut une permission pour
+ % écrire l'ensemble de la thèse en anglais.
+ % Consulter le guide de présentation des mémoires
+ % et des thèses pour de l'information plus
+ % précise et à jour.
+\francais
+
+\chapter*{Résumé}
+
+...sommaire et mots clés en français...
+
+%%------------------------------------------------- %
+%%              pages iv                            %
+%%------------------------------------------------- %
+
+\anglais
+\chapter*{Abstract}
+
+...summary and keywords in english...
+
+%%------------------------------------------------- %
+%%        page v --- Table de matieres              %
+%%------------------------------------------------- %
+
+\francais
+ % \cleardoublepage termine la page actuel et force TeX
+ % a poussé les éléments flottant (fig., tables, etc.) sur
+ % la page (normalement TeX les garde en suspend jusqu'à ce
+ % qu'il trouve un endroit approprié). Avec l'option <twoside>,
+ % la commande s'assure que la prochaine page de texte est sur
+ % le recto, pour l'impression. On l'utilise ici
+ % pour que TeX sache que la table des matières etc. soit
+ % sur la page qui suit.
+%% TABLE DES MATIÈRES
+\cleardoublepage
+\pdfbookmark[chapter]{\contentsname}{toc}  % Crée un bouton sur
+                                           % la bar de navigation
+\tableofcontents
+ % LISTE DES TABLES
+\cleardoublepage
+\phantomsection  % Crée une section invisible (utile pour les hyperliens)
+\listoftables
+ % LISTE DES FIGURES
+\cleardoublepage
+\phantomsection
+\listoffigures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LISTE DES SIGLES ET ABRÉVIATION %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Il est obligatoire, selon les directives de la FESP,
+%% pour une thèse ou un mémoire d'avoir une liste des sigles et
+%% des abréviations.  Si vous considérez que de telles listes ne seraient pas
+%% pertinentes (si, par exemple, vous n'utilisez aucun sigle ou abré.), son
+%% inclusion ou omission est laissé à votre discrétion.  En cas de doute,
+%% parlez-en à votre directeur de recherche, le coadministrateur ou au/à la
+%% bibliothécaire.
+%%
+%% Le gabarit inclut un exemple d'une liste « fait à la main ».  Il existe des outils
+%% plus sophistiqués si vous devez inclure une multitude de sigles et abréviations.
+%% Par exemple, le package <glossaries> peut faire des index élaborés.  Comme
+%% son utilisation est technique, il n'y a pas d'exemple directement dans ce gabarit.
+%% On invite les gens qui aurait à l'utiliser à lire la documentation officielle,
+%% soit en allant sur https://www.ctan.org/, soit en tapant dans un terminal :
+%%
+%% texdoc glossaries
+%%
+
+\chapter*{Liste des sigles et des abréviations}
+ % Option de colonnes: definir \colun ou \coldeux
+%%% Exemple
+%%% \def\colun{\bf} % Première colonne en gras
+%%% Pour numéroté les entrées, on peut faire
+%%% \newcount\abbrlist
+%%% \abbrlist=0
+%%% \def\plusun{\global\advance\abbrlist by 1\relax}
+%%% \def\colun{\plusun\the\abbrlist. }
+%%\def\coldeux{\relax}
+\begin{twocolumnlist}{.2\textwidth}{.7\textwidth}
+  KQ-Methode & Méthode des moindres carrés, de l'allemand
+      \textit{Methode der kleinsten Quadrate}\\
+  MCMC  & Monte Carlo par chaînes de Markov, de l'anglais
+      \textit{Markov Chain Monte Carlo} \\
+  MSE  &  Erreur quadratique moyenne, de l'anglais \textit{Mean Square Error}\\
+  NDR & Retract d'un voisinage, de l'anglais \textit{Neighbourhood Deformation Retract}\\
+  OLS  &  Moindres carrés ordinaires, de l'anglais \textit{Ordinary Least Square}\\
+  ZFC & Théorie des ensembles de Zermelo-Fraenkel avec l'axiome du choix\\
+\end{twocolumnlist}
+%% L'environnement <threecolumnlist> existe aussi pour trois colonnes.
+
+%%------------------------------------------------- %
+%%              pages vi                            %
+%%------------------------------------------------- %
+
+\chapter*{Remerciements}
+
+...remerciements...
+
+ %
+ % Fin des pages liminaires.  À partir d'ici, les
+ % premières pages des chapitres ne doivent pas
+ % être numérotées
+ %
+
+\NoChapterPageNumber
+\cleardoublepage
+\pagenumbering{arabic}
+
+
+ % Il est recommandé que chaque article soit dans son propre .tex
+ % Si la bibliographie de l'article doit appaître à la fin de
+ % l'article (plutôt qu'à la fin de la thèse), il obligatoire que
+ % l'article soit dans son propre .tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%                           %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%  I N T R O D U C T I O N  %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%                           %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  A R T I C L E 1  %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{article1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  A R T I C L E 2  %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\include{article2}
+%%
+%% etc.
+
+ % S'il y a une bibliographie pour tout le document, on peut
+ % utiliser les commandes suivantes. À noter que le style est
+ % laisser au choix de l'auteur·e. (Il est même possible
+ % d'utiliser <natbib>).
+ % Il est possible d'avoir une bibliographie pour chaque
+ % chapitre. Consulter l'article en exemple pour voir
+ % comment faire.
+%%\bibliographystyle{amsplain-french}
+%%\bibliography{<fichier.bib>}
+
+ % Pour les annexes :
+\appendix
+ % Les annexes se font comme les chapitres. Le fichier
+ % commence par \francais ou \anglais et ensuite
+ % \chapter{..}. Le reste est parreil à un chapitre normal.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%   A N N E X E 1   %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\include{annexe1}
+%%
+%% etc.
+
+\end{document}
+
+\endinput
+%%
+%% End of file `gabaritTPA.tex'.

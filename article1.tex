@@ -1,0 +1,181 @@
+%%
+%% This is file `article1.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% dms.dtx  (with options: `article')
+%% Example TeX file for the documentation
+%% of the jurabib package
+%% Copyright (C) 1999, 2000, 2001 Jens Berger
+%% See dms.ins  for the copyright details.
+%% 
+%%% ====================================================================
+%%%  @LaTeX-file{
+%%%     filename        = "dms.dtx",
+%%%     author    = "Nicolas Beauchemin, Damien Rioux-Lavoie, Victor Fardel, Jonathan Godin",
+%%%     copyright = "Copyright (C) 2000 , DMS
+%%%                  all rights reserved.  Copying of this file is
+%%%                  authorized only if either:
+%%%                  (1) you make absolutely no changes to your copy,
+%%%                  including name; OR
+%%%                  (2) if you do make changes, you first rename it
+%%%                  to some other name.",
+%%%     address   = "Département de Mathématiques et de Statistique",
+%%%     telephone = "514-343-6705",
+%%%     FAX       = "514-343-5700",
+%%%     email     = "aide@dms.umontreal.ca (Internet)",
+%%%     keywords  = "latex, amslatex, ams-latex, theorem",
+%%%     abstract  = " Ce fichier est un package conçu pour être
+%%%                  utilisé avec la version de LaTeX2e 1995/06/01. Il
+%%%                  est prévue pour la classe ``amsbook''. Il en
+%%%                  modifie le format des pages, l'entête des
+%%%                  sections, etc, afin d'être  conforme au modèle de
+%%%                  mémoire de maîtrise de l'Université de
+%%%                  Montréal. Finalement ce fichier est grandement
+%%%                  inspiré du fichier amsclass.dtx.",
+%%%     docstring = "The checksum field contains: CRC-16 checksum,
+%%%                  word count, line count, and character count, as
+%%%                  produced by Robert Solovay's checksum utility."}
+%%%  ====================================================================
+
+
+%% To change chapter header dynamically from french to english, use
+%%\entetedynamique
+\setcounter{corA}{0} % Pour recommancer à compter les def,
+                     % theo, etc. à partir de 1
+ % Pour écrire un article en français
+\francais
+ % Pour écrire un article en anglais
+%%\anglais
+%% NOTE: La plupart des macros ont un nom en anglais.
+%% P.ex. \adresse et \address fonctionnent et sont équivalents.
+%% \revue=\journal
+%% \auteur=\author
+%% \titre=\title
+
+%% Les contributions apparaîtront habituellement après
+%% \maketitle (voir un peu plus bas). Selon les goûts, il est
+%% possible de mettre les contributions
+%% avant la page titre de l'article, simplement en les écrivant
+%% directement ici. Par exemple :
+ % \cleardoublepage
+ % \pdfbookmark[chapter]{Contributions}{contrib1} % Remplacer par contrib2 pour l'article 2 etc.
+ % {\bfseries\Large\noindent Contributions de <mon nom> et rôle joué par les coauteurs}
+ % J'ai contribué en...
+ %
+ % Le rôle des coauteurs a été de...
+
+%% Nom de la revue de publication
+\revue{Une revue}
+\article{Titre de l'article}
+%% On peut se référer aux numéros de chapitre ou d'article comme suit.
+%% Si on fait
+%% \label{chap:article1},
+%% alors \ref{chap:article1} donnera le numéro du chapitre. On peut ensuite faire
+%% \labelart{art:article1}
+%% et alors \ref{art:article1} donnera le numéro d'article.
+%% Par exemple, si cette article est le premier article et le deuxième chapitre,
+%% alors si on écrit
+%% Voir le chapitre~\ref{chap:article1} (l'article~\ref{art:article1}).
+%% deviendra
+%% Voir le chapitre 2 (l'article 1).
+%% Si on veut écrire « premier article » au lieu « article 1 », on peut
+%% simplement faire
+%% \ordinal{\ref{art:article1}}~article  % devient première article
+%% ou
+%% \Ordinal{\ref{art:article1}}~article  % devient Première article (avec la majuscule)
+%% Si on est en mode \anglais, \ordinal écrire first, second,...
+
+ % Contribution(s) peronnelle(s) à l'article et rôle joué par tous les coauteur·e·s
+ %
+ % Nécessaire seulement lorsque vous n'êtes pas seul·e auteur·e.
+ % Les contributions peuvent apparaître ailleur dans la thèse.
+ % Si \contributions est laissé vide (p.ex. si vous effacez
+ % celui ci-bas), aucune contributions ne seront générées sur
+ % la page titre de l'article. Vous pouvez alors mettre un
+ % \newpage si vous souhaitez que les résumé et abstract soient
+ % la page suivante.
+ %
+ % REMARQUE : À peu près toutes les constructions \LaTeX\ sont permises
+ % dans les contributions.
+ %
+ % La commande admet une option [<entête>]
+\contributions%[Mes contributions et le rôle des coauteurs]
+{
+J'ai fait telle chose à l'article. J'ai rédigé telle partie
+etc.
+
+  % Exemple avec un <itemize>
+  %  \begin{itemize}
+  %      \item Calcul de telle chose;
+  %      \item Vérification de telle équation;
+  %      \item Idée pour telle définition;
+  %      \item Démonstration de tel théorème.
+  %  \end{itemize}
+
+    Le coauteur1 a suggéré telle chose.
+
+    Le coauteur2 a fait telle calcul.\\[1cm]
+}
+
+%%% INFORMATIONS POUR LA PAGE TITRE
+ % Premier auteur·e et adresse
+\auteur{Hima Ginère}
+\adresse{1252i rue complexe\\ Université du plan complexe}
+ % Deuxième auteur·e et adresse (si différente de la première)
+%%\auteur{Hana Lietick}
+%%\adresse{4242 rue imaginaire\\ Universität von der gau\ss sche Zahlenebene}
+%%
+%% et ainsi de suite pour les autres auteurs
+
+\maketitle
+
+\begin{resume}{Mots clés}
+  Le résumé en français.
+\end{resume}
+
+\begin{abstract}{Key words}
+  The english abstract.
+\end{abstract}
+
+\section{Introduction}
+%%
+%% Le reste de l'article...
+%%
+
+Exemple de citation~: Consultez le \LaTeX\ companien
+de Mittelbach {\it et al\/}~\cite{exemple}.
+
+ % Pour générer la bibliographie à la fin
+ % de l'article, utiliser la commande de la
+ % classe <dms> \sectionbibliography{<nom du .bib>}.
+ % Il y a aussi la possibilité d'utiliser le package
+ % <chapterbib>, auquel cas on utilise simplement
+ % \bibliography normalement.
+ %
+ % IMPORTANT : Dans tous les cas, il faut faire
+ %    pdflatex these
+ %    bibtex chapitre1
+ %    bibtex chapitre2
+ %    .
+ %    .
+ %    .
+ %    bibtex chapitreN
+ %    pdflatex these
+ %    pdflatex these
+ %
+ % où <these> est le nom du .tex principal
+ % (qui contient le \documentclass).
+ % bibtex a besoin du .aux de chapitre1 et
+ % non du .tex. Il est parfois nécessaire
+ % d'effacer le .aux et de recommencer la
+ % compilation du début.
+%%\bibliographystyle{amsplain} % style plain anglais ou
+\bibliographystyle{amsplain-french} % style plain francais
+%%\bibliographystyle{<style>} % autre
+\sectionbibliography{ref.bib} %Donner le nom du .bib
+
+\endinput
+%%
+%% End of file `article1.tex'.
