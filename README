@@ -17,9 +17,9 @@ Langues :
   sont figées une fois que le \begin{document} est passé. Pour 
   qu'elles changent dynamiquement avec \francais et \anglais,
   utilisez \entetedynamique. Attention! Il serait très
-  étrange que l'entête d'une chapitre soit Chapitre, mais
+  étrange que l'entête d'un chapitre soit Chapitre, mais
   que le suivant soit Chapter. Notez que ceci affecte aussi
-  les entrées de la table des matières.
+  les entrées de la table des matières. 
 
   Le package <babel> n'est donc pas strictement nécessaire,
   mais il reste compatible pour l'utiliser, p.ex.,
@@ -35,8 +35,8 @@ Thèses par articles :
   DES MÉMOIRES ET DES THÈSES POUR AVOIR L'INFORMATION À
   JOUR.
 
-  En ce jour (2018), une thèse par article doit être en français,
-  en moins d'avoir la permission de l'écrire en anglais. Il est
+  En ce jour (2018), une thèse par articles doit être en français,
+  à moins d'avoir la permission de l'écrire en anglais. Il est
   cependant permis d'inclure ses articles dans d'autres langues. Si un
   article en anglais est inclus, il faut naturellement ajouter
   \anglais au début de l'article.
@@ -55,7 +55,7 @@ Thèses par articles :
                                   a été publié. La <phrase> est
                                   optionnelle; elle permet d'introduire
                                   la revue autrement que par défaut
-                                  (p.ex. « Cette article a été 
+                                  (p.ex. « Cet article a été 
                                   soumis à la revue ».)
   \contributions[<phrase>]        (Optionnel) Contributions de 
                    {<texte>}      l'étudiant, s'il n'est pas seul 
@@ -85,7 +85,7 @@ Options de la classes :
   Voici les options disponibles pour la classe <dms> :
   
   phd           Thèse de doctorat (standard ou par articles)
-  maitrise       Mémoire de maîtrise
+  maitrise      Mémoire de maîtrise
   rapport       Rapport de stage (maîtrise)
   travail       Travail dirigé (maîtrise)
   nobabel       Obselète
@@ -119,7 +119,7 @@ Document scindé :
   ni \end{document}.  Par conséquent, chapitre1.tex ne peut
   pas être compilé seul.
 
-Bibliographie par article :
+Bibliographie par articles :
   Pour que chaque article ait sa propre bibliographie,
   les articles doivent être dans leur propre fichier .tex
   (p.ex. article1.tex, article2.tex, etc.)
