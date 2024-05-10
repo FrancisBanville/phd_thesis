@@ -761,7 +761,7 @@
         % signature et donc nécessité une ligne vide).
 
                 %Obligatoire
-            \lignemembre\@president\titre{pr\'esident-rapporteur}
+            \lignemembre\@president\titre{pr\'esidente-rapporteuse}
             \vfil
 
                 %Obligatoire
