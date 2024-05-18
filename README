@@ -1,11 +1,11 @@
 Fichiers :
  -- README           Ce fichier
  -- dms.cls          La classe
- -- gabaritTPA.tex   Document de travail. Renommer à 
-                     un nom convenable (p.ex. titre_nom.tex).
- -- introduction.tex Document de travail contenant l'introduction
- -- article1.tex     Document de travail contenant le premier article.
- -- gabaritTPA.pdf   Document compilé par pdflatex
+ -- phd_thesis.tex   Document de travail 
+ -- 01_introduction.tex Document de travail contenant l'introduction
+ -- 02_article1.tex     Document de travail contenant le premier article
+ -- 03_article2.tex     Document de travail contenant le deuxième article
+ -- phd_thesis.pdf   Document compilé par pdflatex
  -- figures/         Pour placer ses figures
 
 Langues :
