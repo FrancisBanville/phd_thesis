@@ -1,5 +1,5 @@
 %%
-%% This is file `gabaritTPA.tex',
+%% This is file `phd_thesis.tex',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
@@ -284,8 +284,7 @@
 
 \directeur{Timothée Poisot}
 
-\codirecteur{Dominique Gravel}         % s'il y a lieu
-%%\codirecteurs{Nom du 2e codirecteur} % s'il y a lieu
+\codirecteur{Dominique Gravel}        
 
 \membrejury{Andrea Paz Velez}
 
@@ -394,14 +393,10 @@
 %%% \def\colun{\plusun\the\abbrlist. }
 %%\def\coldeux{\relax}
 \begin{twocolumnlist}{.2\textwidth}{.7\textwidth}
-  KQ-Methode & Méthode des moindres carrés, de l'allemand
-      \textit{Methode der kleinsten Quadrate}\\
-  MCMC  & Monte Carlo par chaînes de Markov, de l'anglais
-      \textit{Markov Chain Monte Carlo} \\
-  MSE  &  Erreur quadratique moyenne, de l'anglais \textit{Mean Square Error}\\
-  NDR & Retract d'un voisinage, de l'anglais \textit{Neighbourhood Deformation Retract}\\
-  OLS  &  Moindres carrés ordinaires, de l'anglais \textit{Ordinary Least Square}\\
-  ZFC & Théorie des ensembles de Zermelo-Fraenkel avec l'axiome du choix\\
+  MaxEnt & Entropie maximale, de l'anglais
+      \textit{Maximum entropy} \\
+  SVD & Décomposition en valeurs singulières, de l'anglais
+      \textit{Singular value decomposition}\\
 \end{twocolumnlist}
 %% L'environnement <threecolumnlist> existe aussi pour trois colonnes.
 
@@ -433,23 +428,28 @@
 %%%%%%%%%%%%%%%%  I N T R O D U C T I O N  %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%                           %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{introduction}
+\include{01_introduction}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%  A R T I C L E 1  %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{article1}
+\include{02_article1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%  A R T I C L E 2  %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%\include{article2}
-%%
-%% etc.
+\include{03_article2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%                     %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% C O N C L U S I O N %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%                     %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{04_conclusion}
 
  % S'il y a une bibliographie pour tout le document, on peut
  % utiliser les commandes suivantes. À noter que le style est
@@ -458,8 +458,8 @@
  % Il est possible d'avoir une bibliographie pour chaque
  % chapitre. Consulter l'article en exemple pour voir
  % comment faire.
-%%\bibliographystyle{amsplain-french}
-%%\bibliography{<fichier.bib>}
+ \bibliographystyle{amsplain-french}
+ \bibliography{ref.bib}
 
  % Pour les annexes :
 \appendix
@@ -468,15 +468,14 @@
  % \chapter{..}. Le reste est parreil à un chapitre normal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%   A N N E X E 1   %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%   A N N E X E S   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%\include{annexe1}
-%%
-%% etc.
+\include{S_article1}
+\include{S_article2}
 
 \end{document}
 
 \endinput
 %%
-%% End of file `gabaritTPA.tex'.
+%% End of file `phd_thesis.tex'.
