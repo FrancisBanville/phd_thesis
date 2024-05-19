@@ -47,6 +47,12 @@
 \documentclass[12pt,twoside,phd]{dms}
 \usepackage[utf8]{inputenc} %Obligatoires
 \usepackage[T1]{fontenc}    %
+\usepackage{setspace}
+
+\usepackage[backend=biber,
+  style=apa,
+  citestyle=authoryear]{biblatex}
+\addbibresource{ref.bib}
 
 %% <lmodern> incorpore les fontes en T1, pour
 %% faciliter le dépôt final. Ceci n'est pas la
@@ -64,6 +70,15 @@
 %%  certain·e que l'installation est bonne.)
 \usepackage{lmodern}
 \DeclareSymbolFont{largesymbols}{OMX}{cmex}{m}{n}
+
+% boxes
+\usepackage[most]{tcolorbox}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\definecolor{gre}{RGB}{101, 191, 127}
+\definecolor{gree}{RGB}{7, 135, 44}
 
 %% Il n'est pas nécessaire d'utiliser <babel>, car
 %% les commandes intégrées par la classe <dms>
@@ -308,6 +323,8 @@
  % Cette page est obligatoire.
 \maketitle
 
+\doublespacing
+
 %%------------------------------------------------- %
 %%              pages iii                           %
 %%------------------------------------------------- %
@@ -393,10 +410,20 @@
 %%% \def\colun{\plusun\the\abbrlist. }
 %%\def\coldeux{\relax}
 \begin{twocolumnlist}{.2\textwidth}{.7\textwidth}
+  cannib & Proportion d'espèces cannibales \\
+  diam & Diamètre du réseau \\
+  KL & Divergence de Kullback–Leibler \\ 
   MaxEnt & Entropie maximale, de l'anglais
       \textit{Maximum entropy} \\
+  maxtl & Niveau trophique maximale, de l'anglais 
+      \textit{Maximum trophic level} \\
+  MxSim & Similarité maximale moyenne entre paires d'espèces, de l'anglais
+      \textit{Average maximum similarity between species pairs} \\
+  Omniv & Proportion d'espèces omnivores \\
+  PI & Intervalle de percentile, de l'anglais
+      \textit{Percentile interval} \\
   SVD & Décomposition en valeurs singulières, de l'anglais
-      \textit{Singular value decomposition}\\
+      \textit{Singular value decomposition} \\
 \end{twocolumnlist}
 %% L'environnement <threecolumnlist> existe aussi pour trois colonnes.
 
@@ -458,8 +485,8 @@
  % Il est possible d'avoir une bibliographie pour chaque
  % chapitre. Consulter l'article en exemple pour voir
  % comment faire.
- \bibliographystyle{amsplain-french}
- \bibliography{ref.bib}
+
+\printbibliography
 
  % Pour les annexes :
 \appendix
