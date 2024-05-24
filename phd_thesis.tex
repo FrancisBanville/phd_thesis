@@ -263,7 +263,7 @@
 %% \version est la version de votre manuscrit
 %%
 \version{1}
-\pagenumbering{roman}
+\pagenumbering{arabic}
 
 %%------------------------------------------------- %
 %%              pages i et ii                       %
@@ -298,7 +298,7 @@
 
 \directeur{Timothée Poisot}
 
-\codirecteur{Dominique Gravel}        
+\codirecteur{Dominique Gravel}
 
 \membrejury{Andrea Paz Velez}
 
@@ -318,8 +318,8 @@
 
 \maketitle
 \newpage
- % Pour générer la deuxième page titre, il faut appeler à nouveau \maketitle
- % Cette page est obligatoire.
+% Pour générer la deuxième page titre, il faut appeler à nouveau \maketitle
+% Cette page est obligatoire.
 \maketitle
 
 \doublespacing
@@ -328,13 +328,13 @@
 %%              pages iii                           %
 %%------------------------------------------------- %
 
- % Les articles peuvent être en anglais, mais
- % les autres parties du document doivent être
- % en français. Il faut une permission pour
- % écrire l'ensemble de la thèse en anglais.
- % Consulter le guide de présentation des mémoires
- % et des thèses pour de l'information plus
- % précise et à jour.
+% Les articles peuvent être en anglais, mais
+% les autres parties du document doivent être
+% en français. Il faut une permission pour
+% écrire l'ensemble de la thèse en anglais.
+% Consulter le guide de présentation des mémoires
+% et des thèses pour de l'information plus
+% précise et à jour.
 \francais
 
 \chapter*{Résumé}
@@ -354,7 +354,7 @@ locale) a conduit plusieurs écologistes à représenter les interactions entre
 espèces de manière probabiliste au sein de réseaux écologiques complexes. Dans
 cette thèse, je soutiens qu'une telle vision probabiliste des systèmes
 écologiques complexes constitue le fondement du principe d'entropie maximale
-appliqué aux réseaux trophiques. 
+appliqué aux réseaux trophiques.
 
 Le Chapitre 1 examine en détail les sources d'incertitude des interactions entre
 espèces. J'y distingue deux types de représentation probabiliste des
@@ -389,7 +389,7 @@ d'informations nécessaires à leur prédiction, tout en mettant en lumière la
 simplicité des mécanismes biologiques qui régissent les systèmes écologiques
 complexes.
 
-\textbf{Mots clés} : réseaux trophiques, interactions entre espèces, prédation, parasitisme, incertitude, variabilité locale, entropie, modélisation mathématique, écologie 
+\textbf{Mots clés} : réseaux trophiques, interactions entre espèces, prédation, parasitisme, incertitude, variabilité locale, entropie, modélisation mathématique, écologie
 
 %%------------------------------------------------- %
 %%              pages iv                            %
@@ -449,24 +449,24 @@ uncertainty, local variability, entropy, mathematical modeling, ecology
 %%------------------------------------------------- %
 
 \francais
- % \cleardoublepage termine la page actuel et force TeX
- % a poussé les éléments flottant (fig., tables, etc.) sur
- % la page (normalement TeX les garde en suspend jusqu'à ce
- % qu'il trouve un endroit approprié). Avec l'option <twoside>,
- % la commande s'assure que la prochaine page de texte est sur
- % le recto, pour l'impression. On l'utilise ici
- % pour que TeX sache que la table des matières etc. soit
- % sur la page qui suit.
+% \cleardoublepage termine la page actuel et force TeX
+% a poussé les éléments flottant (fig., tables, etc.) sur
+% la page (normalement TeX les garde en suspend jusqu'à ce
+% qu'il trouve un endroit approprié). Avec l'option <twoside>,
+% la commande s'assure que la prochaine page de texte est sur
+% le recto, pour l'impression. On l'utilise ici
+% pour que TeX sache que la table des matières etc. soit
+% sur la page qui suit.
 %% TABLE DES MATIÈRES
 \cleardoublepage
 \pdfbookmark[chapter]{\contentsname}{toc}  % Crée un bouton sur
-                                           % la bar de navigation
+% la bar de navigation
 \tableofcontents
- % LISTE DES TABLES
+% LISTE DES TABLES
 \cleardoublepage
 \phantomsection  % Crée une section invisible (utile pour les hyperliens)
 \listoftables
- % LISTE DES FIGURES
+% LISTE DES FIGURES
 \cleardoublepage
 \phantomsection
 \listoffigures
@@ -493,7 +493,7 @@ uncertainty, local variability, entropy, mathematical modeling, ecology
 %%
 
 \chapter*{Liste des sigles et des abréviations}
- % Option de colonnes: definir \colun ou \coldeux
+% Option de colonnes: definir \colun ou \coldeux
 %%% Exemple
 %%% \def\colun{\bf} % Première colonne en gras
 %%% Pour numéroté les entrées, on peut faire
@@ -505,18 +505,18 @@ uncertainty, local variability, entropy, mathematical modeling, ecology
 \begin{twocolumnlist}{.2\textwidth}{.7\textwidth}
   cannib & Proportion d'espèces cannibales \\
   diam & Diamètre du réseau \\
-  KL & Divergence de Kullback–Leibler \\ 
+  KL & Divergence de Kullback–Leibler \\
   MaxEnt & Entropie maximale, de l'anglais
-      \textit{Maximum entropy} \\
-  maxtl & Niveau trophique maximale, de l'anglais 
-      \textit{Maximum trophic level} \\
+  \textit{Maximum entropy} \\
+  maxtl & Niveau trophique maximale, de l'anglais
+  \textit{Maximum trophic level} \\
   MxSim & Similarité maximale moyenne entre paires d'espèces, de l'anglais
-      \textit{Average maximum similarity between species pairs} \\
+  \textit{Average maximum similarity between species pairs} \\
   Omniv & Proportion d'espèces omnivores \\
   PI & Intervalle de percentile, de l'anglais
-      \textit{Percentile interval} \\
+  \textit{Percentile interval} \\
   SVD & Décomposition en valeurs singulières, de l'anglais
-      \textit{Singular value decomposition} \\
+  \textit{Singular value decomposition} \\
 \end{twocolumnlist}
 %% L'environnement <threecolumnlist> existe aussi pour trois colonnes.
 
@@ -526,23 +526,114 @@ uncertainty, local variability, entropy, mathematical modeling, ecology
 
 \chapter*{Remerciements}
 
-...remerciements...
+Rédiger cette thèse de doctorat a été pour moi un pèlerinage intellectuel plus
+grand que toutes ces longues excursions pédestres que j'ai pu faire dans ma
+jeunesse. Cette promenade sur les sentiers parfois tumultueux de la connaissance
+scientifique n'aurait pas été possible sans le soutien indéfectible de
+nombreuses personnes qui m'ont accompagné tout au long de cette aventure.
 
- %
- % Fin des pages liminaires.  À partir d'ici, les
- % premières pages des chapitres ne doivent pas
- % être numérotées
- %
+Tout d'abord, merci à mes superviseurs, Timothée Poisot et Dominique Gravel,
+d'avoir été de si bons guides. Vous m'avez accueilli dans la cité des
+écologistes quantitatifs et computationnels et m'avez formé pour que je devienne
+l'un des vôtres. Vous m'avez aidé à préciser ma destination et m'avez
+montré la route pour l'atteindre. Merci pour votre support, vos conseils et
+votre bienveillance.
+
+Merci à mes collègues de labo et ami-es, Alice Doucet Beaupré, Andrew MacDonald,
+Camille Rondeau Saint-Jean, Cole Brookson, Cristian Cruz Rodriguez, Daphnée
+Lecours-Tessier, Emily Beasley, Eva Delmas, Gabriel Dansereau, Gracielle Higino,
+Kari Norman, Maria Isabel Arce Plata, Mathilde Besson, Mathis Gheno, Michael D.
+Catchen, Nerea Montes Perez, Norma Forero-Muñoz, Philippe Desjardins-Proulx,
+Salomé Bouskila, Samuel Provencher-Tardif, Tanya Strydom et Valentine Volz. Vous
+avez été mes compagnons de voyage, partageant avec moi différents tronçons de
+cette excursion qui, sans vous, aurait été bien plus solitaire. 
+
+Un merci spécial à Andrew MacDonald, qui m'a encouragé et accompagné dans mes
+premiers pas dans la recherche scientifique. Tu as été mon mentor et seras
+toujours pour moi un modèle d'écologiste attentionné, généreux et passionné.
+Un autre merci spécial à Gabriel Dansereau, qui a été à mes côtés tout au
+long de mon doctorat. Ton calme, ta sagesse et ton expertise m'ont permis
+d'avancer lorsqu'un obstacle se dressait sur mon chemin.
+
+Merci à l'ensemble de mes coauteurs pour nos échanges d'idées et discussions
+stimulantes. Merci à Chris Brimacombe, Dominique Gravel, Gabriel Dansereau,
+Gracielle Higino, Hana Mayall, Kari Norman, Michael Catchen, Penelope S. A.
+Blyth, Tanya Strydom, Thomas Malpas et Timothée Poisot pour m'avoir aidé à
+améliorer la qualité de cette thèse. Grâce à vous, j'ai pu avancer beaucoup plus
+loin que ce que j'aurais imaginé. Merci également à mes autres coauteurs de
+m'avoir accueilli dans des quêtes secondaires. Ensemble, nous avons rédigé pas
+moins de 11 articles scientifiques au-delà de cette thèse, dont 8 ont déjà été
+publiés au moment où j'écris ces lignes. Loin d'être une distraction, ces
+détours m'ont permis de me retrouver et d'élargir mes horizons. Ce fut un réel
+plaisir d'explorer avec vous des sujets aussi variés que la prédiction des
+réseaux écologiques, la vulgarisation scientifique et la transmission des
+connaissances en programmation.
+
+Merci à BIOS², en particulier à Andrew MacDonald, Gracielle Higino et Kim
+Gauthier Schampaert, d'avoir développé une communauté de support pour les
+biologistes computationnels comme moi et d'avoir organisé des ateliers et cours d'été en
+statistique et programmation appliqués à l'écologie. Vous avez fait une énorme
+différence dans mon parcours.
+
+Merci à Andrew Blakney, Emmanuelle Chrétien, Morgan Botrel et Stéphanie Shousha
+de m'avoir accueilli dans votre club de lecture. Nos discussions sur la
+philosophie des sciences, le féminisme et le colonialisme ont changé ma vision
+des sentiers académiques et ont permis de remettre le « Ph » dans mon PhD. 
+
+Merci à Émmélie Leroux, Francis Robitaille, Julie Brémaud, Mobina Gholamhosseini
+et Vincent Melancon pour avoir organisé avec moi le symposium 2023 du
+département de sciences biologiques de l'Université de Montréal. Vous avez fait
+d'une épreuve éprouvante l'une de mes meilleures expériences au doctorat.
+
+Merci à Alexandre Collin de m'avoir donné l'opportunité d'enseigner une partie
+de ton cours de biostatistique pendant deux ans. Cette expérience m'a donné la
+piqûre pour l'enseignement des sciences et m'a donné le goût de montrer à mon tour
+le chemin à la nouvelle génération de scientifiques.
+
+Merci à ma famille et à mes ami-es d'avoir été à mes côtés. Merci à Rebecca
+Burdayron d'avoir été là pour moi lorsque je débutais tout juste cette aventure.
+Un merci spécial à Léa Rancourt et Céleste Sorel de m'avoir aidé à me relever
+lorsque je traversais une période plus difficile en pleine pandémie. Merci
+également à mes parents et beaux-parents qui, sans connaître ma destination,
+m'ont encouragé et supporté tout au long de mon parcours universitaire, s'étant
+échelonné sur pas moins de 11 longues et belles années. Vous m'avez déposé
+devant des sentiers nouveaux avec tout ce dont j'avais besoin pour réussir la
+traversée, ayant confiance que j'allais trouver mon chemin.
+
+Finalement, merci Sufia, ma jaan. Tu m'as accompagné dans la dernière ligne
+droite de notre traversée de l'île de Montréal à pied alors qu'on ne se
+connaissait à peine, et tu es toujours à mes côtés maintenant que je complète
+les dernières étapes de cette odyssée doctorale. Merci pour ta positivité et tes
+encouragements constants. Avec toi mon avenir après le doctorat est radieux. 
+
+Ce travail n'aurait pas été possible sans le financement de l'Institut pour la
+valorisation des données (IVADO), du Programme de formation en sciences et
+services de la biodiversité computationnelle (BIOS²), financé par le Programme
+de formation orientée vers la nouveauté, la collaboration et l'expérience en
+recherche (FONCER) du Conseil de recherches en sciences naturelles et en génie
+du Canada (CRSNG), des Études supérieures et postdoctorales (ESP) de
+l'Université de Montréal, du Département de sciences biologiques de l'Université
+de Montréal et des fonds du laboratoire Poisot. 
+
+\chapter*{Avant-propos}
+
+...avant-propos...
+
+%
+% Fin des pages liminaires.  À partir d'ici, les
+% premières pages des chapitres ne doivent pas
+% être numérotées
+%
 
 \NoChapterPageNumber
 \cleardoublepage
-\pagenumbering{arabic}
+% \pagenumbering{arabic}
 
 
- % Il est recommandé que chaque article soit dans son propre .tex
- % Si la bibliographie de l'article doit appaître à la fin de
- % l'article (plutôt qu'à la fin de la thèse), il obligatoire que
- % l'article soit dans son propre .tex
+% Il est recommandé que chaque article soit dans son propre .tex
+% Si la bibliographie de l'article doit appaître à la fin de
+% l'article (plutôt qu'à la fin de la thèse), il obligatoire que
+% l'article soit dans son propre .tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%                           %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%  I N T R O D U C T I O N  %%%%%%%%%%%%%%%%%
@@ -571,21 +662,21 @@ uncertainty, local variability, entropy, mathematical modeling, ecology
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{04_conclusion}
 
- % S'il y a une bibliographie pour tout le document, on peut
- % utiliser les commandes suivantes. À noter que le style est
- % laisser au choix de l'auteur·e. (Il est même possible
- % d'utiliser <natbib>).
- % Il est possible d'avoir une bibliographie pour chaque
- % chapitre. Consulter l'article en exemple pour voir
- % comment faire.
+% S'il y a une bibliographie pour tout le document, on peut
+% utiliser les commandes suivantes. À noter que le style est
+% laisser au choix de l'auteur·e. (Il est même possible
+% d'utiliser <natbib>).
+% Il est possible d'avoir une bibliographie pour chaque
+% chapitre. Consulter l'article en exemple pour voir
+% comment faire.
 
 \printbibliography
 
- % Pour les annexes :
+% Pour les annexes :
 \appendix
- % Les annexes se font comme les chapitres. Le fichier
- % commence par \francais ou \anglais et ensuite
- % \chapter{..}. Le reste est parreil à un chapitre normal.
+% Les annexes se font comme les chapitres. Le fichier
+% commence par \francais ou \anglais et ensuite
+% \chapter{..}. Le reste est parreil à un chapitre normal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%   A N N E X E S   %%%%%%%%%%%%%%%%%%%%%
