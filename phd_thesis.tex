@@ -51,7 +51,7 @@
 
 \usepackage[backend=biber,
   style=apa,
-  citestyle=authoryear]{biblatex}
+  maxcitenames=1]{biblatex}
 \addbibresource{ref.bib}
 
 %% <lmodern> incorpore les fontes en T1, pour
@@ -630,18 +630,111 @@ de Montréal et des fonds du laboratoire Poisot.
 
 \chapter*{Avant-propos}
 
-...avant-propos...
+La première moitié de mon doctorat fut marquée par la pandémie mondiale de
+COVID-19, qui eut des conséquences sociales et économiques sans précédent. Un
+virus respiratoire, le SRAS-CoV-2, a mis à rude épreuve les systèmes de santé
+partout dans le monde, tout en nécessitant la mise en œuvre de politiques de
+distanciation sociale aux conséquences psychologiques bien visibles. Maintenant
+derrière nous, cette épreuve nous a collectivement fait prendre conscience de la
+vulnérabilité de notre système de santé, en plus de mettre en lumière les
+conséquences possibles d'un contact trop étroit avec la faune. En dépit de cela,
+les activités humaines, comme la modification de l'utilisation du territoire et
+le rejet de gaz à effet de serre dans l'atmosphère, n'ont pas ralenti depuis la
+fin de la pandémie, même si nous savons qu'elles peuvent altérer la distribution
+et la biologie des espèces hôtes de pathogènes. Rien pour atténuer son
+éco-anxiété, le risque est réel de voir émerger une nouvelle crise
+sanitaire causée par des changements environnementaux d'origine anthropique. 
+
+C'est dans ce contexte que s'est développé mon intérêt pour les réseaux
+écologiques. Pour mieux anticiper et nous préparer adéquatement aux changements
+environnementaux à venir, que ce soit en lien avec le risque d'une future
+pandémie, la sécurité alimentaire mondiale ou la pérennité d'autres services
+écosystémiques, il est nécessaire de connaître la distribution des espèces et
+leurs interactions. Si les interactions hôtes-parasites, comme celles entre les
+chauves-souris et les bétacoronavirus, sont une préoccupation majeure en matière
+de santé publique, il est crucial de préserver les interactions
+plantes-pollinisateurs afin de maintenir la culture de nombreuses plantes
+comestibles. De même, les interactions prédateurs-proies sont une composante clé
+de la réponse des écosystèmes aux changements environnementaux puisqu'elles
+déterminent les flux de matière et d'énergie. Cependant, la difficulté
+d'observer les interactions entre espèces dans les milieux naturels complique
+considérablement notre capacité à développer des stratégies de gestion
+environnementale éclairées et à évaluer les risques qu'une nouvelle maladie
+infectieuse se transmette à l'humain. Je crois que l'écologie doit s'élever au
+rang d'une science prédictive pour répondre à ces enjeux.
+
+Lors de mon doctorat, j'ai participé à plusieurs projets de recherche portant
+sur la prédiction des réseaux d'interactions entre espèces à partir des données
+écologiques disponibles. Dans \cite{Strydom2021Roadmapa}, nous avons proposé une
+feuille de route pour améliorer la prédiction de différents types de réseaux
+écologiques dans le temps et l'espace, reconnaissant que les interactions entre
+espèces peuvent varier localement. Nous avons notamment avancé que la prédiction
+des réseaux écologiques à l'échelle locale est facilitée lorsque nous disposons
+d'un réseau régional. Dans \cite{Strydom2022Food}, nous avons montré qu'il est
+possible de reconstituer fidèlement un tel réseau régional en transférant
+l'information écologique d'un réseau analogue. Nous avons ainsi pu prédire les
+interactions prédateurs-proies régionales entre les mammifères canadiens à
+partir d'un réseau trophique analogue européen, qui avait été auparavant
+échantillonné. Nous avons expliqué en détail la méthode utilisée d'intégration
+de graphes (une méthode d'apprentissage automatique) dans
+\cite{Strydom2023Grapha}. Pour ce qui est des réseaux locaux, nous avons
+développé un modèle pour prédire le nombre total d'interactions
+prédateurs-proies à partir du nombre local d'espèces dans
+\cite{MacDonald2020Revisiting}. Finalement, nous avons proposé une méthode dans
+\cite{Higino2023Mismatch} pour vérifier le réalisme écologique des réseaux
+trophiques locaux prédits. Bien que ces projets aient été principalement
+appliqués aux interactions prédateurs-proies à cause de leur importance
+historique en écologie, les méthodes présentées peuvent être appliquées à
+différents types d'interactions entre espèces. 
+
+Ma thèse s'inscrit donc dans un effort plus large visant à prédire les
+interactions entre espèces à différentes échelles spatiales. J'ai approfondi et
+développé dans ma thèse plusieurs des idées soulevées lors de ces projets de
+recherche. Par exemple, lors d'un groupe de travail portant sur le développement
+d'une méthode d'identification des sites d'échantillonnage maximisant
+l'information recueillie sur les interactions entre espèces, nous avons constaté
+que nous n'avions pas la même interprétation des interactions probabilistes.
+Puisque nos modèles prédictifs estiment la probabilité qu'une interaction soit
+réalisée, il est crucial d'avoir une interprétation claire de leurs résultats
+pour pouvoir adéquatement les utiliser. La réalisation qu'il manquait une
+définition précise des interactions probabilistes fut la bougie d'allumage du
+Chapitre 1. De la même manière, c'est en travaillant sur ces modèles prédictifs
+que j'ai pris connaissance que la structure des réseaux d'interactions entre
+espèces était contrainte par un nombre limité de variables écologiques. Cette
+constatation m'a incité à développer les bases de la théorie de l'entropie
+maximale des réseaux trophiques, exposée au Chapitre 2. Cette méthode simplifie
+grandement la prédiction des réseaux d'interactions entre espèces en diminuant
+le nombre d'information requise. 
+
+Mon travail est ancré dans les principes de la reproductibilité et de la science
+ouverte. Je me suis engagé à partager mes données, scripts et résultats pour que
+ma recherche soit plus transparente. Dans \cite{Dansereau2020Re}, nous avons
+reproduit l'article classique de \cite{Hastings1991Chaos} sur le chaos d'une
+chaîne alimentaire à trois espèces, montrant la faisabilité et l'importance d'un
+tel exercice de reproduction. J'ai confiance que le lecteur ou la lectrice
+désirant reproduire mes résultats de recherche trouvera cette démarche aisée.
+Pour aider, nous avons rédigé un article (\cite{Banville2021Mangal}) expliquant
+les librairies principales utilisées dans cette thèse. En outre, dans
+\cite{Lawlor2022Ten}, nous avons rédigé un guide pour aider les biologistes à
+apprendre le langage de programmation R par eux et elles-mêmes. Les principes
+généraux de ce guide peuvent également être utiles pour débuter avec le
+langage de programmation Julia, qui a permis d'obtenir la majorité des résultats
+présentés dans cette thèse. Enfin, je suis convaincu que notre devoir en tant
+que scientifiques est de travailler ensemble et ouvertement pour relever les
+défis mondiaux tels que l'adaptation aux changements climatiques, la
+préservation des habitats naturels et la prévention de futures pandémies. Je
+crois fermement que la compréhension des interactions entre espèces joue un rôle
+crucial dans cet objectif. 
+
 
 %
 % Fin des pages liminaires.  À partir d'ici, les
 % premières pages des chapitres ne doivent pas
 % être numérotées
 %
-
 \NoChapterPageNumber
 \cleardoublepage
 % \pagenumbering{arabic}
-
 
 % Il est recommandé que chaque article soit dans son propre .tex
 % Si la bibliographie de l'article doit appaître à la fin de
