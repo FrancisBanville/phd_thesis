@@ -22,7 +22,92 @@
     \item Écologie des interactions (flux d'énergie, épidémie, sécurité alimentaire)
     \item Écologie des réseaux (stabilité des écosystèmes, résilience, fonctions)
 \end{itemize}
-  
+
+Network thinking has emerged as a standard procedure in the study of a variety
+of complex systems, including the World Wide Web [AlbeJeon99], power grid
+networks [WattStro98], and biological neural networks [WattStro98]. Embedded
+in graph theory, a branch of mathematics whose origin dates back to the
+classical work of Eule41, network science has gained a novel interest among
+scientists thanks to the work of WattStro98 on small-world phenomena and of
+BaraAlbe99b on scale-free networks. These authors observed that a wide range of
+networks, as different in nature as could be, unexpectedly present strong
+topological similarities.
+
+Strongly anchored in network science and graph theory, network ecology is a
+biological subdiscipline typically analyzing interactions between species, but
+also among individuals, populations, or other taxonomic groups [Guim20a]. Like
+for non-ecological networks, a rich scientific literature has sought to
+understand the mechanisms shaping ecological networks [see for example Will11].
+Are networks shaped the way they are mostly because of stochasticity and
+topological rules? What is the role of biological processes in the shaping of
+ecological networks? Uncovering these mechanisms typically requires the use of
+null models, relevant measures of network structure, and empirical data.
+Deviations from null models, i.e. from models that do not rely on given
+ecological mechanisms, are in that respect highly informative [FlorMeye11a;
+FortStou10a].
+
+Moreover, analyzing ecological networks can help us understand how biological
+communities function and respond to changes [see for example PascPasc06;
+GomePerf11]. For instance, many ecological networks are sensitive to the loss
+of keystone species [JordBasc03] and to the introduction of successful invasive
+species [AizeMora08; LopeHaye07]. Understanding species interactions and the
+underlying structure of their ecological networks is essential to assess the
+potential harm of climate change [TyliDidh08; GilmUrba10; ArauRoze11],
+habitat loss [EvanPoco13], and other environmental catastrophes on ecosystems.
+In short, species interactions are closely related to the ongoing biodiversity
+crisis [ValiAize19].  
+
+Network
+ecology has established itself as a proper approach in the study of biological
+communities and their inherent complexity [BorrMood14; DelmBess19]. Species
+interactions can provide meaningful ecological information, as they notably
+underlie how an ecosystem functions and responds to changes [PoisStou16]. One
+of network ecology's major challenges, however, lies in the considerable
+difficulty to sample data on interspecific interactions [Jord16; Jord16a]. As
+a result, such data are scarce, and this raises substantial challenges in the
+study of ecological networks, especially at a large scale. Simulations are one
+way to tackle this ongoing difficulty efficiently.
+
+Ecological networks are dynamic entities whose
+structure can be altered following an ecological perturbation [TyliTsch07]. For
+example, the introduction of an invasive species [SmitMoor17] or the
+extirpation of one [DunnWill02a] could drastically alter trophic links in a
+food web. However, some ecological networks have a structure more stable or
+resilient than others. For instance, food-web stability could increase with
+connectance [DunnWill02a].
+
+One of the biggest challenge humanity will ever have to face is climate change.
+Global warming will have an unprecedent impact on species distribution and
+biodiversity [BotkSaxe07]. With habitat loss and fragmentation, climate change
+is expected to exacerbate the ongoing biodiversity crisis [OpdaWasc04;
+HellZava09]. Species ranges are expected to change, and these changes might
+impact the functioning of any type of ecological networks [TyliLali10].
+Interspecific interactions can vary because of species turnover, but they can
+also vary between two co-occurring species notably because of a change in their
+relative abundance or in their phenology [Vazq05; CanaMouq12; PoisCana12]. In
+mutualistic networks, these shifts depend, among other things, on the rise of
+temperature due to human activities [HeglNiel09]. In short, the amplitude of
+biodiversity loss varies locally, and can be accentuated depending on the
+humanity's effort to mitigate climate change and habitat loss. The
+Intergovernmental Panel on Climate Change (IPCC) is the authority in that
+respect, and their emissions scenarios are still today the reference in the
+modeling of the potential impacts of climate change. Because food-web structure
+is so closely related to species richness, a change in local species richness
+could have hurtful consequences on the structure of ecological networks, and
+thus on their functioning.
+
+The impact of climate change and habitat loss on network structure has been
+studied empirically at the local scale [see for example WoodBrow12]. However,
+at the best of my knowledge, no rigorous simulation has been conducted at the
+global scale. This would raise awareness on ecosystem fragility and help
+identify hotspots of highly vulnerable food webs.
+
+The main challenge in the conduction of a large-scale study of ecological
+networks is the lack of data on interspecific interactions. However, network
+ecologists often summarize entire networks with a few measures only because of
+the information they provide on the functions, dynamics, and stability of
+biological communities. It is thus unnecessary to know exactly who eats who in a
+community if one is mainly interested in the emergent structure of a food web.
 
 \subsection{Différents types de réseaux d'interactions écologiques} 
 
@@ -32,6 +117,38 @@
     \item Différents processus écologiques seront pris en compte selon le type de réseau
 \end{itemize}
 
+Studying and understanding
+ecological networks require that we understand their relation with spatial
+scale.  Species–area relationships (SARs) describe how species richness varies
+with habitat area. According to Deng09, a power-law model is an appropriate
+type of SARs. In this model, the total number of species $S$ in a community
+increases with the local area $A$ according to the equation:
+
+$$ S = c \times A^z, $$ {eq:area}
+
+
+
+where $c$ and $z$ are positive constants.
+
+Because the number of links $L$ in a food web scales with the number of species
+(see Annex 1), $L$ also scales with habitat area [BrosOstl04]. Large areas
+typically contain more species, that globally establish more interactions.
+According to the flexible links model (see Annex 1), the association between $L$
+and $A$, however, depends on the proportion of realized links $p$, which varies
+from one community to another. In other words, the association between $L$ and
+$A$ can take multiple forms, and it is not clear how this could influence the
+outcomes of any spatial food-web simulation.
+
+Not only $L$ scales with $A$, but multiple measures of food-web structure also
+vary with spatial scale [BrosOstl04; ThomTown05]. This could directly be due
+to the scaling of species richness with area, but this could also occur because
+of other ecological phenomena [GaliLurg18].
+
+Ecological networks cannot be indefinitely large, however. Abnormally large food
+webs are typically unstable [May72] and prone to collapsing. This
+imposes a limit to their size, and perhaps as well to the area that food webs
+typically cover.
+
 \subsubsection{Réseaux d'individus ou d'espèces: une question d'organisation} 
 
 \begin{itemize}
@@ -39,6 +156,18 @@
     \item On peut vouloir grouper les individus en populations ou espèces
     \item On peut aussi les grouper à des niveaux d'organisation supérieurs (p.ex. espèces trophiques)
 \end{itemize}
+
+Ecological networks are mathematical representations of interactions occurring
+within a biological community. Interactions typically occur at the individual
+level [Guim20a]. For instance, pollination occurs between pollinator and plant
+individuals, and predation between predator and prey individuals. However,
+ecological networks are typically representations of *species* and their
+interactions [DelmBess19], species interactions being aggregated among
+individuals. In binary networks, two species are linked if at least one of their
+individuals interact. Interactions can also be quantitative if they represent,
+in the case of food webs, the energy flow between two species [Post02a;
+DelmBess19], or probabilistic if they represent the probability that two
+species interact [PoisCirt16].
 
 \subsubsection{Réseaux binaires ou quantitatifs: une question de mesure} 
 
@@ -60,6 +189,39 @@
     \item Il existe plusieurs mesures sur les réseaux 
 \end{itemize}
 
+These three types of networks (binary, quantitative, and probabilistic) are
+analyzed using different measures. DelmBess19 and PoisCirt16 outline and
+propose measures to analyze binary and probabilistic networks, respectively.
+Quantitative food webs can be analyzed at the species or network level using
+measures defined in BersBana02. For deterministic networks (i.e.
+non-probabilistic), the most commonly used measures are the total number of
+species $S$, the total number of links $L$, connectance $L/S^2$, and the degree
+distribution $p_k$ [DelmBess19]. The degree of a species is the number of
+interactions it has with other species in the network, and the degree
+distribution is the probability distribution of such degrees. Similarly, the
+joint degree distribution is the joint probability distribution for in-degrees
+(number of incoming interactions) and out-degrees (number of outgoing
+interactions). Modularity and nestedness are two other measures widely used in
+network ecology [DelmBess19]. Overall, network structure is an important source
+of information on the functioning, stability, and dynamic of biological
+communities [ProuProm05a; PascPasc06; DelmBess19].
+
+Because species interactions are difficult to sample empirically [Jord16c],
+analyzing network structure empirically can be challenging or, in some
+instances, infeasible. Indeed, the interaction between two cooccurring species
+can be observed *in situ* or inferred for example using biopsies or
+metagenomics. It can also be inferred from literature, i.e. by modeling the
+*potential* interaction between two cooccurring species that have already been
+observed interacting. However, because species interactions vary spatially
+[PoisStou15], inferring species interactions entirely from literature generates
+the *metaweb* of the community, i.e. the network of all potential interactions
+that might not occur locally [TyliMorr17b; SaraMari18]. Another approach is to
+predict species interactions using statistical and machine learning tools.
+
+A degree
+distribution is a discrete probability distribution $p_k$ that a species
+establishes $k$ links in a food web, with $k$ varying between $1$ and $S$.
+
 \subsubsection{Propriétés des espèces} 
 
 \begin{itemize}
@@ -74,7 +236,83 @@
     \item Complexité 
 \end{itemize}
 
+The emergent structure of ecological networks is a unique number, or a set of
+numbers, that summarizes a particular property of a network [DelmBess19]. The
+number of nodes (or number of species $S$) and the number of edges (or number of
+interactions $L$) are among the most fundamental ones. Until recently, the
+relationship between these two quantities best followed a power law
+[BrosOstl04; RiedRall10]:
 
+$$ L = b \times S^a, $$ {eq:powerlaw}
+
+where $a$ and $b$ are positive constants.
+
+However, we recently observed that power laws do not account for the minimum
+$S-1$ and maximum $S^2$ numbers of links in ecological networks. The power law model had the undesirable property of
+making predictions that were below the minimal number of links.
+
+We also observed that only a proportion $p$ of the $S^2 - (S-1)$ *flexible*
+links in a food web are in fact realized. We modeled this proportion from a
+Bayesian approach, and obtained a probability distribution for the total number
+of links in a food web from its number of species. Our model fitted surprisingly
+well, outperforming the popular power law model. In addition, and perhaps more
+importantly, our predictions never trespassed the boundaries set by ecological
+principles.
+
+Food webs and
+other ecological networks can be simplified into various measures describing
+their emergent structure [DelmBess19]. These provide valuable information on
+the functioning of biological communities [McCa11; ThomBros12; PoisStou16].
+Two of these measures are linkage density ($L_D = L/S$) and connectance ($C_O =
+L/S^2$). Linkage density is the expected number of interactions that would be
+added into a network after the introduction of a novel species [DelmBess19].
+This value is half of the average degree, which is the number of links a species
+is expected to establish in a network. Connectance is, on the other hand, the
+proportion of realized links among the maximum $S^2$ [DelmBess19]. It measures
+the saturation of a network with regards to potential interactions. Connectance
+is perhaps the most useful value in network ecology. It has been associated with
+the stability [DunnWill02; MontPimm06a] and dynamics of ecological communities
+[VieiAlme15]. It has also been shown that an invasive species has more
+difficulty to enter a network of high connectance [SmitMoor17]. Connectance is
+so fundamental that it covaries with the majority of measures commonly used by
+network ecologists [PoisGrav14].
+
+The degree distribution is another fundamental measure that has been associated
+with many components of food-web structure [Will11a; PoisGrav14]. The degree
+of a species is the total number of interactions it establishes, and the
+distribution of such values typically follows a power law [BaraAlbe99a].
+According to BaraAlbe99, the probability $P_k$ that a node has a total degree
+of $k$ is:
+
+$$ P_k = \frac{k^{-\gamma}}{\zeta(\gamma)},$$ {eq:degree}
+
+where $\zeta$ is the Riemann-zeta function and $\gamma$ the degree exponent.
+
+Various measures describe specific aspects of food-web structure [DelmBess19].
+The mean
+generality (the average number of preys per predators), the mean vulnerability
+(the average number of predators per preys), along with the proportions of basal
+(species without preys), top (species without predators), and intermediate
+(species with both preys and predators) are some of the key features that will
+be explored. These measures, along with the maximum and mean trophic levels,
+provide meaningful information on the flux of energy in a food web
+[ThomBros12]. The energy of a prey is partially transferred to its predators,
+and how this energy circulates in a food web depends notably on the proportion
+of species at each trophic level [ThomBros12]. The ratio between the maximum
+and mean trophic levels can also be computed. It describes the shape of the
+trophic level distribution, by measuring how high is the maximum in comparison
+to the mean. Trophic levels have been extensively studied by ecologists, notably
+because of their association with the functions of biological communities
+[PoliStro96]. Another measure that will be explored in this project is
+nestedness, which describes, in simple terms, how the diets of specialist
+species are subsets of the ones of generalists [StanKopp13a]. Nestedness has
+been negatively associated with network stability [AlleTang12a; StanKopp13a].
+Nestedness can be computed in different ways [UlriAlme09a], but it is typically
+associated with the spectral radius, which is the largest (absolute) eigenvalue
+of the matrix of interactions (the adjacency matrix) [StanKopp13a]. We chose the ones presented
+above because of the ecological information they provide and because of
+computational efficiency. These measures could all be computed with relative
+ease for simulated food webs.
 
 %%%%% Stochasticité des interactions 
 
@@ -108,8 +346,6 @@
     \item C'est important de bien connaître la source d'incertitude puisque ça nous informe sur les processus écologiques 
 \end{itemize}
 
-
-
 %%%%% Modèles prédictifs 
 
 \section{De la nécessité de développer des modèles prédictifs} 
@@ -120,6 +356,188 @@
     \item Il existe plusieurs modèles pour prédire les interactions et les réseaux, mais ces modèles peuvent être complexes
 \end{itemize}
 
+Although the rise in computational power and advances in machine learning have
+significantly improved our ability to predict species interactions and the
+structure of their ecological networks, insufficient data availability remains
+an important limiting factors in our capacity to study and predict ecological
+networks. Nevertheless, species interactions can and have previously been
+predicted using null models, ecological models, statistical models, and machine
+learning methods.
+
+Previous authors predicted missing interactions in ecological networks. For
+instance, DesjLaig17 used machine learning (ML) algorithms to predict which
+species are more likely to be preyed upon by a predator based on the
+"preferences" of similar predators. Moreover, PichBore20 predicted pairwise
+interactions using species traits and various ML algorithms. The prediction of
+ecological networks can also be conducted at the network level. Ecological
+models are based on given ecological mechanisms and include the cascade model
+[CoheBria12], the niche model [WillMart00a], and the nested-hierarchy model
+[CattBers04a]. GravPois13 used the niche model of WillMart00a to predict the
+adjacency matrix using predator-prey body size relationships. Predicting the
+topology of an ecological network before pairwise interactions can in some
+instances be preferable. Network structure can indeed constrain the space of
+feasible ecological networks and, on another level, of pairwise interactions.
+
+The number of links $L$ in food webs is typically predicted from the number of
+species $S$ using the links-species scaling law of CoheBria84 ($L=bS$, with
+$b\approx 2$), the constant connectance model of Mart92b ($L=bS^2$, with $0 < b
+< 1$ ), or the power law model of BrosOstl04a ($L=bS^a$). However, our flexible
+links model [MacDBanv20b] fits data better than these models, while respecting
+biological constraints on the minimal $S-1$ and maximal $S^2$ numbers of links
+in food webs. The flexible links model predicts the probability that flexible
+links are realized, i.e. the proportion of the $S^2 - (S-1)$ potential links
+that are realized. In fig:flexiblelinks, we compared the predictive capability
+of these four models in a completely Bayesian framework.  
+
+The species pool can be predicted using diverse species distribution modeling
+(SDM) methods along with observational data [PhilAnde06b]. Spatially-explicit
+predictions of species interactions can be conducted from the species pool and
+adequate data [e.g. traits, phylogenetic relationships, number of species].
+
+To the best of my knowledge, few studies aimed at forecasting ecological
+networks (in the future), in contrast to predicting them (in the present).
+However, predictive models can be turned into forecasting ones if we use
+forecasted measures as inputs to the predictive models.
+
+While studying ecological networks has proven its worth in environmental
+protection and sustainability, poor data availability makes it difficult to
+analyze them efficiently, especially at large spatial scales. This scarcity of
+data arises from the inherent difficult in sampling species interactions
+[Jord16c]. On the same basis as monitoring other biodiversity variables such as
+species richness and total biomass is considered of environmental importance
+[PereFerr13; SchmJull15], monitoring species interactions is also important.
+Even if the amount of species interaction data has increased in recent years
+[ProuProm05a], there are important biases in sampled data [AguiNewm19;
+PoisBerg20], and the rate at which data is accumulating remains largely
+insufficient to allow us to empirically answer many ecological questions of
+interest.
+
+Existing methods of inference of ecological networks from literature review or
+databases, such as the [Global Biotic Interactions
+(GloBI)](https://www.globalbioticinteractions.org/about) database, are
+unsatisfying because pairwise species interactions can and often do vary
+spatially [PoisCana12]. Indeed, two species interacting at a given location
+might not interact at another location because of differences in traits,
+abundance or stochastic processes [PoisStou15]. Building the metaweb, i.e. the
+network of potential species interactions, does not account for this spatial
+variability. Predicting species interactions and ecological networks spatially
+using another method is thus necessary. Existing predictive methods of species
+interactions and of the structure of ecological networks have been discussed in
+the previous subsection. To the best of my knowledge, there is currently no
+method that can predict network structure across space rigorously without
+directly relying on species interactions data. Just like for other types of
+networks, simple topological and statistical rules that do not rely on specific
+ecological mechanisms underlie the structure of ecological networks, and
+significant deviations from these null models, if any, suggest that other
+processes are also of importance for deviating networks [FlorMeye11a;
+FortStou10a; DelmBess19]. This topological method should mainly rely on
+monitorable and essential biodiversity variables to maximize its applicability.
+Such topological predictive method is highly needed, as it would greatly
+facilitate the study of ecological networks at large spatial and temporal
+scales. Its integration with existing predictive methods of ecological networks
+through space and with species distribution modeling (SDMs) could become a
+standard procedure in network macroecology (see our paper in preparation in the
+Appendices). On the other hand, predicting the structure of ecological networks
+might not be sufficient to study the potential consequences of given
+environmental events on species interactions networks. To this end, forecasting
+models of ecosystems in general [Carp02], and of ecological networks in
+particular, are deeply needed. My thesis aims at filling this gap in the prediction and forecasting of the
+structure of ecological networks across space. 
+
+The scarce data regime characterizing network ecology limits our ability to
+understand ecological networks, especially at a large spatial scale. Yet, the
+structure of ecological networks is a gold mine of information on biological
+communities [ProuProm05a; PascPasc06; DelmBess19], with notable applications
+in conservation, biological control, habitat management, and climate change
+[Memm09; TyliLali10b; TyliBinz14; HarvGoun17]. In the absence of sufficient
+data, predicting ecological networks efficiently is our best option to
+understand them and meet numerous environmental challenges.
+
+Reliable forecasting of biodiversity is important, as it can greatly improve
+environmental decision-making processes by providing stakeholders with useful
+ecological knowledge [ClarCarp01]. In that respect, a rich literature has
+emerged aiming at forecasting biodiversity and species distributions accurately
+(see for example ArauNew07; BotkSaxe07a; UrbaBoce16). As ecology enters a
+*data-rich* era, where collecting real-time environmental data is becoming
+increasingly commun, ecological forecasting is becoming more reliable and
+precise [LuoOgle11]. Given that species interactions vary both in space and
+time [see for example DupoPadr09; Forr14], and given the role of ecological
+networks in ecosystem functioning [see for example PascPasc06; GomePerf11],
+forecasting ecological networks is equally as important as forecasting species
+diversity. In spite of this, very few forecasting studies on ecological networks
+have been conducted. This is in part due to the difficulty to sample species
+interactions empirically [Jord16c]. Indeed, sampling a given ecological network
+over time is almost never done in practice, as it would require significant time
+and (financial) resources. Nevertheless, DeylMay16 measured and modeled the
+temporal variety of species interactions in a small American lake, but their
+method is not realistically applicable to more complex ecosystems. Another
+approach is to predict how ecological networks respond to given changes. For
+example, DunnWill02e evaluated the impact of biodiversity loss on food-web
+structure by randomly removing species with different functions in their
+respective networks. These authors, however, did not make any *prevision* on the
+structure of given ecological networks.
+
+Developing a simple yet rigorous model for predicting ecological networks is
+essential, especially considering that ecologists currently cannot rely on
+species interactions data to conduct many spatial network analyses. Indeed,
+sampling species interactions is difficult, and as a result data is very scarce
+in network ecology. Species interactions vary spatially [PoisCana12;
+PoisStou15], and relying on species interactions databases alone (e.g. the
+[Global Biotic Interactions
+(GloBI)](https://www.globalbioticinteractions.org/about) database) might be
+misleading as many pairwise interactions might not actually occur locally. In
+addition, ecological networks are the backbones of ecosystems, and understanding
+their structure will help us understand how they function and respond to changes
+[PascPasc06]. This is particularly important considering that ecosystems are
+changing at an alarming rate [see for example ButcWalp10].
+
+Three information
+are needed in order to simulate a food web: the number of species $S$, the
+number of links $L = f(S)$, and a food-web model. Because $L$ can be predicted
+from $S$, knowing the species richness and having an adequate food-web model are
+nevertheless enough. The role of a food-web model is to distribute directed
+links among the $S^2$ ordered pairs of species according to an ecological
+mechanism [PascDunn05]. Because species identities are unknown in such
+simulations, the resulting food webs depict interactions between unlabeled
+species. As a matter of fact, it might not be necessary to know exactly who eats
+who in a food web when we are interested in a single measure that could describe
+a specific aspect of a network. Indeed, knowing the emergent structure of a food
+web is necessary and sufficient to tackle various ecological questions,
+especially those related to the dynamics, stability, and functions of biological
+communities [McCa11; ThomBros12].
+
+Several food-web models have been developed over the years to simulate food webs
+using different ecological principles [PascDunn05]. Three of them, that will be
+used in this project, are the cascade model [CoheNewm85], the niche model
+[WillMart00], and the nested-hierarchy model [CattBers04]. In these three
+models, an uniform random value, between 0 and 1, is first assigned to each of
+the $S$ species. In the cascade model, this value represents body size
+[CoheNewm85]. In this model, species have a probability $P$ of feeding on any
+species which have a lower value. Here, cannibalism is not allowed, as well as
+feeding on bigger species. In the niche model, this value now represents an
+ecological niche [WillMart00]. A species will feed on all species whose value
+is within a determined range from its own. In ecological terms, a species
+exclusively feeds on the ones that have a similar niche, including itself. The
+random values also represent ecological niches under the nested-hierarchy model
+[CattBers04]. Without entering into details, this model relaxes the continuity
+property of the niche model. It also takes into account, before assigning an
+interaction to a species, the feeding links of other species similar to it in
+terms of previously assigned preys. Because such food-web models all have
+trivial drawbacks, using an ensemble of models might be more appropriate to
+simulate food webs.
+
+Because the number of links in a food web can be  predicted from its total
+number of species, local food webs could be simulated worldwide using an
+appropriate food-web model. Indeed, even if data on interspecific interactions
+are particularly scarce, this is not the case for species distribution data.
+Data on ecological interactions are indeed orders of magnitude harder to sample
+than are data on species occurrence [Jord16; Jord16a]. In fact, species
+occurrence is perhaps one of the most highly sampled type of ecological data,
+thanks notably to citizen science and the relative easiness to collect them
+[BonnCoop09; HochFink12]. Because of the quantity, quality, and openness of
+species distribution data, local species richness have been extensively
+estimated worldwide, and this could be used in the simulation of local food
+webs.
 
 %%%%% Trophique-METE
 
@@ -133,6 +551,60 @@
     \item Comment ça fonctionne, grossièrement
 \end{itemize}
 
+At the core of many theories and methods in statistical mechanics, with many
+applications in the earth and life sciences [OzawOhmu03; MartSele06], the
+principle of maximum entropy (MaxEnt) is a powerful method of inference of
+probability distributions. MaxEnt is used to derive the *least-biased*
+distribution subject to a given set of constraints on that distribution
+[Jayn57; Jayn57a]. In other words, a probability distribution is derived
+solely from prior knowledge of a system, without relying on arbitrary or biased
+assumptions on the state of that system.
+
+The principle of maximum entropy states that our best guess of a probability
+distribution is the one that maximizes entropy given our set of constraints
+(e.g. on the range, mean or variance of the distribution). Information entropy
+measures the level of information given by the outcome of a stochastic event. According to
+Khin13 and Beck09, information entropy $H$ should satisfy four properties
+(discrete case): (1) $H$ should be a function of a probability distribution
+$p_n$ only; (2) $H$ should be maximized when $p$ is uniform, or constant; (3)
+$H$ should not influenced by outcomes with a null probability, and (4) $H$
+should be independent on the order of information acquisition. Shannon's entropy
+[Shan48]
+
+$$H = -\sum_{n} p_n \log p_n$${eq:shannon}
+
+is the only measure of entropy that satisfies these four properties. Beck09
+discusses other information entropy measures, including the Tjallis entropy
+[Tsal88], which could also be of interest in ecology according to Hart11 even
+though it does not satisfy the forth abovementioned property.
+
+MaxEnt is not a parametrization method, and does not rely on any explicit
+mechanisms. Rather, the probability distribution that maximizes eq:shannon
+subject to a set of $m$ constraints {$g_1, g_2, ..., g_m$} is directly derived
+using the method of Lagrange multipliers:
+
+$$\frac{\partial H}{\partial p_n} = \lambda_1 \frac{\partial g_1}{\partial p_n}
++ \lambda_2 \frac{\partial g_2}{\partial p_n}+...+ \lambda_m \frac{\partial
+g_m}{\partial p_n},$${eq:lagrangegeneral}
+
+where {$\lambda_1, \lambda_2, ..., \lambda_m$} are the Lagrange multipliers.
+Solving eq:lagrangegeneral analytically or numerically gives us the probability
+distribution $p_n$ of maximum entropy. This is the probability distribution that
+best represents our prior knowledge on the system. However, maximum entropy
+distributions are not necessarily the best fit to empirical data. Deviations
+from MaxEnt distributions might suggest that the set of constraints used is not
+adequate, or that mechanisms not encoded in those constraints are important
+[Hart11].
+
+I will maximize Shannon's entropy $H=-\sum_{k=1}^{S} p_k \log p_k$ subject to
+two constraints:
+
+$$g_1 = \sum_{k=1}^{S} p_k = 1,$${eq:g1}
+$$g_2 = \langle k \rangle = \sum_{k=1}^{S} k p_k = \frac{2L}{S}.$${eq:g2}
+
+The first constraint $g_1$ is a normalizing constraint, whereas the second
+constraint $g_2$ is a constraint on the average of the distribution. 
+
 \subsection{La théorie de l'entropie maximale en écologie} 
 
 \begin{itemize}
@@ -140,6 +612,77 @@
     \item METE / ANSE
 \end{itemize}
 
+The principle of maximum entropy has been used to derive many distributions of
+interest in ecology. For example, Will11 derived the least-biased degree
+distribution of various ecological networks from their total number of species
+$S$ and number of interactions $L$. Will11 used the mean degree $L/S$ to
+constrain the average of the degree distribution. MaxEnt has also notably been
+used in species distribution modelling [SDM; PhilAnde06b; PhilDudi08].
+
+The maximum entropy theory of ecology (METE) is a comprehensive ecological
+theory based on the principle of maximum entropy [Hart11]. METE derives many
+distributions of interest in macroecology from a set of state variables.
+Different versions of this theory can be developed according to the choice of
+state variables. The ANSE version [HartZill08; HartNewm14a] relies on four
+*state variables*: the area $A_0$, the total number of individuals $N_0$, the
+number of species $S_0$, and the total energetic requirement of the community
+$E_0$. The core functions of the ANSE version of METE are the ecosystem
+structure function $R(n, \epsilon)$ and the intra-specific spatial abundance
+distribution $P(n)$ [ISSAD; BrumNewm19]. These two distributions are derived
+directly using MaxEnt and are constraints by ratios of the state variables (e.g.
+the average species abundance and the average metabolic rate per species). The
+ecosystem structure function is the probability distribution that if a species
+is chosen at random from the species pool, it will have an abundance of $n$, and
+if an individual among those $n$ individuals is chosen at random, it will have a
+metabolic rate between $\epsilon$ and $d\epsilon$. ISSAD is the probability that
+a given number of individuals of a given species are found in a given area
+within $A_0$. Many metrics are derived from the core functions, including the
+intra-specific energy distribution (ISED; i.e. the probability density function
+that an individual from a given species has a given metabolic energy rate), the
+species-abundance distribution (SAD; i.e. the probability that a given species
+has a given abundance), and the species-area relationship (SAR; i.e. the
+expected number of species found in a given area within $A_0$). The ANSE version
+of METE has been tested against empirical data, with promising results [Hart11;
+McGlXiao15; but see XiaoMcGl15], especially for less disturbed ecosystems
+[NewmWilb20].
+
+HartZill08 derived the SAD, the SAR, the ISSAD, and the ISED, that I will use
+to predict food webs. More specifically, the ASNE version of METE predicts that
+the species-abundance distribution (SAD) is of the form:
+
+$$\Phi(n) = \frac{1}{ln(\lambda_1^{-1})}\frac{e^{-\lambda_1n}}{n},$${eq:SAD}
+
+where $\Phi(n)$ is the probability that a species has an abundance of $n$, and
+$\lambda_1$ is a Lagrange multiplier that satisfies the equation
+$\lambda_1ln(\lambda_1^{-1}) \approx \frac{S_o}{N_o}$.
+
+Moreover, the intra-specific spatial abundance distribution (ISSAD) is of the
+form:
+
+$$P(n) = \frac{e^{-\lambda_pn}}{\sum_{i=0}^{n_0}e^{-\lambda_pi}},$${eq:ISSAD}
+
+where $P(n)$ is the probability that a species has $n$ individuals in an area
+$A$ within $A_0$ if it has $n_0$ individuals in $A_0$, and $\lambda_p$ satisfies
+the equation:
+
+$$\frac{n_0A}{A_0}=\frac{1}{1-e^{-\lambda_p(n_0+1)}}\left(\frac{e^{-\lambda_p}}{1-e^{-\lambda_p}}-e^{-\lambda_p(n_0+1)}\left(n_0+\frac{1}{1-e^{-\lambda_p}}\right)\right)$$
+
+which can be solved numerically.
+
+METE also predicts that the species-area relationship (SAR) is of the form:  
+
+$$S(A) =
+S_o\sum_{n_0=1}^{N_0}\left[1-\frac{1}{\sum_{n=0}^{n_0}e^{-\lambda_pn}}\right]\frac{1}{ln(\lambda_1^{-1})}\frac{e^{-\lambda_1n_0}}{n_0},$${eq:SAR}
+
+where $S(A)$ is the expected number of species in area $A$ within  $A_0$.
+
+Finally, the intra-specific energy distribution (ISED) is of the form:
+
+$$\Theta(\epsilon)\approx \lambda_2ne^{-\lambda_2n\epsilon},$${eq:ISED}
+
+where $\Theta(\epsilon)$ is the probability density for a species to have an
+energetic requirement between $\epsilon$ and $\epsilon+d\epsilon$, and
+$\lambda_2 \approx \frac{S_o}{E_o}$.
 
 \subsection{La théorie de l'entropie maximale des réseaux trophiques} 
 
@@ -150,6 +693,30 @@
     \item Objectifs de la thèse
 \end{itemize}
 
+The degree distributions and probabilistic food webs that will be derived in
+Chapter 1 may dismiss relevant ecological information easily measurable in many
+communities. The total area $A_o$ of a community is such meaningful measure.
+Network-area relationships (NARs) describe the spatial scaling of many
+ecological network properties [ThomTown05; WoodRuss15a; GaliLurg18a]; and
+according to MacDBanv20b, many different NARs are generated from the scaling of
+species richness with area and from the scaling of the number of links with
+species richness. In Chapter 1, I will have shown how spatial scale impacts
+worldwide predictions of food-web structure. Another community measure relevant
+to network ecology is the total number of individuals $N_0$, which has been
+shown to have a strong effect on the nestedness of mutualistic networks
+[KrisJr08]. On a different level, pairwise species interactions could also be a
+result of species abundances due to neutral or stochastic processes [Vazq05a;
+VazqMeli07; CoelRang18; but see OlitFox15]. Moreover, the total metabolic
+energy $E_0$ of a community (or its total biomass) could also impact food-web
+structure. For instance, the body mass of two species could predict the strength
+of trophic interactions [Anon05; BerlDunn09]. These measures were used in the
+ASNE version of the maximum entropy theory of ecology [HartZill08;
+HartNewm14a], along with species richness $S_0$, to derive macroecological
+metrics of maximum entropy. METE notably derives the species-abundance
+distribution (SAD), the species-area relationship (SAR), the intra-specific
+spatial abundance distribution (ISSAD), and the intra-specific energy
+distribution (ISED). These metrics could provide very useful constraints on the
+probability and the weight of pairwise species interactions.
 
 %%%%% Objectifs 
 
@@ -161,10 +728,61 @@
     \item Comprendre la variabilité des interactions et l'utiliser pour développer un modèle robuste des réseaux
 \end{itemize}
 
+The main objective of my thesis is to provide simple and rigorous predictive
+models of food-web structure. My method aims at being as data efficient and as
+unbiased as possible. In that respect, it will rely extensively on the principle
+of maximum entropy [MaxEnt; Jayn57; Jayn57a], which has repeatedly proven
+useful in ecology [see for example PhilAnde06b]. My predictions will however be
+highly sensible to the chosen set of *state variables*, i.e. on the handful of
+ecological measures fed to my models. I aim at building a particularity
+parsimonious model that will rely on a single state variable (i.e. on species
+richness), and a more comprehensive model that will rely on more state
+variables. The latter will build on the maximum entropy theory of ecology (METE)
+of HartZill08. Overall, my research will be a good methodological contribution
+to network ecology by making it easier for ecologists to study food webs at
+macroecological scales, especially given the scarcity of data on trophic
+interactions.
+
+Although I will exclusively analyze food webs in my thesis, my models could be
+adapted to any type of ecological networks. Food webs are convenient for reasons
+of data availability, ecological significance, and wide literature precedence.
+Using my approach with other ecological networks (e.g. parasitism or pollination
+networks), while relevant, will not be part of my thesis.
+
+My models will provide snapshots of ecological networks, either in the *present*
+or in the future. Following the arguments presented in NewmWilb20, I
+hypothesize that my predictions will be more robust for stable communities, i.e.
+for communities whose state variables are not changing too rapidly. In contrast,
+they should be quite imprecise for more dynamic ecosystems, unless my model is
+adapted accordingly (which is unfortunately beyond the scope of my research
+project). However, I believe that deviations from my models should remain
+ecologically informative even for ecosystems *in transition*.  
+
+My models will be both simple and rigorous. I will make predictions of network
+structure using the principle of maximum entropy, which derives least-biased
+distributions that respect a set of constraints. The main objective of my thesis
+will be to develop and validate these models, and to use them with both actual
+and forecasted biodiversity and environmental data. Of course, my predictions
+will be of first-order, and will be accurate only if no other ecological
+mechanisms, other than the ones encoded in these constraints, is at play. In
+that respect, deviations from my predictions will be highly informative. Some of
+my predictions could also be used as informative prior distributions in Bayesian
+inference studies on ecological networks.
 
 %%%%% Chapitres
 
 \section{Organisation de la thèse}
+
+My thesis will be divided in three related chapters. In the first two chapters,
+I will develop and validate my two predictive models of food-web structure. The
+first model (Chapter 1) will predict food-web structure using species richness
+only, whereas the second model (Chapter 2) will predict food-web structure from
+species richness, total abundance, area, and energy requirement. **While the
+first model will be used to predict the structure of probabilistic food webs at
+very large spatial scales, the second one will be used to make predictions of
+weighted food webs for more well-defined communities.** In Chapter 3, these
+models will be used to forecast food-web structure using expected changes in the
+values of these state variables.
 
 \subsection{Chapitre 1: Décrypter les réseaux d'interactions probabilistes} 
 
@@ -183,6 +801,125 @@
     \item Principaux résultats
     \item Contribution personnelle (apport original, indépendant et spécifique)
 \end{itemize}
+
+In Chapter 1, I will derive food-web measures of maximum entropy using two state
+variables: the number of species and the number of links. Because the number of
+links in food webs can be predicted from their number of species [MacDBanv20b],
+I will actually derive food-web properties using data on species richness only.
+In contrast to the model of Chapter 2, building a statistical model based on a
+single state variable will allow me to make predictions at a large spatial
+scale, especially given that species richness is extensively measured and
+modeled worldwide [see for example GoteColw01].
+
+This model could be used in different ways. First, it could be used to make
+first order approximations of network structure worldwide, which would greatly
+facilitate the conduction of spatially-explicit studies on ecological networks.
+I will illustrate this potential application in more details in this chapter.
+Second, it could be used as a null model to identify ecological mechanisms
+leading to observed network structures, by investigating the deviations of
+empirical food webs from the predictions of my model. Third, it could also be
+used to generate informative prior distributions for network structure, which
+could then be updated with empirical data using Bayesian inference methods;
+however I will not focus on this application in my thesis project.
+
+In this chapter, I will predict the degree distribution and the joint degree
+distribution, two fundamental properties of ecological networks [PoisGrav14a;
+DelmBess19], from species richness using the flexible links model
+[MacDBanv20b] and the principle of maximum entropy [Will11]. The probabilistic
+adjacency matrix, and thus other emerging network properties, will also be
+predicted from species richness using simple topological rules on the joint
+degree distribution. My model will provide first-order approximations of network
+structure at a large spatial scale when used with worldwide estimations of local
+species richness. Considering the robustness of METE predictions on more stable
+ecological communities [NewmWilb20], I hypothesize that these approximations
+will be more precise for stable networks than for networks *in transition*.
+Potential discrepancies with empirical data might underline the significance of
+other ecological mechanisms not encoded in my model, including dynamical
+mechanisms.
+
+Predicting the structure of an ecological network solely from its number of
+species is as challenging as it is promising. Given that species richness is
+perhaps the most studied measure of local biodiversity worldwide (see for
+example GoteColw01), the predictive model developed in this chapter will
+greatly facilitate the study of ecological networks at large spatial scales,
+including macroecological studies of the functioning and dynamic of ecological
+systems [PascPasc06; HeleGarc14]. My model is *very* parsimonious, and as such
+can make first-order predictions of food-web structure for all ecosystems on
+Earth, as long as their species richness is known. My model will also act as a
+null model to identify relevant ecological mechanisms shaping ecological
+networks.
+
+In this chapter, food-web structure will be predicted from their species
+richness. First, the total number of links will be predicted using the flexible
+links model of MacDBanv20b, fitted with all food webs archived on
+mangal.io. The degree distribution and the joint
+degree distribution will next be derived using the principle of maximum entropy
+with the predicted mean degree as a constraint. Probabilistic adjacency matrices
+will then be predicted from the joint degree distribution using simple
+topological models and simulating annealing algorithms, and various measures of
+network structure will be computed from these adjacency matrices. Finally, to
+illustrate potential applications of my model, network structure will be mapped
+at the global scale using worldwide data on species richness. The proposed
+methodology is outlined in fig:conceptual1. Note that although I will only
+consider food webs in my research for simplicity purposes, my model could be
+adapted and applied to any type of ecological networks.
+
+Many ecological
+networks archived on `mangal.io` [PoisBais16] are multilayer networks, i.e. networks that
+describe different types of interactions. In contrast to MacDBanv20b, who
+considered as food webs any networks having at least one interaction of
+predation or herbivory, I will consider as food webs all ecological networks
+whose interactions are *mainly* of predation and herbivory types. 
+
+I will use the principle of maximum entropy to derive the least-biased degree
+distribution that best represents my prior knowledge of a food web. 
+
+This implies that predicting a food web's degree
+distribution from its number of species generates a distribution of degree
+distributions when we account for the uncertainty around the predictions of $L$.
+On the other hand, in the case where the number of links is known empirically, a
+single degree distribution of maximum entropy would be derived. 
+
+I will compare empirical degree distributions of food-webs archived on
+`mangal.io` to their predicted degree distributions of maximum entropy using Q-Q
+plots or rank curves.
+
+Maximum entropy in-degree and out-degree distributions can be derived in a
+similar fashion as the maximum entropy degree distribution. However, although
+species *must* have a degree of 1 or higher, they can have an in-degree or an
+out-degree of 0. 
+
+I will predict the adjacency matrix using two methods: an heuristic method and a
+method based on a null model. The adjacency matrix will first be predicted from
+the joint degree distribution using heuristic methods (e.g. simulating
+annealing). Using this method, I will obtain a set of plausible networks that
+have the desired joint degree distributions, and estimate their structure using
+measures presented in DelmBess19. As a result, I will obtain a probability
+distribution for each chosen network property and for each value of $S$.
+
+These predictions will be compared to the ones obtained from the second method.
+In that case, I will use topological null models to directly predict the
+probabilistic adjacency matrix. I will for instance use Type II null models
+[BascJord03b; DelmBess19], that estimate the probability of interaction
+between two species $i$ and $j$ from their in and out-degrees:
+
+$$P_{i \rightarrow j} =
+\frac{1}{2}\left(\frac{k_{in}(j)}{S}+\frac{k_{out}(i)}{S}\right)
+$$
+
+Measures that will be
+computed include nestedness [StanKopp13b], maximum trophic level, mean trophic
+level, generality, and vulnerability [DelmBess19]. My model will be evaluated by plotting its predictions against the observed
+structure of empirical webs.
+
+Although my model could be applied to any type of ecological networks, I will
+only analyze food webs in my thesis. Food webs indeed have the desirable
+property to comprise most species in a biological community. Because all
+heterotrophs must eat to survive, the number of nodes in a food web is very well
+approximated by local species richness. Furthermore, the scaling of the number
+of links with the number of species is very well documented in food webs
+(MacDBanv20b). Adapting my method to other types of ecological networks is
+beyond the scope of my research project.
 
 \endinput
 %%
