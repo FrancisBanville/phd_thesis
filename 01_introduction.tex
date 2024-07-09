@@ -13,15 +13,34 @@
 
 %%%%% Mise en contexte 
 
-\section{L'écologie des réseaux pour mieux comprendre les écosystèmes complexes}
+\section{L'écologie des réseaux pour mieux comprendre les écosystèmes complexes (6 pages)}
 
-\subsection{Pourquoi étudier les interactions écologiques} 
+Les systèmes complexes sont partout autour de nous. Considérez les transactions
+effectuées sur les marchés financiers mondiaux (\cite{Anderson2018Economy}), où
+une décision prise à Toronto peut avoir des répercussions à Londres et à Tokyo
+en quelques secondes seulement. Pensez également au réseau de neurones dans
+notre cerveau (\cite{Sporns2011Human}), qui orchestre des milliers de signaux
+électriques à chaque instant pour créer notre expérience subjective du monde. Ou
+encore, à une colonie de fourmis (\cite{Bonabeau1999Swarm}), où chaque individu
+suit des règles simples, mais qui ensemble génère des comportements complexes
+tels que la construction de nids et la défense du territoire. Les systèmes
+complexes régissent plusieurs phénomènes importants, mais souvent difficiles à
+modéliser, dans notre quotidien et la nature. 
 
-\begin{itemize}
-    \item Différents types d'interactions (trophique, parasitisme, pollinisation)
-    \item Écologie des interactions (flux d'énergie, épidémie, sécurité alimentaire)
-    \item Écologie des réseaux (stabilité des écosystèmes, résilience, fonctions)
-\end{itemize}
+Quel que soit leur objet d'étude, les systèmes complexes sont constitués de
+nombreux éléments qui interagissent entre eux (\cite{Rind1999Complexity}). Ces
+interactions impliquent des échanges directs d'information, de matière ou
+d'énergie (\cite{Ladyman2013What}), donnant lieu à des propriétés émergentes de
+niveau supérieur (\cite{Foote2007Mathematics}). La structure ordonnée des
+systèmes complexes émerge donc du désordre des éléments et de leurs
+interactions. Le nombre élevé d'interactions et de rétroactions (processus par
+lequel les interactions passées influencent celles à venir) dans les systèmes
+complexes rend cependant difficile la prédictibilité de leur structure
+(\cite{Ladyman2013What}). 
+
+Pour faciliter l'étude des systèmes complexes, il est courant de les représenter
+sous forme de réseaux, où les éléments forment des nœuds et les interactions,
+des liens entre ces nœuds (\cite{Newman2003Structure}).    
 
 Network thinking has emerged as a standard procedure in the study of a variety
 of complex systems, including the World Wide Web [AlbeJeon99], power grid
@@ -45,6 +64,63 @@ null models, relevant measures of network structure, and empirical data.
 Deviations from null models, i.e. from models that do not rely on given
 ecological mechanisms, are in that respect highly informative [FlorMeye11a;
 FortStou10a].
+
+
+
+\subsection{Qu'est-ce qu'un réseau d'interactions entre espèces?} 
+
+\begin{itemize}
+    \item Étudier les réseaux demande de faire des choix 
+    \item Ces choix dépendent de ce qu'on veut étudier et de notre capacité d'observation
+    \item Différents processus écologiques seront pris en compte selon le type de réseau
+\end{itemize}
+
+Studying and understanding
+ecological networks require that we understand their relation with spatial
+scale.  Species–area relationships (SARs) describe how species richness varies
+with habitat area. According to Deng09, a power-law model is an appropriate
+type of SARs. In this model, the total number of species $S$ in a community
+increases with the local area $A$ according to the equation:
+
+$$ S = c \times A^z, $$ {eq:area}
+
+
+
+where $c$ and $z$ are positive constants.
+
+Because the number of links $L$ in a food web scales with the number of species
+(see Annex 1), $L$ also scales with habitat area [BrosOstl04]. Large areas
+typically contain more species, that globally establish more interactions.
+According to the flexible links model (see Annex 1), the association between $L$
+and $A$, however, depends on the proportion of realized links $p$, which varies
+from one community to another. In other words, the association between $L$ and
+$A$ can take multiple forms, and it is not clear how this could influence the
+outcomes of any spatial food-web simulation.
+
+Not only $L$ scales with $A$, but multiple measures of food-web structure also
+vary with spatial scale [BrosOstl04; ThomTown05]. This could directly be due
+to the scaling of species richness with area, but this could also occur because
+of other ecological phenomena [GaliLurg18].
+
+Ecological networks cannot be indefinitely large, however. Abnormally large food
+webs are typically unstable [May72] and prone to collapsing. This
+imposes a limit to their size, and perhaps as well to the area that food webs
+typically cover.
+
+
+\subsection{Pourquoi étudier les réseaux d'interactions entre espèces?} 
+
+\begin{itemize}
+    \item Différents types d'interactions (trophique, parasitisme, pollinisation)
+    \item Écologie des interactions (flux d'énergie, épidémie, sécurité alimentaire)
+    \item Écologie des réseaux (stabilité des écosystèmes, résilience, fonctions)
+\end{itemize}
+
+
+
+
+
+
 
 Moreover, analyzing ecological networks can help us understand how biological
 communities function and respond to changes [see for example PascPasc06;
@@ -108,46 +184,6 @@ ecologists often summarize entire networks with a few measures only because of
 the information they provide on the functions, dynamics, and stability of
 biological communities. It is thus unnecessary to know exactly who eats who in a
 community if one is mainly interested in the emergent structure of a food web.
-
-\subsection{Différents types de réseaux d'interactions écologiques} 
-
-\begin{itemize}
-    \item Étudier les réseaux demande de faire des choix 
-    \item Ces choix dépendent de ce qu'on veut étudier et de notre capacité d'observation
-    \item Différents processus écologiques seront pris en compte selon le type de réseau
-\end{itemize}
-
-Studying and understanding
-ecological networks require that we understand their relation with spatial
-scale.  Species–area relationships (SARs) describe how species richness varies
-with habitat area. According to Deng09, a power-law model is an appropriate
-type of SARs. In this model, the total number of species $S$ in a community
-increases with the local area $A$ according to the equation:
-
-$$ S = c \times A^z, $$ {eq:area}
-
-
-
-where $c$ and $z$ are positive constants.
-
-Because the number of links $L$ in a food web scales with the number of species
-(see Annex 1), $L$ also scales with habitat area [BrosOstl04]. Large areas
-typically contain more species, that globally establish more interactions.
-According to the flexible links model (see Annex 1), the association between $L$
-and $A$, however, depends on the proportion of realized links $p$, which varies
-from one community to another. In other words, the association between $L$ and
-$A$ can take multiple forms, and it is not clear how this could influence the
-outcomes of any spatial food-web simulation.
-
-Not only $L$ scales with $A$, but multiple measures of food-web structure also
-vary with spatial scale [BrosOstl04; ThomTown05]. This could directly be due
-to the scaling of species richness with area, but this could also occur because
-of other ecological phenomena [GaliLurg18].
-
-Ecological networks cannot be indefinitely large, however. Abnormally large food
-webs are typically unstable [May72] and prone to collapsing. This
-imposes a limit to their size, and perhaps as well to the area that food webs
-typically cover.
 
 \subsubsection{Réseaux d'individus ou d'espèces: une question d'organisation} 
 
@@ -316,7 +352,7 @@ ease for simulated food webs.
 
 %%%%% Stochasticité des interactions 
 
-\section{Incertitude et variabilité des interactions entre espèces}
+\section{Incertitude et variabilité des interactions entre espèces (3 pages)}
 
 \begin{itemize}
     \item Le défi principal en écologie des réseaux est le manque de données
@@ -348,7 +384,7 @@ ease for simulated food webs.
 
 %%%%% Modèles prédictifs 
 
-\section{De la nécessité de développer des modèles prédictifs} 
+\section{De la nécessité de développer des modèles prédictifs (3 pages)} 
 
 \begin{itemize}
     \item Nous avons besoin de modèles prédictifs pour combler le manque de données 
@@ -541,7 +577,7 @@ webs.
 
 %%%%% Trophique-METE
 
-\section{Vers une théorie de l'entropie maximale des réseaux trophiques}
+\section{Vers une théorie de l'entropie maximale des réseaux trophiques (6 pages)}
 
 \subsection{Le principe d'entropie maximale} 
 
@@ -720,7 +756,7 @@ probability and the weight of pairwise species interactions.
 
 %%%%% Objectifs 
 
-\section{Objectifs généraux} 
+\section{Objectifs généraux (1 page)} 
 
 \begin{itemize}
     \item Décrire cette variabilité et cette incertitude
@@ -771,7 +807,7 @@ inference studies on ecological networks.
 
 %%%%% Chapitres
 
-\section{Organisation de la thèse}
+\section{Organisation de la thèse (2 pages)}
 
 My thesis will be divided in three related chapters. In the first two chapters,
 I will develop and validate my two predictive models of food-web structure. The
