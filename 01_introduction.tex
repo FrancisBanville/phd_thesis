@@ -46,7 +46,7 @@ suis intéressé plus particulièrement aux réseaux d'interactions entre espèc
 qui servent d'outil pour mieux comprendre les écosystèmes complexes. Bien ancrée
 dans la science des réseaux et la théorie des graphes, l'écologie des réseaux
 fournit un cadre d'analyse pour étudier le fonctionnement des écosystèmes et
-leur résilience face aux changements environnementaux à venir
+leur résilience face aux changements environnementaux
 (\cite{McCann2007Protecting}, \cite{McCann2011Food}, \cite{Proulx2005Network},
 \cite{Rooney2012Integrating}). Elle y parvient en offrant des lignes directrices
 pour mesurer les interactions entre espèces (\cite{Jordano2016Sampling}) et des
@@ -55,20 +55,90 @@ méthodes pour analyser la structure émergente des réseaux d'interactions
 
 \subsection{Qu'est-ce qu'une interaction entre espèces?} 
 
-Construire un réseau d'interactions demande de faire des choix qui influencent
-la manière dont nous interprétons leurs propriétés émergentes. Étant donné la
-nombre élevé d'organismes et la diversité de leurs relations, il est
-indispensable d'opter pour une représentation simplifiée de l'écosystème qui met
-de l'avant les aspects qui nous intéressent. 
+Une communauté biologique est composée d'espèces différentes interagissant entre
+elles dans un espace donné (\cite{Stroud2015Community}). Par exemple, les
+milieux forestiers tempérés du Québec sont riches en espèces animales et
+végétales. À cause des changements climatiques et de la fragmentation des
+habitats naturels, on y retrouve maintenant des tiques \textit{Ixodes
+scapularis} infectées par la bactérie \textit{Borrelia burgdorferi}, responsable
+de la maladie de Lyme (\cite{Ogden2009Emergence}, \cite{Simon2014Climate}). Les
+tiques juvéniles se nourrissent sur des petits mammifères, dont la souris à
+pattes blanches (\textit{Peromyscus leucopus}) qui est un réservoir compétent de
+la bactérie (\cite{Donahue1987Reservoir}). Les tiques adultes, quant à elles, se
+nourrissent et s'accouplent sur les cerfs de Virginie (\textit{Odocoileus
+virginianus}, \cite{Lane1991Lyme}). Ces deux espèces (\textit{P. leucopus} et
+\textit{O. virginianus}) s'alimentent à leur tour de glands de chêne
+(\cite{McShea1993Variablea}, \cite{Elkinton1996Interactions},
+\cite{Wolff1996Population}, \cite{McShea2000Influence}), ce qui peut expliquer
+la relation entre l'abondance des tiques et celle des glands
+(\cite{Ostfeld2006Climate}). Comprendre l'écologie et l'épidémiologie de la
+maladie de Lyme nécessite donc une compréhension approfondie des interactions
+entre espèces au sein des communautés biologiques où la tique \textit{I.
+scapularis} est présente.
+
+Plus généralement, il existe différents types d'interactions entre espèces au
+sein d'un écosystème. Les interactions antagonistes, telles que les interactions
+hôtes-parasites, prédateurs-proies et plantes-herbivores, profitent à une espèce
+au détriment de l'autre. Les interactions hôtes-parasites procurent un habitat
+et une source d'alimentation au parasite au prix du \textit{fitness} de l'hôte,
+alors que les interactions prédateurs-proies et plantes-herbivores transfèrent
+l'énergie de la ressource vers le consommateur, entraînant généralement la mort
+de la proie mais pas nécessairement celle de la plante. Les interactions
+mutualistes, telles que les interactions plantes-pollinisateurs, profitent au
+contraire aux deux espèces. Le pollinisateur se nourrit du nectar de la plante,
+qui en retour en profite pour disperser son pollen à des fins de reproduction.
+Les réseaux d'interactions entre espèces peuvent être composés d'un seul type
+d'interaction (p. ex. les réseaux trophiques composés exclusivement
+d'interactions prédateurs-proies et plantes-herbivores) ou de plusieurs (p. ex.
+les réseaux multicouches, \cite{Pilosof2017Multilayer}), selon le niveau de
+complexité écologique représenté.
+
+Construire un réseau d'interactions demande de faire des choix concernant les
+interactions, ce qui impactera notre interprétation des propriétés émergentes
+des réseaux. Étant donné le nombre élevé d'organismes et la diversité de leurs
+interactions, il est nécessaire de simplifier notre représentation d'une
+communauté biologique en mettant de l'avant les processus écologiques qui nous
+intéressent (p. ex. propagation de maladies infectieuses, flux d'énergie dans
+l'écosystème, reproduction végétale). Au delà du type d'interaction, les
+décisions concernant le niveau d'organisation des nœuds (individus ou espèces),
+la mesure des liens (binaire ou quantitatif) et l'échelle spatiale (local ou
+régional) déterminent également les aspects de la complexité écologique
+représentés. Ces décisions dépendent autant des objectifs de recherche que des
+données disponibles.
+
+\subsubsection{Interactions entre individus ou espèces: une question d'organisation} 
 
 \begin{itemize}
-    \item Différents types d'interactions (trophique, parasitisme, pollinisation)
-    \item Écologie des interactions (flux d'énergie, épidémie, sécurité alimentaire)
-    \item Étudier les réseaux demande de faire des choix 
-    \item Ces choix dépendent de ce qu'on veut étudier et de notre capacité d'observation
-    \item Différents processus écologiques seront pris en compte selon le type de réseau
+    \item Les individus sont à la base des interactions
+    \item On peut vouloir grouper les individus en populations ou espèces
+    \item On peut aussi les grouper à des niveaux d'organisation supérieurs (p.ex. espèces trophiques)
 \end{itemize}
 
+Ecological networks are mathematical representations of interactions occurring
+within a biological community. Interactions typically occur at the individual
+level [Guim20a]. For instance, pollination occurs between pollinator and plant
+individuals, and predation between predator and prey individuals. However,
+ecological networks are typically representations of *species* and their
+interactions [DelmBess19], species interactions being aggregated among
+individuals. In binary networks, two species are linked if at least one of their
+individuals interact. Interactions can also be quantitative if they represent,
+in the case of food webs, the energy flow between two species [Post02a;
+DelmBess19], or probabilistic if they represent the probability that two
+species interact [PoisCirt16].
+
+\subsubsection{Interactions binaires ou quantitatives: une question de mesure} 
+
+\begin{itemize}
+    \item Les réseaux binaires nous disent si l'interaction a lieu
+    \item Les réseaux quantitatifs peuvent vouloir dire différentes choses (flux d'énergie, impact d'une espèce sur une autre)
+\end{itemize}
+
+\subsubsection{Interactions locales ou régionales: une question d'échelle spatiale} 
+
+\begin{itemize}
+    \item Les réseaux locaux nous disent si l'interaction est réalisé 
+    \item Les réseaux régionaux nous disent si l'interaction a un potentiel d'être réalisé
+\end{itemize}
 
 Studying and understanding
 ecological networks require that we understand their relation with spatial
@@ -102,10 +172,7 @@ webs are typically unstable [May72] and prone to collapsing. This
 imposes a limit to their size, and perhaps as well to the area that food webs
 typically cover.
 
-
-
-
-
+%%%%%%%%%% 
 
 Moreover, analyzing ecological networks can help us understand how biological
 communities function and respond to changes [see for example PascPasc06;
@@ -170,41 +237,8 @@ the information they provide on the functions, dynamics, and stability of
 biological communities. It is thus unnecessary to know exactly who eats who in a
 community if one is mainly interested in the emergent structure of a food web.
 
-\subsubsection{Réseaux d'individus ou d'espèces: une question d'organisation} 
 
-\begin{itemize}
-    \item Les individus sont à la base des interactions
-    \item On peut vouloir grouper les individus en populations ou espèces
-    \item On peut aussi les grouper à des niveaux d'organisation supérieurs (p.ex. espèces trophiques)
-\end{itemize}
-
-Ecological networks are mathematical representations of interactions occurring
-within a biological community. Interactions typically occur at the individual
-level [Guim20a]. For instance, pollination occurs between pollinator and plant
-individuals, and predation between predator and prey individuals. However,
-ecological networks are typically representations of *species* and their
-interactions [DelmBess19], species interactions being aggregated among
-individuals. In binary networks, two species are linked if at least one of their
-individuals interact. Interactions can also be quantitative if they represent,
-in the case of food webs, the energy flow between two species [Post02a;
-DelmBess19], or probabilistic if they represent the probability that two
-species interact [PoisCirt16].
-
-\subsubsection{Réseaux binaires ou quantitatifs: une question de mesure} 
-
-\begin{itemize}
-    \item Les réseaux binaires nous disent si l'interaction a lieu
-    \item Les réseaux quantitatifs peuvent vouloir dire différentes choses (flux d'énergie, impact d'une espèce sur une autre)
-\end{itemize}
-
-\subsubsection{Réseaux locaux ou régionaux: une question d'échelle spatiale} 
-
-\begin{itemize}
-    \item Les réseaux locaux nous disent si l'interaction est réalisé 
-    \item Les réseaux régionaux nous disent si l'interaction a un potentiel d'être réalisé
-\end{itemize}
-
-\subsection{Structure des réseaux d'interactions entre espèces} 
+\subsection{Quelle est la structure émergente des réseaux d'interactions?} 
 
 \begin{itemize}
     \item Il existe plusieurs mesures sur les réseaux 
