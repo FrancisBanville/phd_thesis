@@ -32,7 +32,7 @@ nombreux éléments qui interagissent entre eux (\cite{Rind1999Complexity}). Ces
 interactions impliquent des échanges directs d'information, de matière ou
 d'énergie (\cite{Ladyman2013What}), donnant lieu à des propriétés émergentes de
 niveau supérieur (\cite{Foote2007Mathematics}). Caractéristiques fondamentales
-des systèmes complexes, ces propriétés émergentes (p. ex. un krach boursier, la
+des systèmes complexes, ces propriétés émergentes (p. ex., un krach boursier, la
 conscience humaine ou le comportement d'un superorganisme) ne sont pas
 déductibles des éléments pris individuellement (\cite{Nielsen2000Emergent}). Le
 désordre apparent des éléments et de leurs interactions génère donc une
@@ -46,78 +46,29 @@ suis intéressé plus particulièrement aux réseaux d'interactions entre espèc
 qui servent d'outil pour mieux comprendre les écosystèmes complexes. Bien ancrée
 dans la science des réseaux et la théorie des graphes, l'écologie des réseaux
 fournit un cadre d'analyse pour étudier le fonctionnement des écosystèmes et
-leur résilience face aux changements environnementaux
-(\cite{McCann2007Protecting}, \cite{McCann2011Food}, \cite{Proulx2005Network},
-\cite{Rooney2012Integrating}). Elle y parvient en offrant des méthodes pour
-mesurer les interactions entre espèces (p. ex. \cite{Jordano2016Sampling}) et
-analyser la structure émergente des réseaux d'interactions (p. ex.
-\cite{Delmas2019Analysing}), nous permettant ainsi de mieux comprendre les
-caractéristiques de ces systèmes complexes. 
+leur résilience face aux changements environnementaux (\cite{Proulx2005Network},
+\cite{McCann2007Protecting}, \cite{McCann2011Food},
+\cite{Rooney2012Integrating}, \cite{Valiente-Banuet2019Species}). Elle y
+parvient en offrant des méthodes pour mesurer les interactions entre espèces (p.
+ex., \cite{Jordano2016Sampling}) et analyser la structure émergente des réseaux
+d'interactions (p. ex., \cite{Delmas2019Analysing}), nous permettant ainsi de
+mieux comprendre les caractéristiques de ces systèmes complexes. 
 
-La théorie de l'entropie maximale des réseaux trophiques, dont je jette les
-bases dans cette thèse, propose une nouvelle approche en écologie des réseaux.
+Cette thèse jette les bases de la théorie de l'entropie maximale des réseaux
+trophiques, qui constitue une approche novatrice en écologie des réseaux.
 Reposant sur la complexité des interactions entre espèces, elle permet de
 prédire la structure émergente des réseaux d'interactions à partir d'un nombre
 limité d'informations écologiques. Avant d'exposer cette théorie, il convient
 d'examiner certains concepts clés de l'écologie des réseaux afin de mieux saisir
-la nature des écosystèmes complexes. Les sous-sections suivantes traitent de la
-nature et des mesures des interactions entre espèces avant d'aborder la
-structure émergente des réseaux d'interactions. Ces précisions permettront de
-mieux comprendre les fondements et domaines d'application de cette théorie.  
+la nature des écosystèmes complexes. Les sous-sections suivantes traitent de
+la nature et des mesures des interactions entre espèces et décrivent la
+structure émergente des réseaux d'interactions. Ces descriptions permettront de
+mieux comprendre les fondements et domaines d'application de cette nouvelle
+théorie.  
 
 \subsection{Qu'est-ce qu'une interaction entre espèces?} 
 
-Une communauté biologique est composée d'espèces différentes interagissant entre
-elles dans un espace donné (\cite{Stroud2015Community}). Par exemple, les
-milieux forestiers tempérés du Québec sont riches en espèces animales et
-végétales. À cause des changements climatiques et de la fragmentation des
-habitats naturels, on y retrouve maintenant des tiques \textit{Ixodes
-scapularis} infectées par la bactérie \textit{Borrelia burgdorferi}, responsable
-de la maladie de Lyme (\cite{Ogden2009Emergence}, \cite{Simon2014Climate}). Les
-tiques juvéniles se nourrissent sur des petits mammifères, dont la souris à
-pattes blanches (\textit{Peromyscus leucopus}) qui est un réservoir compétent de
-la bactérie (\cite{Donahue1987Reservoir}). Les tiques adultes, quant à elles, se
-nourrissent et s'accouplent sur les cerfs de Virginie (\textit{Odocoileus
-virginianus}, \cite{Lane1991Lyme}). Ces deux espèces (\textit{P. leucopus} et
-\textit{O. virginianus}) s'alimentent à leur tour de glands de chêne
-(\cite{McShea1993Variablea}, \cite{Elkinton1996Interactions},
-\cite{Wolff1996Population}, \cite{McShea2000Influence}), ce qui peut expliquer
-qu'il y ait une relation entre l'abondance des tiques et celle des glands
-(\cite{Ostfeld2006Climate}). Comprendre l'écologie et l'épidémiologie de la
-maladie de Lyme nécessite donc une compréhension approfondie des interactions
-entre espèces au sein des communautés biologiques où la tique \textit{I.
-scapularis} est présente.
-
-Plus généralement, il existe différents types d'interactions entre espèces au
-sein d'un écosystème. Les interactions antagonistes, telles que les interactions
-hôtes-parasites, prédateurs-proies et plantes-herbivores, profitent à une espèce
-au détriment de l'autre. Les interactions hôtes-parasites procurent un habitat
-et une source d'alimentation au parasite au prix du \textit{fitness} de l'hôte,
-alors que les interactions prédateurs-proies et plantes-herbivores transfèrent
-l'énergie de la ressource vers le consommateur, entraînant généralement la mort
-de la proie mais pas nécessairement celle de la plante. Les interactions
-mutualistes, telles que les interactions plantes-pollinisateurs, profitent au
-contraire aux deux espèces. Le pollinisateur se nourrit du nectar de la plante,
-qui en retour en profite pour disperser son pollen à des fins de reproduction.
-Les réseaux d'interactions entre espèces peuvent être composés d'un seul type
-d'interaction (p. ex. les réseaux trophiques composés exclusivement
-d'interactions prédateurs-proies et plantes-herbivores) ou de plusieurs (p. ex.
-les réseaux multicouches, \cite{Pilosof2017Multilayer}), selon le niveau de
-complexité écologique représenté.
-
-Construire un réseau d'interactions demande de faire des choix concernant les
-interactions, ce qui impactera notre interprétation ses propriétés émergentes.
-Étant donné le nombre élevé d'organismes et la diversité de leurs interactions,
-il est nécessaire de simplifier notre représentation d'une communauté biologique
-en mettant de l'avant les processus écologiques qui nous intéressent (p. ex.
-propagation de maladies infectieuses, flux d'énergie dans l'écosystème,
-reproduction végétale). Au delà du type d'interaction, les décisions concernant
-le niveau d'organisation des nœuds (individus ou espèces), la mesure des liens
-(binaire ou quantitatif) et l'échelle spatiale (local ou régional) déterminent
-également les aspects de la complexité écologique représentés. Ces décisions
-dépendent autant des objectifs de recherche que des données disponibles.
-
-\subsubsection{Interactions entre individus ou espèces: une question d'organisation} 
+\subsubsection{Une interaction est réalisée entre deux individus} 
 
 \begin{itemize}
     \item Les individus sont à la base des interactions
@@ -137,14 +88,74 @@ in the case of food webs, the energy flow between two species [Post02a;
 DelmBess19], or probabilistic if they represent the probability that two
 species interact [PoisCirt16].
 
-\subsubsection{Interactions binaires ou quantitatives: une question de mesure} 
+\subsubsection{Une interaction peut être antagoniste ou mutualiste} 
 
-\begin{itemize}
-    \item Les réseaux binaires nous disent si l'interaction a lieu
-    \item Les réseaux quantitatifs peuvent vouloir dire différentes choses (flux d'énergie, impact d'une espèce sur une autre)
-\end{itemize}
+Une communauté biologique est composée d'espèces différentes interagissant entre
+elles dans un espace donné (\cite{Stroud2015Community}). Par exemple, les
+milieux forestiers tempérés du Québec sont riches en espèces animales et
+végétales. À cause des changements climatiques et de la fragmentation des
+habitats naturels, on y retrouve maintenant des tiques \textit{Ixodes
+scapularis} infectées par la bactérie \textit{Borrelia burgdorferi}, responsable
+de la maladie de Lyme (\cite{Ogden2009Emergence}, \cite{Simon2014Climate}). Les
+tiques juvéniles se nourrissent sur des petits mammifères, dont la souris à
+pattes blanches (\textit{Peromyscus leucopus}) qui est un réservoir compétent de
+la bactérie (\cite{Donahue1987Reservoir}). Les tiques adultes, quant à elles, se
+nourrissent et s'accouplent sur les cerfs de Virginie (\textit{Odocoileus
+virginianus}, \cite{Lane1991Lyme}). Ces deux espèces (\textit{P. leucopus} et
+\textit{O. virginianus}) s'alimentent à leur tour de glands de chêne
+(\cite{McShea1993Variablea}, \cite{Elkinton1996Interactions},
+\cite{Wolff1996Population}, \cite{McShea2000Influence}), ce qui peut expliquer
+la relation entre l'abondance des tiques et celle des glands
+(\cite{Ostfeld2006Climate}). Comprendre l'écologie et l'épidémiologie de la
+maladie de Lyme nécessite donc une compréhension approfondie des interactions
+entre espèces (p. ex., les interactions hôtes-parasites et plantes-herbivores)
+au sein des communautés biologiques où la tique \textit{I. scapularis} est
+présente.
 
-\subsubsection{Interactions locales ou régionales: une question d'échelle spatiale} 
+Plus généralement, il existe différents types d'interactions entre espèces au
+sein d'un écosystème. Les interactions antagonistes, telles que les interactions
+hôtes-parasites, prédateurs-proies et plantes-herbivores, profitent à une espèce
+au détriment de l'autre. Les interactions hôtes-parasites procurent un habitat
+et une source d'alimentation au parasite au prix du \textit{fitness} de l'hôte,
+alors que les interactions prédateurs-proies et plantes-herbivores transfèrent
+l'énergie de la ressource vers le consommateur, entraînant généralement la mort
+de la proie (mais pas nécessairement celle de la plante). Les interactions
+mutualistes, telles que les interactions plantes-pollinisateurs, profitent au
+contraire aux deux espèces. Le pollinisateur se nourrit du nectar de la plante,
+qui en retour en profite pour disperser son pollen à des fins de reproduction.
+Les réseaux d'interactions entre espèces peuvent être composés d'un seul type
+d'interaction (p. ex. les réseaux trophiques composés exclusivement
+d'interactions prédateurs-proies et plantes-herbivores) ou de plusieurs (p. ex.
+les réseaux multicouches, \cite{Pilosof2017Multilayer}), selon le niveau de
+complexité écologique représenté.
+
+J'ai formulé les principes de la théorie de l'entropie maximale des réseaux
+trophiques autour des interactions trophiques (prédateurs-proies et
+plantes-herbivores). Les réseaux trophiques ont une importance historique en
+écologie, avec notamment Charles Sutherland Elton (1900-1991) qui a développé
+les concepts de chaînes et de niveaux trophiques (\cite{Elton1927Animal},
+\cite{Elton1958Ecology}) il y a près d'un siècle. Plusieurs publications
+marquantes en écologie, comme celles de \cite{May1972Will} sur la stabilité des
+écosystèmes complexes et de \cite{Lotka1925Elements} et
+\cite{Volterra1927Fluctuations} sur la dynamique des populations animales,
+portent sur les interactions trophiques. Les interactions prédateurs-proies et
+plantes-herbivores déterminent les flux de matière et d'énergie au sein des
+écosystèmes. Elles nous permettent de mieux comprendre des phénomènes tels que
+la régulation de la productivité primaire par cascade trophique
+(\cite{Carpenter1987Regulation}), la stabilité des écosystèmes face à
+l'extirpation d'espèces (\cite{Dunne2002Network}, \cite{Srinivasan2007Response},
+\cite{Staniczenko2010Structural}) et la capacité des espèces à migrer et
+s'adapter aux changements climatiques (\cite{Tylianakis2008Global},
+\cite{Gilman2010Framework}) et à la perte d'habitats naturels
+(\cite{Evans2013Robustness}). De plus, les données disponibles sur les réseaux
+trophiques couvrent une diversité d'habitats à l'échelle mondiale
+(\cite{Poisot2021Global}), ce qui facilite la validation des prédictions de la
+théorie. Néanmoins, la théorie de l'entropie maximale des réseaux trophiques
+peut être adaptée et testée sur d'autres types d'interactions qui impliquent un
+échange direct d'information, de matière ou d'énergie (comme les interactions
+hôtes-parasites ou plantes-pollinisateurs).
+
+\subsubsection{Une interaction peut être locale ou régionale} 
 
 \begin{itemize}
     \item Les réseaux locaux nous disent si l'interaction est réalisé 
@@ -183,70 +194,53 @@ webs are typically unstable [May72] and prone to collapsing. This
 imposes a limit to their size, and perhaps as well to the area that food webs
 typically cover.
 
-%%%%%%%%%% 
+\subsection{Comment mesure-t-on une interaction entre espèces?} 
 
-Moreover, analyzing ecological networks can help us understand how biological
-communities function and respond to changes [see for example PascPasc06;
-GomePerf11]. For instance, many ecological networks are sensitive to the loss
-of keystone species [JordBasc03] and to the introduction of successful invasive
-species [AizeMora08; LopeHaye07]. Understanding species interactions and the
-underlying structure of their ecological networks is essential to assess the
-potential harm of climate change [TyliDidh08; GilmUrba10; ArauRoze11],
-habitat loss [EvanPoco13], and other environmental catastrophes on ecosystems.
-In short, species interactions are closely related to the ongoing biodiversity
-crisis [ValiAize19].  
+Construire un réseau demande de faire des choix méthodologiques concernant les
+interactions entre espèces, choix qui impacteront notre interprétation des
+propriétés émergentes du réseau. Étant donné le nombre élevé d'organismes et la
+diversité de leurs interactions, il est souvent nécessaire d'opter pour une
+représentation simplifiée des interactions au sein d'une communauté biologique.
+Cette représentation simplifiée doit contenir les informations écologiques
+pertinentes au sujet d'étude, dans les limites de ce qui peut être observé. Les
+décisions concernant le type d'interaction, le niveau d'organisation des nœuds
+(individus ou espèces) et l'échelle spatiale du réseau (local ou régional)
+déterminent les aspects de la complexité du réseau qui seront mis de l'avant.
+Ces décisions dépendent autant des objectifs de recherche que des données
+disponibles.
 
-Network
-ecology has established itself as a proper approach in the study of biological
-communities and their inherent complexity [BorrMood14; DelmBess19]. Species
-interactions can provide meaningful ecological information, as they notably
-underlie how an ecosystem functions and responds to changes [PoisStou16]. One
-of network ecology's major challenges, however, lies in the considerable
-difficulty to sample data on interspecific interactions [Jord16; Jord16a]. As
-a result, such data are scarce, and this raises substantial challenges in the
-study of ecological networks, especially at a large scale. Simulations are one
-way to tackle this ongoing difficulty efficiently.
+\subsubsection{Une interaction peut être binaire ou quantitative} 
 
-Ecological networks are dynamic entities whose
-structure can be altered following an ecological perturbation [TyliTsch07]. For
-example, the introduction of an invasive species [SmitMoor17] or the
-extirpation of one [DunnWill02a] could drastically alter trophic links in a
-food web. However, some ecological networks have a structure more stable or
-resilient than others. For instance, food-web stability could increase with
-connectance [DunnWill02a].
+\begin{itemize}
+    \item Les réseaux binaires nous disent si l'interaction a lieu
+    \item Les réseaux quantitatifs peuvent vouloir dire différentes choses (flux d'énergie, impact d'une espèce sur une autre)
+\end{itemize}
 
-One of the biggest challenge humanity will ever have to face is climate change.
-Global warming will have an unprecedent impact on species distribution and
-biodiversity [BotkSaxe07]. With habitat loss and fragmentation, climate change
-is expected to exacerbate the ongoing biodiversity crisis [OpdaWasc04;
-HellZava09]. Species ranges are expected to change, and these changes might
-impact the functioning of any type of ecological networks [TyliLali10].
+\subsubsection{Une interaction peut aussi être probabiliste} 
+
+\begin{itemize}
+    \item Deux espèces qui co-occurrent ne vont pas nécessairement interagir
+    \item Quand le lion s'endort 
+    \item Conditions pour qu'une interaction locale ait lieu 
+    \item Exemples de variation dans le temps et l'espace due aux conditions environmentales 
+\end{itemize}
+
+\begin{itemize}
+    \item Le défi principal en écologie des réseaux est le manque de données
+    \item On ne peut pas échantillonner toutes les interactions (faux positifs et négatifs)
+    \item On n'est pas certain des conditions permettant aux interactions d'être réalisés
+    \item Nous pouvons représenter la variabilité et l'incertitude de manière probabiliste
+    \item Par contre, cette probabilité est difficile à interpréter 
+    \item C'est important de bien connaître la source d'incertitude puisque ça nous permet de savoir comment réduire cette incertitude
+    \item C'est important de bien connaître la source d'incertitude puisque ça nous informe sur les processus écologiques 
+\end{itemize}
+
 Interspecific interactions can vary because of species turnover, but they can
 also vary between two co-occurring species notably because of a change in their
 relative abundance or in their phenology [Vazq05; CanaMouq12; PoisCana12]. In
 mutualistic networks, these shifts depend, among other things, on the rise of
-temperature due to human activities [HeglNiel09]. In short, the amplitude of
-biodiversity loss varies locally, and can be accentuated depending on the
-humanity's effort to mitigate climate change and habitat loss. The
-Intergovernmental Panel on Climate Change (IPCC) is the authority in that
-respect, and their emissions scenarios are still today the reference in the
-modeling of the potential impacts of climate change. Because food-web structure
-is so closely related to species richness, a change in local species richness
-could have hurtful consequences on the structure of ecological networks, and
-thus on their functioning.
+temperature due to human activities [HeglNiel09]. 
 
-The impact of climate change and habitat loss on network structure has been
-studied empirically at the local scale [see for example WoodBrow12]. However,
-at the best of my knowledge, no rigorous simulation has been conducted at the
-global scale. This would raise awareness on ecosystem fragility and help
-identify hotspots of highly vulnerable food webs.
-
-The main challenge in the conduction of a large-scale study of ecological
-networks is the lack of data on interspecific interactions. However, network
-ecologists often summarize entire networks with a few measures only because of
-the information they provide on the functions, dynamics, and stability of
-biological communities. It is thus unnecessary to know exactly who eats who in a
-community if one is mainly interested in the emergent structure of a food web.
 
 
 \subsection{Quelle est la structure émergente des réseaux d'interactions?} 
@@ -260,6 +254,14 @@ Cette thèse jette les bases d'une théorie permettant de reconstituer la
 structure émergente des réseaux d'interactions entre espèces à partir d'un
 nombre limité d'informations écologiques. Cette théorie repose sur la prémisse
 selon laquelle les interactions entre espèces 
+
+
+[see for example PascPasc06;
+GomePerf11].
+[SmitMoor17]
+For instance, food-web stability could increase with
+connectance [DunnWill02a].
+[TyliLali10].
 
 These three types of networks (binary, quantitative, and probabilistic) are
 analyzed using different measures. DelmBess19 and PoisCirt16 outline and
@@ -309,18 +311,19 @@ Deviations from null models, i.e. from models that do not rely on given
 ecological mechanisms, are in that respect highly informative [FlorMeye11a;
 FortStou10a].
 
-\subsubsection{Propriétés des espèces} 
+\subsubsection{Mesurer une seule valeur à l'échelle du réseau} 
 
 \begin{itemize}
     \item Peuvent nous informer du rôle des espèces au sein des réseaux (distribution de degrés)
 \end{itemize}
 
-\subsubsection{Propriétés émergentes} 
+\subsubsection{Mesurer une distribution décrivant les espèces} 
 
 \begin{itemize}
     \item Peuvent nous informer de la stabilité et résilience des écosystèmes (modularité, connectance)
     \item Peuvent nous informer du fonctionnement des écosystèmes 
     \item Complexité 
+    \item La distinction entre les deux types de mesure déterminent le genre de modèle MaxEnt qu'on va utiliser
 \end{itemize}
 
 The emergent structure of ecological networks is a unique number, or a set of
@@ -401,38 +404,6 @@ above because of the ecological information they provide and because of
 computational efficiency. These measures could all be computed with relative
 ease for simulated food webs.
 
-%%%%% Stochasticité des interactions 
-
-\section{Incertitude et variabilité des interactions entre espèces (3 pages)}
-
-\begin{itemize}
-    \item Le défi principal en écologie des réseaux est le manque de données
-\end{itemize}
-
-\subsection{Incertitude des interactions: La peur de manquer quelque chose d'important} 
-
-\begin{itemize}
-    \item On ne peut pas échantillonner toutes les interactions (faux positifs et négatifs)
-    \item On n'est pas certain des conditions permettant aux interactions d'être réalisés
-\end{itemize}
-
-\subsection{Variabilité des interactions: Quand le lion s'endort} 
-
-\begin{itemize}
-    \item Deux espèces qui co-occurrent ne vont pas nécessairement interagir
-    \item Conditions pour qu'une interaction locale ait lieu 
-    \item Exemples de variation dans le temps et l'espace due aux conditions environmentales 
-\end{itemize}
-
-\subsection{Représentation probabiliste des interactions entre espèces} 
-
-\begin{itemize}
-    \item Nous pouvons représenter la variabilité et l'incertitude de manière probabiliste
-    \item Par contre, cette probabilité est difficile à interpréter 
-    \item C'est important de bien connaître la source d'incertitude puisque ça nous permet de savoir comment réduire cette incertitude
-    \item C'est important de bien connaître la source d'incertitude puisque ça nous informe sur les processus écologiques 
-\end{itemize}
-
 %%%%% Modèles prédictifs 
 
 \section{De la nécessité de développer des modèles prédictifs (3 pages)} 
@@ -442,6 +413,13 @@ ease for simulated food webs.
     \item Ces modèles prédictifs doivent être explicites sur l'incertitude des interactions
     \item Il existe plusieurs modèles pour prédire les interactions et les réseaux, mais ces modèles peuvent être complexes
 \end{itemize}
+
+One
+of network ecology's major challenges, however, lies in the considerable
+difficulty to sample data on interspecific interactions [Jord16; Jord16a]. As
+a result, such data are scarce, and this raises substantial challenges in the
+study of ecological networks, especially at a large scale. Simulations are one
+way to tackle this ongoing difficulty efficiently.
 
 Although the rise in computational power and advances in machine learning have
 significantly improved our ability to predict species interactions and the
