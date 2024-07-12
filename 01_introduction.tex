@@ -13,7 +13,7 @@
 
 %%%%% Mise en contexte 
 
-\section{L'écologie des réseaux pour mieux comprendre les écosystèmes complexes}
+\section{L'écologie des réseaux pour mieux comprendre les écosystèmes complexes (10 pages)}
 
 Les systèmes complexes sont partout autour de nous. Considérons les transactions
 effectuées sur les marchés financiers mondiaux (\cite{Anderson2018Economy}), où
@@ -62,9 +62,9 @@ d'exposer cette théorie, il convient d'examiner certains concepts clés de
 l'écologie des réseaux afin de mieux décrire la composition et la représentation
 des écosystèmes complexes. Les sous-sections suivantes traitent de la nature et
 des mesures des interactions entre espèces et dressent un portrait de la
-structure émergente des réseaux d'interactions. Ces descriptions permettront de
-mieux comprendre les fondements et domaines d'application de cette théorie en
-développement.  
+structure émergente des réseaux d'interactions. Ces descriptions permettent de
+mieux comprendre les fondements et domaines d'application de cette nouvelle
+théorie.
 
 \subsection{Qu'est-ce qu'une interaction entre espèces?} 
 
@@ -94,14 +94,14 @@ plantes-herbivores) et couvrir différentes échelles spatiales (local ou régio
 
 \subsubsection{Une interaction peut être représentée à différents niveaux d'organisation} 
 
-Bien que les interactions se produisent biologiquement entre des individus,
-elles peuvent être représentées à des niveaux d'organisation supérieures (p.
-ex., au niveau de l'espèce). Les individus sont à la base des interactions
-écologiques puisque ce sont eux qui effectuent les échanges d'information,
-de matière ou d'énergie. Par exemple, c'est du sang d'un cerf de Virginie
-particulier que s'alimentera une tique adulte. Il va sans dire que les réseaux
-d'interactions entre individus sont difficiles à échantillonner, le peu de
-données disponibles sur les interactions entre individus étant biaisées en
+Bien que les interactions se produisent biologiquement entre des
+individus, elles peuvent être représentées à des niveaux d'organisation
+supérieures (p. ex., au niveau de l'espèce). Les individus sont à la base des
+interactions écologiques puisque ce sont eux qui effectuent les échanges
+d'information, de matière ou d'énergie. Par exemple, c'est du sang d'un cerf de
+Virginie particulier que s'alimentera une tique adulte. Il va sans dire que les
+réseaux d'interactions entre individus sont difficiles à échantillonner, le peu
+de données disponibles sur les interactions entre individus étant biaisées en
 faveur d'organismes plus simples à observer (\cite{Guimaraes2020Structure}).
 Pour cette raison, les interactions entre individus sont le plus souvent
 groupées en des niveaux d'organisation supérieures, connectant ainsi différentes
@@ -109,13 +109,25 @@ populations, espèces ou clades entre eux (\cite{Elton1927Animal}). Les réseaux
 d'interactions entre espèces, qui lient deux espèces lorsque certains de leurs
 individus interagissent, ne capturent donc qu'une partie de la complexité d'un
 écosystème. Ils constituent malgré tout une représentation adéquate du rôle
-écologique des espèces et des propriétés émergentes des écosystèmes
-(\cite{Loreau2010Populations}, \cite{McCann2011Food},
-\cite{Bascompte2013Mutualistic}, \cite{Delmas2019Analysing},
-\cite{Gonzalez2020Scalingup}), tout en formant la plupart des réseaux
-d'interactions échantillonnés (\cite{Guimaraes2020Structure}). Cependant, il
-n'existe pas de niveau d'organisation approprié par défaut, car celui-ci dépend
-de la question posée (\cite{Niquil2020Shifting}) et des données disponibles.
+écologique des espèces (\cite{Delmas2019Analysing}) et des propriétés émergentes
+des écosystèmes (\cite{Loreau2010Populations}, \cite{McCann2011Food},
+\cite{Bascompte2013Mutualistic}, \cite{Gonzalez2020Scalingup}), tout en formant
+la plupart des réseaux d'interactions échantillonnés
+(\cite{Guimaraes2020Structure}). Il n'existe pas de niveau d'organisation
+approprié par défaut, celui-ci dépendant de la question posée
+(\cite{Niquil2020Shifting}) et des données disponibles.
+
+J'ai testé la théorie de l'entropie maximale des réseaux trophiques sur des
+réseaux d'interactions entre espèces. Cependant, elle peut être adaptée à
+d'autres niveaux d'organisation taxonomique en sélectionnant les informations
+écologiques (entrées du modèle) et mesures prédites (sorties du modèle)
+conformément au niveau d'organisation choisi. Dans cette thèse, je propose
+également une façon d'étendre la théorie pour qu'elle puisse prédire
+\textit{simultanément} les propriétés des réseaux d'interactions entre individus
+et espèces. À défaut d'avoir développé une telle théorie élargie, cette thèse
+explore comment différents types d'interactions écologiques varient selon le
+niveau d'organisation taxonomique, alimentant une réflexion sur le champ
+d'application de la théorie au-delà des interactions entre espèces. 
 
 \subsubsection{Une interaction peut décrire différents processus écologiques} 
 
@@ -165,42 +177,58 @@ interactions hôtes-parasites ou plantes-pollinisateurs).
 
 \subsubsection{Une interaction peut couvrir différentes échelles spatiales} 
 
-\begin{itemize}
-    \item Les réseaux locaux nous disent si l'interaction est réalisé 
-    \item Les réseaux régionaux nous disent si l'interaction a un potentiel d'être réalisé
-\end{itemize}
+Cette thèse distingue les interactions réalisées à l'échelle locale de celles
+mesurées à l'échelle régionale. Les réseaux locaux
+(\cite{Poisot2012Dissimilarity}) sont constitués d'interactions observées ou
+réalisées à un endroit et moment particuliers. Deux espèces interagissent
+localement si leurs abondances (nombres d'individus) sont suffisamment élevées
+pour qu'elles puissent se rencontrer (\cite{Canard2012Emergence},
+\cite{Canard2014Empirical}) et que leurs traits (caractéristiques biologiques
+telles que la taille corporelle) supportent une interaction lorsqu'elles se
+rencontrent (\cite{Bolnick2011Why}, \cite{Gravel2013Inferring},
+\cite{Stouffer2011Role}). Par exemple, les habitudes alimentaires du cerf de
+Virginie varient selon la disponibilité saisonnière en nourriture
+(\cite{Short1975Nutrition}) et sa masse corporelle (\cite{Luna2013Influence}).
+Les conditions environnementales, comme la température
+(\cite{Angilletta2004Temperature}), les précipitations
+(\cite{Woodward2012Climate}) et l'utilisation du territoire
+(\cite{Tylianakis2007Habitat}), influent également sur la réalisation des
+interactions à l'échelle locale. Ces trois facteurs (abondances, traits et
+conditions environnementales) contribuent à la variation spatiale et temporelle
+des interactions locales (\cite{Poisot2015Species}). 
 
-Studying and understanding
-ecological networks require that we understand their relation with spatial
-scale.  Species–area relationships (SARs) describe how species richness varies
-with habitat area. According to Deng09, a power-law model is an appropriate
-type of SARs. In this model, the total number of species $S$ in a community
-increases with the local area $A$ according to the equation:
+Les réseaux régionaux (ou \textit{metaweb}, \cite{Pascual2006Ecological}), quant
+à eux, sont constitués d'interactions potentielles, c'est-à-dire d'interactions
+biologiquement ou écologiquement faisables sans nécessairement être réalisées
+localement. Par exemple, les interactions trophiques régionales du cerf de
+Virginie incluent l'ensemble des plantes et champignons dont il peut se nourrir
+dans différents contextes. Une interaction régionale indique si deux espèces
+possèdent des traits leur permettant d'interagir dans des conditions idéales.
+Les réseaux régionaux sont donc un catalogue de l'ensemble des interactions
+observées (p. ex., \cite{Maiorano2020Tetraeu}) ou prédites (p. ex.,
+\cite{Strydom2022Food}) entre un groupe d'espèces données. Les réseaux locaux,
+étant constitués d'un sous-ensemble des espèces et interactions régionales, sont
+des sous-réseaux du \textit{metaweb} (\cite{Saravia2022Ecological}).
+Contrairement aux réseaux locaux, les réseaux régionaux ne varient pas
+spatialement ni temporellement puisqu'ils incluent l'ensemble des interactions
+locales. 
 
-$$ S = c \times A^z, $$ {eq:area}
-
-
-
-where $c$ and $z$ are positive constants.
-
-Because the number of links $L$ in a food web scales with the number of species
-(see Annex 1), $L$ also scales with habitat area [BrosOstl04]. Large areas
-typically contain more species, that globally establish more interactions.
-According to the flexible links model (see Annex 1), the association between $L$
-and $A$, however, depends on the proportion of realized links $p$, which varies
-from one community to another. In other words, the association between $L$ and
-$A$ can take multiple forms, and it is not clear how this could influence the
-outcomes of any spatial food-web simulation.
-
-Not only $L$ scales with $A$, but multiple measures of food-web structure also
-vary with spatial scale [BrosOstl04; ThomTown05]. This could directly be due
-to the scaling of species richness with area, but this could also occur because
-of other ecological phenomena [GaliLurg18].
-
-Ecological networks cannot be indefinitely large, however. Abnormally large food
-webs are typically unstable [May72] and prone to collapsing. This
-imposes a limit to their size, and perhaps as well to the area that food webs
-typically cover.
+Cette distinction entre réseaux locaux et régionaux revêt d'une grande
+importance dans l'élaboration de la théorie de l'entropie maximale des réseaux
+trophiques, celle-ci étant mieux adaptée aux réseaux locaux. En effet, cette
+théorie trouve son fondement dans la complexité des écosystèmes locaux. Les
+écosystèmes complexes sont constitués, par définition, d'interactions impliquant
+un échange direct d'information, de matière ou d'énergie
+(\cite{Ladyman2013What}), ce qui se produit à l'échelle locale. Les réseaux
+régionaux décrivent plutôt le potentiel que de tels échanges aient lieu, sans
+nécessairement être réalisés. De plus, la variabilité des interactions locales
+introduit une incertitude qui est non réductible (c.-à-d. qui ne diminue pas
+avec davantage de données). Cela a pour conséquence de diminuer la prédictibilité des
+interactions locales, rendant possiblement les réseaux locaux plus complexes. La
+théorie de l'entropie maximale des réseaux trophiques vise précisément à
+identifier la structure la plus complexe possible des réseaux locaux, dans la
+limite de contraintes écologiques. Un chapitre complet de cette thèse est dédié
+aux caractéristiques et sources d'incertitude des réseaux locaux et régionaux.
 
 \subsection{Comment mesure-t-on une interaction entre espèces?} 
 
@@ -417,7 +445,7 @@ ease for simulated food webs.
 
 %%%%% Modèles prédictifs 
 
-\section{De la nécessité de développer des modèles prédictifs (3 pages)} 
+\section{De la nécessité de développer des modèles prédictifs (2 pages)} 
 
 \begin{itemize}
     \item Nous avons besoin de modèles prédictifs pour combler le manque de données 
@@ -617,7 +645,7 @@ webs.
 
 %%%%% Trophique-METE
 
-\section{Vers une théorie de l'entropie maximale des réseaux trophiques (6 pages)}
+\section{Vers une théorie de l'entropie maximale des réseaux trophiques (5 pages)}
 
 \subsection{Le principe d'entropie maximale} 
 
@@ -680,6 +708,9 @@ $$g_2 = \langle k \rangle = \sum_{k=1}^{S} k p_k = \frac{2L}{S}.$${eq:g2}
 
 The first constraint $g_1$ is a normalizing constraint, whereas the second
 constraint $g_2$ is a constraint on the average of the distribution. 
+
+Because the number of links $L$ in a food web scales with the number of species
+(see Annex 1), $L$ also scales with habitat area [BrosOstl04]. 
 
 \subsection{La théorie de l'entropie maximale en écologie} 
 
