@@ -203,55 +203,61 @@ l'ensemble des interactions locales entre un groupe d'espèces.
 
 \subsection{Comment mesurer une interaction entre espèces?} 
 
-Outre le type d'interaction, la manière dont nous mesurons ces interactions
-affecte également notre représentation et interprétation des propriétés des
-réseaux. Les mesures des interactions peuvent varier selon leur niveau
-d'information écologique. Alors que les interactions binaires et quantitatives
-évaluent respectivement la présence et le poids des interactions, les
-interactions probabilistes mesurent leur incertitude. Le choix d'une mesure
-d'interaction, qui dépend des questions posées et de la qualité des données
-disponibles, détermine les aspects de la complexité écologique représentés dans
-un réseau. Les propriétés des réseaux sont calculés à partir d'une matrice
-d'adjacence contenant la valeur (binaire, quantitative ou probabiliste) des
-interactions entre chaque paire d'espèces (\cite{Delmas2019Analysing}).
+Outre le type d'interaction, la manière dont nous mesurons les interactions
+entre espèces affecte également notre représentation des réseaux et notre
+interprétation de leurs propriétés. Les mesures des interactions peuvent varier
+selon leur niveau d'information écologique. Alors que les interactions binaires
+et quantitatives évaluent respectivement la présence et le poids des
+interactions, les interactions probabilistes mesurent leur incertitude. Le choix
+d'une mesure d'interaction, qui dépend des questions posées et de la qualité des
+données disponibles, détermine les aspects de la complexité écologique qui
+seront représentés dans le réseau. Les propriétés des réseaux sont calculés à
+partir d'une matrice d'adjacence contenant la valeur (binaire, quantitative ou
+probabiliste) des interactions entre chaque paire d'espèces
+(\cite{Delmas2019Analysing}).
 
-\subsubsection{Évaluer la présence ou la valeur d'une interaction} 
+\subsubsection{Évaluer la présence ou le poids d'une interaction} 
 
-Les interactions binaires indiquent quelles interactions sont présentes ou
-absentes dans un réseau. Localement, la présence d'une interaction signifie que
-deux espèces ont été observées en train d'interagir à l'intérieur des frontières
-du réseau. Par exemple, observer une tique \textit{Ixodes scapularis} sur le
-pelage d'un cerf \textit{O. virginianus} dans une forêt donnée témoigne d'une
+Les interactions binaires indiquent si un lien est présent ou non dans un
+réseau. Localement, la présence d'une interaction signifie que deux espèces ont
+été observées en train d'interagir à l'intérieur des frontières du réseau. Par
+exemple, observer une tique \textit{I. scapularis} sur le pelage d'un cerf de
+Virginie \textit{O. virginianus} dans une forêt donnée témoigne d'une
 interaction hôte-parasite entre ces deux espèces. Ne pas détecter cette
-interaction peut indiquer qu'elle ne se produit pas à cet emplacement. En
-revanche, une absence d'observation peut également être un faux négatif
+interaction suggère qu'elle ne se produit pas à cet emplacement spécifique.
+Cependant, l'absence d'observation peut également être un faux négatif
 (\cite{Bluthgen2010Why}, \cite{Chacoff2012Evaluating}, \cite{Stock2017Linear}),
-c'est-à-dire une interaction réalisée qui n'a pas été observée. Les méthodes
-prédictives des interactions entre espèces (\cite{Strydom2021Roadmapa})
-complémentent les données d'interactions en prédisant lesquelles sont réalisées
-localement. Bien qu'elles contiennent peu d'information écologique
-comparativement aux autres mesures d'interaction, les interactions binaires ont
-été plus fréquemment étudiées en écologie, notamment en raison de leur plus
-grande facilité d'échantillonnage (\cite{Jordano2016Sampling}) et de prédiction
-(\cite{Strydom2021Roadmapa}).
+c'est-à-dire une interaction réalisée qui n'a pas été observée empiriquement.
+Les méthodes prédictives des interactions entre espèces
+(\cite{Strydom2021Roadmapa}) pallient cette difficulté d'observation en
+prédisant lesquelles sont réalisées à l'échelle locale. Bien qu'elles
+contiennent peu d'information écologique comparativement aux autres mesures
+d'interaction, les interactions binaires ont été plus fréquemment étudiées en
+écologie (\cite{Pascual2006Ecological}, \cite{Delmas2019Analysing}), notamment
+en raison de leur plus grande facilité d'échantillonnage
+(\cite{Jordano2016Sampling}) et de prédiction (\cite{Strydom2021Roadmapa}).
 
-
+Les interactions quantitatives mesurent quant à elles le poids d'une interaction
+(\cite{Berlow2004Interaction}). Ce poids peut représenter le flux d'énergie ou
+de biomasse (p. ex. \cite{Benke2001Food}, \cite{Post2002Long},
+\cite{Bersier2002Quantitative}, \cite{Borrett2019Walk}), l'impact démographique
+(p. ex. \cite{Paine1992Foodweb}, \cite{Kokkoris2002Variability},
+\cite{Emmerson2004Predatorprey}) ou la fréquence d'interaction (p. ex.
+\cite{Herrera1989Pollinator}, \cite{Montoya2003Food}) entre deux espèces. Par
+exemple, le taux de cerfs de Virginie infectés par \textit{I. scapularis} est
+une mesure du poids d'une interaction locale. Quel que soit l'effet mesuré, le
+poids des interactions est souvent difficile à évaluer, surtout lorsque cet
+effet est variable dans le temps ou qu'il suit une fonction non linéaire ou
+densité-dépendante (\cite{Wootton2005Measurement}). Les réseaux d'interactions
+quantitatives décrivant les flux d'énergie ou de biomasse entre espèces semblent
+toutefois être une bonne représentation des échanges directs se produisant au
+sein des systèmes écologiques complexes (\cite{Ladyman2013What}), à condition
+que ces échanges soient bien quantifiés. 
 
 \subsubsection{Évaluer l'incertitude d'une interaction} 
 
 \begin{itemize}
-    \item Les réseaux quantitatifs peuvent vouloir dire différentes choses (flux d'énergie, impact d'une espèce sur une autre)
-\end{itemize}
-
-In binary networks, two species are linked if at least one of their
-individuals interact. Interactions can also be quantitative if they represent,
-in the case of food webs, the energy flow between two species [Post02a;
-DelmBess19], or probabilistic if they represent the probability that two
-species interact [PoisCirt16].
-
-\begin{itemize}
     \item Deux espèces qui co-occurrent ne vont pas nécessairement interagir
-    \item Conditions pour qu'une interaction locale ait lieu 
     \item Exemples de variation dans le temps et l'espace due aux conditions environmentales 
     \item Le défi principal en écologie des réseaux est le manque de données
     \item On ne peut pas échantillonner toutes les interactions (faux positifs et négatifs)
@@ -261,14 +267,6 @@ species interact [PoisCirt16].
     \item C'est important de bien connaître la source d'incertitude puisque ça nous permet de savoir comment réduire cette incertitude
     \item C'est important de bien connaître la source d'incertitude puisque ça nous informe sur les processus écologiques 
 \end{itemize}
-
-Interspecific interactions can vary because of species turnover, but they can
-also vary between two co-occurring species notably because of a change in their
-relative abundance or in their phenology [Vazq05; CanaMouq12; PoisCana12]. In
-mutualistic networks, these shifts depend, among other things, on the rise of
-temperature due to human activities [HeglNiel09]. 
-
-
 
 \subsection{Quelle est la structure émergente d'un réseau d'interactions entre espèces?} 
 
@@ -281,7 +279,7 @@ temperature due to human activities [HeglNiel09].
 
 \section{Vers une théorie de l'entropie maximale des réseaux trophiques}
 
-\subsection{Pourquoi avons-nous besoin d'une théorie des réseaux trophiques?} 
+\subsection{Pourquoi avons-nous besoin de cette théorie?} 
 
 \subsection{Quels sont les fondements de la théorie?} 
 
