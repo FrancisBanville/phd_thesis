@@ -188,18 +188,19 @@ des interactions locales (\cite{Poisot2015Species}).
 Les réseaux régionaux (ou \textit{metaweb}, \cite{Pascual2006Ecological}), quant
 à eux, sont constitués d'interactions potentielles, c'est-à-dire d'interactions
 biologiquement ou écologiquement faisables sans nécessairement être réalisées
-localement. Par exemple, les interactions trophiques régionales du cerf de
-Virginie incluent l'ensemble des plantes et champignons dont il peut se nourrir
-dans différents contextes. Une interaction régionale indique si deux espèces
-possèdent des traits leur permettant d'interagir dans des conditions idéales.
-Les réseaux régionaux sont donc un catalogue de l'ensemble des interactions
-observées (p. ex. \cite{Maiorano2020Tetraeu}) ou prédites (p. ex.
-\cite{Strydom2022Food}) entre un groupe d'espèces données. Les réseaux locaux,
-étant constitués d'un sous-ensemble des espèces et de leurs interactions
-régionales, sont des sous-réseaux du \textit{metaweb}
-(\cite{Saravia2022Ecological}). Contrairement aux réseaux locaux, les réseaux
-régionaux ne varient pas spatialement ni temporellement puisqu'ils incluent
-l'ensemble des interactions locales entre un groupe d'espèces. 
+localement (\cite{Tylianakis2017Ecological}). Par exemple, les interactions
+trophiques régionales du cerf de Virginie incluent l'ensemble des plantes et
+champignons dont il peut se nourrir dans différents contextes. Une interaction
+régionale indique si deux espèces possèdent des traits leur permettant
+d'interagir dans des conditions idéales. Les réseaux régionaux sont donc un
+catalogue de l'ensemble des interactions observées (p. ex.
+\cite{Maiorano2020Tetraeu}) ou prédites (p. ex. \cite{Strydom2022Food}) entre un
+groupe d'espèces données. Les réseaux locaux, étant constitués d'un
+sous-ensemble des espèces et de leurs interactions régionales, sont des
+sous-réseaux du \textit{metaweb} (\cite{Saravia2022Ecological}). Contrairement
+aux réseaux locaux, les réseaux régionaux ne varient pas spatialement ni
+temporellement puisqu'ils incluent l'ensemble des interactions locales entre un
+groupe d'espèces. 
 
 \subsection{Comment mesurer une interaction entre espèces?} 
 
@@ -282,16 +283,16 @@ réseau régional (\cite{Dansereau2023Spatially}). Documenter l'incertitude des
 interactions entre espèces offre une vision plus juste de la fiabilité des
 données d'interactions. 
 
-Les interactions probabilistes mesurent habituellement la probabilité qu'une
-interaction soit présente (\cite{Poisot2016Structure}). À l'échelle locale,
-elles représentent la probabilité qu'une interaction soit réalisée à un endroit
-et moment particuliers. Par exemple, si nous n'avons pas observé d'interaction
-entre un cerf de Virginie et \textit{I. scapularis} dans une forêt donnée, nous
-pouvons évaluer la probabilité que ces deux espèces interagissent localement à
-partir de leurs abondances relatives (\cite{Canard2014Empirical}) ou de nos
-connaissances sur le cycle de vie du parasite. À l'échelle régionale, les
-interactions probabilistes représentent plutôt la probabilité qu'une interaction
-soit biologiquement ou écologiquement faisable (\cite{Strydom2023Grapha}). Cette
+Les interactions probabilistes mesurent la probabilité qu'une interaction soit
+présente (\cite{Poisot2016Structure}). À l'échelle locale, elles représentent la
+probabilité qu'une interaction soit réalisée à un endroit et moment
+particuliers. Par exemple, si nous n'avons pas observé d'interaction entre un
+cerf de Virginie et \textit{I. scapularis} dans une forêt donnée, nous pouvons
+évaluer la probabilité que ces deux espèces interagissent localement à partir de
+leurs abondances relatives (\cite{Canard2014Empirical}) ou de nos connaissances
+sur le cycle de vie du parasite. À l'échelle régionale, les interactions
+probabilistes représentent plutôt la probabilité qu'une interaction soit
+biologiquement ou écologiquement faisable (\cite{Strydom2023Grapha}). Cette
 probabilité d'interaction régionale est particulièrement utile lorsque deux
 espèces n'ont jamais été observées en train d'interagir, mais qu'elles
 pourraient possiblement le faire dans les bonnes circonstances. Qu'elles soient
@@ -305,14 +306,89 @@ exercer les unes sur les autres au sein d'un réseau local
 
 \subsection{Quelle est la structure émergente d'un réseau d'interactions entre espèces?} 
 
+Les propriétés émergentes d'un système écologique complexe peuvent être évaluées
+en mesurant la structure de son réseau d'interactions, c'est-à-dire en calculant
+les propriétés de la matrice d'adjacence. Plusieurs mesures ont été proposées
+pour analyser la structure des réseaux d'interactions binaires
+(\cite{Delmas2019Analysing}), quantitatives (\cite{Bersier2002Quantitative}) et
+probabilistes (\cite{Poisot2016Structure}). Ces mesures peuvent décrire des
+valeurs uniques (p. ex. nombre d'espèces, nombre d'interactions, connectance,
+modularité) et des distributions des caractéristiques des espèces (p. ex.
+distribution de degrés) ou des interactions (p. ex. distribution des poids
+d'interaction). La structure des réseaux est associée à la dynamique
+(\cite{Pascual2006Ecologicala}) et au fonctionnement des écosystèmes, qui joue
+un rôle crucial dans les flux d'énergie, le cycle des nutriments et la
+régulation des populations (\cite{McCann2011Food}, \cite{Thompson2012Food}).
+Ci-dessous sont décrites plusieurs mesures centrales à cette thèse,
+caractérisant la structure des réseaux d'interactions binaires entre espèces.
+
 \subsubsection{Une structure représentée par des valeurs uniques} 
+
+Le nombre d'espèces (nœuds) et le nombre d'interactions (liens) sont de bons
+premiers descripteurs de la structure d'un réseau, décrivant respectivement son
+ordre et sa taille (\cite{Delmas2019Analysing}). Un réseau contenant plus
+d'espèces réalise un plus grand nombre d'interactions, ces deux mesures étant
+liées par une loi de puissance (\cite{Brose2004Unified},
+\cite{Riede2010Chapter}) ou des principes écologiques contraignants (comme
+l'obligation pour les espèces de se nourrir, \cite{MacDonald2020Revisiting}). Le
+modèle des liens flexibles développé par \cite{MacDonald2020Revisiting} prédit
+de manière réaliste le nombre d'interactions dans les réseaux trophiques à
+partir du nombre d'espèces, ce qui constitue une bonne première étape vers la
+reconstitution des réseaux trophiques à partir de la richesse en espèces lorsque
+les données d'interactions sont rares (\cite{Strydom2021Roadmapa}). 
+
+Ces deux mesures déterminent la connectance d'un réseau, soit la proportion des
+interactions possibles qui sont réalisées. La connectance est un descripteur clé
+de la structure des réseaux d'interactions entre espèces
+(\cite{Martinez1992Constant}), une connectance élevée indiquant que les espèces
+sont davantage connectées. Elle a été associée à plusieurs propriétés émergentes
+des écosystèmes, notamment à l'invasibilité des habitats par des espèces
+envahissantes, qui ont plus de difficulté à intégrer un réseau fortement
+connecté (\cite{Smith-Ramesh2017Global}). La stabilité des réseaux trophiques
+face à l'extirpation d'espèces augmente également avec la connectance puisqu'un
+prédateur peut plus facilement s'adapter en cherchant d'autres sources de
+nourriture après la disparition d'une de ses proies (\cite{Dunne2002Network}).
+Toutefois, on observe la relation inverse dans les réseaux mutualistes lorsque
+l'on tient compte de la dépendance mutuelle des espèces et de l'importance
+relative de chaque interaction (\cite{Vieira2015Simple}). La connectance est un
+des indicateurs de la complexité des réseaux d'interactions entre espèces
+(\cite{Landi2018Complexity}, \cite{Strydom2021Svd}) et covarie avec plusieurs
+autres mesures de la structure des réseaux (p. ex. la distribution de degrés,
+\cite{Poisot2014When}).
+
+La structure des réseaux d'interactions peut décrire une variété d'autres
+processus écologiques. Par exemple, le niveau trophique maximal est le nombre
+maximal d'espèces séparant un producteur primaire d'un prédateur apical le long
+de chaînes trophiques (\cite{Cohen1978Food}). Il représente une limite
+biologique au transfert d'énergie dans les réseaux trophiques
+(\cite{Williams2004Limits}). D'autre part, l'emboîtement décrit à quel point les
+diètes des espèces spécialistes sont un sous-ensemble de celles des espèces
+généralistes (\cite{Staniczenko2013Ghost}). L'emboîtement est fortement corrélée
+à la modularité (c.-à-d. au niveau de division des espèces en modules
+étroitement connectées) dans les réseaux antagonistes et mutualistes
+(\cite{Fortuna2010Nestedness}) et diminue la stabilité des écosystèmes
+(\cite{Okuyama2008Network}, \cite{Bastolla2009Architecture},
+\cite{Thebault2010Stability}). Plusieurs propriétés des réseaux d'interactions
+sont corrélées les unes avec les autres, ce qui suggère que la structure des
+réseaux est influencée par un nombre plus restreint de variables écologiques.
 
 \subsubsection{Une structure représentée par des distributions} 
 
+Les distributions des caractéristiques des espèces peuvent nous informer de 
+leur rôle écologique. Le degré d'une espèce est le nombre d'interactions qu'elle réalise avec d'autres
+espèces dans le réseau, et la distribution des degrés est la distribution de
+probabilité de ces degrés. De manière similaire, la distribution conjointe des
+degrés est la distribution de probabilité conjointe pour les degrés entrants
+(nombre d'interactions entrantes) et sortants (nombre d'interactions sortantes).
 
 %%%%% La théorie de l'entropie maximale des réseaux trophiques
 
 \section{Vers une théorie de l'entropie maximale des réseaux trophiques}
+
+Cette thèse jette les bases d'une théorie permettant de reconstituer la
+structure émergente des réseaux d'interactions entre espèces à partir d'un
+nombre limité d'informations écologiques. Cette théorie repose sur la prémisse
+selon laquelle les interactions entre espèces 
 
 \subsection{Pourquoi avons-nous besoin de cette théorie?} 
 
