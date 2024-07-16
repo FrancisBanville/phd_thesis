@@ -205,32 +205,37 @@ l'ensemble des interactions locales entre un groupe d'espèces.
 
 Outre le type d'interaction, la manière dont nous mesurons les interactions
 entre espèces affecte également notre représentation des réseaux et notre
-interprétation de leurs propriétés. Les mesures des interactions peuvent varier
-selon leur niveau d'information écologique. Alors que les interactions binaires
-et quantitatives évaluent respectivement la présence et le poids des
-interactions, les interactions probabilistes mesurent leur incertitude. Le choix
-d'une mesure d'interaction, qui dépend des questions posées et de la qualité des
-données disponibles, détermine les aspects de la complexité écologique qui
-seront représentés dans le réseau. Les propriétés des réseaux sont calculés à
-partir d'une matrice d'adjacence contenant la valeur (binaire, quantitative ou
-probabiliste) des interactions entre chaque paire d'espèces
-(\cite{Delmas2019Analysing}).
+interprétation de leurs propriétés. Les mesures des interactions varient selon
+leur niveau d'information écologique. Alors que les interactions binaires et
+quantitatives évaluent respectivement la présence et le poids d'une interaction,
+les interactions probabilistes mesurent son incertitude. Le choix d'une mesure
+d'interaction, qui dépend des questions posées et de la qualité des données
+disponibles, détermine les aspects de la complexité écologique représentés dans
+un réseau. Les propriétés des réseaux sont généralement calculées à partir d'une
+matrice d'adjacence (représentation matricielle d'un réseau) contenant la valeur
+(binaire, quantitative ou probabiliste) des interactions entre chaque paire
+d'espèces (\cite{Delmas2019Analysing}).
 
 \subsubsection{Évaluer la présence ou le poids d'une interaction} 
 
 Les interactions binaires indiquent si un lien est présent ou non dans un
-réseau. Localement, la présence d'une interaction signifie que deux espèces ont
+réseau. La présence d'une interaction locale peut signifier que deux espèces ont
 été observées en train d'interagir à l'intérieur des frontières du réseau. Par
 exemple, observer une tique \textit{I. scapularis} sur le pelage d'un cerf de
 Virginie \textit{O. virginianus} dans une forêt donnée témoigne d'une
 interaction hôte-parasite entre ces deux espèces. Ne pas détecter cette
-interaction suggère qu'elle ne se produit pas à cet emplacement spécifique.
-Cependant, l'absence d'observation peut également être un faux négatif
+interaction suggère qu'elle ne se produit pas à cet emplacement particulier.
+Cependant, une absence d'observation peut également être un faux négatif
 (\cite{Bluthgen2010Why}, \cite{Chacoff2012Evaluating}, \cite{Stock2017Linear}),
-c'est-à-dire une interaction réalisée qui n'a pas été observée empiriquement.
-Les méthodes prédictives des interactions entre espèces
-(\cite{Strydom2021Roadmapa}) pallient cette difficulté d'observation en
-prédisant lesquelles sont réalisées à l'échelle locale. Bien qu'elles
+c'est-à-dire une interaction non observée qui est en réalité réalisée. Étant
+donné la difficulté d'échantillonner l'ensemble des interactions entre espèces
+dans un lieu donné (\cite{Jordano2016Sampling}), ces faux négatifs sont
+fréquents dans les jeux de données d'interactions entre espèces. Les méthodes
+prédictives des interactions entre espèces (\cite{Strydom2021Roadmapa}) pallient
+cette difficulté d'observation en prédisant lesquelles sont réalisées à
+l'échelle locale. Il est cependant nécessaire de tester ces méthodes sur des
+données empiriques fiables de présence-absence pour pouvoir utiliser les réseaux
+prédits en toute confiance (\cite{Brimacombe2024Applying}). Bien qu'elles
 contiennent peu d'information écologique comparativement aux autres mesures
 d'interaction, les interactions binaires ont été plus fréquemment étudiées en
 écologie (\cite{Pascual2006Ecological}, \cite{Delmas2019Analysing}), notamment
@@ -246,27 +251,57 @@ de biomasse (p. ex. \cite{Benke2001Food}, \cite{Post2002Long},
 \cite{Herrera1989Pollinator}, \cite{Montoya2003Food}) entre deux espèces. Par
 exemple, le taux de cerfs de Virginie infectés par \textit{I. scapularis} est
 une mesure du poids d'une interaction locale. Quel que soit l'effet mesuré, le
-poids des interactions est souvent difficile à évaluer, surtout lorsque cet
+poids d'une interaction est souvent difficile à évaluer, surtout lorsque cet
 effet est variable dans le temps ou qu'il suit une fonction non linéaire ou
-densité-dépendante (\cite{Wootton2005Measurement}). Les réseaux d'interactions
-quantitatives décrivant les flux d'énergie ou de biomasse entre espèces semblent
-toutefois être une bonne représentation des échanges directs se produisant au
-sein des systèmes écologiques complexes (\cite{Ladyman2013What}), à condition
-que ces échanges soient bien quantifiés. 
+densité-dépendante (\cite{Wootton2005Measurement}). De plus, puisque les
+interactions binaires peuvent être déduites des interactions quantitatives, il
+est nettement plus ardu d'échantillonner et de prédire ces dernières. Toutefois,
+lorsqu'ils sont bien mesurés, les réseaux d'interactions quantitatives décrivant
+les flux d'énergie ou de biomasse entre espèces semblent être une bonne
+représentation des échanges directs se produisant au sein des systèmes
+écologiques complexes. 
 
 \subsubsection{Évaluer l'incertitude d'une interaction} 
 
-\begin{itemize}
-    \item Deux espèces qui co-occurrent ne vont pas nécessairement interagir
-    \item Exemples de variation dans le temps et l'espace due aux conditions environmentales 
-    \item Le défi principal en écologie des réseaux est le manque de données
-    \item On ne peut pas échantillonner toutes les interactions (faux positifs et négatifs)
-    \item On n'est pas certain des conditions permettant aux interactions d'être réalisés
-    \item Nous pouvons représenter la variabilité et l'incertitude de manière probabiliste
-    \item Par contre, cette probabilité est difficile à interpréter 
-    \item C'est important de bien connaître la source d'incertitude puisque ça nous permet de savoir comment réduire cette incertitude
-    \item C'est important de bien connaître la source d'incertitude puisque ça nous informe sur les processus écologiques 
-\end{itemize}
+Que nous ayons évalué la présence ou le poids d'une interaction, il est
+important de quantifier et de bien comprendre l'incertitude de nos estimations
+(c.-à-d. notre niveau de croyance quant à la présence ou valeur d'une
+interaction). En raison des défis que posent l'échantillonnage des interactions
+entre espèces (\cite{Jordano2016Sampling}), celles-ci sont souvent incertaines,
+surtout quand elles n'ont pas été directement observées ou qu'elles ont été
+prédites à l'aide d'une méthode numérique. Cette incertitude peut avoir
+plusieurs sources, incluant les erreurs de mesure des données servant à prédire
+une interaction (p. ex. données de taille corporelle,
+\cite{Gravel2013Inferring}), l'intervalle de confiance des paramètres du modèle
+et l'existence de modèles prédictifs alternatifs (\cite{Simmonds2022Insights},
+\cite{Simmonds2024Recommendations}). La variabilité des interactions locales
+dans le temps et l'espace (\cite{Poisot2015Species}) introduit une source
+additionnelle d'incertitude en limitant le transfert d'information d'un réseau à
+un autre, par exemple lors de l'inférence d'interactions locales à partir d'un
+réseau régional (\cite{Dansereau2023Spatially}). Documenter l'incertitude des
+interactions entre espèces offre une vision plus juste de la fiabilité des
+données d'interactions. 
+
+Les interactions probabilistes mesurent habituellement la probabilité qu'une
+interaction soit présente (\cite{Poisot2016Structure}). À l'échelle locale,
+elles représentent la probabilité qu'une interaction soit réalisée à un endroit
+et moment particuliers. Par exemple, si nous n'avons pas observé d'interaction
+entre un cerf de Virginie et \textit{I. scapularis} dans une forêt donnée, nous
+pouvons évaluer la probabilité que ces deux espèces interagissent localement à
+partir de leurs abondances relatives (\cite{Canard2014Empirical}) ou de nos
+connaissances sur le cycle de vie du parasite. À l'échelle régionale, les
+interactions probabilistes représentent plutôt la probabilité qu'une interaction
+soit biologiquement ou écologiquement faisable (\cite{Strydom2023Grapha}). Cette
+probabilité d'interaction régionale est particulièrement utile lorsque deux
+espèces n'ont jamais été observées en train d'interagir, mais qu'elles
+pourraient possiblement le faire dans les bonnes circonstances. Qu'elles soient
+locales ou régionales, les interactions probabilistes sont généralement évaluées
+de manière indépendante. Cela peut introduire des biais lorsque nous propageons
+l'incertitude des interactions locales vers la structure du réseau
+(\cite{Poisot2016Structure}), à cause de l'impact que les interactions peuvent
+exercer les unes sur les autres au sein d'un réseau local
+(\cite{Golubski2011Modifying}, \cite{Ims2013Indirect}).
+
 
 \subsection{Quelle est la structure émergente d'un réseau d'interactions entre espèces?} 
 
