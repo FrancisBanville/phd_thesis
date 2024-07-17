@@ -15,59 +15,53 @@
 
 \section{Les réseaux d'interactions entre espèces en tant que systèmes complexes}
 
-Les systèmes complexes façonnent le monde qui nous entoure. Considérons par
-exemple les transactions effectuées sur les marchés financiers mondiaux
-(\cite{Anderson2018Economy}), où une décision prise à Toronto peut avoir des
-répercussions à Londres et à Bombay en quelques minutes seulement. Pensons
-également au réseau de neurones dans notre cerveau (\cite{Sporns2011Human}), qui
-orchestre des milliers de signaux électriques à chaque seconde pour créer notre
-expérience subjective du monde. Ou encore, à une colonie de fourmis
-(\cite{Bonabeau1999Swarm}), où chaque individu suit des règles simples, mais qui
-ensemble génère des comportements complexes tels que la construction de nids et
-la défense du territoire. Les systèmes complexes régissent plusieurs phénomènes
-importants, mais souvent difficiles à étudier de par leur faible prédictibilité,
-dans notre quotidien et la nature. 
-
-Quel que soit leur objet d'étude, les systèmes complexes sont constitués de
-nombreux éléments qui interagissent entre eux (\cite{Rind1999Complexity}). Ces
-interactions impliquent des échanges directs d'information, de matière ou
-d'énergie (\cite{Ladyman2013What}), donnant lieu à des propriétés émergentes de
-niveau supérieur (\cite{Foote2007Mathematics}). Caractéristiques fondamentales
-des systèmes complexes, ces propriétés émergentes (p. ex. un krach boursier, la
-conscience humaine ou le comportement d'un superorganisme) ne sont pas
-déductibles des éléments pris individuellement (\cite{Nielsen2000Emergent}). Le
-désordre apparent des éléments et de leurs interactions génère donc une
-structure ordonnée qui est souvent au cœur des recherches sur les systèmes
-complexes. 
+Les systèmes complexes sont constitués de nombreux éléments qui interagissent
+entre eux (\cite{Rind1999Complexity}). Ces interactions impliquent des échanges
+directs d'information, de matière ou d'énergie (\cite{Ladyman2013What}), donnant
+lieu à des propriétés émergentes de niveau supérieur
+(\cite{Foote2007Mathematics}). Par exemple, le réseau de neurones dans notre
+cerveau (\cite{Sporns2011Human}) orchestre des milliers de signaux électriques à
+chaque seconde pour créer notre expérience subjective du monde. De même, une
+colonie de fourmis produit des comportements complexes tels que la construction
+de nids et la défense du territoire par le biais d'individus qui coopèrent en
+s'échangeant ressources et information (\cite{Bonabeau1999Swarm}).
+Caractéristiques fondamentales de tout système complexe, ces propriétés
+émergentes ne sont pas déductibles des éléments pris individuellement
+(\cite{Nielsen2000Emergent}). Du désordre apparent des éléments et de leurs
+interactions émerge donc une structure ordonnée qui est souvent au cœur des
+recherches sur les systèmes complexes. 
 
 Pour faciliter l'étude des systèmes complexes, il est courant de les représenter
 sous forme de réseaux, où les éléments forment des nœuds et les interactions,
 des liens entre ces nœuds (\cite{Newman2003Structure}). Dans cette thèse, je me
-suis intéressé plus particulièrement aux réseaux d'interactions entre espèces,
-qui servent d'outil pour mieux comprendre les systèmes écologiques complexes.
-Bien ancrée dans la science des réseaux et la théorie des graphes, l'écologie
-des réseaux fournit un cadre d'analyse pour étudier le fonctionnement des
-écosystèmes et leur résilience face aux changements environnementaux
+suis intéressé aux réseaux d'interactions entre espèces, qui servent d'outil
+pour mieux comprendre les systèmes écologiques complexes. Ces réseaux lient deux
+espèces lorsqu'elles interagissent (p. ex. un prédateur et sa proie, un parasite
+et son hôte ou une plante et son pollinisateur). Bien ancrée dans la science des
+réseaux et la théorie des graphes, l'écologie des réseaux fournit un cadre
+d'analyse pour étudier les propriétés émergentes des écosystèmes, comme leur
+fonctionnement et résilience face aux changements environnementaux
 (\cite{Proulx2005Network}, \cite{McCann2007Protecting}, \cite{McCann2011Food},
-\cite{Rooney2012Integrating}, \cite{Valiente-Banuet2019Species}). Elle y
-parvient en développant des méthodes pour mesurer les interactions entre espèces
-(p. ex. \cite{Jordano2016Sampling}) et analyser la structure émergente des
-réseaux d'interactions (p. ex. \cite{Delmas2019Analysing}), nous permettant
-ainsi de mieux comprendre les caractéristiques de ces systèmes complexes. 
+\cite{Rooney2012Integrating}, \cite{Valiente-Banuet2019Species}). Pour ce faire,
+elle développe des méthodes pour mesurer les interactions entre espèces (p. ex.
+\cite{Jordano2016Sampling}) et analyser la structure émergente des réseaux
+d'interactions (p. ex. \cite{Delmas2019Analysing}), nous permettant ainsi de
+mieux comprendre les caractéristiques de ces systèmes complexes. 
 
 Cette thèse jette les bases de la théorie de l'entropie maximale des réseaux
 trophiques, qui constitue une approche novatrice en écologie des réseaux
 permettant de prédire la structure émergente des réseaux complexes
-d'interactions à partir d'un nombre limité d'informations écologiques. Avant
-d'exposer cette théorie, il convient de décrire certains concepts clés des
-réseaux d'interactions entre espèces afin de mieux comprendre la composition et
-la représentation mathématique de ces systèmes écologiques complexes. Les sous-sections
-suivantes traitent de la nature et des mesures des interactions entre espèces et
-dressent un portrait de la structure émergente des réseaux d'interactions. Ces
-descriptions permettront de mieux comprendre les fondements et champs d'application
-de cette nouvelle théorie écologique.
+d'interactions à partir d'un nombre limité d'informations écologiques. Avant de
+présenter plus en profondeur cette théorie, il convient de passer en revue les
+connaissances écologiques préalables qui la sous-tendent. Dans les sous-sections
+suivantes, j'explique que les interactions entre espèces sont le résultat de
+nombreux mécanismes écologiques souvent difficiles à départager, que les
+interactions entre espèces sont intrinsèquement probabilistes et que la
+structure émergente des réseaux d'interactions est écologiquement et
+statistiquement contrainte. Ces trois observations permettront de mieux saisir
+les fondements et champs d'application de la théorie proposée.
 
-\subsection{Qu'est-ce qu'une interaction entre espèces?} 
+\subsection{Quels mécanismes écologiques sous-tendent les interactions entre espèces?} 
 
 Une communauté biologique est composée d'espèces différentes interagissant entre
 elles dans un espace donné (\cite{Stroud2015Community}). Par exemple, les
@@ -94,7 +88,7 @@ espèces), décrire une variété de processus écologiques (p. ex. interactions
 hôtes-parasites ou plantes-herbivores) et couvrir différentes échelles spatiales
 (local ou régional).
 
-\subsubsection{Une interaction entre individus représentée à l'échelle de l'espèce} 
+\subsubsection{Des interactions réalisées par des individus} 
 
 Bien que les interactions se produisent biologiquement entre des individus,
 elles peuvent être représentées à des niveaux d'organisation supérieures (p. ex.
@@ -119,7 +113,7 @@ la plupart des réseaux d'interactions échantillonnés
 d'organisation approprié par défaut, celui-ci dépendant de la question posée
 (\cite{Niquil2020Shifting}) et des données disponibles.
 
-\subsubsection{Une interaction pouvant décrire différents processus écologiques} 
+\subsubsection{Des interactions comportant différents types d'échange} 
 
 Les interactions entre espèces peuvent avoir des effets positifs, négatifs ou
 neutres sur les organismes impliqués, en fonction du type d'interaction. Les
@@ -162,7 +156,7 @@ trophiques couvrent une diversité d'habitats à l'échelle mondiale
 statistiques et d'hypothèses écologiques sur ces interactions. C'est pourquoi
 les interactions trophiques occuperont une place centrale dans cette thèse.
 
-\subsubsection{Une interaction réalisée localement mais cataloguée régionalement} 
+\subsubsection{Des interactions résultant de plusieurs mécanismes écologiques} 
 
 Cette thèse distingue les interactions réalisées à l'échelle locale de celles
 cataloguées à l'échelle régionale. Les réseaux locaux
@@ -202,7 +196,7 @@ aux réseaux locaux, les réseaux régionaux ne varient pas spatialement ni
 temporellement puisqu'ils incluent l'ensemble des interactions locales entre un
 groupe d'espèces. 
 
-\subsection{Comment mesurer une interaction entre espèces?} 
+\subsection{Quelles interactions entre espèces sont réalisées?} 
 
 Outre le type d'interaction, la manière dont nous mesurons les interactions
 entre espèces affecte également notre représentation des réseaux et notre
@@ -217,7 +211,7 @@ matrice d'adjacence (représentation matricielle d'un réseau) contenant la vale
 (binaire, quantitative ou probabiliste) des interactions entre chaque paire
 d'espèces (\cite{Delmas2019Analysing}).
 
-\subsubsection{Évaluer la présence ou le poids d'une interaction} 
+\subsubsection{Des interactions mesurées à différents niveaux de résolution} 
 
 Les interactions binaires indiquent si un lien est présent ou non dans un
 réseau. La présence d'une interaction locale peut signifier que deux espèces ont
@@ -262,7 +256,7 @@ les flux d'énergie ou de biomasse entre espèces semblent être une bonne
 représentation des échanges directs se produisant au sein des systèmes
 écologiques complexes. 
 
-\subsubsection{Évaluer l'incertitude d'une interaction} 
+\subsubsection{Des interactions intrinsèquement probabilistes} 
 
 Que nous ayons évalué la présence ou le poids d'une interaction, il est
 important de quantifier et de bien comprendre l'incertitude de nos estimations
@@ -322,7 +316,11 @@ régulation des populations (\cite{McCann2011Food}, \cite{Thompson2012Food}).
 Ci-dessous sont décrites plusieurs mesures centrales à cette thèse,
 caractérisant la structure des réseaux d'interactions binaires entre espèces.
 
-\subsubsection{Une structure représentée par des valeurs uniques} 
+\subsubsection{Une structure décrivant la complexité écologique} 
+
+...
+
+\subsubsection{Une structure aux mesures corrélées} 
 
 Le nombre d'espèces (nœuds) et le nombre d'interactions (liens) sont de bons
 premiers descripteurs de la structure d'un réseau, décrivant respectivement son
@@ -356,6 +354,13 @@ des indicateurs de la complexité des réseaux d'interactions entre espèces
 autres mesures de la structure des réseaux (p. ex. la distribution de degrés,
 \cite{Poisot2014When}).
 
+Les distributions des caractéristiques des espèces peuvent nous informer de 
+leur rôle écologique. Le degré d'une espèce est le nombre d'interactions qu'elle réalise avec d'autres
+espèces dans le réseau, et la distribution des degrés est la distribution de
+probabilité de ces degrés. De manière similaire, la distribution conjointe des
+degrés est la distribution de probabilité conjointe pour les degrés entrants
+(nombre d'interactions entrantes) et sortants (nombre d'interactions sortantes).
+
 La structure des réseaux d'interactions peut décrire une variété d'autres
 processus écologiques. Par exemple, le niveau trophique maximal est le nombre
 maximal d'espèces séparant un producteur primaire d'un prédateur apical le long
@@ -372,14 +377,8 @@ généralistes (\cite{Staniczenko2013Ghost}). L'emboîtement est fortement corr�
 sont corrélées les unes avec les autres, ce qui suggère que la structure des
 réseaux est influencée par un nombre plus restreint de variables écologiques.
 
-\subsubsection{Une structure représentée par des distributions} 
+\subsubsection{Une structure contrainte par des variables écologiques} 
 
-Les distributions des caractéristiques des espèces peuvent nous informer de 
-leur rôle écologique. Le degré d'une espèce est le nombre d'interactions qu'elle réalise avec d'autres
-espèces dans le réseau, et la distribution des degrés est la distribution de
-probabilité de ces degrés. De manière similaire, la distribution conjointe des
-degrés est la distribution de probabilité conjointe pour les degrés entrants
-(nombre d'interactions entrantes) et sortants (nombre d'interactions sortantes).
 
 %%%%% La théorie de l'entropie maximale des réseaux trophiques
 
@@ -395,16 +394,12 @@ selon laquelle les interactions entre espèces
 - Prédire la structure de différents types de réseaux (écologie comme science prédictive)
 - Fournir une explication quant à leur structure (compréhension approfondie des réseaux)
 - Extension potentielle de METE
+- "A well substantiated explanation acquired through the scientific method 
+and repeatedly tested and confirmed through observation and experimentation, 
+used to make predictions about how things are and will be"
 
 \subsection{Quels sont les fondements de la théorie?} 
 
-- Les réseaux d'interactions entre espèces sont des systèmes complexes
-- Complexité interne des réseaux 
-- Les interactions entre espèces dépendent d'une multitude de mécanismes biologiques qui peuvent être ignorés - peut-être qu'il n'y a pas de mécanismes dominants
-- Les interactions entre espèces sont probabilistes (et donc la structure aussi) - vision probabiliste des réseaux
-- Non-indépendance des interactions nous incite à développer des méthodes pour prédire la structure sans?
-- La structure des réseaux est contrainte par un ensemble restreint de variables
-- Les mesures de la structure sont corrélées entre elles
 - Principe d'entropie maximale qui maximise l'incertitude ou la complexité (prédictions non-biaisées) 
 - Mécanismes sont dans les variables d'état (mécanismes implicites)
 
