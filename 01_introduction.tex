@@ -17,18 +17,18 @@
 
 Les systèmes complexes sont un ensemble cohérent d'éléments interagissant entre
 eux (\cite{Rind1999Complexity}). Ces interactions impliquent des échanges
-directs d'information, de matière ou d'énergie (\cite{Ladyman2013What}) qui
-ensemble génèrent des propriétés émergentes de niveau supérieur
+directs d'information, de matière ou d'énergie (\cite{Ladyman2013What}) qui,
+ensemble, génèrent des propriétés émergentes de niveau supérieur
 (\cite{Foote2007Mathematics}). Par exemple, le réseau de neurones dans un
-cerveau (\cite{Sporns2011Human}) orchestre des milliers de signaux électriques à
-chaque seconde pour créer une expérience subjective du monde. De même, une
-colonie de fourmis produit des comportements complexes tels que la construction
-de nids et la défense du territoire par le biais d'individus qui coopèrent en
-s'échangeant ressources et informations (\cite{Bonabeau1999Swarm}).
+cerveau humain (\cite{Sporns2011Human}) orchestre des milliers de signaux
+électriques à chaque seconde pour créer une expérience subjective du monde. De
+même, une colonie de fourmis produit des comportements complexes tels que la
+construction de nids et la défense du territoire par le biais d'individus qui
+coopèrent en s'échangeant ressources et informations (\cite{Bonabeau1999Swarm}).
 Caractéristiques fondamentales des systèmes complexes, ces propriétés émergentes
 ne sont pas déductibles des éléments pris individuellement
 (\cite{Nielsen2000Emergent}). Du désordre apparent des éléments et de leurs
-interactions émerge donc une structure ordonnée qui est souvent au cœur des
+interactions émerge donc une structure ordonnée qui est au cœur des
 recherches sur les systèmes complexes. 
 
 Pour faciliter l'étude des systèmes complexes, il est courant de les représenter
@@ -53,13 +53,14 @@ trophiques, qui constitue une approche novatrice en écologie des réseaux
 permettant de prédire la structure émergente des réseaux complexes
 d'interactions à partir d'un nombre limité d'informations écologiques. Avant de
 présenter plus en profondeur cette théorie, il convient de passer en revue les
-connaissances écologiques préalables qui la sous-tendent. Dans les sous-sections
-suivantes, j'explique que les interactions entre espèces sont le résultat de
-nombreux mécanismes écologiques souvent difficiles à départager, que les
-interactions entre espèces sont intrinsèquement probabilistes et que la
+connaissances écologiques préalables sur lesquelles elle est fondée. Dans les
+sous-sections suivantes, j'explique que les interactions entre espèces sont le
+résultat de nombreux mécanismes écologiques souvent difficiles à départager, que
+les interactions entre espèces sont intrinsèquement probabilistes et que la
 structure émergente des réseaux d'interactions est écologiquement et
-statistiquement contrainte. Ces trois observations constituent le fondement de
-la théorie proposée.
+statistiquement contrainte. Ces trois observations sous-tendent la théorie
+proposée en décrivant plusieurs aspects fondamentaux de la complexité
+écologique.
 
 \subsection{Quels mécanismes écologiques sous-tendent les interactions entre espèces?} 
 
@@ -322,80 +323,113 @@ en mesurant la structure de son réseau d'interactions, c'est-à-dire en calcula
 les propriétés de la matrice d'adjacence. Plusieurs mesures ont été proposées
 pour analyser la structure des réseaux d'interactions binaires
 (\cite{Delmas2019Analysing}), quantitatives (\cite{Bersier2002Quantitative}) et
-probabilistes (\cite{Poisot2016Structure}). Ces mesures peuvent décrire des
-valeurs uniques (p. ex. nombre d'espèces, nombre d'interactions, connectance,
-modularité) et des distributions des caractéristiques des espèces (p. ex.
-distribution de degrés) ou des interactions (p. ex. distribution des poids
+probabilistes (\cite{Poisot2016Structure}). Plusieurs de ces mesures sont de
+bons descripteurs de la complexité des écosystèmes (\cite{Landi2018Complexity}).
+Elles peuvent décrire des valeurs uniques (p. ex. nombre d'espèces, nombre
+d'interactions, connectance) ou des distributions relatives aux espèces (p. ex.
+distribution de degrés) ou aux interactions (p. ex. distribution des poids
 d'interaction). La structure des réseaux est associée à la dynamique
-(\cite{Pascual2006Ecologicala}) et au fonctionnement des écosystèmes, qui joue
-un rôle crucial dans les flux d'énergie, le cycle des nutriments et la
-régulation des populations (\cite{McCann2011Food}, \cite{Thompson2012Food}).
-Ci-dessous sont décrites plusieurs mesures centrales à cette thèse,
-caractérisant la structure des réseaux d'interactions binaires entre espèces.
+(\cite{Pascual2006Ecologicala}) et au fonctionnement des écosystèmes, qui
+détermine les flux d'énergie, le cycle des nutriments et la régulation des
+populations (\cite{McCann2011Food}, \cite{Thompson2012Food}). Malgré le nombre
+élevé de mesures développées, plusieurs covarient entre elles ou sont
+contraintes par des variables écologiques. Cela suggère que la structure des
+réseaux puisse être déterminée par un nombre limité de variables. Ici, je
+propose un aperçu des mesures de la structure d'un réseau, en mettant l'accent
+sur celles décrivant la complexité des réseaux d'interactions entre espèces. 
 
-\subsubsection{Une structure décrivant la complexité écologique} 
+\subsubsection{Plusieurs mesures décrivent la complexité écologique} 
 
-...
-
-\subsubsection{Une structure aux mesures corrélées} 
-
-Le nombre d'espèces (nœuds) et le nombre d'interactions (liens) sont de bons
-premiers descripteurs de la structure d'un réseau, décrivant respectivement son
-ordre et sa taille (\cite{Delmas2019Analysing}). Un réseau contenant plus
-d'espèces réalise un plus grand nombre d'interactions, ces deux mesures étant
-liées par une loi de puissance (\cite{Brose2004Unified},
-\cite{Riede2010Chapter}) ou des principes écologiques contraignants (comme
-l'obligation pour les espèces de se nourrir, \cite{MacDonald2020Revisiting}). Le
-modèle des liens flexibles développé par \cite{MacDonald2020Revisiting} prédit
-de manière réaliste le nombre d'interactions dans les réseaux trophiques à
-partir du nombre d'espèces, ce qui constitue une bonne première étape vers la
-reconstitution des réseaux trophiques à partir de la richesse en espèces lorsque
-les données d'interactions sont rares (\cite{Strydom2021Roadmapa}). 
-
-Ces deux mesures déterminent la connectance d'un réseau, soit la proportion des
-interactions possibles qui sont réalisées. La connectance est un descripteur clé
-de la structure des réseaux d'interactions entre espèces
-(\cite{Martinez1992Constant}), une connectance élevée indiquant que les espèces
-sont davantage connectées. Elle a été associée à plusieurs propriétés émergentes
-des écosystèmes, notamment à l'invasibilité des habitats par des espèces
-envahissantes, qui ont plus de difficulté à intégrer un réseau fortement
+Le niveau de complexité d'un écosystème peut être évalué à l'aide de différents
+descripteurs (\cite{Landi2018Complexity}). Les plus simples d'entre eux sont le
+nombre d'espèces (p. ex. \cite{May1972Will}) et le nombre d'interactions (p. ex.
+\cite{Okuyama2008Network}). Ces deux mesures déterminent la connectance d'un
+réseau, soit la proportion des interactions possibles qui sont réalisées. La
+connectance est un descripteur clé de la structure des réseaux d'interactions
+entre espèces (\cite{Martinez1992Constant}) et de sa complexité (p. ex.
+\cite{Rozdilsky2001Complexity}), une connectance élevée indiquant que les
+espèces sont davantage connectées. Elle a été associée à plusieurs propriétés
+émergentes des écosystèmes, notamment à l'invasibilité des habitats par des
+espèces envahissantes, qui ont plus de difficulté à intégrer un réseau fortement
 connecté (\cite{Smith-Ramesh2017Global}). La stabilité des réseaux trophiques
 face à l'extirpation d'espèces augmente également avec la connectance puisqu'un
 prédateur peut plus facilement s'adapter en cherchant d'autres sources de
 nourriture après la disparition d'une de ses proies (\cite{Dunne2002Network}).
 Toutefois, on observe la relation inverse dans les réseaux mutualistes lorsque
 l'on tient compte de la dépendance mutuelle des espèces et de l'importance
-relative de chaque interaction (\cite{Vieira2015Simple}). La connectance est un
-des indicateurs de la complexité des réseaux d'interactions entre espèces
-(\cite{Landi2018Complexity}, \cite{Strydom2021Svd}) et covarie avec plusieurs
-autres mesures de la structure des réseaux (p. ex. la distribution de degrés,
-\cite{Poisot2014When}).
+relative de chaque interaction (\cite{Vieira2015Simple}). Ces descripteurs
+capturent tous un aspect important de la complexité écologique, soit sa faible
+prédictibilité (\cite{Strydom2021Svd}). 
 
-Les distributions des caractéristiques des espèces peuvent nous informer de 
-leur rôle écologique. Le degré d'une espèce est le nombre d'interactions qu'elle réalise avec d'autres
-espèces dans le réseau, et la distribution des degrés est la distribution de
-probabilité de ces degrés. De manière similaire, la distribution conjointe des
-degrés est la distribution de probabilité conjointe pour les degrés entrants
-(nombre d'interactions entrantes) et sortants (nombre d'interactions sortantes).
+Un autre descripteur de la complexité d'un écosystème est la distribution de
+degrés (\cite{Landi2018Complexity}). Le degré d'une espèce est le nombre
+d'interactions qu'elle réalise avec les autres espèces dans son réseau, et la
+distribution de degrés est la distribution de probabilité de ces degrés. Dans
+les réseaux dirigés, où une interaction se fait dans un sens particulier (p. ex.
+prédateurs vers proies), la distribution conjointe des degrés est la
+distribution de probabilité conjointe décrivant les degrés entrants (nombre
+d'interactions entrantes) et sortants (nombre d'interactions sortantes). La
+distribution de degrés est une mesure écologiquement informative, nous éclairant
+sur le rôle écologique des espèces (\cite{Sole2001Complexity},
+\cite{Dunne2002Network}, \cite{Memmott2004Tolerance}), les mécanismes
+sous-jacents aux interactions entre espèces (\cite{Williams2011Biology}) et
+l'assemblage des réseaux (\cite{Vazquez2005Degree}).
 
-La structure des réseaux d'interactions peut décrire une variété d'autres
-processus écologiques. Par exemple, le niveau trophique maximal est le nombre
-maximal d'espèces séparant un producteur primaire d'un prédateur apical le long
-de chaînes trophiques (\cite{Cohen1978Food}). Il représente une limite
-biologique au transfert d'énergie dans les réseaux trophiques
-(\cite{Williams2004Limits}). D'autre part, l'emboîtement décrit à quel point les
-diètes des espèces spécialistes sont un sous-ensemble de celles des espèces
-généralistes (\cite{Staniczenko2013Ghost}). L'emboîtement est fortement corrélée
-à la modularité (c.-à-d. au niveau de division des espèces en modules
-étroitement connectées) dans les réseaux antagonistes et mutualistes
-(\cite{Fortuna2010Nestedness}) et diminue la stabilité des écosystèmes
+D'autres mesures ont été proposées pour décrire la complexité d'un réseau
+écologique. Par exemple, \cite{Strydom2021Svd} suggèrent l'utilisation de
+l'entropie SVD (de l'anglais \textit{Singular Value Decomposition}) comme
+descripteur de la complexité interne d'un réseau. Cette mesure, basée sur
+l'entropie de Shannon (\cite{Shannon1948Mathematical}), quantifie l'information
+contenue dans les rangs de la matrice d'adjacence. Elle représente une façon
+plus robuste de quantifier la complexité d'un réseau que les autres mesures
+mentionnées. L'entropie SVD a été utilisée comme mesure de complexité dans
+l'application de la théorie de l'entropie maximale des réseaux trophiques
+présentée dans cette thèse. 
+
+\subsubsection{Les mesures de la structure sont corrélées entre elles} 
+
+La structure des réseaux est caractérisée par des mesures qui covarient
+fortement les unes avec les autres, limitant ainsi l'information écologique
+unique qu'elles procurent. Par exemple, un réseau contenant plus d'espèces
+réalise un plus grand nombre d'interactions, ces deux mesures ayant été liées
+par une loi de puissance (\cite{Brose2004Unified}, \cite{Riede2010Chapter}).
+Également, la connectance détermine plusieurs autres mesures de la structure des
+réseaux, comme la distribution de degrés (\cite{Poisot2014When}). D'autres
+mesures de la structure des réseaux covarient entre elles, comme l'emboîtement
+et la modularité dans les réseaux antagonistes et mutualistes
+(\cite{Fortuna2010Nestedness}). L'emboîtement décrit à quel point les diètes des
+espèces spécialistes sont un sous-ensemble de celles des espèces généralistes
+(\cite{Staniczenko2013Ghost}), alors que la modularité représente le niveau de
+division des espèces en modules étroitement connectées. Un réseau fortement
+emboîté, et donc peu modulaire, a tendance à être moins stable écologiquement
 (\cite{Okuyama2008Network}, \cite{Bastolla2009Architecture},
 \cite{Thebault2010Stability}). Plusieurs propriétés des réseaux d'interactions
 sont corrélées les unes avec les autres, ce qui suggère que la structure des
-réseaux est influencée par un nombre plus restreint de variables écologiques.
+réseaux puisse être déterminée par quelques mesures seulement.
 
-\subsubsection{Une structure contrainte par des variables écologiques} 
+\subsubsection{La structure est contrainte par des variables écologiques} 
 
+Au-delà des corrélations observées entre les propriétés des réseaux, des
+principes écologiques contraignent la structure des réseaux. Ces valeurs
+imposent une limite biologique à la configuration que peut prendre un réseau
+d'interactions. Par exemple, l'obligation pour les espèces de se nourrir impose
+une limite inférieure au nombre d'interactions réalisées dans un réseau
+(\cite{MacDonald2020Revisiting}). Le modèle des liens flexibles développé par
+\cite{MacDonald2020Revisiting} prédit de manière réaliste le nombre
+d'interactions dans les réseaux trophiques en utilisant le nombre d'espèces
+comme contrainte écologique. Prédire le nombre d'interactions constitue une
+bonne première étape vers la reconstitution des réseaux trophiques à partir de
+la richesse en espèces lorsque les données d'interactions sont rares
+(\cite{Strydom2021Roadmapa}). En effet, le nombre d'espèces et le nombre
+d'interactions peuvent à leur tour être utilisés comme contraintes pour dériver
+la distribution de degrés avec le principe d'entropie maximale
+(\cite{Williams2011Biology}). Également, le niveau trophique maximal est le
+nombre maximal d'espèces séparant un producteur primaire d'un prédateur apical
+le long de chaînes trophiques (\cite{Cohen1978Food}). Il représente une limite
+biologique au transfert d'énergie dans les réseaux trophiques
+(\cite{Williams2004Limits}). Tenir compte de ces contraintes peut faciliter la
+prédiction de la structure des réseaux d'interactions en réduisant le nombre de
+configurations écologiquement possibles.  
 
 %%%%% La théorie de l'entropie maximale des réseaux trophiques
 
