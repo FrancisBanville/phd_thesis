@@ -409,7 +409,9 @@ emboîté, et donc peu modulaire, a tendance à être moins stable écologiqueme
 (\cite{Okuyama2008Network}, \cite{Bastolla2009Architecture},
 \cite{Thebault2010Stability}). Plusieurs propriétés des réseaux d'interactions
 sont corrélées les unes avec les autres, ce qui suggère que la structure des
-réseaux puisse être déterminée par quelques mesures seulement.
+réseaux puisse être déterminée par quelques mesures seulement. Une théorie
+permettant d'unifier et de réconcilier ces différentes mesures dans un cadre
+commun fait actuellement défaut.
 
 \subsubsection{La structure est contrainte par des variables écologiques} 
 
@@ -440,16 +442,87 @@ configurations écologiquement possibles.
 \section{Vers une théorie de l'entropie maximale des réseaux trophiques}
 
 Cette thèse pose les fondements d'une théorie des réseaux trophiques prédisant
-leur structure émergente à partir d'un nombre limité de variables écologiques
-(ou variables d'état). Cette théorie utilise ces variables écologiques pour
-contraindre des distributions de probabilité et identifier celle qui est la
-moins biaisée (c.-à-d. celle qui ne fait aucune supposition sur la forme de la
-distribution au-delà des informations fournies par les contraintes écologiques).
-Ces distributions peuvent caractériser différents aspects de la structure des
-réseaux trophiques (p. ex. leur distribution de degrés). Selon les variables
-utilisées et les mesures prédites, différentes versions de la théorie peuvent
-être développées, celles présentant le plus fort soutien empirique étant
-retenues au détriment des autres.
+leur structure émergente à partir d'un nombre limité de variables d'état
+(variables écologiques caractérisant la structure des réseaux). Cette théorie
+utilise ces variables écologiques pour contraindre des distributions de
+probabilité et identifier celle qui est la moins biaisée (c.-à-d. celle qui ne
+fait aucune supposition sur la forme de la distribution au-delà des informations
+fournies par les contraintes écologiques). Ces distributions peuvent
+caractériser différents aspects de la structure des réseaux trophiques (p. ex.
+leur distribution de degrés). Selon les variables utilisées et les mesures
+prédites, différentes versions de la théorie peuvent être développées, celles
+présentant le plus fort soutien empirique étant retenues au détriment des
+autres.
+
+\subsection{Quels sont les fondements de la théorie?} 
+
+\subsubsection{Une théorie basée sur le principe d'entropie maximale} 
+
+Le principe d'entropie maximale (MaxEnt) est une méthode d'inférence permettant
+d'identifier la distribution de probabilité la moins biaisée possible
+considérant un ensemble de contraintes sur la forme de la distribution
+(\cite{Jaynes1957Informationa}, \cite{Jaynes1957Information}). MaxEnt stipule
+que notre meilleure estimation d'une distribution de probabilité est celle qui
+maximise son entropie d'information (c.-à-d. une mesure de l'incertitude d'un
+évènement aléatoire comme l'entropie de Shannon,
+\cite{Shannon1948Mathematical}), compte tenu des contraintes utilisées. Par
+exemple, si nous ne connaissons que la moyenne d'une distribution, nous pouvons
+montrer que la distribution exponentielle est celle qui maximise son entropie
+(\cite{Frank2011Simple}). Cette distribution unique est dérivée uniquement à
+partir de nos connaissances préalables sur le système étudié, sans faire appel à
+des suppositions additionnelles sur la forme de la distribution. MaxEnt ne
+repose sur aucun mécanisme explicite et ne nécessite pas d'ajustement aux
+données. La distribution de probabilité d'entropie maximale est plutôt dérivée
+directement à l'aide de la méthode des multiplicateurs de Lagrange (une méthode
+d'optimisation mathématique), dont le fonctionnement est décrit plus loin. Bien
+qu'il n'y ait aucune garantie que cette distribution soit la mieux soutenue
+empiriquement, elle est celle qui représente le plus fidèlement nos
+connaissances préalables (c.-à-d. celle qui minimise les biais causés par des
+suppositions infondées). 
+
+\subsubsection{La théorie de l'entropie maximale de l'écologie appliquée aux réseaux} 
+
+La théorie de l'entropie maximale de l'écologie (METE) prédit de nombreuses
+distributions d'intérêt en macroécologie à l'aide de MaxEnt
+(\cite{Harte2011Maximum}). Différentes versions de cette théorie peuvent être
+développées en fonction des variables d'état choisies. La version ANSE
+(\cite{Harte2008Maximum}, \cite{Harte2014Maximuma}) repose sur quatre variables
+d'état : la superficie $A_0$, le nombre total d'individus $N_0$, le nombre
+d'espèces $S_0$ et l'énergie métabolique totale de la communauté $E_0$. Les
+ratios entre ces quatre variables (p. ex. l'abondance moyenne des espèces)
+contraignent les distributions prédites par la théorie (p. ex. la distribution
+de l'abondance des espèces, \cite{Brummer2019Derivations}). Les prédictions de
+la version ANSE de METE sont en grande partie conformes aux données empiriques
+(\cite{Harte2011Maximum}, \cite{McGlinn2015Exploring}), surtout pour les
+écosystèmes moins perturbés (\cite{Newman2020Disturbance}). 
+
+La théorie de l'entropie maximale des réseaux trophiques est une application de
+METE aux réseaux d'interactions entre espèces. Elle permet de prédire plusieurs
+mesures de la structure des réseaux à partir d'un nombre limité de variables
+d'état les contraignant. Un modèle MaxEnt, en phase avec les objectifs et
+méthodes de cette théorie, a été développé par \cite{Williams2011Biology} pour
+prédire la distribution de degrés de réseaux mutualistes et antagonistes. Pour
+ce faire, ces auteurs ont utilisé le nombre total d'espèces et d'interactions
+comme variables d'état, contraignant la distribution de degrés par le nombre
+moyen d'interactions par espèces. La théorie présentée dans cette thèse applique
+ces mêmes principes aux réseaux d'interactions trophiques, tout en étendant la
+portée des prédictions fournies par MaxEnt.
+
+\subsubsection{Une théorie en plein développement} 
+
+Elle repose sur la prémisse selon
+laquelle la structure des réseaux (propriétés macroscopiques des systèmes
+complexes), résulte d'une agrégation des processus écologiques se produisant à
+l'échelle de l'interaction (\cite{Frank2009Common}). 
+
+
+est enracinée dans la vision
+probabiliste des réseaux d'interactions entre espèces. 
+
+
+La distribution la moins biaisée est trouvée à l'aide d'une méthode
+mathématique qui ne requiert pas d'ajustement aux données. 
+
 
 \subsection{Pourquoi avons-nous besoin de cette théorie?} 
 
@@ -499,9 +572,9 @@ d'état. Par exemple, une version de la théorie prédisant la structure des
 réseaux à partir du nombre d'espèces et du nombre d'interactions n'a besoin que
 de ces deux variables comme entrées du modèle. Elle peut prédire simultanément
 différents aspects de la structure des réseaux, comme la distribution de degrés
-ou la matrice d'adjacence. Elle le fait en quantifiant explicitement l'incertitude 
-des mesures prédites, ce qui revêt une grande importance lorsqu'il est question 
-d'interpréter la validité des modèles (\cite{Simmonds2022Insights}). 
+ou la matrice d'adjacence. Elle le fait en maximisant l'incertitude des 
+distributions de probabilité prédites, c'est-à-dire en trouvant la distribution 
+la plus uniforme possible qui respecte les contraintes écologiques choisies. 
 
 \subsubsection{Identifier les mécanismes écologiques sous-jacents aux réseaux} 
 
@@ -516,31 +589,17 @@ Elle constitue une explication approfondie et
 cohérente de la structure des réseaux. Les déviations du modèle peuvent être
 utilisés pour inférer des mécanismes écologiques (\cite{Harte2014Maximuma}).
 
-Elle repose sur la
-prémisse selon laquelle la structure des réseaux, en tant que systèmes
-complexes, résulte d'une agrégation des processus écologiques se produisant à
-l'échelle de l'interaction (\cite{Frank2009Common}). 
-
 Comme pour les réseaux non écologiques, une riche littérature scientifique a
 cherché à comprendre les mécanismes qui façonnent les réseaux écologiques. Les
 réseaux sont-ils principalement façonnés par la stochasticité et les règles
 topologiques ? Quel est le rôle des processus biologiques dans la structuration
 des réseaux écologiques ?
 
-\subsection{Quels sont les fondements de la théorie?} 
+Les écarts par rapport aux distributions MaxEnt peuvent indiquer que l'ensemble
+de contraintes utilisé n'est pas adéquat, ou que des mécanismes non pris en
+compte par ces contraintes sont importants (\cite{Harte2014Maximum}).
 
-- Principe d'entropie maximale qui maximise l'incertitude ou la complexité (prédictions non-biaisées) 
-- Mécanismes sont dans les variables d'état (mécanismes implicites)
-
-
-est enracinée dans la vision
-probabiliste des réseaux d'interactions entre espèces. 
-
-
-La distribution la moins biaisée est trouvée à l'aide d'une méthode
-mathématique qui ne requiert pas d'ajustement aux données. 
-
-\subsection{Quelles versions de la théorie peuvent être développées?} 
+\subsection{Quels sont ses champs d'application?} 
 
 J'ai testé la théorie de l'entropie maximale des réseaux trophiques sur des
 réseaux d'interactions entre espèces. Cependant, elle peut être adaptée à
