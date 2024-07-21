@@ -566,7 +566,7 @@ réseaux locaux, dans la limite des contraintes écologiques. Pour toutes ces
 raisons, les versions de Trophique-METE développées dans cette thèse ont été
 conçues uniquement pour les réseaux locaux. 
 
-\subsection{Pourquoi avons-nous besoin de cette théorie?} 
+\subsection{Quelle est l'utilité de cette théorie?} 
 
 La théorie de l'entropie maximale des réseaux trophiques explique la structure
 des réseaux d'interactions entre espèces en montrant qu'elle est écologiquement
@@ -576,10 +576,10 @@ la structure des réseaux, sans avoir recours à des méthodes d'ajustement de
 modèles aux données. Ces prédictions dépendent des variables écologiques
 utilisées pour contraindre la structure des réseaux. Identifier les variables
 qui génèrent les meilleures prédictions nous permet de mieux comprendre les
-facteurs qui déterminent sur la structure des réseaux. Ainsi, en tant que théorie
-scientifique, elle permet à la fois de générer des prédictions vérifiables sur
-la structure des réseaux et d'identifier les mécanismes écologiques qui les
-sous-tendent le plus fortement. 
+facteurs qui déterminent la structure des réseaux trophiques. Ainsi, en tant que
+théorie scientifique, elle permet à la fois de générer des prédictions
+vérifiables sur la structure des réseaux trophiques et d'identifier les
+mécanismes écologiques les plus influents. 
 
 \subsubsection{Prédire la structure des réseaux trophiques} 
 
@@ -594,8 +594,8 @@ nous sommes encore loin d'une compréhension exhaustive des interactions entre
 espèces (\cite{Hortal2015Seven}). Les modèles prédictifs peuvent être utilisés
 pour combler partiellement ce manque de données et faciliter l'étude des réseaux
 d'interactions à différentes échelles spatiales et temporelles. Prédire en
-premier lieu la structure des réseaux permet de générer de meilleures
-prédictions sur les interactions entre espèces (\cite{Strydom2021Roadmapa}). La
+premier lieu la structure des réseaux permet également de générer de meilleures
+prédictions sur les interactions entre paires d'espèces (\cite{Strydom2021Roadmapa}). La
 plupart des modèles développés prédisant la structure des réseaux se basent sur
 des mécanismes particuliers, comme ceux liés à la correspondance des traits (p.
 ex. correspondance entre la niche écologique des espèces,
@@ -604,50 +604,112 @@ ex. correspondance entre la niche écologique des espèces,
 réseaux d'interactions entre espèces sont nombreux, il peut être hasardeux de
 construire une théorie autour d'un mécanisme particulier. De plus, la
 disponibilité limitée de plusieurs types de données écologiques peut rendre
-difficile l'utilisation des modèles prédictifs (\cite{Strydom2021Roadmapa}). 
+difficile l'utilisation des modèles prédictifs actuels (\cite{Strydom2021Roadmapa}). 
 
-En étant basée sur un petit nombre de variables écologiques, la théorie de
-l'entropie maximale des réseaux trophiques facilite la prédiction de la
-structure des réseaux d'interactions en réduisant la quantité d'informations
-requises. Les seules données d'entrée du modèle sont les valeurs des variables
-d'état. Par exemple, une version de la théorie prédisant la structure des
-réseaux à partir du nombre d'espèces et du nombre d'interactions n'a besoin que
-de ces deux variables comme entrées du modèle. Elle peut prédire simultanément
-différents aspects de la structure des réseaux, comme la distribution de degrés
-ou la matrice d'adjacence. Elle le fait en maximisant l'incertitude des 
-distributions de probabilité prédites, c'est-à-dire en trouvant la distribution 
-la plus uniforme possible qui respecte les contraintes écologiques choisies. 
+En étant basée sur un petit nombre de variables écologiques, Trophique-METE
+facilite la prédiction de la structure des réseaux trophiques en réduisant la
+quantité d'informations requises. Les seules données d'entrée du modèle sont les
+valeurs des variables d'état. Par exemple, une version de la théorie prédisant
+la structure des réseaux à partir du nombre d'espèces et du nombre
+d'interactions n'a besoin que de ces deux variables comme entrées du modèle.
+Elle peut prédire simultanément et de façon cohérente différents aspects de la
+structure des réseaux, comme la distribution de degrés ou la matrice
+d'adjacence. Elle le fait en maximisant l'entropie des distributions de
+probabilité prédites, c'est-à-dire en trouvant la distribution qui respecte le
+plus fidèlement possible les connaissances préalables représentées par les
+contraintes écologiques. 
 
 \subsubsection{Identifier les mécanismes écologiques sous-jacents aux réseaux} 
 
-Cette théorie
-fournit une explication simple aux propriétés des réseaux trophiques, sans pour
-autant être basée sur des mécanismes écologiques explicites. Ces
-variables, qui peuvent différer selon la version de la théorie, capturent les
-mécanismes écologiques sous-jacents aux réseaux (\cite{White2012Characterizing},
-\cite{McGill2010Mechanisms}).  
-
-Elle constitue une explication approfondie et
-cohérente de la structure des réseaux. Les déviations du modèle peuvent être
-utilisés pour inférer des mécanismes écologiques (\cite{Harte2014Maximuma}).
-
-Comme pour les réseaux non écologiques, une riche littérature scientifique a
-cherché à comprendre les mécanismes qui façonnent les réseaux écologiques. Les
-réseaux sont-ils principalement façonnés par la stochasticité et les règles
-topologiques ? Quel est le rôle des processus biologiques dans la structuration
-des réseaux écologiques ?
-
-Les écarts par rapport aux distributions MaxEnt peuvent indiquer que l'ensemble
-de contraintes utilisé n'est pas adéquat, ou que des mécanismes non pris en
-compte par ces contraintes sont importants (\cite{Harte2014Maximum}).
+Bien que cette théorie ne soit pas basée sur des mécanismes écologiques
+explicites, elle permet d'inférer les mécanismes sous-jacents aux réseaux
+trophiques. Premièrement, les variables d'état capturent les mécanismes
+écologiques sous-jacents aux réseaux (\cite{White2012Characterizing},
+\cite{McGill2010Mechanisms}). Par exemple, le nombre total d'espèces, qui peut
+être utilisé comme variable d'état dans certaines versions de la théorie,
+résulte de l'effet conjoint de plusieurs mécanismes écologiques (p. ex.
+mécanismes de dispersion, d'immigration, de spéciation et d'extinction,
+\cite{Whittaker2001Scale}). Les mécanismes écologiques sont donc implicites dans
+la théorie, étant exprimés à travers les valeurs des variables d'état.
+Deuxièmement, à l'instar de METE (\cite{Harte2014Maximuma}), la théorie de
+l'entropie maximale des réseaux trophiques peut être utilisée comme modèle nul
+(\cite{Fortuna2006Habitat}) générant des distributions de référence (c.-à-d. qui
+conservent certaines propriétés désirées, comme la forme de la distribution
+imposée par les contraintes écologiques). En calculant l'écart entre les données
+empiriques et ces distributions de référence, nous pouvons évaluer dans quelle
+mesure les mécanismes implicites au modèle (c.-à-d. ceux capturés par les
+variables d'état) peuvent générer les valeurs observées. Des erreurs
+systématiques de prédiction suggèrent que des mécanismes importants n'ont pas
+été capturés par les variables d'état utilisées, ce qui peut guider le
+développement de versions améliorées de la théorie qui tiennent compte de ces
+mécanismes. 
 
 %%%%% Objectifs 
 
-\section{Objectifs de la thèse} 
+\section{Objectifs et organisation de la thèse} 
+
+Cette thèse formule les principes de base de la théorie de l'entropie maximale
+des réseaux trophiques. Pour ce faire, elle décrit d'abord les mécanismes
+écologiques et sources d'incertitude des réseaux d'interactions entre espèces
+(Chapitre 1). Puis, elle propose et teste deux premières versions de la théorie
+permettant de prédire une variété de mesures des réseaux trophiques (Chapitre
+2). Les résultats et observations de ces deux chapitres pourraient inspirer le
+développement de versions améliorées et élargies de la théorie, en tenant compte
+des caractéristiques des systèmes écologiques complexes ainsi que des réussites
+et limites des deux versions présentées. Globalement, mon travail permet de
+mieux comprendre les déterminants et mesures des réseaux d'interactions entre
+espèces, tout en fournissant un cadre d'analyse permettant de prédire différents
+aspects de la structure des réseaux trophiques de manière cohérente, rigoureuse
+et facilitée.
 
 \subsection{Chapitre 1: Décrypter les réseaux d'interactions probabilistes} 
 
+Le Chapitre 1 présente les mécanismes écologiques et sources d'incertitude de
+différents types de réseaux écologiques. Il décrit comment les interactions
+entre espèces peuvent être représentées de manière probabiliste, que ce soit au
+sein de réseaux locaux ou régionaux. Ce chapitre montre que ces deux types de
+réseaux diffèrent quant à leurs sources d'incertitude: alors que l'incertitude
+des réseaux locaux provient à la fois de la variation spatiale et temporelle des
+interactions entre espèces et d'un manque de connaissances empiriques sur leur
+réalisation, celle des réseaux régionaux provient exclusivement d'un manque de
+connaissances sur la faisabilité des interactions. Il est important d'identifier
+ces différentes sources d'incertitude afin de les quantifier et, le cas échéant,
+de les réduire. De manière connexe, ce chapitre explique également que ces deux
+types de réseaux diffèrent quant à leurs mécanismes sous-jacents, la réalisation
+des interactions locales étant conditionnelle à un plus grand nombre de
+facteurs, incluant leur faisabilité biologique (ou régional). Ces constats
+permettent de mieux comprendre les champs d'application de la théorie de
+l'entropie maximale des réseaux trophiques, notamment en expliquant que ce sont
+les réseaux locaux qui représentent le plus fidèlement les échanges directs
+d'information, de matière ou d'énergie se produisant au sein des systèmes
+écologiques complexes. La vision probabiliste des réseaux d'interactions entre
+espèces, approfondie dans ce chapitre, nous permet de mieux interpréter les
+prédictions probabilistes de la théorie.
+
 \subsection{Chapitre 2: Des modèles d'entropie maximale prédisant la structure des réseaux trophiques} 
+
+Le Chapitre 2 développe la théorie de l'entropie maximale des réseaux
+trophiques. Il met de l'avant deux versions de la théorie: la première utilise
+le nombre d'espèces et le nombre d'interactions comme variables d'état pour
+prédire la distribution jointe de degrés et la matrice d'adjacence, alors que la
+seconde utilise la distribution jointe de degrés comme variable d'état pour
+prédire la matrice d'adjacence. Dans ces deux versions, la distribution jointe
+de degrés a été prédite (le cas échéant) à l'aide d'une approche dite
+analytique, alors que la matrice d'adjacence a été prédite à l'aide d'une
+approche dite heuristique basée sur l'entropie SVD. Les deux versions ont été
+testées à l'aide de données empiriques de réseaux trophiques échantillonnés à
+l'échelle mondiale (milieux aquatiques et terrestres). La version utilisant la
+distribution jointe de degrés comme variable d'état prédit avec précision
+plusieurs mesures de la structure des réseaux calculées à partir de la matrice
+d'adjacence d'entropie maximale, ce qui suggère que la structure des réseaux
+trophiques est principalement déterminée par la distribution jointe de degrés.
+Cependant, cette version n'a pas réussi à prédire de manière fiable le niveau
+trophique maximal. Pour mieux prédire cette mesure, une version améliorée de la
+théorie pourrait intégrer des contraintes liées à l'énergie totale de la
+communauté. Pour ce faire, ce chapitre présente, de manière précise et
+détaillée, le principe d'entropie maximale et la méthode des multiplicateurs de
+Lagrange, permettant à d'autres écologistes de développer leur propre version de
+la théorie.
 
 \endinput
 %%
