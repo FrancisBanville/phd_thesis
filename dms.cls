@@ -1357,7 +1357,7 @@
     \def\dedicace##1{\gdef\@dedicace{##1}}
     \def\@auteurs{}
     \gdef\dms@adressenum{1} % Utiliser pour le num de la note
-    \def\dms@adressenote{$^\dms@adressenum$} % Racourci pour mettre une note
+    \def\dms@adressenote{$^{\dms@adressenum}$} % Racourci pour mettre une note
     \def\@adresses{\debut@adresses}
         % Paramètres complexes
     \def\auteur##1{\let\@et\dms@et\def\@auteurs{##1\dms@adressenote}%

@@ -9,7 +9,239 @@
 
 \chapter*{Appendix A. Supplementary material for \autoref{chapter1}}
 
-...supplementary material 1...
+\begin{refsection}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\section{Host-parasite network data}
+
+\subsection*{Data description}
+
+We use the collection of tripartite host-parasite networks sampled across Europe
+of \cite{Kopelke2017Foodweb}. This dataset contains well-resolved binary local
+interactions between willows ($52$ species), willow-galling sawflies ($96$
+species), and their parasitoids ($126$ species). Out of a total of $374$ local
+networks, we retained those containing at least $5$ species, resulting in a set
+of $233$ georeferenced local networks (networks sampled within areas of $0.1$ to
+$0.3$ km² during June and/or July spanning $29$ years). Given its replicated
+networks spanning large spatiotemporal scales, this dataset is well-suited for
+analyzing network variability.
+
+We built a metaweb of binary interactions by aggregating all local interactions,
+which gave us a regional network composed of $274$ species and $1080$
+interactions. 
+
+\subsection*{Metawebs of probabilistic interactions}
+
+We converted these binary regional interactions into probabilistic ones using
+simple assumptions. Our aim is not to estimate precise probability values, but
+to create plausible metawebs of probabilistic interactions for our illustrative
+examples. 
+
+We created two metawebs of probabilistic interactions by employing constant
+false positive and false negative rates for all regional interactions. In the
+first metaweb, we set both false positive and false negative rates to zero to
+prevent artificially inflating the total number of interactions, enabling a more
+accurate comparison with binary interaction networks. This gave us a probability
+of regional interaction of $1$ when at least one interaction has been observed
+locally and of $0$ in the absence of any observed interaction between a given
+pair of species. This metaweb was used in Box 2. 
+
+In the second metaweb, we introduced a $5\%$ false positive rate to account for
+spurious interactions and a $10\%$ false negative rate to address the elevated
+occurrence of missing interactions in ecological networks
+(\cite{Catchen2023Missinga}). We believe these rates represent reasonable
+estimates of missing and spurious potential interactions, but confirming their
+accuracy is challenging due to the unavailability of data on the actual
+feasibility of interactions. Observed interactions were thus given a probability
+of regional interaction of $95\%$, whereas unobserved ones were assigned a
+probability of $10\%$. This metaweb was used in Boxes 3 and 5.
+
+\subsection*{Local networks of probabilistic interactions}
+
+We built local networks of probabilistic interactions using the taxa found in
+the empirical local networks and attributing pairwise interaction probabilities
+based on the metawebs of probabilistic interactions $P(M_{i, j})$ and a constant
+value of $P(L_{i, j, k}|M_{i, j})$ across interactions:
+
+\begin{eqnarray}
+    \label{eq:local_meta_sup}
+    P(L_{i, j, k}) = P(L_{i, j, k} | M_{i, j})
+    \times P(M_{i, j}).
+\end{eqnarray}
+
+We set all values of $P(L_{i, j, k}|M_{i, j})$ to $0.5$, $0.75$, or $1.0$
+depending on the simulation. Intermediate values of $P(L_{i, j, k}|M_{i, j})$
+around $50\%$ indicate considerable spatiotemporal variability, while higher
+values close to $100\%$ indicate that regional interactions are nearly always
+realized locally. 
+
+\section{Additional methods for Box 2: Dissimilarity of local host-parasite networks}
+
+\subsection*{Dissimilarity between local networks and the metaweb}
+
+We aggregated local networks of binary interactions by sequentially and randomly
+selecting a number of local networks and aggregating both their species and
+interactions. 
+
+We compared the metaweb of binary interactions and the aggregated local networks
+of binary interactions using the dissimilarity in species composition
+$\beta_{S}$, and the dissimilarity of interactions between common species
+$\beta_{OS}$ indices. Both dissimilarity indices were calculated based on the
+number of items shared by the two networks ($c_{LM}$) and the number of items
+unique to the metaweb ($u_M$) and the aggregated local network ($u_L$). The
+$\beta_{S}$ dissimilarity index uses species (nodes) as items being compared,
+while the $\beta_{OS}$ index assesses dissimilarity based on interactions
+between shared species. Both indices were calculated following the $\beta_W$
+index of \cite{Whittaker1960Vegetation}: 
+
+\begin{eqnarray}
+    \label{eq:betadiv_network}
+    \beta_W = \frac{c_{LM} + u_L + u_M}{(2 c_{LM} + u_L + u_M) / 2} - 1.
+\end{eqnarray}
+
+We repeated the aggregation process one hundred times and highlighted the median
+dissimilarity values across simulations, as well as the $50\%$ and $95\%$
+percentile intervals. 
+
+\subsection*{Aggregation of local networks of probabilistic interactions}
+
+We aggregated local networks of probabilistic interactions similarly to the
+networks of binary interactions, with the distinction that we also adjusted the
+value of $P(L_{i, j, k})$ when sampling networks. The constancy of the
+probability of regional interaction across the entire study area means that any
+rise in the probability of local interaction is solely attributable to an
+increase in $P(L_{i, j, k}|M_{i, j})$. We adjusted the value of $P(L_{i, j,
+k}|M_{i, j})$ as follows. Let $L_1$ and $L_2$ be two local networks and
+$L_{1,2}$ the aggregated network. If $P(L_{i, j, 1}|M_{i, j})$ and $P(L_{i, j,
+2}|M_{i, j})$ are the probabilities that two potentially interacting taxa
+interact respectively in $L_1$ and $L_2$, the probability $P(L_{i, j, 1,2}|M_{i,
+j})$ that these taxa interact in the aggregated network $L_{1,2}$ is obtained
+by: 
+
+\begin{eqnarray}
+    \label{eq:aggregate}
+    P(L_{i, j, 1, 2}|M_{i, j}) = 1 - [1 - P(L_{i, j, 1}|M_{i, j})] \times [1 -
+P(L_{i, j, 2}|M_{i, j})],
+\end{eqnarray}
+
+assuming independence between the interaction of the two taxa in different
+networks. This equation represents the probability that the interaction is
+realized in either (1) exclusively the local network $L_1$, (2) exclusively the
+local network $L_2$ or (3) both, given that the two taxa have the biological
+capacity to interact. 
+
+We then calculated the probabilities of local interaction of the aggregated
+networks using Eq~\ref{eq:local_meta_sup}. The value of $P(L_{i, j, k}|M_{i,
+j})$ for each curve in Figure 2 (panels c-d) is the probability before
+aggregating networks.  
+
+\subsection*{Calculation of the expected number of local interactions and connectance}
+
+We investigated how the number of local interactions and connectance scale with
+the number of sampled (aggregated) local networks. We calculated the expected
+numbers of interactions by taking the sum of all binary or probabilistic
+interaction values. Connectance was calculated as the ratio of the expected
+number of interactions to the number of possible (non-forbidden) interactions.
+Because our networks are tripartite, connectance was calculated as follows: 
+
+\begin{eqnarray}
+    \label{eq:co_tri}
+    Co = \frac{I}{S_S S_G + S_G S_P},
+\end{eqnarray}
+
+where $I$ is the expected number of interactions, $S_S$ the number of Salix
+species, $S_G$ the number of galler species, and $S_P$ the number of parasitoid
+species in the network. 
+
+\section{Additional methods for Box 3: Spatial and temporal scaling of interactions}
+
+\subsection*{Aggregation of local and regional networks of probabilistic interactions} 
+
+Local probabilistic interactions were derived from probabilistic regional
+interactions by setting the value of $P(L_{i, j, k}|M_{i,j})$ (the local
+probability of interaction among potentially interacting species) to $1$,
+ensuring a conservative comparison between aggregated local networks and
+metawebs. Aggregated local and regional networks were obtained by aggregating
+both the species and interactions found within a particular latitudinal window.
+The values of $P(L_{i, j, k}|M_{i, j})$ in local networks remained at their
+maximum value of $1$ following Eq~\ref{eq:aggregate}. Latitudinal windows had
+different positions (central latitudes) and widths (latitudinal widths).
+
+\subsection*{Calculation of the expected number of interactions}
+
+We calculated the expected number of local and regional interactions by taking
+the sum of all probabilistic interaction values of the aggregated networks. 
+
+\section{Additional methods for Box 5: Sampling for binary interaction networks}
+
+\subsection*{Sampling using regional interaction probabilities}
+
+We sampled for binary interaction networks across space, predicting a binary
+interaction network for each location in our dataset. We performed a single
+Bernoulli trial for each pair of taxa based on their regional probability of
+interaction: 
+
+\begin{eqnarray}
+    \label{eq:sample1_sup}
+    M_{i, j} \sim {\rm Bernoulli}(P(M_{i, j})).
+\end{eqnarray}
+
+Every pair of taxa predicted to interact in this metaweb was treated as
+interacting in all localized networks where they co-occurred, i.e. $L_{i, j, k}
+= M_{i, j}$ when $X_{i,j,k} = 1$.
+
+We performed between $1$ and $100$ simulations for each location to get a
+distribution of networks of binary interactions sampled using regional
+interaction probabilities.
+
+\subsection*{Sampling using local interaction probabilities}
+
+We sampled binary interaction networks across space, predicting a binary
+interaction network for each location in our dataset. We first generated
+distinct probabilistic interaction networks for each location. The local
+probability of interaction between potentially interacting species was set to
+three different values: $P(L_{i, j, k}|M_{i, j}) = 1.0$, $P(L_{i, j, k}|M_{i,
+j}) = 0.75$, and $P(L_{i, j, k}|M_{i, j}) = 0.50$. We then sampled each local
+network of probabilistic interactions independently: 
+
+\begin{eqnarray}
+    \label{eq:sample2_sup}
+    L_{i, j, k} \sim {\rm Bernoulli}(P(L_{i, j, k})).
+\end{eqnarray}
+
+We performed between $1$ and $100$ simulations for each location to get a
+distribution of networks of binary interactions sampled using local interaction
+probabilities. 
+
+\subsection*{Calculation of connectance}
+
+We calculated the connectance of our predicted tripartite networks of binary
+interactions following Eq~\ref{eq:co_tri}. We calculated the average connectance
+across simulations for each location.
+
+\subsection*{Calculation of the mean squared logarithmic error (MSLE)}
+
+The mean squared logarithmic error was calculated as follows: 
+
+\begin{eqnarray}
+    \label{eq:MSLE_sup}
+    MSLE = \frac{\sum (log(\overline{Co_L}) - log(\overline{Co_M}))^2}{n},
+\end{eqnarray}
+
+where $\overline{Co_L}$ and $\overline{Co_M}$ are the average connectance across
+simulations for each location, respectively for local and regional samples, and
+$n$ is the number of locations.
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+
+\begingroup
+\let\clearpage\relax
+\printbibliography
+\endgroup
+\end{refsection}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 
 \endinput
 %%
