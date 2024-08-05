@@ -10,6 +10,10 @@
 \entetedynamique
 \setcounter{corA}{0} % Pour recommancer à compter les def,
                      % theo, etc. à partir de 1
+
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+
  % Pour écrire un article en français
 %%\francais
  % Pour écrire un article en anglais
@@ -34,7 +38,7 @@
 
 %% Nom de la revue de publication
 \revue{PLOS Computational Biology and can be found at https://doi.org/10.1371/journal.pcbi.1011458}
-\article{What constrains food webs? A maximum entropy framework for predicting their structure with minimal biases}\label{chapter2}
+\article{What constrains food webs? A maximum entropy framework for predicting their structure with minimal biases}\labelart{art:article2}
 %% On peut se référer aux numéros de chapitre ou d'article comme suit.
 %% Si on fait
 %% \label{chap:article1},
@@ -412,8 +416,8 @@ distribution of maximum entropy directly from the joint degree distribution by
 summing probabilities over the joint degree distribution (since the degree of a
 species is its total number of prey and predators combined). Because of the
 scarcity of empirical data on the number of interactions in food webs, we also
-present a method to predict $L$ from $S$ (Box 1), thus allowing the prediction
-of the joint degree distribution from $S$ solely. 
+present a method to predict $L$ from $S$ (Box~\ref{box3.1}), thus allowing the
+prediction of the joint degree distribution from $S$ solely. 
 
 For the second approach (heuristic), we focus on community-level properties. We
 used a flexible and heuristic model based on simulated annealing (an
@@ -721,9 +725,10 @@ that differ on the constraint used. The type I heuristic MaxEnt model is based
 on connectance, whereas the type II heuristic MaxEnt model is based on the joint
 degree sequence. These models are thus based on the same constraints as the
 types I (\cite{Fortuna2006Habitat}) and II (\cite{Bascompte2003Nested}) null
-models (Box 2) frequently used to generate random networks topologically. This
-allows a direct comparison of the performance of null and heuristic MaxEnt
-models in reproducing the emerging structure of empirical food webs. 
+models (Box~\ref{box3.2}) frequently used to generate random networks
+topologically. This allows a direct comparison of the performance of null and
+heuristic MaxEnt models in reproducing the emerging structure of empirical food
+webs. 
 
 For each network, we estimated their configuration of maximum entropy given each
 of these constraints. For both types of heuristic MaxEnt models, we used a
@@ -769,18 +774,21 @@ chosen based on their ecological importance and prevalent use in network ecology
 (\cite{McCann2011Food}, \cite{Delmas2019Analysing}). 
 
 We compared the performance of both heuristic MaxEnt models in predicting these
-measures to the one of the null and neutral models (Box 2). We conducted these
-comparisons using two different datasets: (1) our complete dataset including
-most food webs archived on Mangal, as well as all food webs in the New Zealand
-and Tuesday Lake datasets, and (2) our \textit{abundance dataset}, a subset of
-the complete dataset comprising all food webs having data on their species'
-relative abundances ($N=19$). Indeed, of the New Zealand and Tuesday Lake
-datasets, $19$ networks had data on species' relative abundances that were used
-in the neutral model to better assess the performance of our heuristic models.
-We compared our models' predictions using these two datasets separately to
-minimize biases and to better represent food webs with abundance data.
+measures to the one of the null and neutral models (Box~\ref{box3.2}). We
+conducted these comparisons using two different datasets: (1) our complete
+dataset including most food webs archived on Mangal, as well as all food webs in
+the New Zealand and Tuesday Lake datasets, and (2) our \textit{abundance
+dataset}, a subset of the complete dataset comprising all food webs having data
+on their species' relative abundances ($N=19$). Indeed, of the New Zealand and
+Tuesday Lake datasets, $19$ networks had data on species' relative abundances
+that were used in the neutral model to better assess the performance of our
+heuristic models. We compared our models' predictions using these two datasets
+separately to minimize biases and to better represent food webs with abundance
+data.
 
-\newtcolorbox{box1}{colback=green!10,enhanced,title=Box 1: Working with predicted numbers of interactions,
+\addcontentsline{toc}{section}{Box 3.1: Working with predicted numbers of interactions}
+
+\newtcolorbox{box3.1}{colback=green!10,enhanced,title=Box \customlabel{box3.1}{3.1}: Working with predicted numbers of interactions,
 	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
@@ -792,9 +800,13 @@ minimize biases and to better represent food webs with abundance data.
 	}
 }
 
-\begin{box1}
+\begin{box3.1}
 
-Our analytical MaxEnt models require information on the number of species and the number of interactions. However, since the latter is rarely measured empirically, ecologists might need to use another predictive model to estimate the total number of interactions in a food web before using MaxEnt. Here we show how this can be done by combining both models sequentially.  
+Our analytical MaxEnt models require information on the number of species and
+the number of interactions. However, since the latter is rarely measured
+empirically, ecologists might need to use another predictive model to estimate
+the total number of interactions in a food web before using MaxEnt. Here we show
+how this can be done by combining both models sequentially.  
 
 We used the flexible links model of \cite{MacDonald2020Revisiting} to predict the
 number of interactions from the number of species in food webs. The flexible
@@ -843,17 +855,18 @@ values of the predicted variable. We thus simulated $1000$ values of $L$ for
 different values of $S$ using the joint posterior distribution of our model
 parameters and calculated the mean degree for each
 simulated value. The resulting distributions are shown in the left panel of
-Fig~\ref{fig:degree_dist_fl} for three different values of species richness. In the
-right panel of Fig~\ref{fig:degree_dist_fl}, we show how the probability
+Figure~\ref{fig:degree_dist_fl} for three different values of species richness. In the
+right panel of Figure~\ref{fig:degree_dist_fl}, we show how the probability
 distribution for the mean degree constraints can be used to generate a
 distribution of maximum entropy degree distributions since each simulated value
 of mean degree generates a different maximum entropy degree distribution
 (Eqs~\ref{eq:lagrange_dd} and \ref{eq:lagrange2_dd}). 
 
-\end{box1}
+\end{box3.1}
 
+\addcontentsline{toc}{section}{Box 3.2: Corresponding null and neutral models}
 
-\newtcolorbox{box2}{colback=green!10,enhanced,title=Box 2: Corresponding null and neutral models,
+\newtcolorbox{box3.2}{colback=green!10,enhanced,title=Box \customlabel{box3.2}{3.2}: Corresponding null and neutral models,
 	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
@@ -865,7 +878,7 @@ of mean degree generates a different maximum entropy degree distribution
 	}
 }
 
-\begin{box2}
+\begin{box3.2}
 
 \textbf{Null models (types I and II)}
 
@@ -921,7 +934,7 @@ neutral abundance matrices for all empirical food webs in our abundance dataset
 and converted these weighted networks to adjacency matrices of Boolean values
 using the same method as the one we used for our null models. 
 
-\end{box2}
+\end{box3.2}
 
 \begin{figure}[!h]
   \centering
@@ -952,7 +965,7 @@ We first discuss the predictive capacity of our analytical models. The
 relationship between the relative numbers of prey $k_{out}$ and predators
 $k_{in}$ in empirical networks and obtained from the joint degree distributions
 of maximum entropy is depicted in the left and central panels of
-Fig~\ref{fig:joint_dd}, respectively. We observe that our analytical model predicts
+Figure~\ref{fig:joint_dd}, respectively. We observe that our analytical model predicts
 higher values of generality and vulnerability compared to empirical food webs
 (i.e. relative values of $k_{out}$ and $k_{in}$ both closer to $1$) for many
 species. In other words, our model predicts that species that have many
@@ -981,8 +994,8 @@ predicts that most species have low generality and vulnerability values.
 \clearpage
 
 Examining the difference between predicted and empirical values for each species
-gives a slightly different perspective (right panel of Fig~\ref{fig:joint_dd}). To
-make that comparison, we must first associate each of our predictions with a
+gives a slightly different perspective (right panel of Figure~\ref{fig:joint_dd}).
+To make that comparison, we must first associate each of our predictions with a
 specific species in a network. Indeed, our predicted joint degree sequences have
 the same number of species (elements) as their empirical counterparts, but they
 are species agnostic. In other words, instead of predicting a pair of values for
@@ -991,25 +1004,27 @@ $i$), we predicted the entire joint degree sequence without taking into account
 species' identity (i.e. the distribution of the number of prey and predators for
 the entire set of species, without knowing which values belong to which
 species). The challenge is thus to adequately associate predictions with
-empirical data. In Fig~\ref{fig:joint_dd}, we present these differences when species
-are ordered by their total degree in their respective networks (i.e. by the sum
-of their in and out-degrees). This means that the species with the highest total
-degree in its network will be associated with the highest prediction, and so
-forth. Doing so, we see that species predicted to have a higher number of
-predators than what is observed generally have a lower number of prey than what
-is observed (and conversely). This is also shown in Fig~\ref{fig:kin_kout_diff_strata} (Appendix B), which
-represents the relationship between prediction errors in the \textit{absolute}
-(non-relative) values of $k_{out}$ and $k_{in}$ across networks of varying
-levels of species richness. This is because the difference in total degree
-($k_{out} + k_{in}$) between predictions and empirical data is minimized when
-species are ranked by their total degree (i.e. the average deviation of the sum
-of relative $k_{out}$ and $k_{in}$ is close to $0$ across all species). This
-result thus shows that the difference between predicted and empirical total
-degrees is low for most species when ordered by their total degrees. There are
-no apparent biases towards in or out degrees. In Fig~\ref{fig:kin_kout_diff} (Appendix B), we show how
-these differences change when species are instead ordered by their out-degrees
-(left panel) and in-degrees (right panel), i.e. when minimizing the error in the
-estimation of the out and in-degrees, respectively.
+empirical data. In Figure~\ref{fig:joint_dd}, we present these differences when
+species are ordered by their total degree in their respective networks (i.e. by
+the sum of their in and out-degrees). This means that the species with the
+highest total degree in its network will be associated with the highest
+prediction, and so forth. Doing so, we see that species predicted to have a
+higher number of predators than what is observed generally have a lower number
+of prey than what is observed (and conversely). This is also shown in
+Figure~\ref{fig:kin_kout_diff_strata} (Appendix~\ref{supp:B}), which represents the
+relationship between prediction errors in the \textit{absolute} (non-relative)
+values of $k_{out}$ and $k_{in}$ across networks of varying levels of species
+richness. This is because the difference in total degree ($k_{out} + k_{in}$)
+between predictions and empirical data is minimized when species are ranked by
+their total degree (i.e. the average deviation of the sum of relative $k_{out}$
+and $k_{in}$ is close to $0$ across all species). This result thus shows that
+the difference between predicted and empirical total degrees is low for most
+species when ordered by their total degrees. There are no apparent biases
+towards in or out degrees. In Figure~\ref{fig:kin_kout_diff}
+(Appendix~\ref{supp:B}), we show how these differences change when species are
+instead ordered by their out-degrees (left panel) and in-degrees (right panel),
+i.e. when minimizing the error in the estimation of the out and in-degrees,
+respectively.
 
 Another way to evaluate the empirical support of the sampled joint degree
 sequences is to compare their shape with the ones of empirical food webs. We
@@ -1022,11 +1037,11 @@ entropy describing the difference between two distributions. Low values indicate
 high similarity between the in and out-degree sequences and suggest that the
 joint degree sequence has a high level of symmetry. We compared the shape of the
 empirical and predicted joint degree sequences in the left panel of
-Fig~\ref{fig:kl_diverg}. As expected, our model predicts more similar in-degree and
+Figure~\ref{fig:kl_diverg}. As expected, our model predicts more similar in-degree and
 out-degree sequences than empirical data (shown by lower KL divergence values).
 However, the difference between the KL divergence of predicted and empirical
 joint degree sequences decreases with connectance (right panel of
-Fig~\ref{fig:kl_diverg}). This might be because food webs with a low connectance are
+Figure~\ref{fig:kl_diverg}). This might be because food webs with a low connectance are
 harder to predict than food webs with a high connectance. Indeed, in low
 connectance systems, what makes two species interact may be more important for
 prediction than in high connectance systems, in which what prevents species from
@@ -1055,22 +1070,23 @@ shape of the joint degree sequence for networks having a high connectance.
 
 Regarding the degree distribution of maximum entropy, one aspect that informs us
 of its ecological realism is the number of isolated species it predicts. As
-\cite{MacDonald2020Revisiting} pointed out, the size of food webs should at least be
-of $S-1$ interactions since a lower number would yield isolated species, i.e.
-species without any predator or prey. Because non-basal species must eat to
-survive, isolated species could indicate that other species are missing;
-otherwise, isolated species should be removed from the network. In
-Fig~\ref{fig:heatmap} (Appendix B), we show that the degree distribution of maximum entropy, given
-$S$ and $L$, gives a very low probability that a species will be isolated in its
-food web (i.e. having $k = 0$) when $L > S-1$. However, under our purely
-information-theoretic model, the probability that a species is isolated is quite
-high when the total number of interactions is below $S-1$. Moreover, the
-expected proportion of isolated species rapidly declines by orders of magnitude
-with increasing numbers of species and interactions. This supports the
-ecological realism of the degree distribution of maximum entropy derived above.
-Nevertheless, ecologists wanting to model a system without allowing isolated
-species could simply change the lower limit of $k$ to $1$ in
-Eq~\ref{eq:lagrange2_dd} and solve the resulting equation numerically.
+\cite{MacDonald2020Revisiting} pointed out, the size of food webs should at
+least be of $S-1$ interactions since a lower number would yield isolated
+species, i.e. species without any predator or prey. Because non-basal species
+must eat to survive, isolated species could indicate that other species are
+missing; otherwise, isolated species should be removed from the network. In
+Figure~\ref{fig:heatmap} (Appendix~\ref{supp:B}), we show that the degree
+distribution of maximum entropy, given $S$ and $L$, gives a very low probability
+that a species will be isolated in its food web (i.e. having $k = 0$) when $L >
+S-1$. However, under our purely information-theoretic model, the probability
+that a species is isolated is quite high when the total number of interactions
+is below $S-1$. Moreover, the expected proportion of isolated species rapidly
+declines by orders of magnitude with increasing numbers of species and
+interactions. This supports the ecological realism of the degree distribution of
+maximum entropy derived above. Nevertheless, ecologists wanting to model a
+system without allowing isolated species could simply change the lower limit of
+$k$ to $1$ in Eq~\ref{eq:lagrange2_dd} and solve the resulting equation
+numerically.
 
 \subsection{Heuristic maximum entropy models}
 
@@ -1177,22 +1193,23 @@ necessarily produce more complex food webs with longer food-chain lengths.
 
 Moreover, we found that the entropy of empirical food webs was slightly lower
 than their maximum entropy when constrained by their joint degree sequence
-Fig~\ref{fig:entropy_dist} (Appendix B). Empirical food webs had an SVD entropy of $0.89 \pm 0.04$,
-compared to an SVD entropy of $0.94 \pm 0.03$ for networks generated using the
-type II heuristic MaxEnt model. The relationship between the SVD entropy of
-empirical food webs and their maximum entropy is plotted in the last panel of
-Fig~\ref{fig:measures}. The slight increase in entropy confirms that our method
-generated more complex networks. Even though we found that many measures of
-empirical networks are close to the ones of their maximum entropy configuration,
-the relatively low predictability of entropy itself may be indicative of
-additional constraints shaping food-web structure, especially for networks with
-low SVD entropy. Incorporating more constraints into the model could increase
-its capacity to generate networks with an adequate level of complexity, as shown
-by the decrease in predictive errors of entropy of the type II heuristic MaxEnt
-model compared to the one based on connectance (Table~\ref{tbl:measures_all}).
-Additionally, we found no clear relationship between the increase in SVD entropy
-and the number of species, the number of interactions, and connectance
-Fig~\ref{fig:entropy_size} (Appendix B). This suggests that our model captured the complexity of
+Figure~\ref{fig:entropy_dist} (Appendix~\ref{supp:B}). Empirical food webs had an
+SVD entropy of $0.89 \pm 0.04$, compared to an SVD entropy of $0.94 \pm 0.03$
+for networks generated using the type II heuristic MaxEnt model. The
+relationship between the SVD entropy of empirical food webs and their maximum
+entropy is plotted in the last panel of Figure~\ref{fig:measures}. The slight
+increase in entropy confirms that our method generated more complex networks.
+Even though we found that many measures of empirical networks are close to the
+ones of their maximum entropy configuration, the relatively low predictability
+of entropy itself may be indicative of additional constraints shaping food-web
+structure, especially for networks with low SVD entropy. Incorporating more
+constraints into the model could increase its capacity to generate networks with
+an adequate level of complexity, as shown by the decrease in predictive errors
+of entropy of the type II heuristic MaxEnt model compared to the one based on
+connectance (Table~\ref{tbl:measures_all}). Additionally, we found no clear
+relationship between the increase in SVD entropy and the number of species, the
+number of interactions, and connectance Figure~\ref{fig:entropy_size}
+(Appendix~\ref{supp:B}). This suggests that our model captured the complexity of
 small and large networks on a similar level and that its capacity to reproduce
 food-web structure was unrelated to the order and size of the network. In other
 words, the gap in entropy between empirical food webs and their maximum entropy
@@ -1216,17 +1233,18 @@ interactions.
 
 A direct comparison of the structure of maximum entropy food webs constrained by
 the joint degree sequence with empirical data also supports the results depicted
-in Table~\ref{tbl:measures_all}. In Fig~\ref{fig:measures}, we show how well empirical
-measures are predicted by the type II heuristic MaxEnt model. Following our
-previous results, we found that nestedness was very well predicted by our model.
-However, the model overestimated the maximum trophic level and network diameter,
-especially when the sampled food web had intermediate values of these measures.
-In Fig~\ref{fig:measures_richness} (Appendix B), we show that the pairwise relationships between the four
-measures in Fig~\ref{fig:measures} and species richness in empirical food webs are
-similar (in magnitude and sign) to the ones found in food webs generated using
-the type II heuristic MaxEnt model. This indicates that the number of species in
-the network does not seem to impact the ability of the model to reproduce
-food-web structure. 
+in Table~\ref{tbl:measures_all}. In Figure~\ref{fig:measures}, we show how well
+empirical measures are predicted by the type II heuristic MaxEnt model.
+Following our previous results, we found that nestedness was very well predicted
+by our model. However, the model overestimated the maximum trophic level and
+network diameter, especially when the sampled food web had intermediate values
+of these measures. In Figure~\ref{fig:measures_richness} (Appendix~\ref{supp:B}),
+we show that the pairwise relationships between the four measures in
+Figure~\ref{fig:measures} and species richness in empirical food webs are similar
+(in magnitude and sign) to the ones found in food webs generated using the type
+II heuristic MaxEnt model. This indicates that the number of species in the
+network does not seem to impact the ability of the model to reproduce food-web
+structure. 
 
 Notwithstanding its difficulties in reproducing adequate measures of food-chain
 lengths, the type II heuristic MaxEnt model can predict surprisingly well the
@@ -1236,11 +1254,11 @@ structure is built and play a crucial role in community dynamics and assembly
 (\cite{Stouffer2011Compartmentalization}). Differences in motif profiles between an observed
 food web and null model-generated ones can unveil important ecological
 mechanisms that contribute to network structure (\cite{Stouffer2007Evidence}). In
-Fig~\ref{fig:motifs}, we show that the motif profile of networks generated using the
+Figure~\ref{fig:motifs}, we show that the motif profile of networks generated using the
 type II heuristic MaxEnt model accurately reproduced the one of empirical data.
 This model made significantly better predictions than the ones based on
 connectance and the type II null model based on the joint degree sequence. This
-is also shown in Fig~\ref{fig:motifs_rel}, which reveals that the relationships
+is also shown in Figure~\ref{fig:motifs_rel}, which reveals that the relationships
 between the proportions of single-link motifs in empirical food webs are similar
 to the ones in networks generated using the type II heuristic MaxEnt model. This
 is in contrast with the type I null and MaxEnt models based on connectance,
@@ -1295,7 +1313,7 @@ biological significance than the proportion of motifs itself.
 
 One of the challenges in implementing and validating a maximum entropy model is
 to discover where its predictions break down. The results depicted in
-Table~\ref{tbl:measures_all} and Fig~\ref{fig:measures} show that our type II heuristic
+Table~\ref{tbl:measures_all} and Figure~\ref{fig:measures} show that our type II heuristic
 MaxEnt model can capture many high-level properties of food webs, but does a
 poor job of capturing others. This suggests that, although the joint degree
 sequence is an important driver of food-web structure, other ecological

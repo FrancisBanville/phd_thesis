@@ -1790,7 +1790,7 @@
 \def\ftype@figure{1}
 \def\ext@figure{lof}
 \def\fnum@figure{\figurename~\thefigure}
-\def\figurename{Fig.}
+\def\figurename{Figure}
 \def\figure{\@float{figure}}
 \def\endfigure{\end@float}
 \ifphd@

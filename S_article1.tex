@@ -7,7 +7,8 @@
 %ou
 \anglais
 
-\chapter*{Appendix A. Supplementary material for \autoref{chapter1}}
+\chapter{Supplementary material of Article~\ref{art:article1}}\label{supp:A}
+
 
 \begin{refsection}
 
@@ -15,7 +16,7 @@
 
 \section{Host-parasite network data}
 
-\subsection*{Data description}
+\subsection{Data description}
 
 We use the collection of tripartite host-parasite networks sampled across Europe
 of \cite{Kopelke2017Foodweb}. This dataset contains well-resolved binary local
@@ -31,7 +32,7 @@ We built a metaweb of binary interactions by aggregating all local interactions,
 which gave us a regional network composed of $274$ species and $1080$
 interactions. 
 
-\subsection*{Metawebs of probabilistic interactions}
+\subsection{Metawebs of probabilistic interactions}
 
 We converted these binary regional interactions into probabilistic ones using
 simple assumptions. Our aim is not to estimate precise probability values, but
@@ -45,7 +46,7 @@ prevent artificially inflating the total number of interactions, enabling a more
 accurate comparison with binary interaction networks. This gave us a probability
 of regional interaction of $1$ when at least one interaction has been observed
 locally and of $0$ in the absence of any observed interaction between a given
-pair of species. This metaweb was used in Box 2. 
+pair of species. This metaweb was used in Box~\ref{box2.2}. 
 
 In the second metaweb, we introduced a $5\%$ false positive rate to account for
 spurious interactions and a $10\%$ false negative rate to address the elevated
@@ -55,9 +56,10 @@ estimates of missing and spurious potential interactions, but confirming their
 accuracy is challenging due to the unavailability of data on the actual
 feasibility of interactions. Observed interactions were thus given a probability
 of regional interaction of $95\%$, whereas unobserved ones were assigned a
-probability of $10\%$. This metaweb was used in Boxes 3 and 5.
+probability of $10\%$. This metaweb was used in Boxes~\ref{box2.3} and
+\ref{box2.5}.
 
-\subsection*{Local networks of probabilistic interactions}
+\subsection{Local networks of probabilistic interactions}
 
 We built local networks of probabilistic interactions using the taxa found in
 the empirical local networks and attributing pairwise interaction probabilities
@@ -76,9 +78,9 @@ around $50\%$ indicate considerable spatiotemporal variability, while higher
 values close to $100\%$ indicate that regional interactions are nearly always
 realized locally. 
 
-\section{Additional methods for Box 2: Dissimilarity of local host-parasite networks}
+\section{Additional methods for Box~\ref{box2.2}: Dissimilarity of local host-parasite networks}
 
-\subsection*{Dissimilarity between local networks and the metaweb}
+\subsection{Dissimilarity between local networks and the metaweb}
 
 We aggregated local networks of binary interactions by sequentially and randomly
 selecting a number of local networks and aggregating both their species and
@@ -104,7 +106,7 @@ We repeated the aggregation process one hundred times and highlighted the median
 dissimilarity values across simulations, as well as the $50\%$ and $95\%$
 percentile intervals. 
 
-\subsection*{Aggregation of local networks of probabilistic interactions}
+\subsection{Aggregation of local networks of probabilistic interactions}
 
 We aggregated local networks of probabilistic interactions similarly to the
 networks of binary interactions, with the distinction that we also adjusted the
@@ -133,10 +135,10 @@ capacity to interact.
 
 We then calculated the probabilities of local interaction of the aggregated
 networks using Eq~\ref{eq:local_meta_sup}. The value of $P(L_{i, j, k}|M_{i,
-j})$ for each curve in Figure 2 (panels c-d) is the probability before
+j})$ for each curve in Figure~\ref{fig:accumulation}c-d is the probability before
 aggregating networks.  
 
-\subsection*{Calculation of the expected number of local interactions and connectance}
+\subsection{Calculation of the expected number of local interactions and connectance}
 
 We investigated how the number of local interactions and connectance scale with
 the number of sampled (aggregated) local networks. We calculated the expected
@@ -154,9 +156,9 @@ where $I$ is the expected number of interactions, $S_S$ the number of Salix
 species, $S_G$ the number of galler species, and $S_P$ the number of parasitoid
 species in the network. 
 
-\section{Additional methods for Box 3: Spatial and temporal scaling of interactions}
+\section{Additional methods for Box~\ref{box2.3}: Spatial and temporal scaling of interactions}
 
-\subsection*{Aggregation of local and regional networks of probabilistic interactions} 
+\subsection{Aggregation of local and regional networks of probabilistic interactions} 
 
 Local probabilistic interactions were derived from probabilistic regional
 interactions by setting the value of $P(L_{i, j, k}|M_{i,j})$ (the local
@@ -168,14 +170,14 @@ The values of $P(L_{i, j, k}|M_{i, j})$ in local networks remained at their
 maximum value of $1$ following Eq~\ref{eq:aggregate}. Latitudinal windows had
 different positions (central latitudes) and widths (latitudinal widths).
 
-\subsection*{Calculation of the expected number of interactions}
+\subsection{Calculation of the expected number of interactions}
 
 We calculated the expected number of local and regional interactions by taking
 the sum of all probabilistic interaction values of the aggregated networks. 
 
-\section{Additional methods for Box 5: Sampling for binary interaction networks}
+\section{Additional methods for Box~\ref{box2.5}: Sampling for binary interaction networks}
 
-\subsection*{Sampling using regional interaction probabilities}
+\subsection{Sampling using regional interaction probabilities}
 
 We sampled for binary interaction networks across space, predicting a binary
 interaction network for each location in our dataset. We performed a single
@@ -195,7 +197,7 @@ We performed between $1$ and $100$ simulations for each location to get a
 distribution of networks of binary interactions sampled using regional
 interaction probabilities.
 
-\subsection*{Sampling using local interaction probabilities}
+\subsection{Sampling using local interaction probabilities}
 
 We sampled binary interaction networks across space, predicting a binary
 interaction network for each location in our dataset. We first generated
@@ -214,13 +216,13 @@ We performed between $1$ and $100$ simulations for each location to get a
 distribution of networks of binary interactions sampled using local interaction
 probabilities. 
 
-\subsection*{Calculation of connectance}
+\subsection{Calculation of connectance}
 
 We calculated the connectance of our predicted tripartite networks of binary
 interactions following Eq~\ref{eq:co_tri}. We calculated the average connectance
 across simulations for each location.
 
-\subsection*{Calculation of the mean squared logarithmic error (MSLE)}
+\subsection{Calculation of the mean squared logarithmic error (MSLE)}
 
 The mean squared logarithmic error was calculated as follows: 
 

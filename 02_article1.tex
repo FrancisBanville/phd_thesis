@@ -10,7 +10,14 @@
 \entetedynamique
 \setcounter{corA}{0} % Pour recommancer à compter les def,
                      % theo, etc. à partir de 1
- % Pour écrire un article en français
+
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+
+\setcounter{table}{0}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+
+% Pour écrire un article en français
 %% \francais
  % Pour écrire un article en anglais
 \anglais
@@ -34,7 +41,7 @@
 
 %% Nom de la revue de publication
 \revue{EcoEvoRxiv and can be found at https://doi.org/10.32942/X28G8Z}
-\article{Deciphering probabilistic species interaction networks}\label{chapter1}
+\article{Deciphering probabilistic species interaction networks}\labelart{art:article1}
 %% On peut se référer aux numéros de chapitre ou d'article comme suit.
 %% Si on fait
 %% \label{chap:article1},
@@ -615,8 +622,8 @@ provides probabilities of interactions, which can be obtained by integrating
 probability densities over space and time. We can quantify both an area $A_0$
 and a duration $t_0$ with these definitions. By studying probabilistic local
 interaction networks, we may thus conduct spatiotemporal analyses of local
-interactions (Box 1), enhancing our understanding of interactions occurring in
-distinct environmental contexts. 
+interactions (Box~\ref{box2.1}), enhancing our understanding of interactions
+occurring in distinct environmental contexts. 
 
 \subsection{What are local probabilistic interactions conditioned on?}
 
@@ -628,14 +635,14 @@ subscript $k$ for clarity) can be conditioned on many environmental and
 biological factors. In addition to network area (or volume) $A_0$ and duration
 $t_0$, they may be conditioned on taxa co-occurrence $X_{i,j,k}$, which is
 usually Boolean, describing if the geographic distributions of both taxa overlap
-within the study area. As illustrated in Box 1, co-occurrence may be modeled
-probabilistically, in which case it may conform to a Bernoulli distribution
-$X_{i,j,k} \sim {\rm Bernoulli}(P(X_{i,j,k}))$. The probability of co-occurrence
-can be calculated using the individual (marginal) occurrence probabilities
-$P(X_{i,k})$ and $P(X_{j,k})$. Given that taxa occurrences are not independent
-of each other, the probability of co-occurrence can be calculated by multiplying
-the probability of occurrence of one taxon by the probability of occurrence of
-the other given that the first one is present: 
+within the study area. As illustrated in Box~\ref{box2.1}, co-occurrence may be
+modeled probabilistically, in which case it may conform to a Bernoulli
+distribution $X_{i,j,k} \sim {\rm Bernoulli}(P(X_{i,j,k}))$. The probability of
+co-occurrence can be calculated using the individual (marginal) occurrence
+probabilities $P(X_{i,k})$ and $P(X_{j,k})$. Given that taxa occurrences are not
+independent of each other, the probability of co-occurrence can be calculated by
+multiplying the probability of occurrence of one taxon by the probability of
+occurrence of the other given that the first one is present: 
 
 \begin{eqnarray}
   \label{eq:modelcoprob}
@@ -743,17 +750,17 @@ example, \cite{Gravel2019Bringing} analyzed local European host-parasite
 networks of willow-galling sawflies and their natural enemies, all referenced in
 space and time, to infer probabilities of local interactions between
 co-occurring species. This was achieved by including temperature and
-precipitation as conditional variables in their models. In Box 2, we reuse these
-data to show the extent of variation among these local networks. We do so by
-measuring their dissimilarity with the regional network (metaweb aggregating all
-local interactions), both in terms of species composition and interactions. We
-built local probabilistic networks following Eq~\ref{eq:local_meta}, showing
-that insufficient local variation (high probability of local interaction among
-potentially interacting species) results in an overestimation in both the number
-of interactions and connectance (i.e., the proportion of all of the
-non-forbidden links that are realized). This analysis was conducted for
-illustrative purposes, and other conditional variables could have been used to
-make these comparisons.
+precipitation as conditional variables in their models. In Box~\ref{box2.2} , we
+reuse these data to show the extent of variation among these local networks. We
+do so by measuring their dissimilarity with the regional network (metaweb
+aggregating all local interactions), both in terms of species composition and
+interactions. We built local probabilistic networks following
+Eq~\ref{eq:local_meta}, showing that insufficient local variation (high
+probability of local interaction among potentially interacting species) results
+in an overestimation in both the number of interactions and connectance (i.e.,
+the proportion of all of the non-forbidden links that are realized). This
+analysis was conducted for illustrative purposes, and other conditional
+variables could have been used to make these comparisons.
 
 When accounted for, conditional variables should be clearly described in the
 documentation of the data (\cite{Brimacombe2023Shortcomings}), preferentially in
@@ -783,25 +790,25 @@ actual realizations of interactions.
    { \bf Expression} & {\bf Type} & {\bf Outcome} & {\bf Common models} & {\bf Reference} \\ \\
   \hline
   \\
-  $P(L_{i, j, k} \vert X_{i,k}, X_{j,k},...)$ & local & realization of the interaction given taxa co-occurrence & species distribution models & \cite{Gravel2019Bringing}, \cite{Dansereau2024Spatially}, Boxes 1 and 5 \\
+  $P(L_{i, j, k} \vert X_{i,k}, X_{j,k},...)$ & local & realization of the interaction given taxa co-occurrence & species distribution models & \cite{Gravel2019Bringing}, \cite{Dansereau2024Spatially}, Boxes~\ref{box2.1} and \ref{box2.5} \\
   \\ 
   $P(L_{i, j, k} \vert N_{i,k}, N_{j,k},...)$ & local & realization of the interaction given taxa abundances & neutral models & \cite{Canard2014Empirical} \\ 
   \\
-  $P(L_{i, j, k} \vert T_{i,k}, T_{j,k}, ...)$ & local & realization of the interaction given local traits & trait matching models & \cite{Caron2024Traitmatching}, Box 4 \\
+  $P(L_{i, j, k} \vert T_{i,k}, T_{j,k}, ...)$ & local & realization of the interaction given local traits & trait matching models & \cite{Caron2024Traitmatching}, Box~\ref{box2.4} \\
   \\
   $P(L_{i, j, k} \vert E_k,...)$ & local & realization of the interaction given local environmental conditions & environmental-based models & \cite{Gravel2019Bringing} (temperature and precipitation) \\ 
   \\
-  $P(L_{i, j, k} \vert A_0, ...)$ & local & realization of the interaction in a given area or volume & spatial models & \cite{Galiana2018Spatiala} *, Box 3 \\ 
+  $P(L_{i, j, k} \vert A_0, ...)$ & local & realization of the interaction in a given area or volume & spatial models & \cite{Galiana2018Spatiala} *, Box~\ref{box2.3} \\ 
   \\
-  $P(L_{i, j, k} \vert t_0,...)$ & local & realization of the interaction during a given time period & temporal models & \cite{Weinstein2017Comparing}, Boxes 1 and 3 \\
+  $P(L_{i, j, k} \vert t_0,...)$ & local & realization of the interaction during a given time period & temporal models & \cite{Weinstein2017Comparing}, Boxes~\ref{box2.1} and \ref{box2.3} \\
   \\
   $P(L_{i, j, k} \vert f(L_k),...)$ & local & realization of the interaction given network structure & topological models & \cite{Fortuna2006Habitat} (connectance), \cite{Stock2017Linear} \\
   \\
-  $P(L_{i, j, k} \vert M_{i, j},...)$ & local & realization of the interaction given that it is biologically feasible & spatiotemporal models & \cite{Dansereau2024Spatially}, Boxes 2, 3, and 5 \\
+  $P(L_{i, j, k} \vert M_{i, j},...)$ & local & realization of the interaction given that it is biologically feasible & spatiotemporal models & \cite{Dansereau2024Spatially}, Boxes~\ref{box2.2}, \ref{box2.3}, and \ref{box2.5} \\
   \\
   $P(O_{i, j, k} \vert L_{i, j, k},...)$ & local & observation of the interaction given that it is realized locally & sampling models & \cite{Catchen2023Missinga} \\
   \\
-  $P(M_{i, j} \vert T_i, T_j)$ & regional & biological feasibility of the interaction given regional traits (non-forbiddenness) & trait matching models & \cite{Strydom2022Food}, Box 4 \\
+  $P(M_{i, j} \vert T_i, T_j)$ & regional & biological feasibility of the interaction given regional traits (non-forbiddenness) & trait matching models & \cite{Strydom2022Food}, Box~\ref{box2.4} \\
   \\
   $P(M^*_{i, j} \vert T_i, T_j, E)$ & regional & ecological feasibility of the interaction given regional traits and environmental conditions & \makecell{trait matching and \\ environmental-based models} & this study \\
   \hline
@@ -863,7 +870,9 @@ prediction, it is crucial to quantify and disclose all sources of uncertainty to
 understand better the validity and limitations of our predictions
 (\cite{Simmonds2024Recommendations}).
 
-\newtcolorbox{box1.1}{colback=green!10,enhanced,title=Box 1: A spatiotemporally explicit model of interactions ,
+\addcontentsline{toc}{section}{Box 2.1: A spatiotemporally explicit model of interactions}
+
+\newtcolorbox{box2.1}{colback=green!10,enhanced,title=Box \customlabel{box2.1}{2.1}: A spatiotemporally explicit model of interactions ,
 	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
@@ -875,7 +884,7 @@ understand better the validity and limitations of our predictions
 	}
 }
 
-\begin{box1.1}
+\begin{box2.1}
 
 Ecologists may resort to predictive models to reconstruct local networks
 across time and space. We introduce and develop a simple generative Bayesian
@@ -928,7 +937,7 @@ following the inference of the $\lambda_k$ and $P(X_{i,j,k})$ parameters.
   \lambda_k \sim \text{Exponential}(2)
 \end{eqnarray}
 
-In Fig~\ref{fig:spatiotemporal}, we show the variation in the probability of
+In Figure~\ref{fig:spatiotemporal}, we show the variation in the probability of
 interaction under different parameter values. In the right panel, we notice
 that the probability of interaction always converges toward the probability of
 co-occurrence $P(X_{i,j,k})$, for all positive values of the interaction rate. 
@@ -939,7 +948,7 @@ the probability of co-occurrence could be modeled as a function of climatic
 variables, while the interaction rate parameter could be modeled based on taxa
 abundances.
 
-\end{box1.1}
+\end{box2.1}
 
 \begin{figure}[!h]
   \centering
@@ -960,7 +969,9 @@ abundances.
 
 \clearpage
 
-\newtcolorbox{box1.2}{colback=green!10,enhanced,title=Box 2: Dissimilarity of local host-parasite networks,
+\addcontentsline{toc}{section}{Box 2.2: Dissimilarity of local host-parasite networks}
+
+\newtcolorbox{box2.2}{colback=green!10,enhanced,title=Box \customlabel{box2.2}{2.2}: Dissimilarity of local host-parasite networks,
 	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
@@ -972,23 +983,23 @@ abundances.
 	}
 }
 
-\begin{box1.2}
+\begin{box2.2}
 
-We present a way to assess local network variability and dissimilarity
-regarding species composition and interactions. We do so by comparing local
-tripartite host-parasite networks to the metaweb using data from
-\cite{Kopelke2017Foodweb}. This collection of networks consists of interactions
-between willows, willow-galling sawflies, and their natural enemies sampled
-across Europe. All data manipulation and methods are described in Appendix 1.
-All code and data to reproduce these analyses are available on Zenodo
+We present a way to assess local network variability and dissimilarity regarding
+species composition and interactions. We do so by comparing local tripartite
+host-parasite networks to the metaweb using data from \cite{Kopelke2017Foodweb}.
+This collection of networks consists of interactions between willows,
+willow-galling sawflies, and their natural enemies sampled across Europe. All
+data manipulation and methods are described in Appendix~\ref{supp:A}. All code
+and data to reproduce these analyses are available on Zenodo
 (https://doi.org/10.5281/zenodo.12802326).
 
-In Fig~\ref{fig:accumulation}a-b, we show how the dissimilarity between the
+In Figure~\ref{fig:accumulation}a-b, we show how the dissimilarity between the
 metaweb of binary interactions and aggregated local networks changes with the
 number of sampled local networks. We compared the metaweb and the aggregated
 local networks using the dissimilarity in species composition ($\beta_{S}$,
-Fig~\ref{fig:accumulation}a) and the dissimilarity of interactions between
-common species ($\beta_{OS}$, Fig~\ref{fig:accumulation}b) indices
+Figure~\ref{fig:accumulation}a) and the dissimilarity of interactions between
+common species ($\beta_{OS}$, Figure~\ref{fig:accumulation}b) indices
 (\cite{Poisot2012Dissimilarity}). Expectedly, local networks are highly
 dissimilar from the metaweb in terms of species composition, especially when
 only a limited number of sites have been sampled. This is because few species
@@ -1002,7 +1013,7 @@ sampling effort were also observed by \cite{McLeod2021Sampling}.
 
 Next, we investigate how the number of local interactions and connectance
 scale with the number of sampled (aggregated) local networks of probabilistic
-or binary interactions (Fig~\ref{fig:accumulation}c-d). By comparing the scaling
+or binary interactions (Figure~\ref{fig:accumulation}c-d). By comparing the scaling
 relationships observed in local networks of binary and probabilistic
 interactions, we observe that high values of $P(L_{i, j, k}|M_{i, j})$ lead to
 systematic overestimations in the number of interactions and connectance,
@@ -1017,7 +1028,7 @@ underestimation of the number of interactions and connectance. These results
 underscore the importance of using the appropriate level of variability when
 estimating local interaction probabilities.
 
-\end{box1.2}
+\end{box2.2}
 
 \begin{figure}[!h]
   \centering
@@ -1051,7 +1062,7 @@ estimating local interaction probabilities.
 Metawebs (\cite{Dunne2006Network}) are networks of potential interactions over
 broad spatial, temporal, and taxonomic scales (e.g., food webs at the
 continental scale). They correspond to the temporal and spatial asymptotes of
-local interactions (Box 1). Potential interactions describe the biological
+local interactions (Box~\ref{box2.1}). Potential interactions describe the biological
 capacity of taxa to interact under optimal or feasible environmental conditions
 given enough time, which is typically assessed at the regional scale. Metawebs
 of probabilistic interactions are particularly useful in situations where there
@@ -1085,19 +1096,19 @@ probabilities, both in terms of uncertainty sources and probability values.
 
 The extent of sampling effort influences our evaluation of probabilities of
 regional interactions, as sampling over a larger area or for a longer duration
-enables us to capture a greater number of interactions (Box 1,
+enables us to capture a greater number of interactions (Box~\ref{box2.1},
 \cite{McLeod2021Sampling}). However, in contrast with local networks of
 probabilistic interactions, regional interactions are not evaluated for any
 particular local context (they are rather a collection of local contexts), which
 impacts how they scale with space and time (notably through the extent of the
-region covered and sampling duration). In Box 3, we discuss the differences in
-spatial and temporal scaling of regional interactions compared to local
-interactions. We do so using the host-parasite networks of
-\cite{Kopelke2017Foodweb} as an illustration of spatial scaling (Box 3).
-Understanding the effect of spatial and temporal scales (including sampling
-effort) on local and regional interaction probabilities is important for
-effectively propagating uncertainty across scales and highlighting the
-fundamental differences between these two types of networks. 
+region covered and sampling duration). In Box~\ref{box2.3}, we discuss the
+differences in spatial and temporal scaling of regional interactions compared to
+local interactions. We do so using the host-parasite networks of
+\cite{Kopelke2017Foodweb} as an illustration of spatial scaling
+(Box~\ref{box2.3}). Understanding the effect of spatial and temporal scales
+(including sampling effort) on local and regional interaction probabilities is
+important for effectively propagating uncertainty across scales and highlighting
+the fundamental differences between these two types of networks. 
 
 \subsection{What are regional probabilistic interactions conditioned on?}
 
@@ -1126,7 +1137,7 @@ can thus use phylogeny to predict species traits and infer regional interactions
 (\cite{Strydom2022Food}, \cite{Eklof2016Phylogenetic},
 \cite{Stouffer2012Evolutionary}). The taxonomic level at which interactions are
 evaluated also influences the distribution of regional traits. However, as
-explained in Box 4, there is no fundamental difference in the taxonomic scaling
+explained in Box~\ref{box2.4}, there is no fundamental difference in the taxonomic scaling
 of regional and local interactions (i.e., how interaction probabilities change
 with taxonomic level) because they both depend on trait aggregation. 
 
@@ -1257,7 +1268,9 @@ potential interaction probabilities, we may build more reliable metawebs that
 adequately reflect our uncertainty on the biological feasibility of
 interactions.
 
-\newtcolorbox{box1.3}{colback=green!10,enhanced,title=Box 3: Spatial and temporal scaling of interactions,
+\addcontentsline{toc}{section}{Box 2.3: Spatial and temporal scaling of interactions}
+
+\newtcolorbox{box2.3}{colback=green!10,enhanced,title=Box \customlabel{box2.3}{2.3}: Spatial and temporal scaling of interactions,
 	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
@@ -1269,7 +1282,7 @@ interactions.
 	}
 }
 
-\begin{box1.3}
+\begin{box2.3}
 
 Local networks and metawebs have distinct relationships with space (area or
 volume) and time (sampling effort or duration). Local probabilities of
@@ -1292,7 +1305,7 @@ co-occurrence and local environmental conditions. However, probabilities of
 regional interactions may change, tending to become more definitive, with
 increased sampling effort. 
 
-In Fig~\ref{fig:spatial}, we show how the expected \textit{number} of local
+In Figure~\ref{fig:spatial}, we show how the expected \textit{number} of local
 host-parasite interactions scales with the spatial boundary of the network
 (represented by an expanding latitudinal window) in comparison with regional
 interactions. We do so using the host-parasite networks of
@@ -1305,9 +1318,10 @@ could not increase further when aggregating them. Despite this, we notice that
 the total number of regional interactions scales more rapidly than local
 interactions. This is because numerous regional interactions involve species
 that never co-occur, and as a result, these interactions are not captured in
-local networks. All data manipulation and methods are described in Appendix 1.
+local networks. All data manipulation and methods are described in
+Appendix~\ref{supp:A}.
 
-\end{box1.3}
+\end{box2.3}
 
 \begin{figure}[!h]
   \centering
@@ -1333,7 +1347,9 @@ local networks. All data manipulation and methods are described in Appendix 1.
 
 \clearpage
 
-\newtcolorbox{box1.4}{colback=green!10,enhanced,title=Box 4: Taxonomic scaling of interactions,
+\addcontentsline{toc}{section}{Box 2.4: Taxonomic scaling of interactions}
+
+\newtcolorbox{box2.4}{colback=green!10,enhanced,title=Box \customlabel{box2.4}{2.4}: Taxonomic scaling of interactions,
 	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
@@ -1345,7 +1361,7 @@ local networks. All data manipulation and methods are described in Appendix 1.
 	}
 }
 
-\begin{box1.4}
+\begin{box2.4}
 
 Given that our interpretation of the properties of ecological networks depends
 on their taxonomic level (\cite{Melian2011Ecoevolutionary}), investigating the
@@ -1396,9 +1412,11 @@ temporal scaling of interactions, as they all represent different ways to
 aggregate individuals into broader groups (either spatially, temporally, or
 taxonomically).
 
-\end{box1.4}
+\end{box2.4}
 
-\newtcolorbox{box1.5}{colback=green!10,enhanced,title=Box 5: Sampling for binary interaction networks,
+\addcontentsline{toc}{section}{Box 2.5: Sampling for binary interaction networks}
+
+\newtcolorbox{box2.5}{colback=green!10,enhanced,title=Box \customlabel{box2.5}{2.5}: Sampling for binary interaction networks,
 	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
@@ -1410,7 +1428,7 @@ taxonomically).
 	}
 }
 
-\begin{box1.5}
+\begin{box2.5}
 
 Local networks of binary interactions may be predicted by performing independent
 Bernoulli trials for each probabilistic interaction. This is particularly useful
@@ -1450,7 +1468,7 @@ interactions from local interaction probabilities, it is crucial to sample at
 the same spatial scale for which probabilities were estimated to prevent
 systematic biases in predictions.
 
-In Fig~\ref{fig:sampling}, we compare the average connectance of binary
+In Figure~\ref{fig:sampling}, we compare the average connectance of binary
 interaction networks resulting from these two sampling techniques. We sampled
 regional and local interactions from our host-parasite networks of probabilistic
 interactions (\cite{Kopelke2017Foodweb}), generating a number of binary
@@ -1460,11 +1478,12 @@ values of $P(L_{i, j, k}|M_{i, j})$ of $0.50$, which represent instances where
 regional interactions do not consistently manifest locally (i.e., with the
 largest local variability). As anticipated, we observe that sampling binary
 interactions from the metaweb tends to overestimate connectance on average
-compared to sampling them from local networks (Fig~\ref{fig:sampling}). We also
+compared to sampling them from local networks (Figure~\ref{fig:sampling}). We also
 observe an increase in the variability of connectance when employing a single
-simulation (Fig~\ref{fig:sampling}a-c, cross markers), which is a more tangible
+simulation (Figure~\ref{fig:sampling}a-c, cross markers), which is a more tangible
 representation of the process leading to the realization of local interactions
-in nature. All data manipulation and methods are described in Appendix 1.
+in nature. All data manipulation and methods are described in
+Appendix~\ref{supp:A}.
 
 Both sampling techniques assume independence between interactions, which might
 not hold true in reality. Covariation among interactions could exist even if we
@@ -1475,7 +1494,7 @@ structure have yet to be empirically examined. Sampling whole networks (or
 graphs) instead of pairwise interactions may eliminate the need for this
 assumption of independence (\cite{Battiston2020Networks}).
 
-\end{box1.5}
+\end{box2.5}
 
 \begin{figure}[!h]
   \centering
@@ -1513,12 +1532,12 @@ mathematical representation of probabilities and their statistical properties
 depend on the type of interactions (local or regional) and the conditions under
 which these interactions were evaluated. We show that local networks and
 metawebs of probabilistic interactions differ in their relationship to spatial
-and temporal scales (Box 3), with regional interactions remaining consistent
+and temporal scales (Box~\ref{box2.3}), with regional interactions remaining consistent
 across scales. In contrast with metawebs, local interactions are measured in a
 specific context (e.g., in a given area, time, and biological and environmental
 conditions) and depend on taxa co-occurrence. These differences bring to light
 the need to use probabilistic data with caution, for instance when generating
-network realizations of binary interactions across space (Box 5). Clear
+network realizations of binary interactions across space (Box~\ref{box2.5}). Clear
 documentation describing the type of interaction and the variables used in their
 estimation are required to ensure adequate data manipulation. Sound data
 practices and foundations for probabilistic thinking in network ecology
@@ -1551,7 +1570,7 @@ networks as defined in this manuscript (i.e., describing local realizations of
 interactions), local interaction probabilities must be smaller than regional
 interaction probabilities. Inferring local networks from a metaweb by
 maintaining identical interaction probability values introduces systematic
-biases into the predictions, as discussed in Box 2 (unless networks are seen as
+biases into the predictions, as discussed in Box~\ref{box2.2} (unless networks are seen as
 downscaled metawebs).
 
 As suggested by \cite{McLeod2021Sampling}, metawebs establish an upper limit for
@@ -1584,9 +1603,9 @@ taxa interact locally if they can potentially interact allows for improved
 predictions of local networks from the metaweb of probabilistic interactions.
 This task is challenging due to the variability of this probability across space
 and time, as well as its variability across pairwise interactions within a
-network. Using simple models of $P(L_{i, j, k}|M_{i, j})$, as shown in Appendix
-1, represents an initial step toward the overarching objective of reconstructing
-local networks from metawebs.
+network. Using simple models of $P(L_{i, j, k}|M_{i, j})$, as shown in
+Appendix~\ref{supp:A}, represents an initial step toward the overarching
+objective of reconstructing local networks from metawebs.
 
 \subsection{Quantifying and reducing interaction uncertainty} 
 
@@ -1640,7 +1659,7 @@ lead to more accurate predictions of local networks of binary interactions by
 bypassing the independence assumption. Probabilistic networks could serve as an
 alternative to null hypothesis significance testing when comparing the structure
 of a local network to some random expectations or, as done in
-\cite{Pellissier2018Comparing} and Box 2, to the metaweb. These random
+\cite{Pellissier2018Comparing} and Box~\ref{box2.2}, to the metaweb. These random
 expectations are typically derived by performing a series of Bernoulli trials on
 probabilistic interactions, assuming independence, to generate a distribution of
 networks of binary interactions to calculate their structure

@@ -116,6 +116,7 @@
 
 %% Packages utiles.
 \usepackage{graphicx,amssymb,subfigure,icomma,makecell}
+
 %% icomma       permet d'écrire les nombres décimaux en
 %%                  français (p.ex. 1,23 plutôt que 1.23)
 %% subfigure    simplifie l'inclusion de figures côtes-à-côtes
@@ -143,6 +144,13 @@
 \usepackage{bookmark} % Remédie à des petits problème
                       % de <hyperref> (important qu'il
                       % apparaisse APRÈS <hyperref>)
+
+\makeatletter
+\newcommand{\customlabel}[2]{%
+   \protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }%
+   \hypertarget{#1}{#2}
+}
+\makeatother
 
   % Enlever les commentaires du prochaine \hypersetup et
   % le remplir avec l'information pertinente.
@@ -356,7 +364,7 @@ réseaux écologiques complexes. Dans cette thèse, je soutiens qu'une telle vis
 probabiliste des systèmes écologiques complexes constitue le fondement d'une
 théorie de l'entropie maximale des réseaux trophiques. 
 
-Le Chapitre 1 examine en détail les sources d'incertitude des interactions entre
+L'article~\ref{art:article1} examine en détail les sources d'incertitude des interactions entre
 espèces. J'y distingue deux types de représentation probabiliste des
 interactions entre espèces: les interactions locales décrivant la probabilité
 qu'elles soient réalisées à un endroit et moment particuliers, et les
@@ -368,7 +376,7 @@ l'espace, mais pas la probabilité d'interaction régionale. Bien comprendre les
 sources d'incertitude des interactions entre espèces permet d'identifier les
 réseaux susceptibles de respecter le principe d'entropie maximale.
 
-Le Chapitre 2 présente pourquoi les réseaux locaux ont une entropie (ou
+L'article~\ref{art:article2} présente pourquoi les réseaux locaux ont une entropie (ou
 complexité) maximale dans la limite d'un nombre restreint de contraintes
 écologiques. J'ai développé deux approches (analytique et heuristique) pour
 prédire la structure des réseaux trophiques locaux avec le principe d'entropie
@@ -410,27 +418,27 @@ probabilistically within complex ecological networks. In this thesis, I argue
 that such a probabilistic view of complex ecological systems is the foundation
 of a maximum entropy theory of food webs.
 
-Chapter 1 examines the sources of uncertainty in species interactions. I
-distinguish two types of probabilistic representation of species interactions:
-local interactions describing the probability that they occur at specific
-locations and times, and regional interactions describing the probability that
-they are biologically feasible. Using a dataset of host-parasite interactions in
-Europe, I show that these two representations differ in their statistical
-properties, with local interaction probabilities varying over time and space,
-but not regional interaction probabilities. Understanding the sources of
-uncertainty in species interactions helps identify networks likely to follow the
-principle of maximum entropy.
+Article~\ref{art:article1} examines the sources of uncertainty in species
+interactions. I distinguish two types of probabilistic representation of species
+interactions: local interactions describing the probability that they occur at
+specific locations and times, and regional interactions describing the
+probability that they are biologically feasible. Using a dataset of
+host-parasite interactions in Europe, I show that these two representations
+differ in their statistical properties, with local interaction probabilities
+varying over time and space, but not regional interaction probabilities.
+Understanding the sources of uncertainty in species interactions helps identify
+networks likely to follow the principle of maximum entropy.
 
-Chapter 2 presents why local networks are of maximum entropy (or internal
-complexity) within a limited number of ecological constraints. I developed two
-approaches (analytical and heuristic) to predict local food-web structure using
-the principle of maximum entropy. The analytical approach allowed me to obtain
-the distribution of the number of prey and predators for each species in a
-network from the total number of species and interactions. The heuristic
-approach, on the other hand, revealed that this same distribution is one of the
-main ecological constraints determining food-web structure. My models better
-predict the structure of aquatic and terrestrial food webs sampled globally than
-null models based on the same constraints.
+Article~\ref{art:article2} presents why local networks are of maximum entropy
+(or internal complexity) within a limited number of ecological constraints. I
+developed two approaches (analytical and heuristic) to predict local food-web
+structure using the principle of maximum entropy. The analytical approach
+allowed me to obtain the distribution of the number of prey and predators for
+each species in a network from the total number of species and interactions. The
+heuristic approach, on the other hand, revealed that this same distribution is
+one of the main ecological constraints determining food-web structure. My models
+better predict the structure of aquatic and terrestrial food webs sampled
+globally than null models based on the same constraints.
 
 This thesis lays the foundations for the maximum entropy theory of food webs.
 This theory can facilitate the study of food webs by reducing the amount of
@@ -697,14 +705,15 @@ que nous n'avions pas la même interprétation des interactions probabilistes.
 Puisque nos modèles prédictifs estiment la probabilité qu'une interaction soit
 réalisée, il est crucial d'avoir une interprétation claire de leurs résultats
 pour pouvoir adéquatement les utiliser. La réalisation qu'il manquait une
-définition précise des interactions probabilistes fut la bougie d'allumage du
-Chapitre 1. De la même manière, c'est en travaillant sur ces modèles prédictifs
-que j'ai pris connaissance que la structure des réseaux d'interactions entre
-espèces était contrainte par un nombre limité de variables écologiques. Cette
-constatation m'a incité à développer les bases de la théorie de l'entropie
-maximale des réseaux trophiques, exposée au Chapitre 2. Cette méthode simplifie
-grandement la prédiction des réseaux d'interactions entre espèces en diminuant
-le nombre d'information requise. 
+définition précise des interactions probabilistes fut la bougie d'allumage de
+l'article~\ref{art:article1}. De la même manière, c'est en travaillant sur ces
+modèles prédictifs que j'ai pris connaissance que la structure des réseaux
+d'interactions entre espèces était contrainte par un nombre limité de variables
+écologiques. Cette constatation m'a incité à développer les bases de la théorie
+de l'entropie maximale des réseaux trophiques, exposée dans
+l'article~\ref{art:article2}. Cette méthode simplifie grandement la prédiction
+des réseaux d'interactions entre espèces en diminuant le nombre d'information
+requise. 
 
 Mon travail est ancré dans les principes de la reproductibilité et de la science
 ouverte. Je me suis engagé à partager mes données, scripts et résultats pour que
@@ -726,7 +735,6 @@ préservation des habitats naturels et la prévention de futures pandémies. Je
 crois fermement que la compréhension des interactions entre espèces joue un rôle
 crucial dans cet objectif. 
 
-
 %
 % Fin des pages liminaires.  À partir d'ici, les
 % premières pages des chapitres ne doivent pas
@@ -745,21 +753,21 @@ crucial dans cet objectif.
 %%%%%%%%%%%%%%%%  I N T R O D U C T I O N  %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%                           %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \include{01_introduction}
+\include{01_introduction}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%  A R T I C L E 1  %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \include{02_article1}
+\include{02_article1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%  A R T I C L E 2  %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \include{03_article2}
+\include{03_article2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%                     %%%%%%%%%%%%%%%%%%%%
@@ -788,8 +796,8 @@ crucial dans cet objectif.
 %%%%%%%%%%%%%%%%%%%%   A N N E X E S   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \include{S_article1}
-% \include{S_article2}
+\include{S_article1}
+\include{S_article2}
 
 \end{document}
 
