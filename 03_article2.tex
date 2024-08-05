@@ -193,7 +193,7 @@ functioning of ecosystems and their responses to environmental change (e.g.
 properties of a network are its order (the number of nodes or species $S$) and
 its size (the number of edges or species interactions $L$), whose ratio $L/S^2$
 (the proportion of possible interactions that are realized) is called
-connectance. In food webs, \cite{Dunne2002Network} showed that a high
+connectance. In food webs, \textcite{Dunne2002Network} showed that a high
 connectance can promote the robustness of the community to species lost.
 Moreover, a different investigation of network structure revealed that
 plant–pollinator and seed-disperser networks have a highly nested structure that
@@ -221,7 +221,7 @@ ecological networks are constrained systems. In other words, the space of
 possible network configurations is shaped by our partial knowledge of their
 structure. For example, there is a finite set of networks with a given number of
 species and interactions (i.e. a given connectance). As shown by
-\cite{Poisot2014When}, connectance can constrain many aspects of network
+\textcite{Poisot2014When}, connectance can constrain many aspects of network
 structure such as the degree distribution (i.e. the probability distribution of
 the number of interactions realized by a species). Because of the scaling
 relationship between the total number of species and interactions, network
@@ -245,7 +245,7 @@ representation of interactions in matrix format) that satisfy the known
 properties can be found. Selecting the right adjacency matrix among all of these
 suitable configurations or evaluating their relative probabilities may be done
 using different modeling tools (e.g. using the principle of maximum entropy or
-Bayesian inference). Second, as suggested by \cite{Strydom2021Roadmapa}, network
+Bayesian inference). Second, as suggested by \textcite{Strydom2021Roadmapa}, network
 structure can also be used to facilitate the estimation of pairwise species
 interactions. For example, by knowing a network's adjacency matrix (or the
 constrained space of feasible networks), we can decrease the volume of
@@ -265,7 +265,7 @@ estimates of the unknown variable. These models have the potential to fill many
 data gaps about species interactions and network structure by making sound
 predictions and generating new data. A variety of such models have recently been
 developed using machine learning and other statistical tools, most of which are
-presented in \cite{Strydom2021Roadmapa}. On the other hand, statistical models can
+presented in \textcite{Strydom2021Roadmapa}. On the other hand, statistical models can
 also be built to describe or understand a parameter or mechanism of interest.
 For example, null models are statistical models that generate baseline
 distributions to evaluate the significance of an observed measure. These
@@ -314,7 +314,7 @@ uncertainty of a random process) among all probability distributions that
 satisfy these constraints. Many measures of entropy have been developed in
 physics (\cite{Beck2009Generalised}), but only a fraction of them could be used as
 an optimization measure with the principle of maximum entropy. According to
-\cite{Beck2009Generalised} and \cite{Khinchin2013Mathematical}, a measure of entropy $H$
+\textcite{Beck2009Generalised} and \textcite{Khinchin2013Mathematical}, a measure of entropy $H$
 should satisfy four properties: (1) it should be a function of a probability
 distribution $p(n)$ only; (2) it should be maximized when $p(n)$ is uniform; (3)
 it should not be influenced by outcomes with a null probability; and (4) it
@@ -626,7 +626,7 @@ obtained from the joint degree distribution as follows:
 \end{eqnarray}
 
 The degree distribution can also be obtained directly using the principle of
-maximum entropy, as discussed in \cite{Williams2011Biology}. This gives the
+maximum entropy, as discussed in \textcite{Williams2011Biology}. This gives the
 following distribution: 
 
 \begin{eqnarray}
@@ -711,7 +711,7 @@ Note that the distribution of relative singular values is analogous to a
 probability distribution, with $0 < s_i < 1$ and $\sum s_i = 1$. This measure
 also satisfies all four properties of an appropriate entropy measure
 above-mentioned, while being a proper measure of the internal complexity of food
-webs (\cite{Strydom2021Svd}). Following \cite{Strydom2021Svd}, we
+webs (\cite{Strydom2021Svd}). Following \textcite{Strydom2021Svd}, we
 standardized it with the rank of the matrix (i.e. $J / \ln(R)$) to account for
 the difference in dimensions between networks (\textit{sensu} Pielou's evenness,
 \cite{Pielou1975Ecological}).
@@ -767,7 +767,7 @@ subgraphs that can be considered simple building blocks of ecological networks
 (\cite{Milo2002Network}, \cite{Stouffer2007Evidence}). There are $13$ possible
 three-species motifs in food webs, including $5$ with only single links ($i
 \rightarrow j$) and $8$ with double links ($i \leftrightarrow j$), labeled S1-S5
-and D1-D8 by \cite{Stouffer2007Evidence}, respectively. A motif profile represents
+and D1-D8 by \textcite{Stouffer2007Evidence}, respectively. A motif profile represents
 the proportion of each of these motifs in a network (i.e. their relative
 frequencies). All of these properties are relatively easy to measure and were
 chosen based on their ecological importance and prevalent use in network ecology
@@ -808,7 +808,7 @@ empirically, ecologists might need to use another predictive model to estimate
 the total number of interactions in a food web before using MaxEnt. Here we show
 how this can be done by combining both models sequentially.  
 
-We used the flexible links model of \cite{MacDonald2020Revisiting} to predict the
+We used the flexible links model of \textcite{MacDonald2020Revisiting} to predict the
 number of interactions from the number of species in food webs. The flexible
 links model has been shown to make reliable predictions of $L$ while taking into
 account meaningful ecological constraints on its lower and upper bounds.
@@ -846,7 +846,7 @@ Carlo sampler with static trajectory ($4$ chains and $3000$ iterations):
 where $m$ is the number of food webs ($m = 257$) and $\textbf{L}$ and
 $\textbf{S}$ are the vectors of their numbers of interactions and numbers of
 species, respectively. Our weakly-informative prior distributions were chosen
-following \cite{MacDonald2020Revisiting}, i.e. a beta distribution for $\mu$ and a
+following \textcite{MacDonald2020Revisiting}, i.e. a beta distribution for $\mu$ and a
 normal distribution for $\phi$. The Monte Carlo sampling of the posterior
 distribution was conducted using the Julia library Turing v0.15.12.
 
@@ -885,7 +885,7 @@ of mean degree generates a different maximum entropy degree distribution
 The predictions of our heuristic maximum entropy models were compared against
 two topological null models. These null models use the same ecological
 information as our heuristic models and thus constitute an adequate baseline for
-comparison. The first is the type I null model of \cite{Fortuna2006Habitat}, in
+comparison. The first is the type I null model of \textcite{Fortuna2006Habitat}, in
 which the probability that a species $i$ predates on another species $j$ is
 given by
   
@@ -894,7 +894,7 @@ given by
     p(i \rightarrow j) = \frac{L}{S^2}.
 \end{eqnarray}
   
-The second is the type II null model of \cite{Bascompte2003Nested}, in which
+The second is the type II null model of \textcite{Bascompte2003Nested}, in which
 the probability of interaction is instead given by 
   
 \begin{eqnarray}
@@ -1070,7 +1070,7 @@ shape of the joint degree sequence for networks having a high connectance.
 
 Regarding the degree distribution of maximum entropy, one aspect that informs us
 of its ecological realism is the number of isolated species it predicts. As
-\cite{MacDonald2020Revisiting} pointed out, the size of food webs should at
+\textcite{MacDonald2020Revisiting} pointed out, the size of food webs should at
 least be of $S-1$ interactions since a lower number would yield isolated
 species, i.e. species without any predator or prey. Because non-basal species
 must eat to survive, isolated species could indicate that other species are
@@ -1352,12 +1352,12 @@ surprisingly well, including the highly informative motif profile. Nevertheless,
 it was not able to predict realistic food-chain lengths. 
 
 Our results bring to the forefront the role of the joint degree distribution in
-shaping food-web structure. This echoes the work of \cite{Fortuna2010Nestedness},
+shaping food-web structure. This echoes the work of \textcite{Fortuna2010Nestedness},
 who found that the degree distribution of ecological networks drives their
 emerging structure such as their nestedness and modularity. Several measures of
 food webs have been analyzed when studying the ecological consequences of
 network structure (\cite{McCann2011Food}, \cite{Delmas2019Analysing}). In fact,
-following \cite{Williams2011Biology}, we believe that there is a lot more
+following \textcite{Williams2011Biology}, we believe that there is a lot more
 ecological information in the deviation between these properties in empirical
 systems and their maximum entropy configuration given a fixed joint degree
 sequence.  
@@ -1379,22 +1379,23 @@ presented in this article. More research is needed to compare the quality of
 different methods in generating adjacency matrices of food webs using MaxEnt.  
 
 Maximum entropy graph models are another type of method that predicts a
-distribution of adjacency matrices under soft or hard constraints (e.g. \cite{Park2004Statistical}, 
-\cite{Cimini2019Statistical}). Under hard constraints, every
-network with a non-zero probability exactly satisfies the constraints on its
-structure. This is in contrast with soft constraints, which require that
-networks satisfy them on average (i.e. many networks with a non-zero probability
-do not have the exact structure set by the constraints). Maximum entropy graph
-models are helpful because they can provide probability distributions for many
-network properties by measuring the structure of all adjacency matrices with a
-non-zero probability. However, we consider that our approach based on simulated
-annealing is more flexible and more computationally efficient. Indeed, many
-measures of food-web structure are hard to translate into mathematical
-constraints. Moreover, because food webs are directed networks that can have
-self-loops, it makes the mathematical derivation of maximum entropy graph models
-difficult. We believe that identifying heuristically what constrains the
-topology of food webs is a useful first step before attempting to derive the
-mathematical formulation of a maximum entropy graph model for food webs. 
+distribution of adjacency matrices under soft or hard constraints (e.g.
+\cite{Park2004Statistical}, \cite{Cimini2019Statistical}). Under hard
+constraints, every network with a non-zero probability exactly satisfies the
+constraints on its structure. This is in contrast with soft constraints, which
+require that networks satisfy them on average (i.e. many networks with a
+non-zero probability do not have the exact structure set by the constraints).
+Maximum entropy graph models are helpful because they can provide probability
+distributions for many network properties by measuring the structure of all
+adjacency matrices with a non-zero probability. However, we consider that our
+approach based on simulated annealing is more flexible and more computationally
+efficient. Indeed, many measures of food-web structure are hard to translate
+into mathematical constraints. Moreover, because food webs are directed networks
+that can have self-loops, it makes the mathematical derivation of maximum
+entropy graph models difficult. We believe that identifying heuristically what
+constrains the topology of food webs is a useful first step before attempting to
+derive the mathematical formulation of a maximum entropy graph model for food
+webs. 
 
 \subsection{Applications}
 
@@ -1425,7 +1426,7 @@ our description and understanding of the system.
 
 Third, our analytical and heuristic models can be used to make better
 predictions of pairwise species interactions by constraining the space of
-feasible networks, as discussed in \cite{Strydom2021Roadmapa}. In other words, we
+feasible networks, as discussed in \textcite{Strydom2021Roadmapa}. In other words, we
 can use the network configuration or specific measures of food-web structure
 derived using MaxEnt to ensure that our predictions of interspecific
 interactions form feasible networks. This means that the probability that two
