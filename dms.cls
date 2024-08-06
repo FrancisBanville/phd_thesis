@@ -105,7 +105,7 @@
 \edef\remarknamefr{Remarque}
 \edef\remarknameen{Remark}
 
-\edef\tablenamefr{Tableau}
+\edef\tablenamefr{Table}
 \edef\tablenameen{Table}
 
 \edef\dmscontentsnamefr{Table des mati\noexpand\`eres} %\'e car on ne sait pas si inputenc sera chargé
@@ -114,10 +114,10 @@
 \edef\revuemsgfr{Cet article a \noexpand\'et\noexpand\'e soumis dans }
 \edef\revuemsgen{This article was submitted in }
 
-\edef\contribmsgfr{Les principales contributions de
-  \noexpand\authors\ \noexpand\`a cet article sont pr\noexpand\'esent\noexpand\'ees.}
-\edef\contribmsgen{The main contributions of
-  \noexpand\authors\ for this articles are presented.}
+% \edef\contribmsgfr{Les principales contributions de
+%   \noexpand\authors\ \noexpand\`a cet article sont pr\noexpand\'esent\noexpand\'ees.}
+% \edef\contribmsgen{The main contributions of
+%  \noexpand\authors\ for this articles are presented.}
 
 \edef\dms@articlenamefr{article}
 \edef\dms@articlenameen{article}
@@ -132,10 +132,10 @@
   \edef\revuemsgfr{Cet article a \'et\'e soumis dans }
   \edef\revuemsgen{This article was submitted in }
 
-  \edef\contribmsgfr{Les principales contributions de
-    \noexpand\authors\ \`a cet article sont pr\'esent\'ees.}
-  \edef\contribmsgen{The main contributions of
-    \noexpand\authors\ for this articles are presented.}
+ % \edef\contribmsgfr{Les principales contributions de
+ %   \noexpand\authors\ \`a cet article sont pr\'esent\'ees.}
+ % \edef\contribmsgen{The main contributions of
+ %   \noexpand\authors\ for this articles are presented.}
 
   \edef\keywordsfr{Mots cl\'es}
   \edef\keywordsen{Keywords}
