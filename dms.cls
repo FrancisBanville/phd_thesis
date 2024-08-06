@@ -546,7 +546,7 @@
 \ifmaitrise@\def\@degree{Ma\^itre \`es sciences (M.Sc.)} \fi
 \ifrapport@\def\@degree{Ma\^itre \`es sciences (M.Sc.)} \fi
 \iftravail@\def\@degree{Ma\^itre \`es sciences (M.Sc.)} \fi
-\ifphd@\def\@degree{Philosophi\ae\ Doctor (Ph.D.)} \fi
+\ifphd@\def\@degree{\textit{Philosophi\ae\ Doctor} (Ph.D.)} \fi 
 
 \def\orientation#1{\def\@orientation{{\normalfont\rm\small#1}}}
 \def\@orientation{}
@@ -809,7 +809,7 @@
             \ifphd@
                 \lignemembre\@repdoyen\titre{repr\'esentant du doyen de la FESP}
                 \vfil
-            \fi
+             \fi
 
  %%            \ifmaitrise@\centerline{M\'emoire accept\'e le~:}\fi
  %%            \ifrapport@\centerline{Rapport de stage accept\'e le~:}\fi

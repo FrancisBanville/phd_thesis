@@ -864,6 +864,28 @@ of mean degree generates a different maximum entropy degree distribution
 
 \end{box3.1}
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{figures/article2/maxent_degree_dist_fl.png}
+  \caption{\textbf{Maximum entropy degree distributions with predicted numbers of interactions.}
+  (a) Probability density of the mean degree of a food web obtained using
+  different values of species richness $S$. The number of interactions $L$ was
+  simulated $1000$ times using the flexible links model fitted to all empirical
+  networks. The mean degrees $2L/S$ were then obtained
+  from these simulated values. (b) Degree distributions of maximum entropy for a
+  network of $S=27$ species and different numbers of interactions. The numbers
+  of interactions correspond to the lower and upper bounds of the $67\%$,
+  $89\%$, and $97\%$ percentile intervals (PI), as well as the median (in blue),
+  of the counterfactuals of the flexible links model. Each degree distribution
+  of maximum entropy was obtained using Eq~\ref{eq:lagrange_dd} after solving
+  numerically Eq~\ref{eq:lagrange2_dd} using different values of the mean
+  degree constraint.}
+  \label{fig:degree_dist_fl}
+\end{figure}
+
+\clearpage
+
+
 \addcontentsline{toc}{section}{Box 3.2: Corresponding null and neutral models}
 
 \newtcolorbox{box3.2}{colback=green!10,enhanced,title=Box \customlabel{box3.2}{3.2}: Corresponding null and neutral models,
@@ -936,27 +958,6 @@ using the same method as the one we used for our null models.
 
 \end{box3.2}
 
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=\textwidth]{figures/article2/maxent_degree_dist_fl.png}
-  \caption{\textbf{Maximum entropy degree distributions with predicted numbers of interactions.}
-  (a) Probability density of the mean degree of a food web obtained using
-  different values of species richness $S$. The number of interactions $L$ was
-  simulated $1000$ times using the flexible links model fitted to all empirical
-  networks. The mean degrees $2L/S$ were then obtained
-  from these simulated values. (b) Degree distributions of maximum entropy for a
-  network of $S=27$ species and different numbers of interactions. The numbers
-  of interactions correspond to the lower and upper bounds of the $67\%$,
-  $89\%$, and $97\%$ percentile intervals (PI), as well as the median (in blue),
-  of the counterfactuals of the flexible links model. Each degree distribution
-  of maximum entropy was obtained using Eq~\ref{eq:lagrange_dd} after solving
-  numerically Eq~\ref{eq:lagrange2_dd} using different values of the mean
-  degree constraint.}
-  \label{fig:degree_dist_fl}
-\end{figure}
-
-\clearpage
-
 \section{Results and Discussion}
 
 \subsection{Analytical maximum entropy models}
@@ -975,6 +976,8 @@ biological factors preventing generalist predators from having many prey.
 Nevertheless, with the exception of these generalist species, MaxEnt adequately
 predicts that most species have low generality and vulnerability values.
 
+\afterpage{\clearpage
+
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{figures/article2/joint_degree_dist.png}
@@ -991,7 +994,7 @@ predicts that most species have low generality and vulnerability values.
 \label{fig:joint_dd}
 \end{figure}
 
-\clearpage
+}
 
 Examining the difference between predicted and empirical values for each species
 gives a slightly different perspective (right panel of Figure~\ref{fig:joint_dd}).
@@ -1053,6 +1056,8 @@ asymmetry of the joint degree distribution, especially for networks with a lower
 connectance. Nevertheless, our MaxEnt model seems to capture quite well the
 shape of the joint degree sequence for networks having a high connectance.
 
+\afterpage{\clearpage
+
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{figures/article2/kl_divergence.png}
@@ -1066,7 +1071,7 @@ shape of the joint degree sequence for networks having a high connectance.
 \label{fig:kl_diverg}
 \end{figure}
 
-\clearpage
+}
 
 Regarding the degree distribution of maximum entropy, one aspect that informs us
 of its ecological realism is the number of isolated species it predicts. As
@@ -1112,8 +1117,9 @@ of prey and predators for each species substantially improves the prediction of
 food-web structure, both compared to models solely based on connectance and to
 the ones solely based on species relative abundances.
 
+\afterpage{\clearpage
 
-\begin{table}[h!]
+\begin{table}[!h]
   \resizebox{\textwidth}{!}{
   \centering
   \begin{tabular}{c c c c c c c c } 
@@ -1142,9 +1148,7 @@ proportion of omnivorous species. \textit{entropy}: SVD entropy.}
   \label{tbl:measures_all}
 \end{table}
 
-\clearpage
-
-\begin{table}[h!]
+\begin{table}[!b]
   \resizebox{\textwidth}{!}{
   \centering
   \begin{tabular}{c c c c c c c c } 
@@ -1173,6 +1177,7 @@ proportion of omnivorous species. \textit{entropy}: SVD entropy.}
 \end{table}
 
 \clearpage
+}
 
 Next, the predictions of the type II heuristic MaxEnt model can be compared to
 its null model counterpart. On average, the type II heuristic MaxEnt model was
@@ -1217,6 +1222,8 @@ configuration may be the result of additional constraints that were not taken
 into account in the model, regardless of the number of species and the number of
 interactions. 
 
+\afterpage{\clearpage
+
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{figures/article2/measures_emp_maxent.png}
@@ -1229,7 +1236,7 @@ interactions.
   \label{fig:measures}
 \end{figure}
 
-\clearpage
+}
 
 A direct comparison of the structure of maximum entropy food webs constrained by
 the joint degree sequence with empirical data also supports the results depicted
@@ -1271,6 +1278,8 @@ However, given the incapacity of our MaxEnt models to accurately predict
 food-chain lengths, the way motifs interconnect with each other may hold greater
 biological significance than the proportion of motifs itself. 
 
+\afterpage{\clearpage
+
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{figures/article2/motifs_distribution.png}
@@ -1293,7 +1302,9 @@ biological significance than the proportion of motifs itself.
 \label{fig:motifs}
 \end{figure}
 
-\clearpage
+}
+
+\afterpage{\clearpage
 
 \begin{figure}[!h]
   \centering
@@ -1309,7 +1320,7 @@ biological significance than the proportion of motifs itself.
   \label{fig:motifs_rel}
 \end{figure}
 
-\clearpage
+}
 
 One of the challenges in implementing and validating a maximum entropy model is
 to discover where its predictions break down. The results depicted in

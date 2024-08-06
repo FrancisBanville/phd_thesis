@@ -54,6 +54,7 @@
   maxcitenames=1]{biblatex}
 \addbibresource{ref.bib}
 
+
 %% <lmodern> incorpore les fontes en T1, pour
 %% faciliter le dépôt final. Ceci n'est pas la
 %% seule option :
@@ -115,7 +116,8 @@
 %%\fussy  %ou \fussy
 
 %% Packages utiles.
-\usepackage{graphicx,amssymb,subfigure,icomma,makecell}
+\usepackage{graphicx,amssymb,subfigure,icomma,makecell, flafter}
+\usepackage{afterpage}
 
 %% icomma       permet d'écrire les nombres décimaux en
 %%                  français (p.ex. 1,23 plutôt que 1.23)
@@ -315,7 +317,7 @@
 
 %% \membresjury{Deuxième membre du jury}  % s'il y a lieu
 
-\repdoyen{} %(thèse seulement)
+\repdoyen{ } % (thèse seulement)
 
 %%
 %% Fin des variables à définir. La commande \maketitle créera votre
@@ -345,6 +347,8 @@
 % et des thèses pour de l'information plus
 % précise et à jour.
 \francais
+
+\setlength{\parskip}{6pt}%
 
 \chapter*{Résumé}
 
@@ -465,6 +469,9 @@ uncertainty, local variability, entropy, mathematical modeling, ecology
 \cleardoublepage
 \pdfbookmark[chapter]{\contentsname}{toc}  % Crée un bouton sur
 % la bar de navigation
+
+\setlength{\parskip}{0pt}%
+
 \tableofcontents
 % LISTE DES TABLES
 \cleardoublepage
@@ -474,6 +481,7 @@ uncertainty, local variability, entropy, mathematical modeling, ecology
 \cleardoublepage
 \phantomsection
 \listoffigures
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% LISTE DES SIGLES ET ABRÉVIATION %
@@ -531,6 +539,8 @@ uncertainty, local variability, entropy, mathematical modeling, ecology
 %%------------------------------------------------- %
 %%              pages vi                            %
 %%------------------------------------------------- %
+
+\setlength{\parskip}{6pt}%
 
 \chapter*{Remerciements}
 
