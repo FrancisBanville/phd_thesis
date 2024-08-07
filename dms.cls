@@ -807,7 +807,7 @@
                 %garante du doyen qui assiste à la soutenance. (Il ne fait
                 %pas parti du jury.)
             \ifphd@
-                \lignemembre\@repdoyen\titre{repr\'esentant du doyen de la FESP}
+                \lignemembre\@repdoyen\titre{repr\'esentant.e du doyen de la FESP}
                 \vfil
              \fi
 

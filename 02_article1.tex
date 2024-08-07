@@ -871,8 +871,8 @@ understand better the validity and limitations of our predictions
 
 \addcontentsline{toc}{section}{Box 2.1: A spatiotemporally explicit model of interactions}
 
-\newtcolorbox{box2.1}{colback=green!10,enhanced,title=Box \customlabel{box2.1}{2.1}: A spatiotemporally explicit model of interactions ,
-	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
+\newtcolorbox{box2.1}{colback=green!4,enhanced,title=Box \customlabel{box2.1}{2.1}: A spatiotemporally explicit model of interactions, 
+	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=3pt,rightrule=0.5pt,leftrule=3pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
 			\draw[line width=1mm,gre]([xshift=2mm]frame.north east)--([xshift=5mm]frame.east)--([xshift=2mm]frame.south east);
@@ -947,31 +947,29 @@ the probability of co-occurrence could be modeled as a function of climatic
 variables, while the interaction rate parameter could be modeled based on taxa
 abundances.
 
+\clearpage
+
+\includegraphics[width=\textwidth]{figures/article1/spatiotemporal_model.png}
+\captionsetup{justification=justified}
+\captionof{figure}{\textbf{Parameters of the spatiotemporally explicit model of interactions.}
+(a) Probability of local interaction given by the process model (Eq~\ref{eq:modeleq})
+under different values of $\lambda_k$ (interaction rate) and $P(X_{i,j,k})$
+(probability of co-occurrence), with $t_0 = 1$ (duration). The probability of
+local interaction represents the probability that the two taxa will interact
+at least once within the given time interval. Parameters $t_0$ and $\lambda_k$
+have complementary units (e.g., $t_0$ in months and $\lambda_k$ in number of
+interactions per month). The parameter values used in the right panel are
+denoted by the white stars. (b) Scaling of the probability of interaction with
+the duration parameter $t_0$, for different values of $\lambda_k$ and
+$P(X_{i,j,k})$.}\label{fig:spatiotemporal}
+
 \end{box2.1}
 
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=\textwidth]{figures/article1/spatiotemporal_model.png}
-  \caption{\textbf{Parameters of the spatiotemporally explicit model of interactions.}
-  (a) Probability of local interaction given by the process model (Eq~\ref{eq:modeleq})
-  under different values of $\lambda_k$ (interaction rate) and $P(X_{i,j,k})$
-  (probability of co-occurrence), with $t_0 = 1$ (duration). The probability of
-  local interaction represents the probability that the two taxa will interact
-  at least once within the given time interval. Parameters $t_0$ and $\lambda_k$
-  have complementary units (e.g., $t_0$ in months and $\lambda_k$ in number of
-  interactions per month). The parameter values used in the right panel are
-  denoted by the white stars. (b) Scaling of the probability of interaction with
-  the duration parameter $t_0$, for different values of $\lambda_k$ and
-  $P(X_{i,j,k})$.}
-  \label{fig:spatiotemporal}
-\end{figure}
-
-\clearpage
 
 \addcontentsline{toc}{section}{Box 2.2: Dissimilarity of local host-parasite networks}
 
-\newtcolorbox{box2.2}{colback=green!10,enhanced,title=Box \customlabel{box2.2}{2.2}: Dissimilarity of local host-parasite networks,
-	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
+\newtcolorbox{box2.2}{colback=green!4,enhanced,title=Box \customlabel{box2.2}{2.2}: Dissimilarity of local host-parasite networks,
+	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=3pt,rightrule=0.5pt,leftrule=3pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
 			\draw[line width=1mm,gre]([xshift=2mm]frame.north east)--([xshift=5mm]frame.east)--([xshift=2mm]frame.south east);
@@ -1027,30 +1025,30 @@ underestimation of the number of interactions and connectance. These results
 underscore the importance of using the appropriate level of variability when
 estimating local interaction probabilities.
 
-\end{box2.2}
+\clearpage
 
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=\textwidth]{figures/article1/network_accumulation.png}
-  \caption{\textbf{Network accumulation curves.}
-  (a) Dissimilarity in species composition and (b) dissimilarity of interactions
-  between common species between aggregated local networks and the metaweb of
-  binary host-parasite interactions. In both panels, the colored line represents
-  the median dissimilarity across simulations and the grey areas cover the
-  $50\%$ and $95\%$ percentile intervals. (c) Scaling of the number of
-  interactions and (d) scaling of connectance with the number of sampled
-  (aggregated) binary and probabilistic local interaction networks. For a better
-  comparison with binary interactions, local networks of probabilistic
-  interactions were derived from a metaweb of probabilistic interactions with a
-  false positive and false negative rate of zero. A specific value of $P(L_{i,
-  j, k}|M_{i, j})$ (the local probability of interaction among potentially
-  interacting species) was used for all non-aggregated local networks within a
-  particular curve. Aggregated local networks were obtained by sequentially and
-  randomly selecting a number of local networks and aggregating both their
-  species and interactions (with the value of $P(L_{i, j, k}|M_{i, j})$
-  increasing in aggregated local networks of probabilistic interactions).}
-  \label{fig:accumulation}
-\end{figure}
+\includegraphics[width=\textwidth]{figures/article1/network_accumulation.png}
+\captionsetup{justification=justified}
+\captionof{figure}{\textbf{Network accumulation curves.} (a) Dissimilarity in
+species composition and (b) dissimilarity of interactions between common species
+between aggregated local networks and the metaweb of binary host-parasite
+interactions. In both panels, the colored line represents the median
+dissimilarity across simulations and the grey areas cover the $50\%$ and $95\%$
+percentile intervals. (c) Scaling of the number of interactions and (d) scaling
+of connectance with the number of sampled (aggregated) binary and probabilistic
+local interaction networks. For a better comparison with binary interactions,
+local networks of probabilistic interactions were derived from a metaweb of
+probabilistic interactions with a false positive and false negative rate of
+zero. A specific value of $P(L_{i, j, k}|M_{i, j})$ (the local probability of
+interaction among potentially interacting species) was used for all
+non-aggregated local networks within a particular curve. Aggregated local
+networks were obtained by sequentially and randomly selecting a number of local
+networks and aggregating both their species and interactions (with the value of
+$P(L_{i, j, k}|M_{i, j})$ increasing in aggregated local networks of
+probabilistic interactions).}
+\label{fig:accumulation}
+
+\end{box2.2}
 
 \clearpage
 
@@ -1269,8 +1267,8 @@ interactions.
 
 \addcontentsline{toc}{section}{Box 2.3: Spatial and temporal scaling of interactions}
 
-\newtcolorbox{box2.3}{colback=green!10,enhanced,title=Box \customlabel{box2.3}{2.3}: Spatial and temporal scaling of interactions,
-	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
+\newtcolorbox{box2.3}{colback=green!4,enhanced,title=Box \customlabel{box2.3}{2.3}: Spatial and temporal scaling of interactions,
+	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=3pt,rightrule=0.5pt,leftrule=3pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
 			\draw[line width=1mm,gre]([xshift=2mm]frame.north east)--([xshift=5mm]frame.east)--([xshift=2mm]frame.south east);
@@ -1320,36 +1318,35 @@ that never co-occur, and as a result, these interactions are not captured in
 local networks. All data manipulation and methods are described in
 Appendix~\ref{supp:A}.
 
-\end{box2.3}
+\clearpage
 
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=\textwidth]{figures/article1/spatial_scaling.png}
-  \caption{\textbf{Spatial scaling of interactions.}
-  Expected number of host-parasite interactions in a network aggregating all (a)
-  local and (b) regional probabilistic interactions within a latitudinal window
-  of a given width. Every dashed curve corresponds to a different window
-  centered at a given latitude (color bar), with the pink solid line
-  representing the median number of interactions across windows. Heatmaps of the
-  expected number of (c) local and (d) regional interactions found in windows of
-  specified width and position (central latitude). Probabilities of regional
-  interactions were obtained with a false positive rate of $5\%$ and a false
-  negative rate of $10\%$. Local probabilistic interactions were derived from
-  regional probabilistic interactions by setting the value of $P(L_{i, j,
-  k}|M_{i,j})$ (the local probability of interaction among potentially
-  interacting species) to $1$. Aggregated local networks were obtained by
-  aggregating both the species and interactions found within a particular
-  latitudinal window, with the values of $P(L_{i, j, k}|M_{i, j})$ remaining at
-  their maximum value of $1$.}
-  \label{fig:spatial}
-\end{figure}
+\includegraphics[width=\textwidth]{figures/article1/spatial_scaling.png}
+\captionsetup{justification=justified}
+\captionof{figure}{\textbf{Spatial scaling of interactions.}
+Expected number of host-parasite interactions in a network aggregating all (a)
+local and (b) regional probabilistic interactions within a latitudinal window of
+a given width. Every dashed curve corresponds to a different window centered at
+a given latitude (color bar), with the pink solid line representing the median
+number of interactions across windows. Heatmaps of the expected number of (c)
+local and (d) regional interactions found in windows of specified width and
+position (central latitude). Probabilities of regional interactions were
+obtained with a false positive rate of $5\%$ and a false negative rate of
+$10\%$. Local probabilistic interactions were derived from regional
+probabilistic interactions by setting the value of $P(L_{i, j, k}|M_{i,j})$ (the
+local probability of interaction among potentially interacting species) to $1$.
+Aggregated local networks were obtained by aggregating both the species and
+interactions found within a particular latitudinal window, with the values of
+$P(L_{i, j, k}|M_{i, j})$ remaining at their maximum value of $1$.}
+\label{fig:spatial}
+
+\end{box2.3}
 
 \clearpage
 
 \addcontentsline{toc}{section}{Box 2.4: Taxonomic scaling of interactions}
 
-\newtcolorbox{box2.4}{colback=green!10,enhanced,title=Box \customlabel{box2.4}{2.4}: Taxonomic scaling of interactions,
-	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
+\newtcolorbox{box2.4}{colback=green!4,enhanced,title=Box \customlabel{box2.4}{2.4}: Taxonomic scaling of interactions,
+	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=3pt,rightrule=0.5pt,leftrule=3pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
 			\draw[line width=1mm,gre]([xshift=2mm]frame.north east)--([xshift=5mm]frame.east)--([xshift=2mm]frame.south east);
@@ -1415,8 +1412,8 @@ taxonomically).
 
 \addcontentsline{toc}{section}{Box 2.5: Sampling for binary interaction networks}
 
-\newtcolorbox{box2.5}{colback=green!10,enhanced,title=Box \customlabel{box2.5}{2.5}: Sampling for binary interaction networks,
-	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=0pt,rightrule=0pt,leftrule=4pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
+\newtcolorbox{box2.5}{colback=green!4,enhanced,title=Box \customlabel{box2.5}{2.5}: Sampling for binary interaction networks,
+	attach boxed title to top left={xshift=-4mm},boxrule=0pt,after skip=1cm,before skip=1cm,right skip=0cm,breakable,fonttitle=\bfseries,toprule=0pt,bottomrule=3pt,rightrule=0.5pt,leftrule=3pt,arc=0mm,skin=enhancedlast jigsaw,sharp corners,colframe=gree,colbacktitle=gre,boxed title style={
 		frame code={ 
 			\fill[gre](frame.south west)--(frame.north west)--(frame.north east)--([xshift=3mm]frame.east)--(frame.south east)--cycle;
 			\draw[line width=1mm,gre]([xshift=2mm]frame.north east)--([xshift=5mm]frame.east)--([xshift=2mm]frame.south east);
@@ -1493,33 +1490,33 @@ structure have yet to be empirically examined. Sampling whole networks (or
 graphs) instead of pairwise interactions may eliminate the need for this
 assumption of independence (\cite{Battiston2020Networks}).
 
-\end{box2.5}
+\clearpage
 
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=\textwidth]{figures/article1/network_sampling.png}
-  \caption{\textbf{Connectance of sampled binary interaction networks.}
-  (a-c) Average connectance of binary interaction networks obtained from the two
-  sampling techniques for $20$ randomly selected host-parasite networks. Cross
-  markers represent the connectance of a single sample for each network, diamond
-  markers the average connectance across $10$ samples, hexagon markers the
-  average connectance across $50$ samples, and the colored circles the average
-  connectance across $100$ samples (marker size proportional to the number of
-  samples). (d-f) Reduction in the mean squared logarithmic error between the
-  average connectance of binary interaction networks (all $233$ host-parasite
-  networks) obtained from these two sampling techniques as the number of samples
-  increases. The local probability of interaction between potentially
-  interacting species was set to three different values: (a,d) $P(L_{i, j,
-  k}|M_{i, j}) = 1.0$, (b,e) $P(L_{i, j, k}|M_{i, j}) = 0.75$, and (c,f)
-  $P(L_{i, j, k}|M_{i, j}) = 0.50$. Probabilities of regional interactions were
-  obtained with a false positive rate of $5\%$ and a false negative rate of
-  $10\%$. Regional samples were obtained by randomly sampling binary
-  interactions from the probabilistic interaction metaweb, and then propagating
-  this result to all local networks that include the species potentially engaged
-  in the interactions. Local samples were obtained by independently sampling
-  binary interactions for each local network of probabilistic interactions.}
-  \label{fig:sampling}
-\end{figure}
+\includegraphics[width=\textwidth]{figures/article1/network_sampling.png}
+\captionsetup{justification=justified}
+\captionof{figure}{\textbf{Connectance of sampled binary interaction networks.}
+(a-c) Average connectance of binary interaction networks obtained from the two
+sampling techniques for $20$ randomly selected host-parasite networks. Cross
+markers represent the connectance of a single sample for each network, diamond
+markers the average connectance across $10$ samples, hexagon markers the
+average connectance across $50$ samples, and the colored circles the average
+connectance across $100$ samples (marker size proportional to the number of
+samples). (d-f) Reduction in the mean squared logarithmic error between the
+average connectance of binary interaction networks (all $233$ host-parasite
+networks) obtained from these two sampling techniques as the number of samples
+increases. The local probability of interaction between potentially
+interacting species was set to three different values: (a,d) $P(L_{i, j,
+k}|M_{i, j}) = 1.0$, (b,e) $P(L_{i, j, k}|M_{i, j}) = 0.75$, and (c,f)
+$P(L_{i, j, k}|M_{i, j}) = 0.50$. Probabilities of regional interactions were
+obtained with a false positive rate of $5\%$ and a false negative rate of
+$10\%$. Regional samples were obtained by randomly sampling binary
+interactions from the probabilistic interaction metaweb, and then propagating
+this result to all local networks that include the species potentially engaged
+in the interactions. Local samples were obtained by independently sampling
+binary interactions for each local network of probabilistic interactions.}
+\label{fig:sampling}
+
+\end{box2.5}
 
 \clearpage
 
