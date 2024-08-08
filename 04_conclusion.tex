@@ -23,37 +23,38 @@ peuvent être développées selon les contraintes utilisées et les distribution
 prédites. Cette thèse développe et teste deux versions restreintes de la théorie
 (Article~\ref{art:article2}). 
 
-L'article~\ref{art:article1} explique pourquoi les interactions entre espèces,
-telles que les interactions prédateurs-proies et plantes-herbivores, sont
-intrinsèquement probabilistes. Notre manque de connaissances sur les
-interactions locales et régionales, en partie attribuable aux limites
-d'observation des interactions entre espèces (\cite{Jordano2016Sampling}), ainsi
-que la variabilité spatiale et temporelle des interactions locales
-(\cite{Poisot2015Species}), introduisent une incertitude dans notre mesure des
-interactions entre espèces. Cette incertitude est irréductible à l'échelle
-locale, c.-à-d. qu'elle persiste même avec l'ajout de nouvelles données
-empiriques. Cet article souligne l'importance d'identifier, de quantifier et de
-communiquer cette incertitude inhérente aux interactions entre espèces. 
+L'article~\ref{art:article1} constitue le cadre conceptuel de la théorie. Il
+explique pourquoi les interactions entre espèces, telles que les interactions
+prédateurs-proies et plantes-herbivores, sont intrinsèquement probabilistes.
+Notre manque de connaissances sur les interactions locales et régionales, en
+partie attribuable aux limites d'observation des interactions entre espèces
+(\cite{Jordano2016Sampling}), ainsi que la variabilité spatiale et temporelle
+des interactions locales (\cite{Poisot2015Species}), introduisent une
+incertitude dans notre mesure des interactions. Cette incertitude est
+irréductible à l'échelle locale, c.-à-d. qu'elle persiste même avec l'ajout de
+nouvelles données empiriques. Cet article souligne l'importance d'identifier, de
+quantifier et de communiquer cette incertitude inhérente aux interactions entre
+espèces. 
 
-Trophique-METE définit un cadre d'analyse permettant de quantifier plus
+Trophique-METE fournit un cadre d'analyse permettant de quantifier plus
 facilement et avec cohérence l'incertitude au sein des réseaux trophiques à
 partir d'un nombre limité d'informations écologiques. Elle s'inscrit donc dans
-la vision probabiliste des réseaux mise de l'avant dans
-l'article~\ref{art:article1} en générant des prédictions probabilistes de
-différentes mesures de la structure des réseaux trophiques. En effet, puisque
-l'incertitude des interactions entre espèces se propage à la structure émergente
-des réseaux, cette dernière est également probabiliste. En approfondissant notre
-compréhension des interactions probabilistes, nous pouvons mieux interpréter les
-prédictions de la théorie (comme la distribution jointe de degrés, qui décrit la
-probabilité qu'une espèce ait un nombre donné de proies et de prédateurs). Les
-sources d'incertitude et mécanismes écologiques sous-jacents aux interactions
-entre espèces, décrits dans l'article~\ref{art:article1}, peuvent inspirer le
-développement de différentes versions de la théorie, p. ex. en prenant comme
-variables d'état celles qui conditionnent les probabilités d'interactions entre
-espèces. Puisque les prédictions de la théorie ne sont basées que sur ces
-variables d'état, la structure probabiliste des réseaux inférée par
-Trophique-METE ne repose pas sur la supposition souvent erronée d'indépendance
-entre les interactions, ce qui peut contribuer à la robustesse de la théorie.
+la vision probabiliste des réseaux élaborée dans l'article~\ref{art:article1} en
+générant des prédictions probabilistes de différentes mesures de la structure
+des réseaux trophiques. En effet, puisque l'incertitude des interactions entre
+espèces se propage à la structure émergente des réseaux, cette dernière est
+également probabiliste. En approfondissant notre compréhension des interactions
+probabilistes, nous pouvons mieux interpréter les prédictions de la théorie
+(comme la distribution jointe de degrés, qui décrit la probabilité qu'une espèce
+ait un nombre donné de proies et de prédateurs). Les sources d'incertitude et
+mécanismes écologiques sous-jacents aux interactions entre espèces, décrits dans
+l'article~\ref{art:article1}, peuvent inspirer le développement de différentes
+versions de la théorie, p. ex. en prenant comme variables d'état celles qui
+conditionnent les probabilités d'interactions entre espèces. Puisque les
+prédictions de Trophique-METE ne sont basées que sur ces variables d'état, cette
+théorie infère la structure des réseaux sans supposer (à tort) que les
+interactions entre espèces sont indépendantes les unes des autres, ce qui
+contribue à la robustesse de la théorie.
 
 En reconnaissant que la structure émergente des réseaux trophiques est
 écologiquement et statistiquement contrainte, l'article~\ref{art:article2} jette
@@ -90,15 +91,210 @@ testées (comme l'emboîtement). Cependant, ces deux versions surestiment
 systématiquement le niveau trophique maximal, ce qui suggère que les variables
 utilisées ne capturent pas adéquatement certains mécanismes importants
 sous-jacents aux réseaux, notamment en ce qui a trait au transfert d'énergie au
-sein des systèmes écologiques complexes. Malgré cela, les réseaux prédits par la
-deuxième version de la théorie sont proches de leur entropie maximale, ce qui
-suggère que les variables utilisées parviennent tout de même à bien capturer la
-complexité des réseaux trophiques, et par conséquent, une grande partie des
-mécanismes écologiques sous-jacents.
+sein des systèmes écologiques complexes. Malgré cela, les réseaux trophiques
+empiriques sont proches de leur entropie maximale tel que prédit par mes
+modèles, ce qui suggère que les variables utilisées parviennent tout de même à
+bien capturer la complexité des réseaux trophiques, et par conséquent, une
+grande partie des mécanismes écologiques sous-jacents aux réseaux. 
 
 \subsection{Comment améliorer et étendre la théorie?} 
 
+Différentes versions de la théorie de l'entropie maximale des réseaux trophiques
+peuvent être développées selon les variables d'état choisies. La sélection des
+variables d'état peut se faire sur la base des limites et erreurs de prédiction
+des versions précédentes. Par exemple, puisque les versions élaborées dans
+l'article~\ref{art:article2} n'ont pas réussi à prédire adéquatement le niveau
+trophique maximal et le diamètre des réseaux, une version contraignant la
+longueur des chaînes trophiques pourrait s'avérer plus précise. Une telle
+version pourrait utiliser l'énergie métabolique totale de la communauté comme
+variable d'état (imposant une limite au transfert d'énergie au sein des réseaux)
+ou le niveau trophique moyen comme contrainte écologique. Bien que le
+développement de telles versions améliorées de la théorie puisse permette
+d'obtenir de meilleures prédictions de la structure des réseaux trophiques,
+elles se cantonnent à une seule représentation des réseaux (p. ex. aux réseaux
+d'interactions binaires entre espèces), sans tenir compte des différents niveaux
+d'organisation et de mesure des interactions dans les réseaux.
 
+Pour être plus complète, une théorie élargie de l'entropie maximale des réseaux
+trophiques devrait pouvoir prédire simultanément différentes représentations des
+réseaux trophiques. Cette théorie élargie serait l'extension logique de la
+théorie de l'entropie maximale de l'écologie (METE, \cite{Harte2011Maximum}) aux
+réseaux trophiques (d'où l'appellation «~Trophique-METE~»).
+
+
+\begin{itemize}
+    \item ANSEL 
+    \item Champs d'application 
+    \item Prédire les réseaux quantitatifs
+    \item Dériver la distribution probabiliste MaxEnt des réseaux
+    \item MaxEnt pour prédire la structure des réseaux dans l'espace
+    \item MaxEnt pour prévoire (forecast) la structure des réseaux dans le temps
+    \item MaxEnt pour générer des priors informatifs 
+    \item Indépendance entre in et out degree
+    \item Pour mieux prédire les interactions entre paires d'espèces
+\end{itemize}
+
+The degree distributions and probabilistic food webs that will be derived in
+Chapter 1 may dismiss relevant ecological information easily measurable in many
+communities. The total area $A_o$ of a community is such meaningful measure.
+Network-area relationships (NARs) describe the spatial scaling of many
+ecological network properties [ThomTown05; WoodRuss15a; GaliLurg18a]; and
+according to MacDBanv20b, many different NARs are generated from the scaling of
+species richness with area and from the scaling of the number of links with
+species richness. In Chapter 1, I will have shown how spatial scale impacts
+worldwide predictions of food-web structure. Another community measure relevant
+to network ecology is the total number of individuals $N_0$, which has been
+shown to have a strong effect on the nestedness of mutualistic networks
+[KrisJr08]. On a different level, pairwise species interactions could also be a
+result of species abundances due to neutral or stochastic processes [Vazq05a;
+VazqMeli07; CoelRang18; but see OlitFox15]. Moreover, the total metabolic
+energy $E_0$ of a community (or its total biomass) could also impact food-web
+structure. For instance, the body mass of two species could predict the strength
+of trophic interactions [Anon05; BerlDunn09]. These measures were used in the
+ASNE version of the maximum entropy theory of ecology [HartZill08;
+HartNewm14a], along with species richness $S_0$, to derive macroecological
+metrics of maximum entropy. METE notably derives the species-abundance
+distribution (SAD), the species-area relationship (SAR), the intra-specific
+spatial abundance distribution (ISSAD), and the intra-specific energy
+distribution (ISED). 
+
+In Chapter 2, in contrast with Chapter 1, I will derive food-web structure using
+the principle of maximum entropy and 5 state variables. Those state variables
+are the area $A$, the total number of individuals $N$, the number of species
+$S$, the total energetic requirement of the community $E$, and the number of
+interactions $L$. Using $N$ and $E$ will allow me to predict many properties of
+weighted food webs. The main objective of this chapter will be to develop a
+novel version (ANSEL) of the maximum entropy theory of ecology (METE) applied to
+food webs. This version will be called *Trophic-METE*.
+
+Because Trophic-METE will necessitate data often difficult to sample or
+estimate, it will not be used to map food-web structure at a large spatial scale
+as in Chapter 1. Rather, I will model specific and well-defined communities for
+which those variables have been measured or estimated. When not measured
+empirically, the number of links will again be estimated using species richness.
+My model will be used to predict food-web structure with, as I suspect, more
+accuracy than the model of the first chapter, as long as communities are not in
+a transition state and that the state variables have been measured or estimated
+accurately. As in Chapter 1, the maximum entropy distributions could be used as
+informative prior distributions in Bayesian inference, and deviations from these
+predictions could be used to identify ecological mechanisms leading to observed
+network structures.
+
+Chapter 2 aims at bringing together predictive models of food-web structure and
+the derivations of METE to derive a distribution of feasible and plausible
+networks, from which measures could be computed. In that respect, the main
+objective of this chapter is to derive and validate another version of METE
+(namely Trophic-METE) applied to the spatial prediction of food webs. I believe
+that the SAD, the SAR, the ISSAD, the ISED, and the joint degree distribution of
+maximum entropy will provide sufficient information to predict accurately the
+probability of the interaction strength between two species $i$ and $j$, i.e.
+$P(w_{ij}|A, n_i, n_j, S_0, e_i, e_j, k_i, k_j)$, or, more generally, the
+probability of a weighted network $W$ given the values of the state variables,
+i.e. $P(W|A, N_0, S_0, E_0, L_0)$. Again, these predictions should be more
+precise for more stable communities, in contrast to communities undergoing rapid
+changes.  
+
+These predictions could be used in a similar way as the ones of the first
+chapter. Notably, my model could be used to predict the food web of given
+communities. However, in contrast to Chapter 1, the model of Chapter 2 will not
+be built to generate first-order approximations of food-web structure at a large
+spatial scale, i.e. for communities in each grid of a map, unless $N_0$ and
+$E_0$ are estimated rigorously at the given spatial resolution. Rather, I expect
+that my model could be used to predict the network of more well-defined
+community. For example, it could be used to predict the food web of a given
+forest patch if values of $A_0$, $S_0$, $N_0$, and $E_0$ are well sampled. If my
+model generates accurate predictions of food webs, it could greatly facilitate
+the conduction of *preliminary* studies on the functioning and stability of
+ecological communities, without directly relying on data on species
+interactions. In a related way, it could be used to generate informative prior
+distributions of food-web structure that could be updated with empirical data.
+Finally, my model could be used as a null model to investigate the role of
+ecological mechanisms in the shaping of food-web topology.
+
+My model could *a priori* be applied on any taxonomic groups or at any level of
+organization, as long as state variables and derived metrics are defined
+coherently. I however hypothesize that my model will be more robust when used
+with a set of taxons that encompasses all trophic levels (i.e. comprising
+autotrophs, herbivores, and carnivores), so that the modeled community is well
+represented. On another note, I believe that my model will be suitable to any
+spatial scales. However, it is not clear to me how it will perform with very
+small or very large communities.
+
+In this chapter, I will derive a distribution of feasible weighted networks
+using the area $A_0$, the number of species $S_0$, the total number of
+individuals $N_0$, the total energetic requirement of the community $E_0$, and
+the (predicted) number of links $L_0$. 
+
+For communities where $L_0$ has not been measured or estimated empirically, I
+will estimate $L_0$ from $S_0$ using the flexible links model of MacDBanv20b.
+Similarly, for communities where $E_0$ has not been estimated empirically, but
+for which the total biomass $M_0$ has been estimated, I will estimate $E_0$ from
+$M_0$ using the metabolic theory of ecology [MTE; Klei32; BrowGill04; and
+Hart11]:
+
+
+
+$$E_o = cM_o^{3/4}$$
+
+where $c$ is a positive constant whose value can be estimated empirically.
+
+These predictions (eq:SAD to eq:ISED) could be used directly to predict
+weighted food webs, along with the joint degree distribution of maximum entropy
+derived in Chapter 1 (eq:maxentjoint). This would constitute the ANSEL version
+of the maximum entropy theory of ecology (Trophic-METE). However, I will attempt
+to derive other metrics directly. One of these metrics could be the interaction
+strength distribution $P(w_{ij}|A, n_i, n_j, S_o, e_i, e_j, k_i, k_j)$, where
+$P(w_{ij})$ is the probability density that if two species are taken at random
+from the species pool, that they will interact and that this interaction will
+have a strength of $w_{ij}$. Note that this probability density function might
+depend only on a subset of the ANSEL variables. Another approach could be to
+attempt to predict emerging network properties, such as the distribution of
+trophic levels in a food web, from the five state variables.
+
+These predictions will be compared to observed data using ranking plots. To do
+so, I might have to estimate a few state variables in existing datasets in order
+to conduct this validation process.
+
+I will use the distributions derived from Trophic-METE to constrain the space of
+feasible networks. More specifically, I will predict the probability
+distribution $P(W|A, N_0, S_0, E_0, L_0)$ given the values of the state
+variables. To do so, I might use simulating annealing algorithms to filter out
+potential adjacency matrices that do not respect the derived distributions. Note
+that $P(W)$ will take into account the uncertainty around $L_0$ for networks
+whose number of links will be predicted from species richness. I believe,
+however, that my version of METE will be more appealing if I can predict $P(W)$
+analytically from these distributions, probably using some approximations. This
+might however prove very challenging, and perhaps unfeasible as part of my
+thesis.
+
+Emerging food-web properties, such as nestedness and modularity, could be
+computed for all potential food webs in the distribution of feasible networks.
+The resulting distribution of food-web properties will take into account the
+likelihood of every potential network. These predictions will then be compared
+with empirical data.
+
+The probability distribution of weighted food webs derived in this chapter will
+not be the result of any mechanistic or ecological processes. It will instead
+characterize the networks we expect to see, by chance, given values of the state
+variables ($A_0$, $N_0$, $S_0$, $E_0$, and $L_0$). This network-centered version
+of the maximum entropy theory of ecology will make testable predictions that
+will be compared with empirical data. Deviations from the maximum entropy degree
+distributions will be ecologically informative. However, if I find systematic
+deviations from my predictions, I would need to revisit my model, either by
+choosing a different set of state variables or by choosing different constraints
+on the distributions. On another note, in contrast to the model of Chapter 1, I
+believe that adapting Trophic-METE to other types of ecological networks would
+require important changes in the choices of state variables and of constraints.
+
+Overall, Trophic-METE could be very useful to derive least-biased distributions
+of food-web structure and of weighted interactions, given prior knowledge on a
+biological community. These least-biased distributions could be used as prior
+distributions, or could be used directly to estimate various emerging food-web
+properties. Predictions will be snapshots of an ecosystem, and knowing the value
+of the state variables at a given time point would allow me to predict its food
+web at that time point. In the next and final chapter, I will take advantage of
+this feature and use Trophic-METE, along with the model of Chapter 1, to
+forecast food webs over time.
 
 %% Tester la théorie
 
@@ -116,6 +312,7 @@ mécanismes écologiques sous-jacents.
 \subsection{Compréhension des mécanismes sous-jacents aux réseaux d'interactions} 
 
 \subsection{Prévision de la structure des réseaux trophiques} 
+
 
 \endinput
 %%
