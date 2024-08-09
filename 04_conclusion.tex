@@ -10,8 +10,6 @@
 
 \chapter{Conclusions générales}
 
-%% Développer la théorie
-
 Cette thèse pose les fondements de la théorie de l'entropie maximale des réseaux
 trophiques (Trophique-METE). Basée sur le principe d'entropie maximale, cette
 théorie permet d'inférer des distributions de probabilité caractérisant la
@@ -72,13 +70,15 @@ pour développer d'autres versions de la théorie reposant sur d'autres variable
 d'état. Dans les sous-sections suivantes, je discute des développements actuels
 et futurs, des tests à venir et des applications potentielles de la théorie. 
 
+%% Développer la théorie
+
 \section{Développement de la théorie de l'entropie maximale des réseaux trophiques} 
 
 \subsection{Où en sommes-nous?} 
 
 L'article~\ref{art:article2} propose deux premières versions de la théorie,
 employant les approches analytiques et heuristiques basées sur le principe
-d'entropie maximale. La première version de trophique-METE prédit la structure
+d'entropie maximale. La première version de Trophique-METE prédit la structure
 des réseaux trophiques à partir du nombre d'espèces et du nombre d'interactions.
 Cette version a permis de prédire la distribution jointe de degrés (approche
 analytique) et la matrice d'adjacence utilisée pour calculer différentes mesures
@@ -87,15 +87,16 @@ elle, prédit la matrice d'adjacence à partir du nombre de proies et de
 prédateurs pour chaque espèce dans le réseau (approche heuristique). La première
 version prédit bien la distribution jointe de degrés lorsque la connectance du
 réseau est élevée, alors que la seconde version prédit mieux les autres mesures
-testées (comme l'emboîtement). Cependant, ces deux versions surestiment
-systématiquement le niveau trophique maximal, ce qui suggère que les variables
-utilisées ne capturent pas adéquatement certains mécanismes importants
-sous-jacents aux réseaux, notamment en ce qui a trait au transfert d'énergie au
-sein des systèmes écologiques complexes. Malgré cela, les réseaux trophiques
-empiriques sont proches de leur entropie maximale tel que prédit par mes
-modèles, ce qui suggère que les variables utilisées parviennent tout de même à
-bien capturer la complexité des réseaux trophiques, et par conséquent, une
-grande partie des mécanismes écologiques sous-jacents aux réseaux. 
+testées (comme l'emboîtement et la proportion des motifs à trois espèces).
+Cependant, ces deux versions surestiment systématiquement le niveau trophique
+maximal et le diamètre des réseaux, ce qui suggère que les variables utilisées
+ne capturent pas adéquatement certains mécanismes importants sous-jacents aux
+réseaux, notamment en ce qui a trait au transfert d'énergie au sein des systèmes
+écologiques complexes. Malgré cela, les réseaux trophiques empiriques sont
+proches de leur entropie maximale tel que prédit par mes modèles, ce qui suggère
+que les variables utilisées parviennent tout de même à bien capturer la
+complexité des réseaux trophiques, et par conséquent, une grande partie des
+mécanismes écologiques sous-jacents aux réseaux. 
 
 \subsection{Comment améliorer et étendre la théorie?} 
 
@@ -112,28 +113,28 @@ ou le niveau trophique moyen comme contrainte écologique. Bien que le
 développement de telles versions améliorées de la théorie puisse permette
 d'obtenir de meilleures prédictions de la structure des réseaux trophiques,
 elles se cantonnent à une seule représentation des réseaux (p. ex. aux réseaux
-d'interactions binaires entre espèces), sans tenir compte des différents niveaux
+d'interactions entre espèces), sans tenir compte des différents niveaux
 d'organisation et de mesure des interactions.
 
 Pour être plus complète, une théorie élargie de l'entropie maximale des réseaux
 trophiques devrait pouvoir prédire simultanément différentes représentations des
 réseaux trophiques. Cette théorie élargie serait l'extension logique de la
 théorie de l'entropie maximale de l'écologie (METE, \cite{Harte2011Maximum}) aux
-réseaux trophiques (d'où l'appellation «~Trophique-METE~»). La version ANSE de
-METE utilise la superficie $A_0$, le nombre total d'individus $N_0$, le nombre
-d'espèces $S_0$ et l'énergie métabolique totale $E_0$ (ou la biomasse) d'une
+réseaux trophiques (d'où l'appellation «~Trophique-METE~»). La version ASNE de
+METE utilise la superficie $A_0$, le nombre d'espèces $S_0$, le nombre total
+d'individus $N_0$ et l'énergie métabolique totale $E_0$ (ou la biomasse) d'une
 communauté comme variables d'état pour prédire plusieurs distributions d'intérêt
 en écologie (\cite{Harte2008Maximum}, \cite{Harte2011Maximum},
 \cite{Harte2014Maximum}). Trophique-METE, dans sa version élargie, pourrait
 notamment ajouter le nombre total d'interactions entre espèces $L_0$ à ces
-variables d'état pour former la version ANSEL de la théorie. En plus des
+variables d'état pour former la version ASNEL de la théorie. En plus des
 prédictions macroécologiques de METE (telles que la relation aire-espèce et les
-distributions du nombre d'individus et du taux métabolique par espèce), ANSEL
-pourrait prédire la relation entre la structure des réseaux et leur superficie,
-tout en faisant le pont entre les réseaux d'interactions entre individus et
-entre espèces. Cette théorie élargie permettrait ainsi d'avoir une vision plus
-harmonieuse des réseaux trophiques représentés à différentes échelles spatiales
-et taxonomiques.
+distributions du nombre d'individus et du taux métabolique par espèce), ASNEL
+permettrait de prédire la relation entre la structure des réseaux et leur
+superficie, tout en faisant le pont entre les réseaux d'interactions entre
+individus et entre espèces. Cette théorie élargie permettrait ainsi d'avoir une
+vision plus harmonieuse des réseaux trophiques représentés à différentes
+échelles spatiales et taxonomiques.
 
 Les versions élargies de Trophique-METE peuvent être construites autour de
 plusieurs autres variables d'état pour tenir compte des conditions locales
@@ -143,30 +144,43 @@ depuis le début de la succession primaire) peut être ajouté aux variables
 d'état, ce qui permettrait de prédire la relation entre la structure des réseaux
 et leur durée. Le temps pourrait également être intégré dans une version
 dynamique de la théorie en laissant les valeurs des variables d'état fluctuer au
-fil du temps, tel qu'effectué par \textcite{Harte2021Dynamete}. Par ailleurs, le
-nombre de genres ou de familles au sein d'une communauté peut également être
-ajouté aux variables d'état pour dériver davantage de mesures liées au niveau
-taxonomique, comme la relation aire-genre ou aire-famille
-(\cite{Harte2014Maximum}). Dans le même ordre d'idées, le nombre total
-d'interactions entre individus, genres ou familles peut être intégré à la
-théorie pour prédire plus précisément la structure des réseaux à différentes
-échelles taxonomiques. Le nombre total d'interactions entre individus (c.-à-d.
-le nombre total d'événements de prédation survenus au cours d'une période de
-temps donné) peut également être utilisé pour prédire la structure des réseaux
-d'interactions quantitatives (p. ex. pour dériver la distribution de fréquences
-d'interactions par espèce). Le principal obstacle à la construction d'une telle
-théorie élargie est le manque actuel de données empiriques nécessaires pour
-tester et valider différentes versions de la théorie, bien que cela ne devrait
-pas nous empêcher de poursuivre activement son développement.
+fil du temps, tel qu'effectué par \textcite{Harte2021Dynamete} dans leur version
+dynamique de METE. Par ailleurs, le nombre de genres ou de familles au sein
+d'une communauté peut également être ajouté aux variables d'état pour dériver
+davantage de propriétés liées au niveau taxonomique, comme la relation
+aire-genre ou aire-famille (\cite{Harte2014Maximum}). Dans le même ordre
+d'idées, le nombre total d'interactions entre individus, genres ou familles peut
+être intégré à la théorie pour prédire plus précisément la structure des réseaux
+à différentes échelles taxonomiques. Le nombre total d'interactions entre
+individus (c.-à-d. le nombre total d'événements de prédation survenus au cours
+d'une période de temps donné) peut également être utilisé pour prédire la
+structure des réseaux d'interactions quantitatives (p. ex. pour dériver la
+distribution de fréquences d'interactions par espèce). Le principal obstacle à
+la construction d'une telle théorie élargie des réseaux trophiques est le manque
+actuel de données empiriques nécessaires pour tester et valider différentes
+versions de la théorie. Cependant, poursuivre activement le développement de
+Trophique-METE nous permet de mieux identifier les données et variables d'état à
+échantillonner. 
 
-%% En construction %%
-En plus de prédire des distributions de probabilité au sein des réseaux,
-Trophique-METE peut également être développé pour inférer des distributions
-d'entropie maximale \textit{sur} les réseaux (c.-à-d. donnant la probabilité
-qu'une configuration de réseau soit réalisée). Ces distributions peuvent être 
-dérivées à partir de contraintes rigides (c.-à-d. ). Contraindre l'espace 
-des réseaux possibles. La structure des réseaux peut être calculée à partir de 
-cette distribution, pour avoir la probabilité des mesures. 
+Les prédictions de Trophique-METE sont intrinsèquement probabilistes. Cependant,
+la matrice d'adjacence prédite pour un réseau particulier, avec la méthode
+présentée dans l'article~\ref{art:article2}, est unique et composée
+d'interactions binaires. Cela est dû à l'approche heuristique employée, qui
+maximise l'entropie de la distribution des valeurs singulières au sein de la
+matrice, permettant ainsi d'identifier celle ayant la plus grande complexité
+interne. Trophique-METE peut également être développée pour inférer
+analytiquement des distributions d'entropie maximale \textit{sur} les réseaux
+(c.-à-d. générant des réseaux probabilistes tels que définis dans
+l'article~\ref{art:article1}). Ces distributions peuvent être obtenues en
+utilisant des contraintes rigides (où chaque réseau ayant une probabilité non
+nulle satisfait exactement les contraintes) ou souples (où les réseaux prédits
+satisfont les contraintes en moyenne). Mesurer la structure des réseaux à partir
+de ces distributions d'entropie maximale nous permettrait de générer des
+prédictions probabilistes pour l'ensemble des propriétés des réseaux. Le
+développement de Trophique-METE autour des réseaux probabilistes constitue une
+avancée naturelle dans la théorie, nous permettant d'aller au-delà des
+prédictions uniques des réseaux, tout en offrant une alternative à l'évaluation
+indépendante des probabilités d'interaction au sein des réseaux.  
 
 %% Tester la théorie
 
