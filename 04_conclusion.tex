@@ -133,8 +133,8 @@ distributions du nombre d'individus et du taux métabolique par espèce), ASNEL
 permettrait de prédire la relation entre la structure des réseaux et leur
 superficie, tout en faisant le pont entre les réseaux d'interactions entre
 individus et entre espèces. Cette théorie élargie permettrait ainsi d'avoir une
-vision plus harmonieuse des réseaux trophiques représentés à différentes
-échelles spatiales et taxonomiques.
+vision plus harmonieuse et exhaustive des réseaux trophiques représentés à
+différentes échelles spatiales et taxonomiques.
 
 Les versions élargies de Trophique-METE peuvent être construites autour de
 plusieurs autres variables d'état pour tenir compte des conditions locales
@@ -155,41 +155,65 @@ d'idées, le nombre total d'interactions entre individus, genres ou familles peu
 individus (c.-à-d. le nombre total d'événements de prédation survenus au cours
 d'une période de temps donné) peut également être utilisé pour prédire la
 structure des réseaux d'interactions quantitatives (p. ex. pour dériver la
-distribution de fréquences d'interactions par espèce). Le principal obstacle à
-la construction d'une telle théorie élargie des réseaux trophiques est le manque
-actuel de données empiriques nécessaires pour tester et valider différentes
-versions de la théorie. Cependant, poursuivre activement le développement de
-Trophique-METE nous permet de mieux identifier les données et variables d'état à
-échantillonner. 
+distribution de fréquences d'interactions entre espèces). Le principal obstacle
+à la construction d'une telle théorie élargie des réseaux trophiques est le
+manque actuel de données empiriques nécessaires pour tester et valider
+différentes versions de la théorie. Cependant, poursuivre activement le
+développement de Trophique-METE nous permet de mieux identifier les données et
+variables d'état à échantillonner. 
 
-Les prédictions de Trophique-METE sont intrinsèquement probabilistes. Cependant,
-la matrice d'adjacence prédite pour un réseau particulier, avec la méthode
-présentée dans l'article~\ref{art:article2}, est unique et composée
-d'interactions binaires. Cela est dû à l'approche heuristique employée, qui
-maximise l'entropie de la distribution des valeurs singulières au sein de la
-matrice, permettant ainsi d'identifier celle ayant la plus grande complexité
-interne. Trophique-METE peut également être développée pour inférer
-analytiquement des distributions d'entropie maximale \textit{sur} les réseaux
-(c.-à-d. générant des réseaux probabilistes tels que définis dans
-l'article~\ref{art:article1}). Ces distributions peuvent être obtenues en
-utilisant des contraintes rigides (où chaque réseau ayant une probabilité non
-nulle satisfait exactement les contraintes) ou souples (où les réseaux prédits
-satisfont les contraintes en moyenne). Mesurer la structure des réseaux à partir
-de ces distributions d'entropie maximale nous permettrait de générer des
-prédictions probabilistes pour l'ensemble des propriétés des réseaux. Le
-développement de Trophique-METE autour des réseaux probabilistes constitue une
-avancée naturelle dans la théorie, nous permettant d'aller au-delà des
-prédictions uniques des réseaux, tout en offrant une alternative à l'évaluation
-indépendante des probabilités d'interaction au sein des réseaux.  
+Quelle que soit la version développée, les prédictions de Trophique-METE
+demeurent intrinsèquement probabilistes. Cependant, la matrice d'adjacence
+prédite pour un réseau particulier, avec la méthode présentée dans
+l'article~\ref{art:article2}, est unique et composée d'interactions binaires.
+Cela est dû à l'approche heuristique employée, qui maximise l'entropie de la
+distribution des valeurs singulières de la matrice d'adjacence, permettant ainsi
+d'identifier celle ayant la plus grande complexité interne. Trophique-METE peut
+également être développée pour inférer analytiquement des distributions
+d'entropie maximale \textit{sur} les réseaux (c.-à-d. générant une distribution
+de réseaux probabilistes tels que définis dans l'article~\ref{art:article1}).
+Ces distributions peuvent être obtenues en utilisant des contraintes rigides (où
+chaque réseau ayant une probabilité non nulle satisfait exactement les
+contraintes) ou souples (où les réseaux prédits satisfont les contraintes en
+moyenne). Mesurer la structure des réseaux à partir de ces distributions
+d'entropie maximale nous permettrait de générer des prédictions probabilistes
+pour l'ensemble des propriétés des réseaux. Le développement de Trophique-METE
+autour des réseaux probabilistes constitue une avancée naturelle dans la
+théorie, nous permettant d'aller au-delà des prédictions uniques des réseaux,
+tout en offrant une alternative à l'estimation indépendante des probabilités
+d'interactions entre espèces.  
 
 %% Tester la théorie
 
 \section{Validation de la théorie} 
 
-\subsection{Quels réseaux sont d'entropie maximale?} 
+En tant que théorie écologique en cours de développement, Trophique-METE doit
+être testée à répétition et validée par des observations empiriques fiables.
+Comme indiqué plus haut, ce processus itératif de validation permet de
+développer des versions plus robustes et complètes de la théorie. Cette thèse
+réalise la première évaluation de la théorie en la testant sur des données
+empiriques recueillies à l'échelle globale, tant en milieu aquatique que
+terrestre (Article~\ref{art:article2}). Cependant, plusieurs questions restent
+en suspens, notamment en ce qui a trait aux particularités et à l'équilibre
+écologique des réseaux trophiques d'entropie maximale. Répondre à ces questions
+nous permettra de mieux identifier les champs d'application et limites de la
+théorie.
+
+\subsection{Quelles sont les particularités d'un réseau d'entropie maximale?} 
+
+Jusqu'à présent, Trophique-METE a été développée pour l'ensemble des réseaux
+trophiques, sans tenir compte des caractéristiques propres aux différents types
+d'écosystèmes. Autrement dit, les prédictions de la théorie sont identiques pour
+tout écosystème disposant des mêmes valeurs de variables d'état, indépendamment
+de leurs particularités. 
+
+Représentation. 
 
 \subsection{Un réseau d'entropie maximale est-il à l'équilibre?} 
 
+Temps. 
+
+Équilibre.
 
 %% Appliquer la théorie
 
