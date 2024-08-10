@@ -193,27 +193,100 @@ Comme indiqué plus haut, ce processus itératif de validation permet de
 développer des versions plus robustes et complètes de la théorie. Cette thèse
 réalise la première évaluation de la théorie en la testant sur des données
 empiriques recueillies à l'échelle globale, tant en milieu aquatique que
-terrestre (Article~\ref{art:article2}). Cependant, plusieurs questions restent
-en suspens, notamment en ce qui a trait aux particularités et à l'équilibre
-écologique des réseaux trophiques d'entropie maximale. Répondre à ces questions
-nous permettra de mieux identifier les champs d'application et limites de la
-théorie.
+terrestre (Article~\ref{art:article2}). Lorsqu'elles surviennent, les erreurs de
+prédiction peuvent provenir des variables d'état utilisées, qui peuvent être mal
+mesurées, inadéquates ou insuffisantes. Cependant, plusieurs questions relatives
+à l'évaluation de la théorie restent en suspens, notamment en ce qui a trait aux
+particularités et à l'équilibre écologique des réseaux trophiques d'entropie
+maximale (c.-à-d. des réseaux dont la complexité est bien prédite par la
+théorie). En approfondissant notre compréhension des caractéristiques des
+réseaux trophiques d'entropie maximale, nous pourrons mieux définir les champs
+d'application et limites de la théorie.
 
-\subsection{Quelles sont les particularités d'un réseau d'entropie maximale?} 
+\subsection{Quelles sont les particularités des réseaux trophiques d'entropie maximale?} 
 
 Jusqu'à présent, Trophique-METE a été développée pour l'ensemble des réseaux
 trophiques, sans tenir compte des caractéristiques propres aux différents types
 d'écosystèmes. Autrement dit, les prédictions de la théorie sont identiques pour
 tout écosystème disposant des mêmes valeurs de variables d'état, indépendamment
-de leurs particularités. 
+de leurs particularités. Toutefois, les écosystèmes pourraient être contraints
+par différentes variables d'état, selon les mécanismes écologiques qui les
+régissent. Par exemple, nous pourrions tester si la biomasse totale contraint
+autant les réseaux trophiques aquatiques que terrestres. Les caractéristiques
+des écosystèmes, telles que leur habitat (\cite{Shurin2005All}), leur niveau de
+perturbation anthropique (\cite{Tylianakis2007Habitat}) et leur superficie
+(\cite{Galiana2018Spatiala}), peuvent en effet impacter les processus
+écologiques sous-jacents à leur structure émergente et, par conséquent, la
+capacité des variables d'état utilisées à capturer adéquatement ces processus.
+De même, adapter la théorie de l'entropie maximale des réseaux trophiques à
+d'autres types de réseaux (p. ex. aux réseaux d'interactions hôtes-parasites ou
+plantes-pollinisateurs) impliquerait d'identifier les variables d'état qui les
+déterminent spécifiquement, lesquelles pourraient différer de celles gouvernant
+les réseaux trophiques. Les particularités des réseaux moins bien prédits par la
+théorie définissent les limites de celle-ci et peuvent nous guider dans le
+développement de différentes versions mieux adaptées à divers contextes
+écologiques.
 
-Représentation. 
+Au-delà des caractéristiques biologiques des écosystèmes, la représentation des
+réseaux trophiques peut également impacter la capacité de la théorie à faire de
+bonnes prédictions. Dans cette thèse, j'ai montré que le principe d'entropie
+maximale prédit bien la structure des réseaux d'interactions binaires entre
+espèces (Article~\ref{art:article2}). Le développement et la validation d'une
+théorie élargie des réseaux trophiques aideront à déterminer si MaxEnt est plus
+efficace pour prédire la structure des réseaux à un niveau taxonomique
+(interactions entre individus, populations, espèces ou clades) et à une échelle
+de mesure (interactions binaires ou quantitatives) particuliers, ou s'il prédit
+convenablement l'ensemble de ces représentations. Étant donné que les échanges
+de matière et d'énergie au sein des systèmes écologiques complexes s'effectuent
+entre individus, je fais l'hypothèse que la théorie sera plus efficace pour
+prédire la structure des réseaux trophiques lorsqu'ils reflètent au mieux ces
+échanges, c.-à-d. lorsqu'ils représentent fidèlement la complexité écologique.
+Tester la théorie sur plusieurs types de réseaux trophiques s'avère donc
+essentiel pour bien comprendre ce qui détermine la structure de différentes
+représentations des systèmes écologiques complexes. 
 
 \subsection{Un réseau d'entropie maximale est-il à l'équilibre?} 
 
-Temps. 
+Le temps requis pour que les réseaux trophiques atteignent leur entropie
+maximale, dans la limite des contraintes imposées par les variables d'état,
+n'est pas bien compris. Nous pouvons supposer que les écosystèmes en transition,
+qui n'ont pas eu assez de temps pour atteindre un état d'équilibre à la suite
+d'une perturbation écologique, sont moins susceptibles d'être près de leur
+entropie maximale. En effet, les prédictions de METE sont plus robustes pour les
+communautés stables, c.-à-d. pour les communautés dont les variables d'état ne
+fluctuent pas trop rapidement (\cite{Newman2020Disturbance},
+\cite{Harte2021Dynamete}). Cela s'explique par le fait que les variables d'état
+et les distributions prédites sont évaluées pour le même instant dans le temps.
+Lorsque la valeur des variables d'état change trop rapidement, laissant un délai
+insuffisant pour permettre aux distributions de s'ajuster, l'exactitude des
+prédictions est compromise. Puisque Trophique-METE est aussi basée sur la valeur
+instantanée des variables d'état, il convient de vérifier si la validité de ses
+prédictions ne tient également que pour les écosystèmes dont les variables
+d'état sont stables.
 
-Équilibre.
+Les réseaux trophiques doivent également respecter le principe de conservation
+de biomasse, selon lequel le bilan global entre les flux intrants et sortants de
+matière est à l'équilibre. Ce principe s'applique autant à l'écosystème dans son
+ensemble qu'à chaque espèce individuelle, puisque le taux moyen de production
+d'énergie d'une espèce doit être équivalent à son taux moyen d'utilisation
+(croissance, métabolisme et perte) et de consommation par les autres espèces
+(\cite{Sterner2002Ecological}). La validation d'une version élargie de
+Trophique-METE, qui utiliserait notamment l'énergie métabolique totale de la
+communauté comme variable d'état, peut donc en partie être effectuée en
+vérifiant le respect du principe de conservation de masse à l'échelle de
+l'écosystème et de l'espèce. Pour ce faire, la théorie doit prédire les
+distributions du taux d'utilisation d'énergie et du nombre d'individus par
+espèce, ainsi que de la force d'interaction entre prédateurs et proies. Elle
+peut toutefois s'appuyer sur des relations allométriques existantes, telle que
+la relation entre l'énergie métabolique et la biomasse fournie par la théorie
+métabolique de l'écologie (\cite{Brown2004Metabolic}, \cite{West1997General}),
+pour estimer les paramètres manquants (tel qu'effectué par
+\cite{Harte2022Equation} dans leurs efforts d'unification de METE avec la
+théorie métabolique de l'énergie). Cette méthode de validation permettrait à la
+fois de vérifier la cohérence interne et le réalisme écologique de
+Trophique-METE, tout en permettant d'évaluer sa compatibilité avec les relations
+allométriques largement acceptées en écologie.
+
 
 %% Appliquer la théorie
 
