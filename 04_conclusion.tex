@@ -305,351 +305,54 @@ observés.
 
 \subsection{Compréhension des mécanismes sous-jacents aux réseaux trophiques} 
 
-Les erreurs de prédiction peuvent orienter
-la recherche sur les systèmes écologiques complexes en mettant en lumière les
-mécanismes sous-jacents aux réseaux trophiques et en guidant le développement de
-versions plus robustes et précises de la théorie.
-
-When it comes to the environmental impacts of climate change and
-habitat loss, seldom the potential changes in food-web topology are considered.
-However, such changes in network structure could drastically alter how entire
-ecosystems function and react to external perturbations. Simulation studies
-could help us predict how ecological networks could look like in decades from
-now. These are not perfect, as they rely on too few data, on too many biological
-assumptions, and on other ecological models. Quantifying the uncertainty of
-these simulations and their robustness to some assumptions, like the choice of
-spatial scale, can make their predictions a lot more realistic and
-contextualized. This thesis could potentially help identify regions where food
-webs are more vulnerable to climate change and habitat loss in order to better
-protect their integrity and the ecosystem services they provide. This thesis
-also seeks to provide a methodological breakthrough in the macroecology of food
-webs.
+Bien que Trophique-METE ne soit pas basée sur des mécanismes écologiques
+explicites, elle facilite l'identification des mécanismes régissant la structure
+des réseaux trophiques. D'abord, tel qu'expliqué par
+\textcite{Harte2014Maximum}, une théorie écologique basée sur l'entropie
+maximale tient compte des mécanismes écologiques de manière implicite par le
+biais de nos connaissances préalables. En effet, les mécanismes sous-jacents à
+la structure des réseaux trophiques sont capturés par la valeur empirique des
+variables d'état. Ainsi, pour mieux comprendre les mécanismes qui déterminent la
+structure des réseaux trophiques, nous pouvons examiner ceux qui régissent les
+variables d'état. Ensuite, les erreurs de prédiction de la théorie nous
+informent des mécanismes importants n'ayant pas été capturés par les variables
+d'état. Trophique-METE peut donc être utilisée comme modèle nul, fournissant des
+distributions de référence auxquelles la structure des réseaux empiriques est
+comparée. À cet égard, les écarts entre la structure des réseaux empiriques et
+celle des réseaux d'entropie maximale prédits peuvent fournir des informations
+écologiques plus révélatrices que les mesures brutes. Lorsque ces erreurs sont
+systématiques (comme ce fut le cas pour le niveau trophique maximal et le
+diamètre des réseaux dans l'article~\ref{art:article2}), elles peuvent guider le
+développement de versions plus robustes et précises de la théorie, permettant
+ainsi d'identifier les variables d'état capturant plus efficacement les
+mécanismes écologiques sous-jacents. 
 
 \subsection{Prévision de la structure des réseaux trophiques} 
 
-Trophique-METE permet de faire des prédictions sur des événements qui n'ont pas
-encore été observés.
-
-When it comes to the environmental impacts of climate change and
-habitat loss, seldom the potential changes in food-web topology are considered.
-However, such changes in network structure could drastically alter how entire
-ecosystems function and react to external perturbations. Simulation studies
-could help us predict how ecological networks could look like in decades from
-now. These are not perfect, as they rely on too few data, on too many biological
-assumptions, and on other ecological models. Quantifying the uncertainty of
-these simulations and their robustness to some assumptions, like the choice of
-spatial scale, can make their predictions a lot more realistic and
-contextualized. This thesis could potentially help identify regions where food
-webs are more vulnerable to climate change and habitat loss in order to better
-protect their integrity and the ecosystem services they provide. This thesis
-also seeks to provide a methodological breakthrough in the macroecology of food
-webs.
-
-A second primary objective of my thesis is to develop first-order forecasts of
-food-web structure. These forecasts will be based on different scenarios of
-biodiversity and habitat loss, and will be computed using the predictive MaxEnt
-models designed in my thesis. My forecasts should under no circumstances be used
-in any environmental decision-making process, but should instead be seen as a
-first attempt to study expected changes in food-web structure at large spatial
-and temporal scales.
-
-In Chapter 3, I will forecast food-web structure using the models of the two
-previous chapters. More specifically, I will use forecasting models of species
-richness at the global scale as inputs to the model developed in Chapter 1 to
-forecast food-web structure worldwide according to different scenarios of
-biodiversity loss. In contrast, Trophic-METE (Chapter 2) will be used to
-forecast the structure of given food webs, by varying the values of their state
-variables again according to different environmental scenarios.
-
-These models could be used as a first assessment of the potential impact of
-climate change, biodiversity loss, and habitat loss on food-web structure. I
-will forecast network structure after a given event (e.g. an extreme climate
-event) or in future years (e.g. in 2050), based on forecasts of the state
-variables. Forecasting network structure continuously would require, to my
-understanding, that I develop a dynamic version of my models, which will not be
-realized as part of my thesis. I reiterate that my models should not be used in
-environmental decision-making, but should rather be seen as a first step toward
-the development of more realistic forecasting models of network structure.
-
-A main application of my model is the prediction of the structure of ecological
-networks globally. In this chapter, I will illustrate this application by
-mapping terrestrial food webs worldwide. To do so, I will need to query data on
-species distributions in order to estimate local species richness. Because my
-objective will be to *illustrate* this application, I will not conduct species
-distribution modelling (SDM) myself. Instead, I will query polygon or raster
-data on species distributions from online databases, such as the [IUCN Red List
-of Threatened
-Species](https://www.iucnredlist.org/resources/spatial-data-download) or
-[BiodiversityMapping](https://biodiversitymapping.org/). I will choose taxonomic
-groups based on available data, but I will make sure to include terrestrial
-mammals, birds, amphibians, and plants. Extinct and vagrant species will not be
-included.
-
-For each taxa, local species richness will be estimated on equal area grids.
-Because my predictions might be highly sensible to the spatial scale of
-analysis, species richness will be approximated at different spatial scales
-(e.g. 10 km$^2$, 100 km$^2$ or 1,000 km$^2$). In each grid, I will sum the
-number of species of each selected taxonomic group to estimate local total
-species richness.
-
-Every grid will represent a different biological community. I will consider that
-the number of nodes in food webs are equivalent to the total number of species
-present in each grid. I will thus make the assumption that every species has at
-least one trophic interaction with another member of its community. Mean and
-variance of different food-web measures will then be estimated for each food web
-(i.e. in each grid) using the model developed in this chapter. Maps of different
-spatial scales will be compared, and the spatial variation of network structure
-will be briefly examined and discussed.
-
-Because my model will be very parsimonious, predictions of network structure
-could be conducted at a very large spatial scale, but perhaps with poorer
-precision. This is in contrast with the model of the next chapter, which
-considers more state variables, i.e. more biological information, in the
-derivation of maximum entropy distributions and of food-web structure.
-
-In the previous two chapters, I will have predicted food-web structure from a
-given set of state variables. The objective of Chapter 3 will be to develop a
-forecasting model of food-web structure using my predictive models, along with
-forecasts of these state variables. More specifically, I will forecast food-web
-structure at the global scale using the model developed in Chapter 1, and
-forecast the structure of more well-defined ecological networks using the model
-of Chapter 2. Note that the goal will not be to produce actionable forecasts.
-Instead, my forecasts will be of first-orders, and should be seen as a first
-attempt to conduct such analysis efficiently. Moreover, the reliability of my
-forecasts of food-web structure will be conditional on the validity of my
-predictive models and on the reliability of the forecasts of the state
-variables. A more comprehensive forecasting framework, that integrates diverse
-predictive and forecasting models (potentially including mine) and different
-types of data (e.g. traits, phylogeny), should be established and rigorously
-tested in order to use them in any environmental decision-making processes.
-
-Because my predictive models of the two previous chapters will be snapshots of
-biological communities, my forecasts will not be continuous. I will rather
-forecast food-web structure at discrete points in time. Indeed, my predictive
-models are meant to generate snapshots of *stable* biological communities. I
-might assume, perhaps too liberally, that my forecasted food webs were
-transiting from one state (present) to another (future). Analyzing and comparing
-the structure of each state would allow me to assess the potential impacts of
-given environmental scenarios on food-web topology. Generating continuous
-forecasts of food-web structure would require a more dynamical version of my
-MaxEnt predictive models.
-
-he models of the two previous chapters predicted a probability distribution of
-the form:
-
-$$P(x|\textbf{Y}),$${eq:predictions}
-
-where $x$ is the value of a given food-web measure, and $\textbf{Y}$ is the
-vector of values of the state variables.
-
-In Chapter 3, I will forecast food-web structure at a given timepoint $t$:
-
-$$P(x(t)|\textbf{Y}(t)).$${eq:predictions}
-
-My proposed methodology is outlined in fig:conceptual3. Food-web structure will
-be forecasted at the global scale using worldwide forecasts of local species
-richness as inputs to the maximum-entropy predictive model of Chapter 1. I will
-also forecast the structure of sampled biological communities using forecasts of
-the ANSEL state variables as inputs to Trophic-METE. Note that, in the latter
-case, forecasts of $S_0$ for a given geolocated food web could be estimated from
-worldwide forecasts of local species richness. The biggest challenge of this
-chapter will thus be to derive and use realistic forecasts of the state
-variables, under different environmental scenarios.
-
-Food-web structure will be forecasted using forecasts of the
-state variables $A_1$ (forecasted habitat area), $N_1$ (forecasted
-number of individuals), $S_1$ (forecasted species richness), $E_1$
-(forecasted total energetic requirement), and $L_1$ (forecasted number
-of links). As part of my research, $A_1$ will be chosen arbitrarily
-based on different scenarios of habitat loss for illustrative purposes.
-The other state variables $N_1$, $S_1$, $E_1$, and $L_1$ will be
-forecasted using $A_1$, the initial values of the state variables
-($A_0$, $N_0$, $S_0$, $E_0$, $L_0$), as well as the metrics of maximum
-entropy derived by METE or Trophic-METE. Next, forecasted values of the
-state variables will be used as inputs to the model of Chapter 2 to
-generate a probability distribution of feasible weighted food webs, and
-diverse measures of these webs will be computed. The other goal of
-Chapter 3 will be to used to model developed in Chapter 1, along with
-forecasts of species richness based on different environmental
-scenarios, to forecast food-web structure at the global scale. Note that
-worldwide forecasts of species richness could also be used to estimate
-$S_1$ for a given geolocalized food web.
-
-In the first instance, I will forecast food-web structure at the global scale
-using the model developed in Chapter 1. More specifically, I will forecast
-worldwide local species richness in 2020, 2050, and 2080 (those dates are
-however arbitrary and subject to change), under the four Representative
-Concentration Pathways (RCP 2.6, RCP 4.5, RCP 6.0, and RCP 8.5) of the
-Intergovernmental Panel on Climate Change [IPCC; PachMaye15]. To do so, I might
-conduct species distribution modelling (SDMs) to predict species richness from
-given [bioclimatic variables](https://www.worldclim.org/data/bioclim.html) using
-the data on local species richness of Chapter 1. Forecasting of worldwide local
-species richness could then be conducted using scenario-specific forecasts of
-those bioclimatic variables. Next, I will use my forecasts of local species richness as inputs to the
-maximum-entropy model developed in Chapter 1. More specifically, I will predict
-the number of links from the forecasted numbers of species using the flexible
-links model, derive the (joint) degree distributions of maximum entropy, predict
-a distribution of adjacency matrices using simulated annealing and/or
-topological models, and compute various measures of food-web structure from
-those adjacency matrices. I could then map food-web structure at the global
-scale. I will generate a total of 12 maps for each analyzed measure, i.e. at
-three timepoints and under the four environmental scenarios. These measures will
-essentially be the same as those analyzed in Chapter 1, including connectance,
-nestedness, and the maximum trophic level. 
-In the second instance, I will forecast weighted food webs using the derived
-metrics of Trophic-METE. Following Hart11, I will vary the values of the ANSEL
-state variables based on hypothetical scenarios. More specifically, I will
-explore the potential impacts on food-web structure of a 10%, 25%, and 50%
-reduction of suitable habitat area. This habitat loss could be the result of
-land use change (e.g. deforestation) or of climate change (i.e. a shrunk or
-displacement of suitable habitat due to global warming). More generally, I will
-forecast weighted food webs and their structure given an area loss of
-$A_{loss}$.
-
-To do so, I could use the endemics-area relationship (EAR) predicted by METE
-[Hart11], i.e. the expected number of species $E$ unique to a cell of area $A$
-within $A_0$:
-
-$$E(A) = S_0 \sum_{n_0=1}^{N_0}P(n_0)\Phi(n_0),$${eq:endemics}
-
-where $\Phi(n_0)$ is the probability that a species has an abundance of $n_0$ in
-$A_0$ (evaluated using eq:SAD), and $P(n_0)$ is the probability that all of
-those $n_0$ individuals will be in the same cell of area $A$ (evaluated using
-eq:ISSAD). Evaluating $E(A_{loss})$ gives me the expected number of species
-unique to the cell of area $A_{loss}$; this is the expected number of species
-lost if an area of $A_{loss}$ becomes unsuitable. The expected number of
-remaining species $S_1$ could thus be estimated as follows:
-
-$$S_1 = S_0 - E(A_{loss}).$${eq:remain}
-
-Similarly, I could use the species-area relationship $S(A)$, evaluated at
-$A_0-A_{loss}$, to estimate the number of remaining species. Note that,
-according to Hart11, using the SAR would be more appropriate if a patch of area
-$A_1 = A_0-A_{loss}$ remains, whereas we should typically use the EAR if a patch
-of area $A_{loss}$ is lost.
-
-The number of remaining individuals $N_1$ could be estimated as follows:
-
-$$N_1 = N_0 -
-S_0\sum_{n_0=1}^{N_0}\sum_{n=0}^{n_0}nP(n)\Phi(n_0)$$
-
-where $P(n)$ is the probability that $n$ individuals of a species of $n_0$
-individuals are found in the lost patch. Finally, the total energy requirement
-of the community $E_1$ after the perturbation could be estimated as follows:
-
-$$E_1 = E_0 -
-(N_0-N_1)\sum_{n_0=1}^{N_0}\int_{\epsilon=1}^{E_0}\epsilon\Theta(\epsilon)\Phi(n_0)d\epsilon,$${eq:indremain}
-
-where $\Theta(\epsilon)$ is the probability density function that an individual
-of a species with $n_0$ individuals has a metabolic energy between $\epsilon$
-and $d\epsilon$ (eq:ISED).
-
-To summarize this forecasting model, I would start with a community of known
-$A_0$, $N_0$, $S_0$, and $E_0$. I would predict $L_0$ from $S_0$ if it has not
-been measured empirically, and predict food webs using the method presented in
-Chapter 2. I would then investigate how food-web structure would be impacted if
-an area $A_1$ remains after an habitat of area $A_{loss}$ is no longer suitable
-for the community. I would predict $N_1$, $S_1$, $E_1$, and $L_1$ using the
-metrics derived in Chapter 2 and by HartZill08. I could then predict food-web
-structure using this second set of state variables as inputs to Trophic-METE. To
-this date, I ignore on which sampled communities I will apply my method, and how
-I could assess the robustness of my forecasts without any historical data.
-
-The forecasts generated in this chapter will not be actionable. First, the
-habitat loss scenarios will be completely arbitrary, and in that regard my
-results will be of illustrative purposes only. However, Trophic-METE could be
-used to generate *first-order* forecasting of food webs with *legitimate*
-habitat loss scenarios. However, my model should be validated and rigorously
-tested in order to be confident in its forecasts, and I am doubtful that
-sufficient data is available to conduct such analysis. I might have to use a set
-of proxies for historical data, but to this date it is still unclear to me what
-would those proxies be. Second, the robustness of my worldwide forecasts of
-local food-web structure will be conditional on the robustness of the model of
-Chapter 1. However, on the same basis as the argument presented in the first
-chapter, I expect that my forecasts will have a low reliability, although they
-might have a high validity for more stable communities. Again, I am not sure how
-I will assess the reliability and validity of those worldwide forecasts
-empirically.
-
-A main limitation of my models is that they will be snapshots of biological
-communities and of their food webs, and as such I do not expect that they will
-make adequate predictions for communities in transition. Because communities
-undergoing rapid changes (e.g. deforestation, rapid rise in temperature) might
-be in transition for a very long period of time, my model might not be used in
-any environmental decision-making processes. In that respect, a more dynamical
-version of Trophic-METE should be built. Better, my forecasting models could be
-integrated within a framework of predictive and forecasting models. They could,
-for instance, be used to constrain the space of feasible food webs that would be
-fed to other models. This methodological framework could be very promising to
-forecast pairwise species interactions and the structure of their ecological
-networks more accurately and realistically.
-
-Potential limitations of my models include its potential lack of accuracy.
-Indeed, the predicted distribution of the number of links, obtained from the
-number of species, is quite spread out [MacDBanv20b], and as a consequence I
-believe that the confidence intervals around my predictions might be very large
-as well. However, my predictions might be more precise for networks with
-empirically-measured number of links. I could also use the *maximum a
-posteriori* estimates of the number of links instead of the whole posterior
-distribution, but in that case the outcomes of my models will be interpreted
-differently.
-
-Finally, my models will not predict actual networks, but will provide
-first-order predictions of their structure and adjacency matrices. In this
-regard, they could best be used with other predictive methods to obtain more
-realistic predictions of ecological networks. For example, my predictions of
-network structure could be used to constrain the space of feasible interactions
-between given pairs of species. They could thus complement existing methods of
-inference of pairwise interactions based on various ecological information such
-as species traits, phylogenies, and expert knowledge. Similarly, my forecasts of
-network structure might be improved by integrating my models into a more
-comprehensive methodological framework for the prediction of ecological networks
-in space.
-
-Chapter 2 will have two main steps. First, I will estimate local
-species richness worldwide under different scenarios of climate change and
-habitat loss. Next, I will simulate food-web structure worldwide according to my
-predictions in species richness.
-
-I will use the Representative
-Concentration Pathways (RCPs), adopted by the Intergovernmental Panel on Climate
-Change (IPCC) in its [Fifth Assessment Report (2014)][IPCC], for the potential
-trajectories of worldwide temperature and precipitation. Specifically, I will
-use the IPCC climate models under the RCP 2.6, RCP 4.5, RCP 6.0, and RCP 8.5
-scenarios. Regarding habitat loss, I will use as a baseline the mean rate, over a 30-year
-period, of natural habitat loss for every country where such data is available.
-Four scenarios will be considered: (1) a constant rate over time, (2) a 0.1
-decrease by decades, (3) a 0.1 increase by decades, and (4) a 0.2 increase by
-decades. My model will not account for other causes of biodiversity loss, such as habitat
-fragmentation, species migration capabilities and occurrence of potential
-predators or preys in the new range. Local rates of change in species richness will be
-estimated at the global scale using machine learning techniques and species
-distribution models (SDMs). According to the performance of the machine learning models, I might also use
-species distribution models (SDMs). SDMs are used to predict species
-distributions  from occurrence and environmental data [GuisTing13]. The temporal
-change of these variables, under the 16 scenarios, could be used to forecast
-species distribution and thus species richness through time. I might also use
-joint species distribution models (JSDMs), which, unlike conventional SDMs, take
-into account species co-occurrence in such modeling [PollTing14].
-
-I will use the model presented and validated in
-the first chapter to forecast food-web structure at the global scale.
-Specifically, I will use the generated distributions, obtained from Chapter 1,
-of the food-web measures for each level of species richness. I should then be
-able to map the medians of these distributions at the global scale according to
-my different predictions of worldwide local species richness. I will compute and map the predicted temporal variations of these measures, and
-identify the hotspots where these changes might be the most extreme. I will also
-explore what makes a food web robust to species richness variation, and identify
-environmental thresholds beyond which significant changes in food-web structure
-would likely occur. I will finally discuss the potential impacts of these changes on the functioning
-of biological communities and on the ecosystem services they provide.
-
-Because food-web structure
-is so closely related to species richness, a change in local species richness
-could have hurtful consequences on the structure of ecological networks, and
-thus on their functioning. This would raise awareness on ecosystem fragility and help
-identify hotspots of highly vulnerable food webs.
-
+Nécessitant très peu de données empiriques préalables, Trophique-METE peut
+faciliter la prédiction des réseaux trophiques dans le temps et l'espace. Selon
+le niveau de validation de la version employée, les distributions prédites
+peuvent être utilisées comme distributions informatives \textit{a priori}
+(c.-à-d. comme distributions mises à jour par de nouvelles données empiriques
+dans des analyses bayésiennes de la structure des réseaux) ou comme prédictions
+directes de la structure des réseaux. Lorsque soutenue empiriquement, une
+version de la théorie peut simplifier l'étude des réseaux trophiques sur de
+vastes étendues spatiales en générant des prédictions pour différentes
+communautés dont nous connaissons la valeur des variables d'état. De même,
+Trophique-METE peut être utilisée pour prévoir les changements futurs dans la
+structure des réseaux trophiques. Pour ce faire, elle utilise les projections
+des variables d'état à des moments précis dans le temps selon différents
+scénarios climatiques et environnementaux (p. ex. la projection de la richesse
+spécifique d'une communauté lors de la prochaine décennie ou la projection de la
+superficie occupée par un écosystème forestier après un projet d'expansion
+urbain). Cette projection suppose que les nouvelles valeurs des variables d'état
+ont atteint un nouvel équilibre stable, sauf si une version dynamique de
+Trophique-METE est développée pour les écosystèmes en transition. Avec les
+changements climatiques et la perte des habitats naturels qui altèrent
+profondément la structure des écosystèmes, une théorie des réseaux trophiques
+capable de prédire efficacement et de manière cohérente leurs propriétés
+émergentes nous aidera à mieux anticiper les impacts écologiques des changements
+environnementaux à venir. 
 
 \endinput
 %%
