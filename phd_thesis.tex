@@ -359,21 +359,21 @@ Pour bien comprendre le fonctionnement et la dynamique des écosystèmes, nous
 devons développer une compréhension approfondie des réseaux d'interactions entre
 espèces. Cependant, la difficulté d'échantillonner ces réseaux complique leur
 étude à différentes échelles spatiales. Les modèles prédictifs peuvent pallier
-ce manque de données, mais il peut être ardu de déterminer quel mécanisme
-écologique, parmi ceux sous-jacents aux interactions entre espèces, devrait
+ce manque de données, mais il peut être difficile de déterminer quels mécanismes
+écologiques, parmi ceux sous-jacents aux interactions entre espèces, devraient
 servir de base pour ces modèles. De plus, les sources d'incertitude liées à ces
-modèles ne sont pas toujours identifiées, ce qui peut nuire à notre
-interprétation des réseaux prédits en suscitant un excès de confiance dans les
+modèles ne sont pas toujours bien identifiées, ce qui peut nuire à notre
+interprétation des réseaux prédits en entraînant un excès de confiance dans les
 prédictions. En reconnaissant que la structure des réseaux trophiques est
-écologiquement et statistiquement contrainte, cette thèse met de l'avant une
-méthode intrinsèquement probabiliste permettant de prédire, de manière cohérente
-et non biaisée, différentes mesures des réseaux trophiques à partir de ces
-contraintes. Elle jette les bases de la théorie de l'entropie maximale des
-réseaux trophiques (Trophique-METE), qui permet d'inférer des distributions de
-probabilité caractérisant la structure des réseaux trophiques. Ne reposant sur
-aucun mécanisme écologique explicite, cette théorie prédit ces distributions à
-partir du principe d'entropie maximale et d'un ensemble limité de variables
-d'état, dont le choix permet de formuler différentes versions de la théorie. 
+écologiquement contrainte, cette thèse met de l'avant une méthode
+intrinsèquement probabiliste permettant de prédire, de manière cohérente et non
+biaisée, différentes mesures des réseaux trophiques à partir de ces contraintes.
+Elle jette les bases de la théorie de l'entropie maximale des réseaux trophiques
+(Trophique-METE), qui permet d'inférer des distributions de probabilité
+caractérisant la structure des réseaux trophiques. Ne reposant sur aucun
+mécanisme écologique explicite, cette théorie prédit ces distributions à partir
+du principe d'entropie maximale et d'un ensemble limité de variables d'état,
+dont le choix permet de formuler différentes versions de la théorie. 
 
 L'article~\ref{art:article1} constitue le cadre conceptuel de la théorie. En
 décrivant les sources d'incertitude des interactions entre espèces, il clarifie
@@ -384,7 +384,7 @@ intrinsèque dans le temps et l'espace. Je distingue deux types d'interaction
 probabiliste qui diffèrent dans leurs sources d'incertitude~: les interactions
 locales décrivant la probabilité qu'elles soient réalisées à un endroit et
 moment particuliers, et les interactions régionales décrivant la probabilité
-qu'elles soit biologiquement faisables. À l'aide d'un jeu de données
+qu'elles soient biologiquement faisables. À l'aide d'un jeu de données
 d'interactions hôtes-parasites en Europe, je montre que ces deux représentations
 ont différentes propriétés statistiques, la probabilité d'interaction locale
 variant dans le temps et l'espace, mais pas la probabilité d'interaction
@@ -407,13 +407,13 @@ heuristique, prédit bien la structure des réseaux trophiques aquatiques et
 terrestres à l'échelle globale. Cependant, elle surestime systématiquement leur
 diamètre et niveau trophique maximal, ce qui suggère qu'une version subséquente
 contraignant la longueur des chaînes trophiques pourrait s'avérer plus précise.
-De manière générale, Trophique-METE facilite la prédiction des réseaux
-trophiques en réduisant le nombre d'informations requises, tout en permettant
-d'identifier les mécanismes écologiques importants qui les régissent.
+Globalement, Trophique-METE facilite la prédiction des réseaux trophiques en
+réduisant le nombre d'informations requises, tout en permettant d'identifier les
+mécanismes écologiques importants à partir des erreurs de prédiction.
 
-\textbf{Mots clés} : écologie, entropie, incertitude, interactions entre
-espèces, modélisation mathématique, parasitisme, prédation, réseaux trophiques,
-théorie, variabilité locale  
+\textbf{Mots clés} : écologie, herbivorie, incertitude, interactions entre
+espèces, modélisation mathématique, parasitisme, prédation, prédiction, théorie
+scientifique, variabilité locale  
 
 %%------------------------------------------------- %
 %%              pages iv                            %
@@ -422,49 +422,60 @@ théorie, variabilité locale
 \anglais
 \chapter*{Abstract}
 
-To better understand ecosystem functioning and implement effective conservation
-measures, we need to develop a thorough understanding of species
-interactions. Among these interactions, trophic interactions such as predation
-and herbivory, play a significant ecological role by affecting
-population dynamics. However, uncertainties remain regarding the occurrence of
-trophic interactions. First, these uncertainties stem from our lack of empirical
-knowledge about these interactions and the conditions favoring their occurrence.
-Secondly, they arise from their intrinsic variability in time and space.
-Considering these two major sources of uncertainty (lack of knowledge and local
-variability) has led several ecologists to represent species interactions
-probabilistically within complex ecological networks. In this thesis, I argue
-that such a probabilistic view of complex ecological systems is the foundation
-of a maximum entropy theory of food webs.
+To better understand ecosystems functioning and dynamics, we need to develop a
+deep understanding of species interactions networks. However, the difficulty of
+sampling these networks impedes their study at different spatial scales.
+Predictive models can compensate for this lack of data, but it can be
+challenging to determine which ecological mechanisms, among those underlying
+species interactions, should be incorporated into these models. Additionally,
+the sources of uncertainty associated with these models are not always well
+identified, which can hinder our interpretation of predicted networks by leading
+to overconfidence in the predictions. By recognizing that food-web structure is
+ecologically constrained, this thesis introduces an intrinsically probabilistic
+method generating coherent and least-biased predictions of various food-web
+measures based on these constraints. It lays the groundwork for the maximum
+entropy theory of food webs (Trophic-METE), which infers probability
+distributions characterizing food-web structure. Without relying on explicit
+ecological mechanisms, this theory predicts these distributions using the
+principle of maximum entropy and a limited set of state variables, the choice of
+which allows for the development of different versions of the theory.
 
-Article~\ref{art:article1} examines the sources of uncertainty in species
-interactions. I distinguish two types of probabilistic representation of species
-interactions: local interactions describing the probability that they occur at
-specific locations and times, and regional interactions describing the
-probability that they are biologically feasible. Using a dataset of
-host-parasite interactions in Europe, I show that these two representations
-differ in their statistical properties, with local interaction probabilities
-varying over time and space, but not regional interaction probabilities.
-Understanding the sources of uncertainty in species interactions helps identify
-networks likely to follow the principle of maximum entropy.
+Article~\ref{art:article1} constitutes the conceptual framework of the theory.
+By describing the sources of uncertainty in species interactions, it expands the
+probabilistic view of food webs that underpins the theory. I show that this
+uncertainty arises both from our lack of knowledge about species interactions
+and their intrinsic variability in time and space. I distinguish two types of
+probabilistic interactions that differ in their uncertainty sources: local
+interactions describing the probability that they occur at a specific location
+and time, and regional interactions describing the probability that they are
+biologically feasible. Using a dataset of host-parasite interactions in Europe,
+I show that these two representations have different statistical properties,
+with local interaction probabilities varying in time and space, but not regional
+interaction probabilities. Understanding the sources of uncertainty and
+properties of probabilistic interactions helps us define the scope of the theory
+and can guide the development of different versions based on the variables on
+which they are conditioned.
 
-Article~\ref{art:article2} presents why local networks are of maximum entropy
-(or internal complexity) within a limited number of ecological constraints. I
-developed two approaches (analytical and heuristic) to predict local food-web
-structure using the principle of maximum entropy. The analytical approach
-allowed me to obtain the distribution of the number of prey and predators for
-each species in a network from the total number of species and interactions. The
-heuristic approach, on the other hand, revealed that this same distribution is
-one of the main ecological constraints determining food-web structure. My models
-better predict the structure of aquatic and terrestrial food webs sampled
-globally than null models based on the same constraints.
+Article~\ref{art:article2} develops the first two versions of the theory. The
+first version uses the number of species and interactions as state variables to
+predict the joint degree distribution and the adjacency matrix, while the second
+version uses the number of prey and predators per species to predict the
+adjacency matrix. These versions employ two complementary approaches for
+predicting the structure of local networks using the principle of maximum
+entropy. The analytical approach directly infers probability distributions using
+the method of Lagrange multipliers, whereas the heuristic approach predicts the
+adjacency matrix using permutations. I show that the second version, based
+solely on the heuristic approach, accurately predicts the structure of aquatic
+and terrestrial food webs at a global scale. However, it consistently
+overestimates their diameter and maximum trophic level, which suggests that a
+subsequent version of the theory constraining trophic chain lengths might be
+more accurate. Overall, Trophic-METE facilitates the prediction of food webs by
+reducing the amount of information required while helping us identify important
+ecological mechanisms from prediction errors.
 
-This thesis lays the foundations for the maximum entropy theory of food webs.
-This theory can facilitate the study of food webs by reducing the amount of
-information required for their prediction, while highlighting the simplicity of
-the biological mechanisms governing complex ecological systems.
-
-\textbf{Keywords}: food webs, species interactions, predation, parasitism,
-uncertainty, local variability, entropy, mathematical modeling, ecology
+\textbf{Keywords}: ecology, herbivory, local variability, mathematical modeling,
+parasitism, predation, prediction, scientific theory, species interactions,
+uncertainty
 
 %%------------------------------------------------- %
 %%        page v --- Table de matieres              %
@@ -546,7 +557,7 @@ uncertainty, local variability, entropy, mathematical modeling, ecology
   SVD & Décomposition en valeurs singulières, de l'anglais
   \textit{Singular value decomposition} \\
   Trophique-METE & Théorie de l'entropie maximale des réseaux trophiques, de l'anglais 
-  \textit{Maximum entropy theory of ecology for food webs} \\
+  \textit{Maximum entropy theory of food webs} \\
 \end{twocolumnlist}
 %% L'environnement <threecolumnlist> existe aussi pour trois colonnes.
 
