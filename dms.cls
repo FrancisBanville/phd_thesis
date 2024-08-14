@@ -111,7 +111,7 @@
 \edef\dmscontentsnamefr{Table des mati\noexpand\`eres} %\'e car on ne sait pas si inputenc sera chargé
 \edef\dmscontentsnameen{Contents}
 
-\edef\revuemsgfr{Cet article a \noexpand\'et\noexpand\'e soumis en anglais dans }
+\edef\revuemsgfr{Cet article a \noexpand\'et\noexpand\'e }
 \edef\revuemsgen{This article was submitted in }
 
 % \edef\contribmsgfr{Les principales contributions de
@@ -129,7 +129,7 @@
   \edef\refnamefr{R\'ef\'erences bibliographiques}
   \edef\refnameen{References}
 
-  \edef\revuemsgfr{Cet article a \'et\'e soumis en anglais dans }
+  \edef\revuemsgfr{Cet article a \'et\'e }
   \edef\revuemsgen{This article was submitted in }
 
  % \edef\contribmsgfr{Les principales contributions de
