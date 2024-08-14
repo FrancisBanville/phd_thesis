@@ -668,8 +668,8 @@ les activités humaines, comme la modification de l'utilisation du territoire et
 le rejet de gaz à effet de serre dans l'atmosphère, n'ont pas ralenti depuis la
 fin de la pandémie, même si nous savons qu'elles peuvent altérer la distribution
 et la biologie des espèces hôtes de pathogènes. Rien pour atténuer son
-éco-anxiété, le risque est réel de voir émerger une nouvelle crise
-sanitaire causée par des changements environnementaux d'origine anthropique. 
+éco-anxiété, le risque est réel de voir émerger une nouvelle crise sanitaire
+causée par des changements environnementaux d'origine anthropique. 
 
 C'est dans ce contexte que s'est développé mon intérêt pour les réseaux
 écologiques. Pour mieux anticiper et nous préparer adéquatement aux changements
@@ -691,27 +691,26 @@ rang d'une science prédictive pour répondre à ces enjeux.
 
 Lors de mon doctorat, j'ai participé à plusieurs projets de recherche portant
 sur la prédiction des réseaux d'interactions entre espèces à partir des données
-écologiques disponibles. Dans \textcite{Strydom2021Roadmapa}, nous avons proposé une
-feuille de route pour améliorer la prédiction de différents types de réseaux
+écologiques disponibles. Dans \textcite{Strydom2021Roadmapa}, nous avons proposé
+une feuille de route pour améliorer la prédiction de différents types de réseaux
 écologiques dans le temps et l'espace, reconnaissant que les interactions entre
 espèces peuvent varier localement. Nous avons notamment avancé que la prédiction
 des réseaux écologiques à l'échelle locale est facilitée lorsque nous disposons
-d'un réseau régional. Dans \textcite{Strydom2022Food}, nous avons montré qu'il est
-possible de reconstituer fidèlement un tel réseau régional en transférant
+d'un réseau régional. Dans \textcite{Strydom2022Food}, nous avons montré qu'il
+est possible de reconstituer fidèlement un tel réseau régional en transférant
 l'information écologique d'un réseau analogue. Nous avons ainsi pu prédire les
 interactions prédateurs-proies régionales entre les mammifères canadiens à
 partir d'un réseau trophique analogue européen, qui avait été auparavant
 échantillonné. Nous avons expliqué en détail la méthode utilisée d'intégration
 de graphes (une méthode d'apprentissage automatique) dans
 \textcite{Strydom2023Grapha}. Pour ce qui est des réseaux locaux, nous avons
-développé un modèle pour prédire le nombre total d'interactions
-prédateurs-proies à partir du nombre local d'espèces dans
-\textcite{MacDonald2020Revisiting}. Finalement, nous avons proposé une méthode dans
-\textcite{Higino2023Mismatch} pour vérifier le réalisme écologique des réseaux
-trophiques locaux prédits. Bien que ces projets aient été principalement
-appliqués aux interactions prédateurs-proies à cause de leur importance
-historique en écologie, les méthodes présentées peuvent être appliquées à
-différents types d'interactions entre espèces. 
+développé un modèle prédisant le nombre total d'interactions prédateurs-proies à
+partir du nombre d'espèces locales dans \textcite{MacDonald2020Revisiting}.
+Finalement, nous avons proposé une méthode dans \textcite{Higino2023Mismatch}
+pour vérifier le réalisme écologique des réseaux trophiques locaux prédits. Bien
+que ces projets aient été principalement réalisés sur les interactions
+prédateurs-proies, les méthodes présentées peuvent être appliquées à différents
+types d'interactions entre espèces. 
 
 Ma thèse s'inscrit donc dans un effort plus large visant à prédire les
 interactions entre espèces à différentes échelles spatiales. J'ai approfondi et
@@ -720,38 +719,39 @@ recherche. Par exemple, lors d'un groupe de travail portant sur le développemen
 d'une méthode d'identification des sites d'échantillonnage maximisant
 l'information recueillie sur les interactions entre espèces, nous avons constaté
 que nous n'avions pas la même interprétation des interactions probabilistes.
-Puisque nos modèles prédictifs estiment la probabilité qu'une interaction soit
-réalisée, il est crucial d'avoir une interprétation claire de leurs résultats
-pour pouvoir adéquatement les utiliser. La réalisation qu'il manquait une
-définition précise des interactions probabilistes fut la bougie d'allumage de
-l'article~\ref{art:article1}. De la même manière, c'est en travaillant sur ces
-modèles prédictifs que j'ai pris connaissance que la structure des réseaux
-d'interactions entre espèces était contrainte par un nombre limité de variables
-écologiques. Cette constatation m'a incité à développer les bases de la théorie
-de l'entropie maximale des réseaux trophiques, exposée dans
-l'article~\ref{art:article2}. Cette méthode simplifie grandement la prédiction
-des réseaux d'interactions entre espèces en diminuant le nombre d'information
-requise. 
+Puisque plusieurs de nos modèles prédictifs estiment la probabilité qu'une
+interaction soit réalisée, il est crucial d'avoir une interprétation claire de
+leurs résultats pour pouvoir adéquatement les utiliser. La réalisation qu'il
+manquait une définition précise des interactions probabilistes fut la bougie
+d'allumage de l'article~\ref{art:article1}. De la même manière, c'est en
+travaillant sur ces modèles prédictifs que j'ai pris connaissance que la
+structure des réseaux d'interactions entre espèces est contrainte par un nombre
+limité de variables écologiques. Cette constatation m'a incité à développer les
+bases de la théorie de l'entropie maximale des réseaux trophiques, dont les deux
+premières versions sont présentées dans l'article~\ref{art:article2}. Cette
+théorie simplifie grandement la prédiction des réseaux trophiques en diminuant
+le nombre d'informations préalables requises. 
 
 Mon travail est ancré dans les principes de la reproductibilité et de la science
 ouverte. Je me suis engagé à partager mes données, scripts et résultats pour que
-ma recherche soit plus transparente. Dans \textcite{Dansereau2020Re}, nous avons
-reproduit l'article classique de \textcite{Hastings1991Chaos} sur le chaos d'une
-chaîne alimentaire à trois espèces, montrant la faisabilité et l'importance d'un
-tel exercice de reproduction. J'ai confiance que le lecteur ou la lectrice
-désirant reproduire mes résultats de recherche trouvera cette démarche aisée.
-Pour aider, nous avons rédigé un article (\cite{Banville2021Mangal}) expliquant
-les librairies principales utilisées dans cette thèse. En outre, dans
-\textcite{Lawlor2022Ten}, nous avons rédigé un guide pour aider les biologistes
-à apprendre le langage de programmation R par eux et elles-mêmes. Les principes
-généraux de ce guide peuvent également être utiles pour débuter avec le langage
-de programmation Julia, qui a permis d'obtenir la majorité des résultats
-présentés dans cette thèse. Enfin, je suis convaincu que notre devoir en tant
-que scientifiques est de travailler ensemble et ouvertement pour relever les
-défis mondiaux tels que l'adaptation aux changements climatiques, la
-préservation des habitats naturels et la prévention de futures pandémies. Je
-crois fermement que la compréhension des interactions entre espèces joue un rôle
-crucial dans cet objectif. 
+ma recherche soit plus transparente et reproductible. Dans
+\textcite{Dansereau2020Re}, nous avons reproduit l'article classique de
+\textcite{Hastings1991Chaos} sur le chaos d'une chaîne alimentaire à trois
+espèces, montrant la faisabilité et l'importance d'un tel exercice de
+reproduction. J'espère que le lecteur ou la lectrice désirant reproduire mes
+résultats de recherche trouvera cette démarche aisée. Pour aider, nous avons
+rédigé un article (\cite{Banville2021Mangal}) expliquant les librairies
+principales utilisées dans cette thèse. En outre, dans \textcite{Lawlor2022Ten},
+nous avons écrit un guide pour aider les biologistes à apprendre le langage de
+programmation R par eux et elles-mêmes. Les principes généraux exposés dans ce
+guide peuvent également être utiles pour débuter avec le langage de
+programmation Julia, qui a permis d'obtenir la majorité des résultats présentés
+dans cette thèse. Enfin, je suis convaincu que notre devoir en tant que
+scientifiques est de travailler ensemble et ouvertement pour relever les défis
+mondiaux tels que l'adaptation aux changements climatiques, la préservation des
+habitats naturels et la prévention de futures pandémies. Je crois fermement que
+la compréhension des interactions entre espèces joue un rôle crucial dans cet
+objectif. 
 
 %
 % Fin des pages liminaires.  À partir d'ici, les
