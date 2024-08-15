@@ -15,29 +15,29 @@
 
 \section{Les réseaux d'interactions entre espèces en tant que systèmes complexes}
 
-Plusieurs phénomènes naturels sont régis par des systèmes complexes, qui forment
-un ensemble cohérent d'éléments interagissant entre eux
-(\cite{Rind1999Complexity}). Ces interactions impliquent des échanges directs
-d'information, de matière ou d'énergie (\cite{Ladyman2013What}) dont l'effet
-conjoint génère des propriétés émergentes de niveau supérieur
-(\cite{Foote2007Mathematics}). Par exemple, le réseau de neurones dans un
-cerveau humain orchestre des milliers de signaux électriques à chaque seconde
-pour créer une expérience subjective du monde (\cite{Sporns2011Human}). De même,
-une colonie de fourmis produit des comportements complexes tels que la
-construction de nids et la défense du territoire par le biais d'individus
-coopératifs qui s'échangent ressources et informations
-(\cite{Bonabeau1999Swarm}). Caractéristiques fondamentales des systèmes
-complexes, ces propriétés émergentes ne sont pas déductibles des éléments pris
-individuellement (\cite{Nielsen2000Emergent}). Du désordre apparent des éléments
-et de leurs interactions émerge donc une structure ordonnée qui est au cœur des
-recherches sur les systèmes complexes. 
+De nombreux phénomènes physiques, biologiques et sociaux importants sont régis
+par des systèmes complexes, qui forment un ensemble cohérent d'éléments
+interagissant entre eux (\cite{Rind1999Complexity}). Ces interactions impliquent
+des échanges directs d'information, de matière ou d'énergie
+(\cite{Ladyman2013What}) dont l'effet conjoint génère des propriétés émergentes
+de niveau supérieur (\cite{Foote2007Mathematics}). Par exemple, le réseau de
+neurones dans notre cerveau orchestre des milliers de signaux électriques à
+chaque seconde pour créer notre expérience subjective du monde
+(\cite{Sporns2011Human}). De même, une colonie de fourmis produit des
+comportements complexes tels que la construction de nids et la défense du
+territoire par le biais d'individus coopératifs qui s'échangent ressources et
+informations (\cite{Bonabeau1999Swarm}). Caractéristiques fondamentales des
+systèmes complexes, ces propriétés émergentes ne sont pas déductibles des
+éléments pris individuellement (\cite{Nielsen2000Emergent}). Du désordre
+apparent des éléments et de leurs interactions émerge donc une structure
+ordonnée qui est au cœur des recherches sur les systèmes complexes.  
 
 Pour faciliter l'étude des systèmes complexes, il est courant de les représenter
 sous forme de réseaux, où les éléments forment des nœuds et les interactions,
 des liens entre ces nœuds (\cite{Newman2003Structure}). Dans cette thèse, je me
 suis intéressé aux réseaux d'interactions entre espèces, qui servent d'outil
 pour mieux comprendre les systèmes écologiques complexes. Ces réseaux lient
-chaque paire d'espèces qui interagissent entre elles, comme un prédateur et sa
+chaque paire d'espèces qui interagissent ensemble, comme un prédateur et sa
 proie, un parasite et son hôte ou une plante et son pollinisateur. Bien ancrée
 dans la science des réseaux et la théorie des graphes, l'écologie des réseaux
 fournit un cadre d'analyse pour étudier les propriétés émergentes des
@@ -51,20 +51,20 @@ d'interactions (p. ex. \cite{Delmas2019Analysing}), nous permettant ainsi de
 mieux comprendre les caractéristiques de ces systèmes complexes. 
 
 Cette thèse jette les bases de la théorie de l'entropie maximale des réseaux
-trophiques, qui constitue une approche novatrice en écologie des réseaux
-permettant de prédire la structure émergente des réseaux complexes
-d'interactions à partir d'un nombre limité d'informations écologiques. Avant
-d'exposer cette théorie, il convient de passer en revue quelques
-caractéristiques importantes des systèmes écologiques complexes, notamment en ce
-qui a trait aux mécanismes régissant les interactions entre espèces et aux
-mesures des interactions et de la structure des réseaux. Plus spécifiquement,
-j'explique, dans les sous-sections suivantes, que les interactions entre espèces
-sont le résultat de nombreux mécanismes écologiques souvent difficiles à
-départager, que les interactions entre espèces sont intrinsèquement
-probabilistes et que la structure émergente des réseaux d'interactions est
-écologiquement et statistiquement contrainte. Ces trois observations
-sous-tendent la théorie proposée en décrivant plusieurs aspects fondamentaux de
-la complexité écologique.
+trophiques (Trophique-METE), qui constitue une approche novatrice en écologie
+des réseaux permettant de prédire la structure émergente des réseaux trophiques
+à partir d'un nombre limité de variables écologiques, tout en expliquant les
+déterminants des réseaux complexes d'interactions. Avant d'exposer cette
+théorie, il convient de passer en revue quelques caractéristiques importantes
+des systèmes écologiques complexes, notamment en ce qui a trait aux mécanismes
+régissant les interactions entre espèces, aux mesures des interactions entre
+espèces et à l'analyse de la structure des réseaux. J'explique notamment, dans
+les sous-sections suivantes, que les interactions entre espèces sont le résultat
+de nombreux mécanismes écologiques souvent difficiles à départager, que les
+interactions entre espèces sont intrinsèquement probabilistes et que la
+structure émergente des réseaux d'interactions est écologiquement et
+statistiquement contrainte. Ces trois observations sous-tendent la théorie
+proposée en décrivant des aspects fondamentaux de la complexité écologique.
 
 \subsection{Quels mécanismes écologiques sous-tendent les interactions entre espèces?} 
 
@@ -89,9 +89,15 @@ Comprendre l'écologie et l'épidémiologie de la maladie de Lyme nécessite une
 compréhension approfondie des interactions entre espèces au sein des communautés
 où la tique \textit{I. scapularis} est présente. Plus généralement, il est
 important d'identifier les mécanismes écologiques sous-tendant les interactions
-entre espèces pour mieux comprendre les conditions favorisant leur réalisation. 
+entre espèces pour mieux comprendre les conditions favorisant leur réalisation.
+La théorie de l'entropie maximale des réseaux trophiques, mise de l'avant dans
+cette thèse, facilite l'identification des mécanismes importants agissant à
+l'échelle de la communauté à l'aide des variables utilisées et de ses erreurs de
+prédiction. Cependant, notre compréhension de ces mécanismes peut dépendre du
+type d'interaction, du niveau d'organisation taxonomique et de l'échelle
+spatiale des réseaux étudiés. 
 
-\subsubsection{Les interactions impliquent différents types d'échange} 
+\subsubsection{Les interactions entre espèces impliquent différents types d'échange} 
 
 Les interactions entre espèces peuvent avoir des effets positifs, négatifs ou
 neutres sur les organismes impliqués, en fonction du type d'interaction. Les
@@ -103,21 +109,32 @@ interactions prédateurs-proies et plantes-herbivores transfèrent l'énergie de
 ressource vers le consommateur, entraînant généralement la mort de la proie,
 mais pas nécessairement celle de la plante. Les interactions mutualistes, telles
 que les interactions plantes-pollinisateurs, profitent au contraire aux deux
-espèces. Le pollinisateur se nourrit du nectar de la plante, qui en retour en
+espèces. Le pollinisateur se nourrit du nectar de la plante qui, en retour, en
 profite pour disperser son pollen à des fins de reproduction. Selon le niveau de
-complexité représenté, les réseaux d'interactions entre espèces peuvent être
-composés d'un seul type d'interaction (p. ex. les réseaux trophiques composés
-exclusivement d'interactions trophiques prédateurs-proies et plantes-herbivores)
-ou de plusieurs (p. ex. les réseaux multicouches composés d'interactions
-antagonistes et mutualistes, \cite{Pilosof2017Multilayer}). 
+complexité écologique représenté, les réseaux d'interactions entre espèces
+peuvent être composés d'un seul type d'interaction (p. ex. les réseaux
+trophiques composés exclusivement d'interactions trophiques prédateurs-proies et
+plantes-herbivores) ou de plusieurs (p.~ex. les réseaux multicouches composés
+d'interactions antagonistes et mutualistes, \cite{Pilosof2017Multilayer}). 
 
-Les interactions prédateurs-proies et plantes-herbivores ont une importance
-particulière et historique en écologie. Les réseaux trophiques ont été
-introduits il y a près d'un siècle, lorsque Charles Sutherland Elton (1900-1991)
-a développé les concepts de chaînes et de niveaux trophiques
+Les mécanismes écologiques sous-tendant différents types d'interactions directes
+sont essentiellement les mêmes, bien que leurs spécificités puissent varier. Par
+exemple, toutes les interactions directes reposent sur des règles de
+correspondance de traits (\cite{Poisot2015Species}). Cependant, les traits
+pertinents varient d'un type d'interaction à un autre (p. ex. la dentition d'un
+prédateur pour une interaction trophique ou la longueur de l'étamine pour une
+interaction plante-pollinisateur). Les interactions directes sont comparables
+dans la mesure où elles sont toutes réalisées localement par des individus, ce
+qui nous permet d'aborder en parallèle leurs mécanismes écologiques (tel
+qu'effectué dans l'article~\ref{art:article1}).
+
+Les interactions prédateurs-proies et plantes-herbivores ont toutefois une
+importance particulière et historique en écologie. Le concept de réseau
+trophique a été introduit il y a près d'un siècle, lorsque Charles Sutherland
+Elton (1900-1991) a développé les concepts de chaînes et de niveaux trophiques
 (\cite{Elton1927Animal}, \cite{Elton1958Ecology}). Plusieurs publications
-marquantes en écologie, comme celles de \textcite{May1972Will} sur la stabilité des
-écosystèmes complexes et de \textcite{Lotka1925Elements} et
+marquantes en écologie, comme celles de \textcite{May1972Will} sur la stabilité
+des écosystèmes complexes et de \textcite{Lotka1925Elements} et
 \textcite{Volterra1927Fluctuations} sur la dynamique des populations animales,
 portent sur les interactions trophiques. Les interactions prédateurs-proies et
 plantes-herbivores déterminent les flux de matière et d'énergie au sein des
@@ -131,20 +148,11 @@ s'adapter aux changements climatiques (\cite{Tylianakis2008Global},
 (\cite{Evans2013Robustness}). De plus, les données disponibles sur les réseaux
 trophiques couvrent une diversité d'habitats à l'échelle mondiale
 (\cite{Poisot2021Global}), ce qui nous permet de tester une variété de modèles
-statistiques et d'hypothèses écologiques sur ces interactions. C'est pourquoi 
-les réseaux trophiques occupent une place centrale dans cette thèse. 
+statistiques et d'hypothèses écologiques sur ces interactions. C'est en grande
+partie pour ces raisons que cette thèse propose et teste une théorie sur les
+réseaux trophiques.
 
-Les mécanismes écologiques qui sous-tendent différents types d'interactions sont
-essentiellement les mêmes, bien que leurs spécificités puissent varier. Par
-exemple, toutes les interactions directes reposent sur des règles de
-correspondance des traits (\cite{Poisot2015Species}). Cependant, les traits
-pertinents varient d'un type d'interaction à un autre (p. ex. dentition d'un
-prédateur pour une interaction trophique ou longueur de l'étamine pour une
-interaction plante-pollinisateur). L'ensemble des interactions écologiques
-directes est réalisé localement par des individus, permettant ainsi de discuter
-communément de leurs mécanismes écologiques.
-
-\subsubsection{Les interactions sont réalisées par des individus} 
+\subsubsection{Les interactions entre espèces sont réalisées par des individus} 
 
 Les individus sont à la base des interactions entre espèces puisque ce sont eux
 qui effectuent les échanges d'information, de matière ou d'énergie. Par exemple,
@@ -171,7 +179,7 @@ comment les processus écologiques agissant à l'échelle individuelle se combin
 pour supporter les interactions entre espèces nous aide à mieux saisir les
 déterminants des réseaux d'interactions entre espèces.
 
-\subsubsection{Les interactions locales résultent de plusieurs mécanismes écologiques} 
+\subsubsection{Les interactions locales résultent d'un grand nombre de mécanismes} 
 
 Cette thèse distingue les interactions cataloguées à l'échelle régionale de
 celles réalisées à l'échelle locale. Les réseaux régionaux (ou \textit{metaweb},
