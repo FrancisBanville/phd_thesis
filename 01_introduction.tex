@@ -54,17 +54,17 @@ Cette thèse jette les bases de la théorie de l'entropie maximale des réseaux
 trophiques (Trophique-METE), qui constitue une approche novatrice en écologie
 des réseaux permettant de prédire la structure émergente des réseaux trophiques
 à partir d'un nombre limité de variables écologiques, tout en expliquant les
-déterminants des réseaux complexes d'interactions. Avant d'exposer cette
-théorie, il convient de passer en revue quelques caractéristiques importantes
-des systèmes écologiques complexes, notamment en ce qui a trait aux mécanismes
-régissant les interactions entre espèces, aux mesures des interactions entre
-espèces et à l'analyse de la structure des réseaux. J'explique notamment, dans
-les sous-sections suivantes, que les interactions entre espèces sont le résultat
-de nombreux mécanismes écologiques souvent difficiles à départager, que les
+déterminants de ces réseaux complexes. Avant d'exposer cette théorie, il
+convient de passer en revue quelques caractéristiques importantes des systèmes
+écologiques complexes, notamment en ce qui a trait aux mécanismes régissant les
+interactions entre espèces, aux mesures des interactions entre espèces et à
+l'analyse de la structure des réseaux. J'explique notamment, dans les
+sous-sections suivantes, que les interactions entre espèces sont le résultat de
+nombreux mécanismes écologiques souvent difficiles à départager, que les
 interactions entre espèces sont intrinsèquement probabilistes et que la
 structure émergente des réseaux d'interactions est écologiquement et
-statistiquement contrainte. Ces trois observations sous-tendent la théorie
-proposée en décrivant des aspects fondamentaux de la complexité écologique.
+statistiquement contrainte. Ces observations sous-tendent la théorie proposée en
+décrivant des aspects fondamentaux de la complexité écologique.
 
 \subsection{Quels mécanismes écologiques sous-tendent les interactions entre espèces?} 
 
@@ -116,7 +116,7 @@ peuvent être composés d'un seul type d'interaction (p. ex. les réseaux
 trophiques composés exclusivement d'interactions trophiques prédateurs-proies et
 plantes-herbivores) ou de plusieurs (p.~ex. les réseaux multicouches composés
 d'interactions antagonistes et mutualistes, \cite{Pilosof2017Multilayer}). 
-
+ 
 Les mécanismes écologiques sous-tendant différents types d'interactions directes
 sont essentiellement les mêmes, bien que leurs spécificités puissent varier. Par
 exemple, toutes les interactions directes reposent sur des règles de
@@ -157,47 +157,49 @@ réseaux trophiques.
 Les individus sont à la base des interactions entre espèces puisque ce sont eux
 qui effectuent les échanges d'information, de matière ou d'énergie. Par exemple,
 c'est du sang d'un cerf de Virginie particulier que s'alimentera une tique
-adulte. Les mécanismes sous-tendant les interactions entre espèces sont donc
-basés sur ceux agissant à l'échelle individuelle (p. ex. le comportement d'une
-proie qui détermine sa vulnérabilité à un prédateur,
+adulte. Les mécanismes sous-tendant les interactions entre espèces sont donc en
+partie basés sur ceux agissant à l'échelle individuelle (p. ex. le comportement
+d'une proie qui détermine sa vulnérabilité à un prédateur,
 \cite{Choh2012Predatorprey}). Il va sans dire que les réseaux d'interactions
 entre individus (réseaux dont les nœuds sont des individus) représentent plus
-exhaustivement les échanges ayant lieu au sein des écosystèmes. Ils sont
-cependant difficiles à échantillonner, le peu de données disponibles sur les
-interactions à cette échelle étant biaisées en faveur d'organismes plus simples
-à observer (\cite{Guimaraes2020Structure}). Pour cette raison, les interactions
-entre individus sont le plus souvent groupées en des niveaux d'organisation
-supérieures, connectant différentes populations, espèces ou clades entre eux
+directement les échanges ayant lieu au sein des écosystèmes. Ils sont cependant
+difficiles à échantillonner, le peu de données disponibles sur les interactions
+à cette échelle étant biaisées en faveur d'organismes plus simples à observer
+(\cite{Guimaraes2020Structure}). Pour cette raison, les interactions entre
+individus sont le plus souvent groupées en des niveaux d'organisation
+supérieurs, connectant différentes populations, espèces ou clades entre eux
 (\cite{Elton1927Animal}). Les réseaux d'interactions entre espèces, qui lient
 deux espèces lorsque certains de leurs individus interagissent, ne capturent
 donc qu'une partie de la complexité écologique. Ils constituent néanmoins une
 représentation adéquate du rôle écologique des espèces
 (\cite{Delmas2019Analysing}) et des propriétés émergentes des écosystèmes
 (\cite{Loreau2010Populations}, \cite{McCann2011Food},
-\cite{Bascompte2013Mutualistic}, \cite{Gonzalez2020Scalingup}). Comprendre
-comment les processus écologiques agissant à l'échelle individuelle se combinent
-pour supporter les interactions entre espèces nous aide à mieux saisir les
-déterminants des réseaux d'interactions entre espèces.
+\cite{Bascompte2013Mutualistic}, \cite{Gonzalez2020Scalingup}). Tel que discuté
+dans l'article~\ref{art:article1}, comprendre comment les processus écologiques
+agissant à l'échelle individuelle se combinent pour supporter les interactions
+entre espèces nous aide à mieux saisir les déterminants des réseaux
+d'interactions entre espèces.
 
-\subsubsection{Les interactions locales résultent d'un grand nombre de mécanismes} 
+\subsubsection{Les interactions locales sont le résultat de nombreux mécanismes} 
 
 Cette thèse distingue les interactions cataloguées à l'échelle régionale de
-celles réalisées à l'échelle locale. Les réseaux régionaux (ou \textit{metaweb},
-\cite{Pascual2006Ecological}) sont constitués d'interactions potentielles,
-c'est-à-dire d'interactions biologiquement ou écologiquement faisables sans
-nécessairement être réalisées localement (\cite{Tylianakis2017Ecological}). Par
-exemple, les interactions trophiques régionales du cerf de Virginie incluent
-l'ensemble des plantes et champignons dont il peut se nourrir dans différents
-contextes. Une interaction régionale indique si deux espèces possèdent des
-traits leur permettant d'interagir dans des conditions idéales. Les réseaux
-régionaux sont donc un catalogue de l'ensemble des interactions observées (p.
-ex. \cite{Maiorano2020Tetraeu}) ou prédites (p. ex. \cite{Strydom2022Food})
-entre un groupe d'espèces données. Contrairement aux réseaux locaux, les réseaux
-régionaux ne varient pas spatialement ni temporellement puisqu'ils incluent
-l'ensemble des interactions locales entre un groupe d'espèces. Les mécanismes
-biologiques sous-tendant les interactions régionales sont relativement peu
-nombreux et plus facile à identifier, reposant presqu'exclusivement sur les
-traits des espèces. 
+celles réalisées à l'échelle locale (article~\ref{art:article1}). Les réseaux
+régionaux (ou \textit{metaweb}, \cite{Pascual2006Ecological}) sont constitués
+d'interactions potentielles, c'est-à-dire d'interactions biologiquement ou
+écologiquement faisables sans nécessairement être réalisées localement
+(\cite{Tylianakis2017Ecological}). Par exemple, les interactions trophiques
+régionales du cerf de Virginie incluent l'ensemble des plantes et champignons
+dont il peut se nourrir dans différents contextes. Une interaction régionale
+indique si deux espèces possèdent des traits (caractéristiques biologiques
+telles que la taille corporelle) leur permettant d'interagir dans des conditions
+idéales. Les réseaux régionaux sont donc un catalogue de l'ensemble des
+interactions observées (p. ex. \cite{Maiorano2020Tetraeu}) ou prédites (p. ex.
+\cite{Strydom2022Food}) entre un groupe d'espèces données. Contrairement aux
+réseaux locaux, les réseaux régionaux ne varient pas spatialement ni
+temporellement puisqu'ils incluent l'ensemble des interactions locales entre un
+groupe d'espèces. Les mécanismes biologiques sous-tendant les interactions
+régionales sont relativement peu nombreux et plus faciles à identifier, reposant
+presqu'exclusivement sur les traits des espèces. 
 
 Les réseaux locaux (\cite{Poisot2012Dissimilarity}), quant à eux, sont
 constitués d'interactions observées ou réalisées à un endroit et moment
@@ -208,8 +210,7 @@ faisable, les réseaux locaux sont des sous-réseaux du \textit{metaweb}
 (\cite{Saravia2022Ecological}). Deux espèces interagissent localement si leurs
 abondances (nombres d'individus) sont suffisamment élevées pour qu'elles
 puissent se rencontrer (\cite{Canard2012Emergence}, \cite{Canard2014Empirical})
-et que leurs traits (caractéristiques biologiques telles que la taille
-corporelle) supportent une interaction lorsqu'elles se rencontrent
+et que leurs traits supportent une interaction lorsqu'elles se rencontrent
 (\cite{Bolnick2011Why}, \cite{Gravel2013Inferring}, \cite{Stouffer2011Role}).
 Par exemple, les habitudes alimentaires du cerf de Virginie varient localement
 selon la disponibilité saisonnière en nourriture (\cite{Short1975Nutrition}) et
@@ -217,11 +218,13 @@ sa masse corporelle (\cite{Luna2013Influence}). Les conditions
 environnementales, comme la température (\cite{Angilletta2004Temperature}), les
 précipitations (\cite{Woodward2012Climate}) et l'utilisation du territoire
 (\cite{Tylianakis2007Habitat}), influent également sur la réalisation des
-interactions à l'échelle locale. Ces trois facteurs (abondances, traits,
+interactions à l'échelle locale. Ces trois facteurs (abondances, traits et
 conditions environnementales) contribuent à la variation spatiale et temporelle
 des interactions locales (\cite{Poisot2015Species}). Les mécanismes sous-tendant
 les interactions locales sont nombreux, et il peut être difficile d'identifier
-lesquels contribuent le plus à la réalisation des interactions. 
+lesquels contribuent le plus à la réalisation des interactions. Il peut donc
+être hasardeux de construire une théorie des réseaux trophiques basée sur des
+mécanismes particuliers.  
 
 \subsection{Comment mesurer une interaction entre espèces?} 
 
@@ -230,41 +233,45 @@ entre espèces affecte également notre représentation des réseaux et notre
 interprétation de leurs propriétés. Les mesures des interactions varient selon
 leur niveau d'information écologique. Alors que les interactions binaires et
 quantitatives évaluent respectivement la présence et le poids d'une interaction,
-les interactions probabilistes mesurent son incertitude. Étant donné qu'il y
-aura toujours une incertitude dans notre évaluation des interactions, celles-ci
-sont intrinsèquement probabilistes. Cependant, le choix d'une mesure
-d'interaction dépend des questions posées, de la qualité des données disponibles
-et de notre capacité de quantifier cette incertitude. Les propriétés des réseaux
-sont généralement calculées à partir d'une matrice d'adjacence (représentation
-matricielle d'un réseau) contenant la valeur (binaire, quantitative ou
-probabiliste) des interactions entre chaque paire d'espèces
-(\cite{Delmas2019Analysing}), d'où l'importance du choix de mesure.
+les interactions probabilistes mesurent sa fréquence relative ou son
+incertitude. Étant donné qu'il y aura toujours une incertitude dans notre
+évaluation des interactions locales, à cause de leur variabilité spatiale et
+temporelle, celles-ci sont intrinsèquement probabilistes. Cependant, le choix
+d'une mesure d'interaction dépend des questions posées, de la qualité des
+données disponibles et de notre capacité à quantifier leur incertitude. Les
+propriétés des réseaux sont généralement calculées à partir d'une matrice
+d'adjacence (représentation matricielle d'un réseau) contenant la valeur
+(binaire, quantitative ou probabiliste) des interactions entre chaque paire
+d'espèces (\cite{Delmas2019Analysing}), d'où l'importance du choix de mesure.
+Ainsi, les propriétés des réseaux, prédites par la théorie développée dans cette
+thèse, dépendent de la mesure des interactions entre espèces. 
 
-\subsubsection{Les interactions mesurent différents aspects des échanges de matière et d'énergie} 
+\subsubsection{Les interactions entre espèces mesurent différents aspects des échanges de matière et d'énergie} 
 
 Les interactions binaires indiquent si un lien est présent ou non dans un
 réseau. La présence d'une interaction locale peut signifier que deux espèces ont
 été observées en train d'interagir à l'intérieur des frontières du réseau. Par
 exemple, observer une tique \textit{I. scapularis} sur le pelage d'un cerf de
-Virginie \textit{O. virginianus} dans une forêt donnée témoigne d'une
-interaction hôte-parasite entre ces deux espèces. Ne pas détecter cette
-interaction suggère qu'elle ne se produit pas à cet emplacement particulier.
-Cependant, une absence d'observation peut également être un faux négatif
+Virginie dans une forêt donnée suggère la présence d'une interaction
+hôte-parasite entre ces deux espèces. Ne pas détecter cette interaction peut
+indiquer qu'elle ne se produit pas à cet emplacement particulier. Cependant, une
+absence d'observation peut également être un faux négatif
 (\cite{Bluthgen2010Why}, \cite{Chacoff2012Evaluating}, \cite{Stock2017Linear}),
 c'est-à-dire une interaction non observée qui est en réalité réalisée. Étant
 donné la difficulté d'échantillonner l'ensemble des interactions entre espèces
-dans un lieu donné (\cite{Jordano2016Sampling}), ces faux négatifs sont
-fréquents dans les jeux de données d'interactions entre espèces. Les méthodes
-prédictives des interactions entre espèces (\cite{Strydom2021Roadmapa}) pallient
-cette difficulté d'observation en prédisant lesquelles sont réalisées à
-l'échelle locale. Il est cependant nécessaire de tester ces méthodes sur des
-données empiriques fiables de présence-absence pour pouvoir utiliser les réseaux
-prédits en toute confiance (\cite{Brimacombe2024Applying}). Bien qu'elles
-contiennent peu d'information écologique comparativement aux autres mesures
-d'interaction, les interactions binaires ont été plus fréquemment étudiées en
-écologie (\cite{Pascual2006Ecological}, \cite{Delmas2019Analysing}), notamment
-en raison de leur plus grande facilité d'échantillonnage
-(\cite{Jordano2016Sampling}) et de prédiction (\cite{Strydom2021Roadmapa}).
+au sein d'un milieu naturel donné (\cite{Jordano2016Sampling}), ces faux
+négatifs sont fréquents dans les jeux de données d'interactions entre espèces.
+Les méthodes prédictives des interactions entre espèces
+(\cite{Strydom2021Roadmapa}) pallient cette difficulté d'observation en
+prédisant lesquelles sont réalisées à l'échelle locale. Il est cependant
+nécessaire de tester ces méthodes sur des données empiriques fiables de
+présence-absence pour pouvoir utiliser les réseaux prédits en toute confiance
+(\cite{Brimacombe2024Applying}). Bien qu'elles contiennent peu d'information
+écologique comparativement aux autres mesures d'interaction, les interactions
+binaires ont été plus fréquemment étudiées en écologie
+(\cite{Pascual2006Ecological}, \cite{Delmas2019Analysing}), notamment en raison
+de leur plus grande facilité d'échantillonnage (\cite{Jordano2016Sampling}) et
+de prédiction (\cite{Strydom2021Roadmapa}).
 
 Les interactions quantitatives mesurent quant à elles le poids d'une interaction
 (\cite{Berlow2004Interaction}). Ce poids peut représenter le flux d'énergie ou
@@ -279,43 +286,44 @@ poids d'une interaction est souvent difficile à évaluer, surtout lorsque cet
 effet est variable dans le temps ou qu'il suit une fonction non linéaire ou
 densité-dépendante (\cite{Wootton2005Measurement}). De plus, puisque les
 interactions binaires peuvent être déduites des interactions quantitatives, il
-est nettement plus ardu d'échantillonner et de prédire ces dernières. Toutefois,
-lorsqu'ils sont bien mesurés, les réseaux d'interactions quantitatives décrivant
-les flux d'énergie ou de biomasse entre espèces semblent être une bonne
-représentation des échanges directs se produisant au sein des systèmes
-écologiques complexes. 
+est généralement plus ardu d'échantillonner et de prédire ces dernières.
+Toutefois, lorsqu'ils sont bien mesurés, les réseaux d'interactions
+quantitatives décrivant les flux d'énergie ou de biomasse entre espèces semblent
+être une bonne représentation des échanges directs se produisant au sein des
+systèmes écologiques complexes. 
 
-\subsubsection{Les interactions sont intrinsèquement probabilistes} 
+\subsubsection{Les interactions entre espèces sont intrinsèquement probabilistes} 
 
 Que nous ayons évalué la présence ou le poids d'une interaction, il est
 important de quantifier et de bien comprendre l'incertitude de nos estimations
 (c.-à-d. notre niveau de croyance quant à la présence ou valeur d'une
-interaction). En raison des défis que posent l'échantillonnage des interactions
+interaction). En raison des défis que pose l'échantillonnage des interactions
 entre espèces (\cite{Jordano2016Sampling}), celles-ci possèdent presque toujours
-une incertitude, surtout quand elles n'ont pas été directement observées ou
+une incertitude, surtout lorsqu'elles n'ont pas été directement observées ou
 qu'elles ont été prédites à l'aide d'une méthode numérique. Cette incertitude
 peut avoir plusieurs sources, incluant les erreurs de mesure des données servant
-à prédire une interaction (p. ex. données de taille corporelle,
+à prédire une interaction (p. ex. les données de taille corporelle,
 \cite{Gravel2013Inferring}), l'intervalle de confiance des paramètres du modèle
 et l'existence de modèles prédictifs alternatifs (\cite{Simmonds2022Insights},
 \cite{Simmonds2024Recommendations}). La variabilité des interactions locales
 dans le temps et l'espace (\cite{Poisot2015Species}) introduit une source
-additionnelle d'incertitude en limitant le transfert d'information d'un réseau à
-un autre, par exemple lors de l'inférence d'interactions locales à partir d'un
-réseau régional (\cite{Dansereau2024Spatially}). Documenter l'incertitude des
-interactions entre espèces offre une vision plus juste de la fiabilité des
-données d'interactions. 
+additionnelle d'incertitude, irréductible à l'échelle locale. Cette variabilité
+limite le transfert d'information d'un réseau à un autre, par exemple lors de
+l'inférence d'interactions locales à partir d'un réseau régional
+(\cite{Dansereau2024Spatially}). Documenter l'incertitude des interactions entre
+espèces offre une vision plus juste de la fiabilité des mesures d'interactions.
 
-Les interactions probabilistes mesurent la probabilité qu'une interaction soit
-présente (\cite{Poisot2016Structure}). À l'échelle locale, elles représentent la
-probabilité qu'une interaction soit réalisée à un endroit et moment
-particuliers. Par exemple, si nous n'avons pas observé d'interaction entre un
-cerf de Virginie et \textit{I. scapularis} dans une forêt donnée, nous pouvons
-évaluer la probabilité que ces deux espèces interagissent localement à partir de
-leurs abondances relatives (\cite{Canard2014Empirical}) ou de nos connaissances
-sur le cycle de vie du parasite. À l'échelle régionale, les interactions
-probabilistes représentent plutôt la probabilité qu'une interaction soit
-biologiquement ou écologiquement faisable (\cite{Strydom2023Grapha}). Cette
+Les interactions probabilistes, qui sont décrites en détail dans
+l'article~\ref{art:article1}, mesurent généralement la probabilité qu'une
+interaction soit présente (\cite{Poisot2016Structure}). À l'échelle locale,
+elles représentent la probabilité qu'une interaction soit réalisée à un endroit
+et moment particuliers. Par exemple, si nous n'avons pas observé d'interaction
+entre un cerf de Virginie et \textit{I. scapularis} dans une forêt donnée, nous
+pouvons évaluer la probabilité que ces deux espèces interagissent localement à
+partir de leurs abondances relatives (\cite{Canard2014Empirical}) ou de nos
+connaissances sur le cycle de vie du parasite. À l'échelle régionale, les
+interactions probabilistes représentent plutôt la probabilité qu'une interaction
+soit biologiquement ou écologiquement faisable (\cite{Strydom2023Grapha}). Cette
 probabilité d'interaction régionale est particulièrement utile lorsque deux
 espèces n'ont jamais été observées en train d'interagir, mais qu'elles
 pourraient possiblement le faire dans les bonnes circonstances. Qu'elles soient
@@ -326,7 +334,14 @@ l'incertitude des interactions locales vers la structure du réseau
 exercer les unes sur les autres au sein d'un réseau local
 (\cite{Golubski2011Modifying}, \cite{Ims2013Indirect}). Néanmoins, les
 interactions probabilistes demeurent le moyen le plus courant de représenter
-l'incertitude inhérente aux interactions entre espèces.
+l'incertitude inhérente aux interactions entre espèces. Puisque l'incertitude
+des interactions entre espèces se propage à la structure des réseaux, cette
+dernière est également probabiliste. Une théorie des réseaux trophiques
+prédisant leurs propriétés émergentes doit donc nous permettre de mieux
+comprendre et de quantifier l'incertitude de la structure des réseaux, de
+préférence sans reposer sur la prémisse d'indépendance des interactions
+probabilistes.
+
 
 \subsection{Quelle est la structure émergente d'un réseau d'interactions entre espèces?} 
 
@@ -421,7 +436,7 @@ réseaux puisse être déterminée par quelques mesures seulement. Une théorie
 permettant d'unifier et de réconcilier ces différentes mesures dans un cadre
 commun fait actuellement défaut.
 
-\subsubsection{La structure est contrainte par des variables écologiques} 
+\subsubsection{La structure des réseaux est écologiquement contrainte} 
 
 Au-delà des corrélations observées entre les propriétés des réseaux, des
 principes écologiques contraignent la structure des réseaux. Ces valeurs
