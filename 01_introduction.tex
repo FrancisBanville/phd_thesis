@@ -296,7 +296,7 @@ systèmes écologiques complexes.
 
 Que nous ayons évalué la présence ou le poids d'une interaction, il est
 important de quantifier et de bien comprendre l'incertitude de nos estimations
-(c.-à-d. notre niveau de croyance quant à la présence ou valeur d'une
+(c.-à-d. notre niveau de croyance quant à la présence ou au poids d'une
 interaction). En raison des défis que pose l'échantillonnage des interactions
 entre espèces (\cite{Jordano2016Sampling}), celles-ci possèdent presque toujours
 une incertitude, surtout lorsqu'elles n'ont pas été directement observées ou
@@ -406,7 +406,7 @@ espèces (\cite{Williams2011Biology}) et l'assemblage des réseaux
 (\cite{Vazquez2005Degree}). 
 
 \textcite{Strydom2021Svd} suggèrent plutôt l'utilisation de l'entropie SVD (de
-l'anglais \textit{Singular Value Decomposition}) comme descripteur de la
+l'anglais \textit{Singular value decomposition}) comme descripteur de la
 complexité interne d'un réseau. Cette mesure, basée sur l'entropie de Shannon
 (\cite{Shannon1948Mathematical}), quantifie l'information contenue dans les
 rangs de la matrice d'adjacence après avoir effectué une décomposition de la
@@ -441,8 +441,8 @@ plus rapidement au sein du réseau (\cite{Okuyama2008Network},
 \cite{Bastolla2009Architecture}, \cite{Thebault2010Stability}). Puisque de
 nombreuses propriétés des réseaux sont corrélées les unes avec les autres, une
 théorie des réseaux trophiques rigoureuse doit pouvoir prédire ces mesures de
-manière cohérente, tout en identifiant celles qui sont les plus importantes et
-qui déterminent la valeur des autres.
+manière cohérente, tout en identifiant celles qui, en conditionnant la valeur
+des autres, sont les plus importantes.
 
 \subsubsection{La structure des réseaux est écologiquement contrainte} 
 
@@ -459,11 +459,11 @@ partir de sa richesse spécifique lorsque les données d'interactions sont
 manquantes (\cite{Strydom2021Roadmapa}). En effet, le nombre d'espèces et le
 nombre d'interactions peuvent à leur tour être utilisés comme contraintes pour
 dériver la distribution de degrés avec le principe d'entropie maximale
-(\cite{Williams2011Biology}). Par ailleurs, le niveau trophique maximal
+(\cite{Williams2011Biology}). Par ailleurs, le niveau trophique maximal, qui
 représente le nombre maximal d'espèces séparant un producteur primaire d'un
 prédateur apical le long des chaînes trophiques d'un réseau
-(\cite{Cohen1978Food}), imposant une limite biologique au transfert d'énergie
-dans les réseaux trophiques (\cite{Williams2004Limits}). La présence de ces
+(\cite{Cohen1978Food}), impose une limite biologique au transfert d'énergie dans
+les réseaux trophiques (\cite{Williams2004Limits}). La présence de ces
 contraintes et relations invariantes suggère que la structure des réseaux
 trophiques est déterminée par quelques mesures importantes seulement. La théorie
 de l'entropie maximale des réseaux trophiques permet d'identifier ces mesures,
@@ -511,13 +511,14 @@ la même moyenne (\cite{Frank2011Simple}). Cette distribution unique est dériv�
 exclusivement à partir de nos connaissances préalables sur le système étudié,
 sans faire appel à des suppositions additionnelles sur la forme de la
 distribution. MaxEnt ne repose sur aucun mécanisme explicite et ne nécessite pas
-d'ajustement aux données. La distribution de probabilité d'entropie maximale est
-plutôt dérivée directement à l'aide de la méthode des multiplicateurs de
-Lagrange (une méthode d'optimisation mathématique), dont le fonctionnement est
-décrit plus loin dans cette thèse (article~\ref{art:article2}). Bien qu'il n'y
-ait aucune garantie que cette distribution soit la mieux soutenue empiriquement,
-elle est celle qui représente le plus fidèlement nos connaissances préalables
-(c.-à-d. celle qui minimise les biais causés par des suppositions infondées). 
+d'ajustement aux données. La distribution de probabilité d'entropie maximale
+peut plutôt être dérivée analytiquement à l'aide de la méthode des
+multiplicateurs de Lagrange (une méthode d'optimisation mathématique), dont le
+fonctionnement est décrit plus loin dans cette thèse
+(article~\ref{art:article2}). Bien qu'il n'y ait aucune garantie que cette
+distribution soit la mieux soutenue empiriquement, elle est celle qui représente
+le plus fidèlement nos connaissances préalables (c.-à-d. celle qui minimise les
+biais causés par des suppositions infondées). 
 
 \subsubsection{La théorie de l'entropie maximale de l'écologie appliquée aux réseaux trophiques} 
 
@@ -725,8 +726,9 @@ trophiques, notamment en expliquant que ce sont les réseaux locaux qui
 représentent le plus fidèlement les échanges directs d'information, de matière
 ou d'énergie se produisant au sein des systèmes écologiques complexes. La vision
 probabiliste des réseaux d'interactions entre espèces, approfondie dans cet
-article, nous permet de mieux interpréter les prédictions probabilistes de la
-théorie et peut guider le développement de versions futures de la théorie.
+article, nous permet de mieux interpréter les prédictions probabilistes de
+Trophique-METE et peut guider le développement de versions futures de la
+théorie.
 
 \subsection{Article~\ref{art:article2}: Des modèles d'entropie maximale prédisant la structure des réseaux trophiques} 
 
@@ -756,3 +758,4 @@ la théorie.
 \endinput
 %%
 %% End of file `01_introduction.tex'.
+ 
