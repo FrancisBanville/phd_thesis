@@ -21,13 +21,13 @@ peuvent être développées selon les contraintes utilisées et les distribution
 prédites. Cette thèse développe et teste deux versions restreintes de la théorie
 (article~\ref{art:article2}). 
 
-L'article~\ref{art:article1} constitue le cadre conceptuel général de la
-théorie. Il explique pourquoi les interactions entre espèces, telles que les
-interactions prédateurs-proies et plantes-herbivores, sont intrinsèquement
-probabilistes. Notre manque de connaissances sur les interactions locales et
-régionales, en partie attribuable aux limites d'observation des interactions
-entre espèces (\cite{Jordano2016Sampling}), ainsi que la variabilité spatiale et
-temporelle des interactions locales (\cite{Poisot2015Species}), introduisent une
+L'article~\ref{art:article1} constitue le cadre conceptuel de la théorie. Il
+explique pourquoi les interactions entre espèces, telles que les interactions
+prédateurs-proies et plantes-herbivores, sont intrinsèquement probabilistes.
+Notre manque de connaissances sur les interactions locales et régionales, en
+partie attribuable aux limites d'observation des interactions entre espèces
+(\cite{Jordano2016Sampling}), ainsi que la variabilité spatiale et temporelle
+des interactions locales (\cite{Poisot2015Species}), introduisent une
 incertitude dans notre mesure des interactions. Cette incertitude est
 irréductible à l'échelle locale, c.-à-d. qu'elle persiste même après l'ajout de
 nouvelles données empiriques. Cet article souligne l'importance d'identifier, de
@@ -282,47 +282,30 @@ pour estimer les paramètres manquants, le cas échéant (tel qu'effectué par
 théorie métabolique de l'énergie). Cette méthode de validation permettrait à la
 fois de vérifier la cohérence interne et le réalisme écologique de
 Trophique-METE, tout en permettant d'évaluer sa compatibilité avec les relations
-allométriques acceptées en écologie.
+allométriques largement acceptées en écologie.
 
 
 %% Appliquer la théorie
 
 \section{Applications potentielles de la théorie} 
 
-La théorie de l'entropie maximale des réseaux trophiques nous aide à élucider
-les déterminants des réseaux trophiques.
+Deux raisons principales motivent le développement d'une théorie scientifique
+telle que Trophique-METE. D'abord, une théorie doit nous permettre de mieux
+comprendre un phénomène naturel donné en s'appuyant sur un ensemble cohérent de
+connaissances et d'explications scientifiques sur ce phénomène. Ensuite, elle
+doit réaliser des prédictions vérifiables sur des événements ou systèmes qui
+n'ont pas encore été observés. Après avoir développé et validé différentes
+versions de Trophique-METE, nous pouvons ainsi l'utiliser pour mieux comprendre
+les déterminants des réseaux trophiques et prédire leurs propriétés émergentes
+dans le temps et l'espace. Cela peut inspirer et faciliter la réalisation de
+nouvelles recherches sur les systèmes écologiques complexes, notamment celles
+axées sur l'impact des activités humaines sur les réseaux trophiques.
 
-cohérentes sur les phénomènes observés. Elles doivent 
-générer un ensemble de pré
-
-
-Trophique-METE 
-
-
-
-La théorie de l'entropie maximale des réseaux trophiques fournit une explication
-étayée des déterminants et propriétés des réseaux trophiques. 
-
-Une théorie scientifique fournit une explication approfondie et étayée d'un phénomène, 
-soutenue par des données probantes. Elle génère 
-des prédictions vérifiables sur des choses qui n'ont pas encore été observées.
-
-a pour but d'unifier
-nos connaissances sur les réseaux trophiques en offrant une compréhension
-globale et cohérente de leur structure émergente. Elle y parvient en prédisant
-les propriétés émergentes des réseaux trophiques, les mécanismes sous-jacents
-aux réseaux pouvant être déduits des variables d'état utilisées et des erreurs
-de prédiction de la théorie. Ces prédictions sont facilitées par la nature
-parcimonieuse de la théorie, qui ne repose que sur un ensemble limité
-d'informations écologiques. Le rôle de Trophique-METE est donc double~: elle
-permet de mieux comprendre les déterminants des réseaux trophiques et de générer
-des prédictions vérifiables sur des réseaux qui n'ont pas encore été observés.
-
-\subsection{Compréhension des mécanismes sous-jacents aux réseaux trophiques} 
+\subsection{Mieux comprendre les déterminants des réseaux trophiques} 
 
 Bien que Trophique-METE ne soit pas basée sur des mécanismes écologiques
-explicites, elle facilite l'identification des mécanismes régissant la structure
-des réseaux trophiques. D'abord, tel qu'expliqué par
+explicites, elle facilite l'identification des mécanismes dominants régissant la
+structure des réseaux trophiques. D'abord, tel qu'expliqué par
 \textcite{Harte2014Maximum}, une théorie écologique basée sur l'entropie
 maximale tient compte des mécanismes écologiques de manière implicite par le
 biais de nos connaissances préalables. En effet, les mécanismes sous-jacents à
@@ -330,56 +313,69 @@ la structure des réseaux trophiques sont capturés par la valeur empirique des
 variables d'état. Ainsi, pour mieux comprendre les mécanismes qui déterminent la
 structure des réseaux trophiques, nous pouvons examiner ceux qui régissent les
 variables d'état. Ensuite, les erreurs de prédiction de la théorie nous
-informent des mécanismes importants n'ayant pas été capturés par les variables
-d'état. Trophique-METE peut donc être utilisée comme modèle nul, fournissant des
-distributions de référence auxquelles la structure des réseaux empiriques est
-comparée. À cet égard, les écarts entre la structure des réseaux empiriques et
-prédits peuvent fournir des informations écologiques plus révélatrices que les
-mesures brutes. Lorsque ces erreurs sont systématiques (comme ce fut le cas pour
-le niveau trophique maximal et le diamètre des réseaux dans
-l'article~\ref{art:article2}), elles peuvent guider le développement de versions
-plus robustes et précises de la théorie, permettant ainsi d'identifier les
-variables d'état capturant plus efficacement les mécanismes écologiques
-sous-jacents. 
+informent de la présence de mécanismes importants n'ayant pas été capturés par
+les variables d'état. Trophique-METE peut donc être utilisée comme modèle nul,
+fournissant des distributions de référence auxquelles la structure des réseaux
+empiriques est comparée. À cet égard, les écarts entre la structure des réseaux
+empiriques et prédits peuvent fournir des informations écologiques plus
+révélatrices que les mesures brutes. Lorsque ces erreurs sont systématiques
+(comme ce fut le cas pour le niveau trophique maximal et le diamètre des réseaux
+dans l'article~\ref{art:article2}), elles peuvent guider le développement de
+versions plus robustes et précises de la théorie, permettant ainsi d'identifier
+les variables d'état capturant plus efficacement les mécanismes écologiques
+sous-jacents. Cependant, Trophique-METE ne peut que suggérer des mécanismes
+potentiels susceptibles d'impacter la structure des réseaux trophiques à partir
+des variables d'état et erreurs de prédiction. Il est donc nécessaire de mener
+des recherches plus approfondies pour mieux cerner et identifier les mécanismes
+dominants.
 
-\subsection{Prévision de la structure des réseaux trophiques} 
 
-Nécessitant très peu de données empiriques préalables, Trophique-METE peut
-faciliter la prédiction des réseaux trophiques dans le temps et l'espace. Selon
-le niveau de validation de la version employée, les distributions prédites
-peuvent être utilisées comme distributions informatives \textit{a priori}
-(c.-à-d. comme distributions mises à jour par de nouvelles données empiriques
-dans des analyses bayésiennes de la structure des réseaux) ou comme prédictions
-directes de la structure des réseaux. Une version de la théorie bien soutenue
-empiriquement peut simplifier l'étude des réseaux trophiques sur de vastes
-étendues spatiales en générant des prédictions pour différentes communautés dont
-nous connaissons la valeur des variables d'état. De même, Trophique-METE peut
-être utilisée pour prévoir les changements futurs dans la structure des réseaux
-trophiques. Pour ce faire, elle peut utiliser les projections des variables
-d'état à des moments précis dans le temps selon différents scénarios climatiques
-et environnementaux (p. ex. la projection de la richesse spécifique d'une
-communauté lors de la prochaine décennie ou la projection de la superficie
-occupée par un écosystème forestier après un projet d'expansion urbain). Cette
-prévision suppose que les nouvelles valeurs des variables d'état ont atteint un
+\subsection{Prédire les propriétés des réseaux trophiques dans le temps et l'espace} 
+
+Trophique-METE facilite la prédiction des réseaux trophiques dans le temps et
+l'espace en réduisant la quantité d'informations préalables requises. Pour ce
+faire, nous devons connaître la valeur des variables d'état à un moment ou à un
+emplacement donné. Ainsi, Trophique-METE peut simplifier l'étude des réseaux
+trophiques sur de vastes étendues spatiales en réalisant des prédictions pour
+différentes communautés biologiques dont nous connaissons la valeur des
+variables d'état. De même, elle peut servir à reconstituer la structure passée
+ou à prévoir la structure future des réseaux trophiques à partir des projections
+des variables d'état à des moments précis dans le temps. Ces projections peuvent
+être obtenues selon différents scénarios climatiques ou environnementaux (p. ex.
+la projection de la richesse spécifique d'un écosystème forestier après un
+projet d'expansion urbain). La prévision de la structure des réseaux dans le
+temps suppose que les nouvelles valeurs des variables d'état ont atteint un
 nouvel équilibre stable, sauf si une version dynamique de Trophique-METE est
-utilisée pour les écosystèmes en transition. Dans un contexte où les changements
-climatiques et la perte des habitats naturels causés par les activités humaines
-impactent la distribution et la biologie des espèces, une théorie des réseaux
-trophiques permettant de prédire leur structure émergente dans le temps et
-l'espace peut nous aider à mieux anticiper les effets de ces bouleversements sur
-le fonctionnement des milieux naturels.
+appliquée aux écosystèmes en transition. Les prédictions de la structure des
+réseaux dans le temps et l'espace peuvent mener à la formulation de nouvelles
+hypothèses en macroécologie, paléontologie ou biologie de la conservation. De
+surcroît, dans un contexte où les changements climatiques et la perte des
+habitats naturels causés par les activités humaines impactent la distribution et
+la biologie des espèces, ces prédictions peuvent nous aider à mieux anticiper
+les effets de ces bouleversements sur le fonctionnement des milieux naturels. 
+
+En posant les bases de la théorie de l'entropie maximale des réseaux trophiques,
+cette thèse nous aide non seulement à mieux prédire les propriétés émergentes
+des réseaux trophiques, mais aussi à mieux apprécier la diversité des
+interactions entre espèces et la complexité des écosystèmes sur lesquels nous
+dépendons. 
+
+\bigskip
+\bigskip
+\bigskip
+
+\begingroup
 
 \raggedleft
-
-\
-\
 
 \textit{« The more clearly we can focus our attention on the wonders and
 realities of the universe about us, the less taste we shall have for
 destruction. »} 
   
 
-– Rachel Carson, The real world around us\footnote{Discours prononcé lors d'un sommet des femmes journalistes, Theta Sigma Phi} (1954)
+– Rachel Carson, The real world around us\footnote{Discours prononcé lors du sommet de Theta Sigma Phi tenu le 21 avril 1954 à Columbus, Ohio} (1954)
+
+\endgroup
 
 \endinput
 %%
