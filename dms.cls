@@ -806,10 +806,10 @@
                 %Nécessaire seulement pour les thèses. C'est la personne
                 %garante du doyen qui assiste à la soutenance. (Il ne fait
                 %pas parti du jury.)
-            \ifphd@
-                \lignemembre\@repdoyen\titre{repr\'esentant.e du doyen de la FESP}
-                \vfil
-             \fi
+            % \ifphd@
+            %    \lignemembre\@repdoyen\titre{repr\'esentant.e du doyen de la FESP}
+            %    \vfil
+            % \fi
 
  %%            \ifmaitrise@\centerline{M\'emoire accept\'e le~:}\fi
  %%            \ifrapport@\centerline{Rapport de stage accept\'e le~:}\fi
