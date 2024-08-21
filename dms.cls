@@ -47,7 +47,7 @@
 \newif\ifrectoverso@
 \newif\ifpagetitreart@
 
-\DeclareOption{twoside}{\rectoverso@true}
+\DeclareOption{twoside}{\rectoverso@false} % page vide entre les chapitres
 \DeclareOption{nobabel}{\nobabel@true}
 \DeclareOption{phd}{\phd@true}
 \DeclareOption{maitrise}{\maitrise@true}
