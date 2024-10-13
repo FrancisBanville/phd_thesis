@@ -40,7 +40,7 @@
  % Le rôle des coauteurs a été de...
 
 %% Nom de la revue de publication
-\revue{publié comme preprint sur EcoEvoRxiv et est accessible via le lien suivant~: \url{https://doi.org/10.32942/X28G8Z}}
+\revue{publiée comme preprint sur EcoEvoRxiv et est accessible via le lien suivant~: \url{https://doi.org/10.32942/X28G8Z}}
 \article{Deciphering probabilistic species interaction networks}\labelart{art:article1}
 %% On peut se référer aux numéros de chapitre ou d'article comme suit.
 %% Si on fait
@@ -379,7 +379,7 @@ developed to describe the structure (\cite{Poisot2016Structure}) and diversity
 (\cite{Ohlmann2019Diversity}, \cite{Godsoe2022Species}) of probabilistic
 interaction networks. These models and measures support the use of probabilistic
 interactions for the study of a wide range of ecological questions, from making
-better predictions of species distribution (\cite{Cazelles2016Theorya}) to
+better predictions of species distributions (\cite{Cazelles2016Theorya}) to
 forecasting the impact of climate change on ecological networks
 (\cite{Gilman2010Framework}).
 
@@ -499,13 +499,14 @@ that were considered realized after observing at least one individual from group
 $i$ interact with at least another individual from group $j$. In an adjacency
 matrix $B$ of binary interactions, the presence or absence of an interaction
 $B_{i,j}$ between two taxa can be viewed as the result of a Bernoulli trial
-$B_{i, j} \sim {\rm Bernoulli}(P(B_{i, j}))$, with $P(B_{i, j})$ being the
+$B_{i, j} \sim {\rm Bernoulli}(\phi)$, with $\phi = P(B_{i, j} = 1)$ being the
 probability of interaction. This interaction probability characterizes our
 limited ecological knowledge and/or the intrinsic spatiotemporal variability of
 the interaction. It may be estimated through predictive models (e.g., those
 based on biological traits and species abundances) or expert (prior) knowledge
 about the interaction. In networks of probabilistic interactions, the edge
-values $P(B_{i, j})$ are probabilistic events whose only two possible outcomes
+values $P(B_{i, j} = 1)$ (which we denote as $P(B_{i, j})$ for simplicity and
+better readability) are probabilistic events whose only two possible outcomes
 are the presence ($B_{i, j} = 1$) or absence ($B_{i, j} = 0$) of an interaction
 between each pair of nodes. Depending on the type of probabilistic interaction
 network (local network or metaweb), the mathematical formulation and
@@ -515,22 +516,22 @@ area, and time, for example using logistic regression with continuous
 explanatory variables. This allows us to model the probability that at least two
 individuals interact under these conditions. 
 
-The variability of an interaction determines the fraction of networks in which
-it occurs. This fraction can be predicted by using a Binomial distribution,
-assuming a constant interaction probability and independence between
-interactions in different networks (trials). When considering uncertainties
-around the estimation of $P(B_{i, j})$, a Beta distribution may be used to
-represent the relative likelihood of different probability values. For example,
-when calculating the probability of interaction between two taxa based on their
-local abundances, any uncertainty in their abundances would introduce
-uncertainty in the interaction probability at the local scale. If we take into
-account the uncertainty of the interaction probability, a Beta-Binomial
-distribution can be used to predict the number of networks in which the
-interaction occurs. Empirically observing an interaction between two taxa at a
-given location and time provides important information that can be used to
-update previous estimates of $P(B_{i, j})$, informing us of the conditions that
-enabled them to interact locally. By sampling binary interactions in different
-contexts, we can thus estimate their local variability more precisely. 
+The variability of an interaction determines the number of networks in which it
+occurs. This number can be predicted by using a Binomial distribution, assuming
+a constant interaction probability and independence between interactions in
+different networks (trials). When considering uncertainties around the
+estimation of $P(B_{i, j})$, a Beta distribution may be used to represent the
+relative likelihood of different probability values. For example, when
+calculating the probability of interaction between two taxa based on their local
+abundances, any uncertainty in their abundances would introduce uncertainty in
+the interaction probability at the local scale. If we take into account the
+uncertainty of the interaction probability, a Beta-Binomial distribution can be
+used to predict the number of networks in which the interaction occurs.
+Empirically observing an interaction between two taxa at a given location and
+time provides important information that can be used to update previous
+estimates of $P(B_{i, j})$, informing us of the conditions that enabled them to
+interact locally. By sampling binary interactions in different contexts, we can
+thus estimate their local variability more precisely. 
 
 \subsubsection{The outcome of probabilistic interactions may also be quantitative}
 
@@ -636,30 +637,39 @@ $t_0$, they may be conditioned on taxa co-occurrence $X_{i,j,k}$, which is
 usually Boolean, describing if the geographic distributions of both taxa overlap
 within the study area. As illustrated in Box~\ref{box2.1}, co-occurrence may be
 modeled probabilistically, in which case it may conform to a Bernoulli
-distribution $X_{i,j,k} \sim {\rm Bernoulli}(P(X_{i,j,k}))$. The probability of
-co-occurrence can be calculated using the individual (marginal) occurrence
-probabilities $P(X_{i,k})$ and $P(X_{j,k})$. Given that taxa occurrences are not
-independent of each other, the probability of co-occurrence can be calculated by
-multiplying the probability of occurrence of one taxon by the probability of
-occurrence of the other given that the first one is present: 
+distribution $X_{i,j,k} \sim {\rm Bernoulli}(\phi)$, where $\phi = P(X_{i,j,k} =
+1)$. The probability of co-occurrence can be calculated using the individual
+(marginal) occurrence probabilities $P(X_{i,k} = 1)$ and $P(X_{j,k} = 1)$ (which
+we denote as $P(X_{i, k})$ and $P(X_{j, k})$ for simplicity and better
+readability). Given that taxa occurrences are not independent of each other, the
+probability of co-occurrence can be calculated by multiplying the probability of
+occurrence of one taxon by the probability of occurrence of the other given that
+the first one is present: 
 
 \begin{eqnarray}
   \label{eq:modelcoprob}
-     P(X_{i,j,k}) = P(X_{i,k}, X_{j,k})= P(X_{i,k} | X_{j,k}) \times P(X_{j,k})
+     P(X_{i,j,k}) = P(X_{i,k}, X_{j,k})= P(X_{i,k} | X_{j,k}) \times P(X_{j,k}).
 \end{eqnarray}
 
-The probability of co-occurrence $P(X_{i,j,k})$ can be estimated through the
-application of joint species distribution models (e.g.,
-\cite{Pollock2014Understanding}), potentially taking into account biotic
+Note that to keep the text concise and readable, the probability notation used
+in this manuscript implicitly assigns a value of $1$ to binary variables (e.g.,
+in Eq~\ref{eq:modelcoprob} the term $P(X_{i,k} | X_{j,k})$ is short for
+$P(X_{i,k} = 1 | X_{j,k} = 1)$), unless stated otherwise. The value is only
+stated explicitly when it is $0$ or when we wish to emphasize the value of $1$.
+
+The probability of co-occurrence $P(X_{i,j,k})$ (short for $P(X_{i,j,k} = 1$))
+can be estimated through the application of joint species distribution models
+(e.g., \cite{Pollock2014Understanding}), potentially taking into account biotic
 interactions (\cite{Staniczenko2017Linking}). Given that the probability that
-two non-co-occurring taxa interact locally is zero (i.e., $P(L_{i, j, k}|
+two non-co-occurring taxa interact locally is zero (i.e., $P(L_{i, j, k} = 1|
 X_{i,j,k} = 0) = 0$), the probability of local interaction can be obtained by
 multiplying the probability of interaction given co-occurrence with the
 probability of co-occurrence: 
 
 \begin{eqnarray}
   \label{eq:co-occur}
-    P(L_{i, j, k}) = P(L_{i, j, k}| X_{i,j,k} = 1) \times P(X_{i,j,k} = 1).
+    P(L_{i, j, k} = 1) = P(L_{i, j, k} = 1| X_{i,j,k} = 1) \times P(X_{i,j,k} =
+    1).
 \end{eqnarray}
 
 Knowing that two taxa co-occur improves our estimation of the probability that
@@ -701,20 +711,21 @@ estimate and define interaction probabilities.
 \subsubsection{Local interactions may be conditioned on biological feasibility}
 
 Local interactions must be biologically feasible before occurring at a specific
-time and space. A local probability of interaction $P(L_{i, j, k})$ can be
-expressed as the product of the probability of local interaction given that the
-two taxa can potentially interact $P(L_{i, j, k} | M_{i, j} = 1)$, which we
-sometimes denote as $P(L_{i, j, k}|M_{i, j})$ for the sake of simplicity, with
-their probability of regional interaction $P(M_{i, j})$: 
+time and space. A local probability of interaction $P(L_{i, j, k})$ (short for
+$P(L_{i, j, k} = 1)$) can be expressed as the product of the probability of
+local interaction given that the two taxa can potentially interact $P(L_{i, j,
+k} = 1 | M_{i, j} = 1)$ (which we sometimes denote as $P(L_{i, j, k}|M_{i, j})$
+for the sake of simplicity), with their probability of regional interaction
+$P(M_{i, j} = 1)$: 
 
 \begin{eqnarray}
   \label{eq:local_meta}
-  P(L_{i, j, k}) = P(L_{i, j, k} | M_{i, j} = 1) \times P(M_{i, j} = 1),
+  P(L_{i, j, k} = 1) = P(L_{i, j, k} = 1 | M_{i, j} = 1) \times P(M_{i, j} = 1),
 \end{eqnarray}
 
-assuming that $P(L_{i,j,k} | M_{i,j } =0) = 0$.
+assuming that $P(L_{i,j,k} = 1 | M_{i,j } = 0) = 0$.
 
-Low values of $P(L_{i, j, k} | M_{i, j} = 1)$ indicate that feasible interactions
+Low values of $P(L_{i, j, k} | M_{i, j})$ indicate that feasible interactions
 rarely occur locally, intermediate values around $50\%$ suggest considerable
 spatiotemporal variability, while high values indicate that regional
 interactions are nearly always realized locally. The local probability of
@@ -777,12 +788,12 @@ understanding of potential uncertainty sources. Reporting the scale and level of
 aggregation of the data enables us to more accurately study the underlying
 ecological processes (\cite{Clark2011Individualscale}) and manipulate or
 propagate uncertainty to different aggregation levels
-(\cite{Simmonds2024Recommendations}). In Table~\ref{tbl:prob}, we present examples of
-studies that used different expressions of probabilistic interactions with
-different conditional variables. We included in this table the probability of
-empirically observing an interaction that is realized locally $P(O_{i, j, k}
-\vert L_{i, j, k})$ to underscore the distinction between local observations and
-actual realizations of interactions.
+(\cite{Simmonds2024Recommendations}). In Table~\ref{tbl:prob}, we present
+examples of studies that used different expressions of probabilistic
+interactions with different conditional variables. We included in this table the
+probability of empirically observing an interaction that is realized locally
+$P(O_{i, j, k} \vert L_{i, j, k})$ to underscore the distinction between local
+observations and actual realizations of interactions.
 
 \clearpage
 
@@ -909,7 +920,7 @@ interval $t_0$ can be given by:
 
 \begin{eqnarray}
   \label{eq:modelrate}
-  P(L_{i, j, k} | X_{i,j,k}) = 1-e^{-\lambda_k t_0},
+  P(L_{i, j, k} = 1| X_{i,j,k} = 1) = 1-e^{-\lambda_k t_0},
 \end{eqnarray}
 
 which tends toward $1$ as $t_0 \to \infty$ if $\lambda_k > 0$. In other words,
@@ -917,18 +928,19 @@ two co-occurring taxa with a nonzero rate of interaction will inevitably
 interact at least once in a sufficiently long time interval. 
 
 The occurrence of an interaction between $i$ and $j$ may be the result of a
-Bernoulli trial with probability $P(L_{i, j, k})$. A Bayesian model can be
-built using the preceding equations to generate new interaction data,
-following the inference of the $\lambda_k$ and $P(X_{i,j,k})$ parameters.
+Bernoulli trial with parameter $\phi$ representing the probability of
+interaction $P(L_{i, j, k} = 1)$. A Bayesian model can be built using the
+preceding equations to generate new interaction data, following the inference of
+the $\lambda_k$ and $\phi$ parameters.
 
 \begin{eqnarray}
   \label{eq:model}
-  L_{i, j, k} \sim \text{Bernoulli}(P(L_{i, j, k}))
+  L_{i, j, k} \sim \text{Bernoulli}(\phi)
 \end{eqnarray}
 
 \begin{eqnarray}
   \label{eq:modeleq}
-  P(L_{i, j, k}) = P(X_{i,j,k})(1-e^{-\lambda_k t_0})
+  \phi = P(X_{i,j,k} = 1)(1-e^{-\lambda_k t_0})
 \end{eqnarray}
 
 \begin{eqnarray}
@@ -944,7 +956,7 @@ following the inference of the $\lambda_k$ and $P(X_{i,j,k})$ parameters.
 In Figure~\ref{fig:spatiotemporal}, we show the variation in the probability of
 interaction under different parameter values. In the right panel, we notice
 that the probability of interaction always converges toward the probability of
-co-occurrence $P(X_{i,j,k})$, for all positive values of the interaction rate. 
+co-occurrence $P(X_{i,j,k} = 1)$, for all positive values of the interaction rate. 
 
 This model can be customized in different ways, such as linking both
 parameters to specific environmental or biological variables. For instance,
@@ -957,16 +969,17 @@ abundances.
 \includegraphics[width=\textwidth]{figures/article1/spatiotemporal_model.png}
 \captionsetup{justification=justified}
 \captionof{figure}{\textbf{Parameters of the spatiotemporally explicit model of interactions.}
-(a) Probability of local interaction given by the process model (Eq~\ref{eq:modeleq})
-under different values of $\lambda_k$ (interaction rate) and $P(X_{i,j,k})$
-(probability of co-occurrence), with $t_0 = 1$ (duration). The probability of
-local interaction represents the probability that the two taxa will interact
-at least once within the given time interval. Parameters $t_0$ and $\lambda_k$
-have complementary units (e.g., $t_0$ in months and $\lambda_k$ in number of
-interactions per month). The parameter values used in the right panel are
-denoted by the white stars. (b) Scaling of the probability of interaction with
-the duration parameter $t_0$, for different values of $\lambda_k$ and
-$P(X_{i,j,k})$.}\label{fig:spatiotemporal}
+(a) Probability of local interaction $\phi = P(L_{i,j,k})$ (short for
+$P(L_{i,j,k} = 1)$) given by the process model (Eq~\ref{eq:modeleq}) under
+different values of $\lambda_k$ (interaction rate) and $P(X_{i,j,k})$
+(probability of co-occurrence, short for $P(X_{i,j,k} = 1)$), with $t_0 = 1$
+(duration). The probability of local interaction represents the probability that
+the two taxa will interact at least once within the given time interval.
+Parameters $t_0$ and $\lambda_k$ have complementary units (e.g., $t_0$ in months
+and $\lambda_k$ in number of interactions per month). The parameter values used
+in the right panel are denoted by the white stars. (b) Scaling of the
+probability of interaction with the duration parameter $t_0$, for different
+values of $\lambda_k$ and $P(X_{i,j,k})$.}\label{fig:spatiotemporal}
 
 \end{box2.1}
 
@@ -1013,22 +1026,22 @@ interactions are observed locally. Adding more sites brings new species, but not
 always their interactions. Quadratic relationships of network properties with
 sampling effort were also observed by \textcite{McLeod2021Sampling}.
 
-Next, we investigate how the number of local interactions and connectance
-scale with the number of sampled (aggregated) local networks of probabilistic
-or binary interactions (Figure~\ref{fig:accumulation}c-d). By comparing the scaling
+Next, we investigate how the number of local interactions and connectance scale
+with the number of sampled (aggregated) local networks of probabilistic or
+binary interactions (Figure~\ref{fig:accumulation}c-d). By comparing the scaling
 relationships observed in local networks of binary and probabilistic
-interactions, we observe that high values of $P(L_{i, j, k}|M_{i, j})$ lead to
-systematic overestimations in the number of interactions and connectance,
-especially when $P(L_{i, j, k}|M_{i, j}) = 1$ (i.e., when local and regional
-probabilities of interactions are equivalent). This suggests that high values
-of $P(L_{i, j, k}|M_{i, j})$ do not adequately capture the variability of
-local interactions. However, these biases tend to diminish as the number of
-sampled networks increases, indicating that most interactions are eventually
-captured when $P(L_{i, j, k}|M_{i, j})$ is high. In contrast, low values of
-$P(L_{i, j, k}|M_{i, j})$ lead to missing interactions, resulting in an
-underestimation of the number of interactions and connectance. These results
-underscore the importance of using the appropriate level of variability when
-estimating local interaction probabilities.
+interactions, we observe that high values of $P(L_{i, j, k}|M_{i, j})$ (short
+for $P(L_{i, j, k} = 1|M_{i, j} = 1)$) lead to systematic overestimations in the
+number of interactions and connectance, especially when $P(L_{i, j, k}|M_{i, j})
+= 1$ (i.e., when local and regional probabilities of interactions are
+equivalent). This suggests that high values of $P(L_{i, j, k}|M_{i, j})$ do not
+adequately capture the variability of local interactions. However, these biases
+tend to diminish as the number of sampled networks increases, indicating that
+most interactions are eventually captured when $P(L_{i, j, k}|M_{i, j})$ is
+high. In contrast, low values of $P(L_{i, j, k}|M_{i, j})$ lead to missing
+interactions, resulting in an underestimation in the number of interactions and
+connectance. These results underscore the importance of using the appropriate
+level of variability when estimating local interaction probabilities.
 
 \clearpage
 
@@ -1453,8 +1466,10 @@ each pair of taxa based on their regional probability of interaction:
 
 \begin{eqnarray}
   \label{eq:sampling1}
-  M_{i, j} \sim {\rm Bernoulli}(P(M_{i, j})).
+  M_{i, j} \sim {\rm Bernoulli}(\phi_{i,j}),
 \end{eqnarray}
+
+where $\phi_{i,j} = P(M_{i, j} = 1)$.
 
 In employing this technique, we predict a single metaweb of binary
 interactions for each simulation. Every pair of taxa predicted to interact in
@@ -1467,8 +1482,10 @@ probabilistic interactions:
 
 \begin{eqnarray}
   \label{eq:sampling2}
-  L_{i, j, k} \sim {\rm Bernoulli}(P(L_{i, j, k})).
+  L_{i, j, k} \sim {\rm Bernoulli}(\phi_{i,j,k}),
 \end{eqnarray}
+
+where $\phi_{i,j,k} = P(L_{i, j, k} = 1)$.
 
 This can be achieved by first generating distinct probabilistic interaction
 networks for each location. Because binary interactions are sampled
