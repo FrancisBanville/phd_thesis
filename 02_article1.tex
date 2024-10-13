@@ -659,7 +659,7 @@ probability of co-occurrence:
 
 \begin{eqnarray}
   \label{eq:co-occur}
-    P(L_{i, j, k}) = P(L_{i, j, k}| X_{i,j,k}) \times P(X_{i,j,k}).
+    P(L_{i, j, k}) = P(L_{i, j, k}| X_{i,j,k} = 1) \times P(X_{i,j,k} = 1).
 \end{eqnarray}
 
 Knowing that two taxa co-occur improves our estimation of the probability that
@@ -709,10 +709,12 @@ their probability of regional interaction $P(M_{i, j})$:
 
 \begin{eqnarray}
   \label{eq:local_meta}
-  P(L_{i, j, k}) = P(L_{i, j, k} | M_{i, j} = 1) \times P(M_{i, j} = 1).
+  P(L_{i, j, k}) = P(L_{i, j, k} | M_{i, j} = 1) \times P(M_{i, j} = 1),
 \end{eqnarray}
 
-Low values of $P(L_{i, j, k}|M_{i, j})$ indicate that feasible interactions
+assuming that $P(L_{i,j,k} | M_{i,j } =0) = 0$.
+
+Low values of $P(L_{i, j, k} | M_{i, j} = 1)$ indicate that feasible interactions
 rarely occur locally, intermediate values around $50\%$ suggest considerable
 spatiotemporal variability, while high values indicate that regional
 interactions are nearly always realized locally. The local probability of
@@ -729,11 +731,14 @@ thus be conditioned on their co-occurrence $X_{i,j,k}$ (or more explicitly on
 their occurrences $X_{i,k}$ and $X_{j,k}$), local abundances $N_{i,k}$ and
 $N_{j,k}$, local traits $T_{i,k}$ and $T_{j,k}$, local environmental conditions
 $E_k$, network area (or volume) $A_0$, time interval $t_0$, network properties
-$f(L_k)$, and biological feasibility $M_{i, j}$. When these conditions are not
-explicit, it may be because they have been marginalized over, which would be
-reflected in the overall uncertainty of the interaction. The local probability
-of interaction is described by the following expression when all of these
-conditional variables are included:
+$f(L_k)$, and biological feasibility $M_{i, j}$. When these conditions are
+absent from an expression, it may be because they have been marginalized over,
+which would be reflected in the overall uncertainty of the interaction.
+Interaction probabilities may also have been implicitly conditioned on missing
+variables (e.g., when estimated for specific values of these variables without
+explicitly including them as conditions), potentially impacting our
+interpretation. The local probability of interaction is described by the
+following expression when all of these conditional variables are included:
 
 \begin{eqnarray}
   \label{eq:local}
@@ -1195,21 +1200,28 @@ unactive under low temperatures (\cite{Kissner1997Rattling}), whereas wood
 lemmings may have low tolerance to high temperatures
 (\cite{Kausrud2008Linking}). The probability that an interaction is ecologically
 feasible is always lower than the probability that it is biologically feasible,
-even across all environmental conditions: 
+even across all environmental conditions:
 
 \begin{eqnarray}
+\begin{split}
   \label{eq:feasibility}
-  \int_{E}P(M^*_{i, j} | T_i, T_j, E) dE \leq P(M_{i, j} |
-T_i, T_j).
+  P(M^*_{i, j} | T_i, T_j) & = \int_{E}P(M^*_{i, j} | T_i, T_j, E) g(E|T_i, T_j) dE \\
+  & \leq P(M_{i, j} |
+T_i, T_j),
+\end{split}
 \end{eqnarray}
 
-This is because the biological feasibility of an interaction is a prerequisite
-for its ecological feasibility. In other words, biological feasibility is
-necessary but not sufficient for an interaction to be ecologically feasible. Our
-discussion of metawebs focuses on the biological feasibility of interactions
-since most methods developed for inferring probabilities of regional
-interactions do not explicitly take into account environmental conditions (e.g.,
-\cite{Strydom2022Food}). 
+where $g(E | T_i, T_j)$ is the conditional probability density function of $E$
+given $T_i$ and $T_j$. 
+
+The difference between these two regional probabilities of interaction
+(across all environmental conditions) arises because the biological
+feasibility of an interaction is a prerequisite for its ecological feasibility.
+In other words, biological feasibility is necessary but not sufficient for an
+interaction to be ecologically feasible. Our discussion of metawebs focuses on
+the biological feasibility of interactions since most methods developed for
+inferring probabilities of regional interactions do not explicitly take into
+account environmental conditions (e.g., \cite{Strydom2022Food}). 
 
 \subsection{How are regional probabilistic interactions estimated?}
 
@@ -1370,13 +1382,13 @@ conditional variables (e.g., trait distribution) may covary with taxonomic
 scale. In such cases, local and regional interaction probabilities would change
 taxonomically following the scaling of these variables.
 
-In both types of interactions, transitioning to a broader level of
-organization (e.g., from a species-level network $S$ to a genus-level network
-$G$) can be done using interaction probabilities from finer scales. For
-example, in a network with $n_1$ species of genus $g_1$ and $n_2$ species of
-genus $g_2$, one can calculate the probability that at least one species from
-genus $g_1$ interacts with at least one species from genus $g_2$ (i.e., the
-probability that the genus-level interaction occurs) as follows:
+In both types of interactions, transitioning to a broader level of organization
+(e.g., from a species-level network $S$ to a genus-level network $G$) can be
+done using interaction probabilities from finer scales. For example, in a
+network with $n_1$ species of genus $g_1$ and $n_2$ species of genus $g_2$, one
+can calculate the probability that at least one species from genus $g_1$
+interacts with at least one species from genus $g_2$ (i.e., the probability that
+the genus-level interaction occurs) as follows:
 
 \begin{eqnarray}
   \label{eq:taxo}
@@ -1384,8 +1396,10 @@ probability that the genus-level interaction occurs) as follows:
 P(S_{g_{1,i}, g_{2,j}})),
 \end{eqnarray}
 
-where $g_{1,i}$ and $g_{2,j}$ are the species of the corresponding genus and
-assuming independence between species-level interactions. In contrast, a
+where $g_{1,i}$ and $g_{2,j}$ are the species of the corresponding genus. This
+equation assumes independence between species-level interactions, which may not
+hold true in practice due to the strong phylogenetic signal frequently
+encountered in species interactions (\cite{Gomez2010Ecological}). In contrast, a
 different approach is necessary when transitioning from a broader to a finer
 level of organization. This is because the knowledge of an interaction between
 two genera does not guarantee that all possible pairwise species combinations
@@ -1584,15 +1598,17 @@ variables considered:
 Moreover, the probability that two taxa possess the biological capacity to
 interact must be higher than the probability of them interacting at any location
 and time because they may never co-occur or encounter locally. Specifically, the
-cumulative probability of local interaction across all spatial, temporal, and
+marginal probability of local interaction across all spatial, temporal, and
 environmental conditions must be less than the probability of regional
 interaction, i.e.
 
 \begin{eqnarray}
   \label{eq:all}
-  \int_{E_k}\int_{A_0}\int_{t_0} P(L_{i, j, k} | E_k, A_0, t_0) \, \text{d}t_0
-\, \text{d}A_0 \,\text{d}E_k \leq P(M_{i, j} | T_i, T_j).
+  \int_{E_k}\int_{A_0}\int_{t_0} P(L_{i, j, k} | E_k, A_0, t_0) g(E_k, A_0,
+t_0)\, \text{d}t_0 \, \text{d}A_0 \,\text{d}E_k \leq P(M_{i, j} | T_i, T_j),
 \end{eqnarray}
+
+where $g(E_k, A_0, t_0)$ is the joint density function of $E_k$, $A_0$, and $t_0$.
 
 Estimating more precisely the probability $P(L_{i, j, k}|M_{i, j})$ that two
 taxa interact locally if they can potentially interact allows for improved
