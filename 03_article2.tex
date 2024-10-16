@@ -685,19 +685,19 @@ structure, is the one of maximum entropy. Generating the most complex network
 that corresponds to this structure allows us to explore more easily other
 properties of food webs under MaxEnt. 
 
-Shannon's entropy can only be calculated on conventional probability
-distributions such as the joint degree distribution. This is an issue when
-working with the adjacency matrix of ecological networks. For this reason, we
-need to use another measure of entropy if we want to predict a network's
-configuration directly using MaxEnt. We used the SVD entropy as our measure of
-entropy, which is an application of Shannon's entropy to the relative non-zero
-singular values of a food web's adjacency matrix (\cite{Strydom2021Svd}).
-These values are obtained by performing singular value decomposition (SVD) on
-the matrix. SVD is a mathematical method that decomposes a matrix into three
-separate matrices, one of which contains singular values on the diagonal. We
-selected the non-zero singular values (i.e. the informative singular values that
-reflect a non-negligible contribution to the structure of the matrix) by keeping
-the largest $R$ values, where $R$ is the rank of the matrix
+Shannon's entropy can only be calculated on probability distributions such as
+the joint degree distribution. This is an issue when measuring the entropy of a
+binary adjacency matrix. For this reason, we need to use another measure of
+entropy if we want to predict a network's configuration directly using MaxEnt.
+We used the SVD entropy as our measure of entropy, which is an application of
+Shannon's entropy to the relative non-zero singular values of a food web's
+adjacency matrix (\cite{Strydom2021Svd}). These values are obtained by
+performing singular value decomposition (SVD) on the matrix. SVD is a
+mathematical method that decomposes a matrix into three separate matrices, one
+of which contains singular values on the diagonal. We selected the non-zero
+singular values (i.e. the informative singular values that reflect a
+non-negligible contribution to the structure of the matrix) by keeping the
+largest $R$ values, where $R$ is the rank of the matrix
 (\cite{Golub1987Generalization}). We measured SVD entropy as follows: 
 
 \begin{eqnarray}
