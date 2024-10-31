@@ -714,7 +714,8 @@ above-mentioned, while being a proper measure of the internal complexity of food
 webs (\cite{Strydom2021Svd}). Following \textcite{Strydom2021Svd}, we
 standardized it with the rank of the matrix (i.e. $J / \ln(R)$) to account for
 the difference in dimensions between networks (\textit{sensu} Pielou's evenness,
-\cite{Pielou1975Ecological}).
+\cite{Pielou1975Ecological}), but SVD entropy can also be calculated without this
+standardization.
 
 \subsubsection{Types I and II heuristic MaxEnt models}
 
@@ -940,7 +941,8 @@ ended up with one null adjacency matrix for each empirical network. \\
 \textbf{Neutral model}
   
 We also compared our heuristic MaxEnt models to a neutral model of relative
-abundances, in which the probabilities of interaction are given by
+abundances (\cite{Krishna2008Neutralniche}, \cite{Canard2012Emergence}), in
+which the probabilities of interaction are given by
   
 \begin{eqnarray}
 \label{eq:neutralmodel}
@@ -1243,15 +1245,17 @@ the joint degree sequence with empirical data also supports the results depicted
 in Table~\ref{tbl:measures_all}. In Figure~\ref{fig:measures}, we show how well
 empirical measures are predicted by the type II heuristic MaxEnt model.
 Following our previous results, we found that nestedness was very well predicted
-by our model. However, the model overestimated the maximum trophic level and
-network diameter, especially when the sampled food web had intermediate values
-of these measures. In Figure~\ref{fig:measures_richness} (Appendix~\ref{supp:B}),
-we show that the pairwise relationships between the four measures in
-Figure~\ref{fig:measures} and species richness in empirical food webs are similar
-(in magnitude and sign) to the ones found in food webs generated using the type
-II heuristic MaxEnt model. This indicates that the number of species in the
-network does not seem to impact the ability of the model to reproduce food-web
-structure. 
+by our model. This is consistent with the theoretical work of
+\textcite{Payrato-Borras2019Breaking}, who show that nestedness is an entropic
+consequence of the degree sequence in mutualistic networks. However, the model
+overestimated the maximum trophic level and network diameter, especially when
+the sampled food web had intermediate values of these measures. In
+Figure~\ref{fig:measures_richness} (Appendix~\ref{supp:B}), we show that the
+pairwise relationships between the four measures in Figure~\ref{fig:measures}
+and species richness in empirical food webs are similar (in magnitude and sign)
+to the ones found in food webs generated using the type II heuristic MaxEnt
+model. This indicates that the number of species in the network does not seem to
+impact the ability of the model to reproduce food-web structure. 
 
 Notwithstanding its difficulties in reproducing adequate measures of food-chain
 lengths, the type II heuristic MaxEnt model can predict surprisingly well the
