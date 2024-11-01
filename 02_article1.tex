@@ -598,7 +598,10 @@ environmental conditions experienced by the community and the matching of taxa's
 local biological traits. In local networks, edges commonly represent our degree
 of belief that two taxa interact in nature, but can also represent the
 probability of empirically \textit{observing} this interaction
-(\cite{Catchen2023Missinga}). Local interactions may thus arise from both the
+(\cite{Catchen2023Missinga}). Realized interactions occur locally without
+necessarily being observed (two locally interacting taxa may or may not be seen
+interacting during sampling), whereas observed interactions are those that have
+been locally recorded. Local interactions may thus arise from both the
 ecological (realized interactions) and sampling (observed interactions)
 processes taking place locally.
 
@@ -680,16 +683,17 @@ they interact locally by mitigating a potential source of uncertainty.
 Local interactions may also be conditioned on local environmental factors such
 as temperature (\cite{Angilletta2004Temperature}), precipitation
 (\cite{Woodward2012Climate}), habitat structure (\cite{Klecka2014Effect}), and
-presence of other taxa in the network (\cite{Pilosof2017Multilayer},
-\cite{Kefi2012More}). We use the variable $E_k$ to describe the local
-environmental context in which interaction probabilities were estimated. For
-example, in a mesocosm experiment estimating interaction probabilities between
-predators and prey with and without refuges, $E_k$ would represent the presence
-or absence of these refuges. Like co-occurrence, $E_k$ can also be modeled
-probabilistically when the variability or uncertainty of environmental factors
-is considered. $E_k$ represents all environmental variables that were taken into
-consideration when measuring interaction probabilities; it is therefore a subset
-of all environmental factors acting on ecological interactions. 
+the presence or abundance of other taxa in the network
+(\cite{Pilosof2017Multilayer}, \cite{Kefi2012More}). We use the variable $E_k$
+to describe the local environmental context in which interaction probabilities
+were estimated. For example, in a mesocosm experiment estimating interaction
+probabilities between predators and prey with and without refuges, $E_k$ would
+represent the presence or absence of these refuges. Like co-occurrence, $E_k$
+can also be modeled probabilistically when the variability or uncertainty of
+environmental factors is considered. $E_k$ represents all environmental
+variables that were taken into consideration when measuring interaction
+probabilities; it is therefore a subset of all environmental factors acting on
+ecological interactions. 
 
 Other important factors that can impact interaction probabilities at the local
 scale are taxa local abundances $N_{i,k}$ and $N_{j,k}$, which affect encounter
@@ -1157,13 +1161,13 @@ of regional and local interactions (i.e., how interaction probabilities change
 with taxonomic level) because they both depend on trait aggregation. 
 
 The biological feasibility of interactions expresses our degree of belief that
-there exists at least one combination of phenotypes that could support an
-interaction if they were to encounter each other, assuming they had enough time
-to interact. Evaluating this probability is conducted without incorporating the
-environmental conditions under which they encounter each other into the model.
-It is the complement of the probability $P(F_{i, j} | T_i, T_j)$ of forbidden
-interactions (i.e., the probability that their traits do not support an
-interaction), which is based uniquely on biological traits:
+there exists at least one combination of phenotypes that could support a
+specific type of interaction if they were to encounter each other, assuming they
+had enough time to interact. Evaluating this probability is conducted without
+incorporating the environmental conditions under which they encounter each other
+into the model. It is the complement of the probability $P(F_{i, j} | T_i, T_j)$
+of forbidden interactions (i.e., the probability that their traits do not
+support an interaction), which is based uniquely on biological traits:
 
 \begin{eqnarray}
   \label{eq:forbidden}
@@ -1514,12 +1518,13 @@ Appendix~\ref{supp:A}.
 
 Both sampling techniques assume independence between interactions, which might
 not hold true in reality. Covariation among interactions could exist even if we
-do not explicitly condition interactions on others. For example, an interaction
-between two taxa could be more probable when another interaction occurs. The
-consequences of this assumption of independence on the prediction of network
-structure have yet to be empirically examined. Sampling whole networks (or
-graphs) instead of pairwise interactions may eliminate the need for this
-assumption of independence (\cite{Battiston2020Networks}).
+do not explicitly condition interactions on others. For example, the probability
+that two taxa interact could change with the realization of another interaction
+or the presence or abundance of other taxa (\cite{Pilosof2017Multilayer},
+\cite{Kefi2012More}). The consequences of this assumption of independence on the
+prediction of network structure have yet to be empirically examined. Sampling
+whole networks (or graphs) instead of pairwise interactions may eliminate the
+need for this assumption of independence (\cite{Battiston2020Networks}).
 
 \clearpage
 
@@ -1667,8 +1672,11 @@ Estimating local interaction probabilities independently for each taxa pair and
 assembling them into a network of probabilistic interactions comes with
 limitations. Predicting local networks of binary interactions based on these
 interaction probabilities assumes independence among interactions, a condition
-seldom respected in practice (\cite{Golubski2011Modifying}). Relaxing this
-assumption is the next logical step in the stochastic representation of
+seldom respected in practice (\cite{Golubski2011Modifying}). The occurrence of
+an interaction may depend on the realization of other interactions or the
+presence or abundance of other taxa in the network
+(\cite{Pilosof2017Multilayer}, \cite{Kefi2012More}). Relaxing this assumption of
+independence is the next logical step in the stochastic representation of
 interactions. 
 
 A more accurate representation of the uncertainty and variability of ecological
