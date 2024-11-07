@@ -9,9 +9,30 @@
 %ou
 %%\anglais
 
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+
 \chapter{Introduction}
 
 %%%%% Mise en contexte 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/intro/bee_spider.png}
+    \caption*{\textbf{Guêpe prise dans une toile d'araignée.}
+    Les deux animaux sont des prédateurs qui doivent se nourrir pour survivre.
+    Ici, la guêpe pourrait ou non devenir la nourriture de l'araignée, cette
+    incertitude pouvant être représentée par une probabilité. Ces deux animaux
+    font également partie d'une communauté plus large d'espèces qui interagissent entre
+    elles, formant un réseau trophique d'interactions prédateurs-proies et
+    plantes-herbivores. Cette thèse décrit l'incertitude au sein de ces réseaux
+    trophiques, notamment la probabilité qu'une interaction entre deux espèces
+    se produise localement. En outre, cette thèse montre comment prédire la
+    structure émergente des réseaux trophiques lorsque nous avons peu
+    d'information sur ces interactions. Crédit photo~: Yves Banville.}
+\end{figure}
+
+\clearpage
 
 \section{Les réseaux d'interactions entre espèces en tant que systèmes complexes}
 
@@ -207,7 +228,9 @@ et moment particuliers. Ce sont eux qui décrivent les échanges directs
 d'information, de matière ou d'énergie réalisés par les individus à l'échelle
 locale. Étant donné qu'une interaction locale ne peut être réalisée que si elle
 est biologiquement faisable, les réseaux locaux sont des sous-réseaux du
-\textit{metaweb} (\cite{Saravia2022Ecological}). Deux espèces interagissent
+\textit{metaweb} (\cite{Saravia2022Ecological}). La
+Figure~\ref{fig:reseaux_concepts} compare visuellement un réseau régional fictif
+à deux réseaux locaux (réalisés et observés). Deux espèces interagissent
 localement si leurs abondances (nombres d'individus) sont suffisamment élevées
 pour qu'elles puissent se rencontrer (\cite{Canard2012Emergence},
 \cite{Canard2014Empirical}) et que leurs traits supportent une interaction
@@ -226,6 +249,34 @@ les interactions locales sont nombreux, et il peut être difficile d'identifier
 lesquels contribuent le plus à la réalisation des interactions. Il peut donc
 être hasardeux de construire une théorie des réseaux trophiques basée sur des
 mécanismes particuliers.  
+
+\afterpage{\clearpage
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{figures/intro/reseaux_concepts.png}
+  \caption{\textbf{Comparaison entre les interactions régionales et locales de réseaux trophiques fictifs.}
+  Un réseau régional (gauche) est un catalogue d'interactions potentielles
+  pouvant être réalisées localement ou non. Les réseaux locaux (droite)
+  contiennent l'ensemble des interactions se produisant (réseaux locaux
+  réalisés) ou ayant été échantillonnées (réseaux locaux observés) à un endroit
+  et moment particuliers (ici, à deux endroits en Afrique subsaharienne). Les
+  réseaux locaux réalisés peuvent contenir des interactions observées et/ou
+  prédites. Puisqu'il peut y avoir des espèces ou des interactions manquantes
+  (espèces présentes ou interactions réalisées qui n'ont pas été observées) dans
+  les réseaux observés, ceux-ci sont un sous-ensemble des réseaux réalisés. De
+  même, les espèces présentes et interactions réalisées localement (prédites ou
+  observées) sont un sous-ensemble des espèces et interactions régionales. La
+  position des nœuds est la même dans les différents réseaux pour faciliter leur
+  comparaison. Deux espèces (\textit{Panthera leo} et \textit{Suricata
+  suricatta}) sont mises en évidence pour mieux comparer leurs interactions dans
+  différents réseaux. Bien que les réseaux trophiques soient des réseaux dirigés
+  (c.-à-d. des réseaux dont les flux de matière et d'énergie se font dans un
+  sens particulier), la direction des interactions n'est pas représentée
+  graphiquement pour simplifier la représentation des réseaux.}
+\label{fig:reseaux_concepts}
+\end{figure}
+}
 
 \subsection{Comment mesurer une interaction entre espèces?} 
 
