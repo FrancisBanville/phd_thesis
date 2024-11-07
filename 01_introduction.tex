@@ -429,17 +429,32 @@ espèces (\cite{Williams2011Biology}) et l'assemblage des réseaux
 
 \textcite{Strydom2021Svd} suggèrent plutôt l'utilisation de l'entropie SVD (de
 l'anglais \textit{Singular value decomposition}) comme descripteur de la
-complexité interne d'un réseau. Cette mesure, basée sur l'entropie de Shannon
-(\cite{Shannon1948Mathematical}), quantifie l'information contenue dans les
-rangs de la matrice d'adjacence après avoir effectué une décomposition de la
-matrice en valeurs singulières. Une entropie SVD élevée indique que les rangs de
-la matrice contiennent une quantité similaire d'information, et donc que la
-structure du réseau est peu compressible (\cite{Gu2016How}). Cette mesure
-constitue une façon plus robuste de quantifier la complexité d'un réseau que les
-autres mesures mentionnées plus haut (\cite{Strydom2021Svd}). Puisqu'elle évalue
-l'entropie d'information des réseaux, elle a été choisie comme mesure de
-complexité écologique dans les versions de la théorie de l'entropie maximale des
-réseaux trophiques développées dans l'article~\ref{art:article2} de cette thèse. 
+complexité interne d'un réseau. L'entropie est une mesure du niveau moyen
+d'incertitude (ou d'information) associée aux différentes issues d'une variable
+aléatoire. L'entropie de Shannon $H$ (\cite{Shannon1948Mathematical}) est la
+mesure la plus courante en théorie de l'information, et est calculée
+exclusivement à partir de la distribution de probabilité $p(x)$ de la variable
+pour différentes issues $x$ : 
+
+\begin{eqnarray}
+    \label{eq:shannon_intro}
+            H = -\sum_{x} p(x) \log p(x).
+\end{eqnarray}
+
+L'entropie est maximale lorsque toutes les issues ont la même probabilité,
+c.-à-d. lorsque la distribution est uniforme et que notre incertitude sur le
+résultat de l'événement est la plus élevée. L'entropie SVD est calculée en
+appliquant l'entropie de Shannon aux valeurs singulières relatives de la matrice
+d'adjacence (obtenues par SVD). Elle quantifie l'information contenue dans le
+réseau, c.-à-d. la quantité d'information requise pour encoder le réseau. Une
+entropie SVD élevée indique que les vecteurs singuliers (obtenus par SVD)
+contiennent une quantité similaire d'information, et donc que la structure du
+réseau est peu compressible (\cite{Gu2016How}). Cette mesure constitue une façon
+plus robuste de quantifier la complexité d'un réseau que les autres mesures
+mentionnées plus haut (\cite{Strydom2021Svd}). Elle a été choisie comme mesure
+d'entropie de la matrice d'adjacence des réseaux dans les versions de la théorie
+de l'entropie maximale des réseaux trophiques développées dans
+l'article~\ref{art:article2} de cette thèse. 
 
 \subsubsection{Plusieurs mesures de la structure des réseaux sont corrélées entre elles} 
 
