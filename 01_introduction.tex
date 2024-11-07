@@ -193,8 +193,8 @@ dont il peut se nourrir dans différents contextes. Une interaction régionale
 indique si deux espèces possèdent des traits (caractéristiques biologiques
 telles que la taille corporelle) leur permettant d'interagir dans des conditions
 idéales. Les réseaux régionaux sont donc un catalogue de l'ensemble des
-interactions observées (p. ex. \cite{Maiorano2020Tetraeu}) ou prédites (p. ex.
-\cite{Strydom2022Food}) entre un groupe d'espèces données. Contrairement aux
+interactions observées (p. ex. \cite{Maiorano2020Tetraeu}) et/ou prédites (p.
+ex. \cite{Strydom2022Food}) entre un groupe d'espèces données. Contrairement aux
 réseaux locaux, les réseaux régionaux ne varient pas spatialement ni
 temporellement puisqu'ils incluent l'ensemble des interactions locales entre un
 groupe d'espèces. Les mécanismes biologiques sous-tendant les interactions
@@ -202,21 +202,22 @@ régionales sont relativement peu nombreux et plus faciles à identifier, reposa
 presqu'exclusivement sur les traits des espèces. 
 
 Les réseaux locaux (\cite{Poisot2012Dissimilarity}), quant à eux, sont
-constitués d'interactions observées ou réalisées à un endroit et moment
-particuliers. Ce sont eux qui décrivent les échanges directs d'information, de
-matière ou d'énergie réalisés par les individus à l'échelle locale. Étant donné
-qu'une interaction locale ne peut être réalisée que si elle est biologiquement
-faisable, les réseaux locaux sont des sous-réseaux du \textit{metaweb}
-(\cite{Saravia2022Ecological}). Deux espèces interagissent localement si leurs
-abondances (nombres d'individus) sont suffisamment élevées pour qu'elles
-puissent se rencontrer (\cite{Canard2012Emergence}, \cite{Canard2014Empirical})
-et que leurs traits supportent une interaction lorsqu'elles se rencontrent
-(\cite{Bolnick2011Why}, \cite{Gravel2013Inferring}, \cite{Stouffer2011Role}).
-Par exemple, les habitudes alimentaires du cerf de Virginie varient localement
-selon la disponibilité saisonnière en nourriture (\cite{Short1975Nutrition}) et
-sa masse corporelle (\cite{Luna2013Influence}). Les conditions
-environnementales, comme la température (\cite{Angilletta2004Temperature}), les
-précipitations (\cite{Woodward2012Climate}) et l'utilisation du territoire
+constitués d'interactions observées et/ou prédites d'être réalisées à un endroit
+et moment particuliers. Ce sont eux qui décrivent les échanges directs
+d'information, de matière ou d'énergie réalisés par les individus à l'échelle
+locale. Étant donné qu'une interaction locale ne peut être réalisée que si elle
+est biologiquement faisable, les réseaux locaux sont des sous-réseaux du
+\textit{metaweb} (\cite{Saravia2022Ecological}). Deux espèces interagissent
+localement si leurs abondances (nombres d'individus) sont suffisamment élevées
+pour qu'elles puissent se rencontrer (\cite{Canard2012Emergence},
+\cite{Canard2014Empirical}) et que leurs traits supportent une interaction
+lorsqu'elles se rencontrent (\cite{Bolnick2011Why}, \cite{Gravel2013Inferring},
+\cite{Stouffer2011Role}). Par exemple, les habitudes alimentaires du cerf de
+Virginie varient localement selon la disponibilité saisonnière en nourriture
+(\cite{Short1975Nutrition}) et sa masse corporelle (\cite{Luna2013Influence}).
+Les conditions environnementales, comme la température
+(\cite{Angilletta2004Temperature}), les précipitations
+(\cite{Woodward2012Climate}) et l'utilisation du territoire
 (\cite{Tylianakis2007Habitat}), influent également sur la réalisation des
 interactions à l'échelle locale. Ces trois facteurs (abondances, traits et
 conditions environnementales) contribuent à la variation spatiale et temporelle
@@ -314,24 +315,45 @@ l'inférence d'interactions locales à partir d'un réseau régional
 espèces offre une vision plus juste de la fiabilité des mesures d'interactions.
 
 Les interactions probabilistes, qui sont décrites en détail dans
-l'article~\ref{art:article1}, mesurent généralement la probabilité qu'une
-interaction soit présente (\cite{Poisot2016Structure}). À l'échelle locale,
-elles représentent la probabilité qu'une interaction soit réalisée à un endroit
-et moment particuliers. Par exemple, si nous n'avons pas observé d'interaction
-entre un cerf de Virginie et \textit{I. scapularis} dans une forêt donnée, nous
-pouvons évaluer la probabilité que ces deux espèces interagissent localement à
-partir de leurs abondances relatives (\cite{Canard2014Empirical}) ou de nos
-connaissances sur le cycle de vie du parasite. À l'échelle régionale, les
-interactions probabilistes représentent plutôt la probabilité qu'une interaction
-soit biologiquement ou écologiquement faisable (\cite{Strydom2023Grapha}). Cette
-probabilité d'interaction régionale est particulièrement utile lorsque deux
-espèces n'ont jamais été observées en train d'interagir, mais qu'elles
-pourraient possiblement le faire dans les bonnes circonstances. Qu'elles soient
-locales ou régionales, les interactions probabilistes sont généralement évaluées
-de manière indépendante. Cela peut introduire des biais lorsque nous propageons
-l'incertitude des interactions locales vers la structure du réseau
-(\cite{Poisot2016Structure}), à cause de l'impact que les interactions peuvent
-exercer les unes sur les autres au sein d'un réseau local
+l'article~\ref{art:article1}, mesurent généralement notre niveau de croyance
+quant à la présence d'une interaction entre espèces
+(\cite{Poisot2016Structure}). À l'échelle locale, elles représentent la
+probabilité qu'une interaction soit réalisée à un endroit et moment
+particuliers. Différents types de modèles peuvent être utilisés pour estimer la
+probabilité que deux espèces interagissent localement, tels que des modèles de
+régression logistique ou d'apprentissage automatique
+(\cite{Strydom2021Roadmapa}). Ces modèles peuvent prendre en compte différentes
+variables biologiques ou environnementales mesurées à l'échelle locale. Par
+exemple, si nous n'avons pas observé d'interaction entre un cerf de Virginie et
+\textit{I. scapularis} dans une forêt donnée, nous pouvons évaluer la
+probabilité que ces deux espèces interagissent localement à partir de leurs
+abondances relatives (\cite{Canard2014Empirical}). Nous pouvons également
+utiliser notre expertise sur la biologie des deux espèces pour choisir une
+probabilité \textit{a priori} informative (c.-à-d. une probabilité reposant sur
+nos connaissances antérieures à nos observations locales) que l'interaction soit
+réalisée localement. Cette probabilité \textit{a priori} peut ensuite être mise
+à jour à l'aide de méthodes d'inférence bayésienne en considérant les conditions
+locales. Au-delà des modèles statistiques, la probabilité d'une interaction
+locale peut aussi être estimée en comptant le nombre de fois où elle a été
+observée au cours d'un certain nombre d'essais. Par exemple, si on échantillonne
+aléatoirement un certain nombre de réseaux locaux dans une région donnée et que
+ces réseaux sont représentatifs de la région, la proportion des réseaux où deux
+espèces données interagissent est un bon estimateur de la probabilité qu'elles
+interagissent dans un autre réseau (non échantillonné) de la région. À l'échelle
+régionale, les interactions probabilistes représentent plutôt la probabilité
+qu'une interaction soit biologiquement ou écologiquement faisable
+(\cite{Strydom2023Grapha}). Cette probabilité d'interaction régionale est
+particulièrement utile lorsque deux espèces n'ont jamais été observées en train
+d'interagir, mais qu'elles pourraient possiblement le faire dans les bonnes
+circonstances sur la base de leurs traits. L'article~\ref{art:article1} présente
+de manière plus approfondie les méthodes et variables permettant d'estimer les
+interactions probabilistes locales et régionales.
+
+Qu'elles soient locales ou régionales, les interactions probabilistes sont
+généralement évaluées de manière indépendante. Cela peut introduire des biais
+lorsque nous propageons l'incertitude des interactions locales vers la structure
+du réseau (\cite{Poisot2016Structure}), à cause de l'impact que les interactions
+peuvent exercer les unes sur les autres au sein d'un réseau local
 (\cite{Golubski2011Modifying}, \cite{Ims2013Indirect}). Néanmoins, les
 interactions probabilistes demeurent le moyen le plus courant de représenter
 l'incertitude inhérente aux interactions entre espèces. Puisque l'incertitude
