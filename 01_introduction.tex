@@ -9,9 +9,30 @@
 %ou
 %%\anglais
 
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+
 \chapter{Introduction}
 
 %%%%% Mise en contexte 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/intro/bee_spider.png}
+    \caption*{\textbf{Guêpe prise dans une toile d'araignée.}
+    Les deux animaux sont des prédateurs qui doivent se nourrir pour survivre.
+    Ici, la guêpe pourrait ou non devenir la nourriture de l'araignée, cette
+    incertitude pouvant être représentée par une probabilité. Ces deux animaux
+    font partie d'une communauté plus large d'espèces qui interagissent entre
+    elles à un endroit et moment particuliers, formant un réseau trophique d'interactions
+    prédateurs-proies et plantes-herbivores. Cette thèse décrit l'incertitude au
+    sein des réseaux trophiques, notamment la probabilité qu'une interaction
+    entre deux espèces se produise localement. En outre, cette thèse montre
+    comment prédire la structure émergente des réseaux trophiques lorsque nous
+    avons peu d'information sur ces interactions. Crédit photo~: Yves Banville.}
+\end{figure}
+
+\clearpage
 
 \section{Les réseaux d'interactions entre espèces en tant que systèmes complexes}
 
@@ -38,35 +59,50 @@ des liens entre ces nœuds (\cite{Newman2003Structure}). Dans cette thèse, je m
 suis intéressé aux réseaux d'interactions entre espèces, qui servent d'outil
 pour mieux comprendre les systèmes écologiques complexes. Ces réseaux lient
 chaque paire d'espèces qui interagissent ensemble, comme un prédateur et sa
-proie, un parasite et son hôte ou une plante et son pollinisateur. Bien ancrée
-dans la science des réseaux et la théorie des graphes, l'écologie des réseaux
-fournit un cadre d'analyse pour étudier les propriétés émergentes des
-écosystèmes, comme leur fonctionnement (p. ex. productivité primaire et cycle
-des nutriments) et résilience face aux changements environnementaux
-(\cite{Proulx2005Network}, \cite{McCann2007Protecting}, \cite{McCann2011Food},
+proie, un parasite et son hôte ou une plante et son pollinisateur. Ils nous
+permettent de mieux comprendre la fonction écologique des espèces (p. ex. la
+régulation de la taille des populations de chenilles par la mésange charbonnière
+\textit{Parus major}, \cite{Harvey2017Bridging}) et leur rôle dans la communauté
+(p. ex. le rôle des espèces clés de voûte, telle que la loutre de mer
+\textit{Osmia cornuta}, dans le fonctionnement et la stabilité des écosystèmes,
+\cite{Estes1998Killer}), notamment à l'aide de mesures sur l'influence des
+espèces dans le réseau (p. ex. le nombre d'espèces avec qui elles
+interagissent). Bien ancrée dans la science des réseaux et la théorie des
+graphes, l'écologie des réseaux fournit un cadre d'analyse pour étudier les
+propriétés émergentes des écosystèmes, comme leur fonctionnement (p. ex.
+productivité primaire et cycle des nutriments) et résilience face aux
+changements environnementaux (\cite{Proulx2005Network},
+\cite{McCann2007Protecting}, \cite{McCann2011Food},
 \cite{Rooney2012Integrating}, \cite{Valiente-Banuet2019Species}). Pour ce faire,
-elle a recours à des méthodes pour mesurer les interactions entre espèces (p.
-ex. \cite{Jordano2016Sampling}) et analyser la structure émergente des réseaux
-d'interactions (p. ex. \cite{Delmas2019Analysing}), nous permettant ainsi de
-mieux comprendre les caractéristiques de ces systèmes complexes. 
+elle a recours à des mesures de la structure émergente des réseaux
+d'interactions (\cite{Delmas2019Analysing}). Par exemple, la structure modulaire
+d'un réseau (structure où les interactions sont nombreuses au sein de groupes
+d'espèces, mais peu nombreuses entre les groupes) favorise la stabilité d'un
+écosystème en limitant la propagation des perturbations, telles que les
+extinctions d'espèces (\cite{Stouffer2011Compartmentalization}) et la présence
+de contaminants (\cite{Garay-Narvaez2014Food}), à l'ensemble du réseau
+(\cite{May1972Will}). Les mesures des réseaux d'interactions entre espèces sont
+donc essentielles pour mieux comprendre les caractéristiques des systèmes
+écologiques complexes. 
 
 Cette thèse jette les bases de la théorie de l'entropie maximale des réseaux
 trophiques (Trophique-METE), qui constitue une approche novatrice en écologie
 des réseaux permettant de prédire la structure émergente des réseaux trophiques
-à partir d'un nombre limité de variables écologiques, tout en expliquant les
-déterminants de ces réseaux complexes. Avant d'exposer cette théorie, il
-convient de passer en revue quelques caractéristiques importantes des systèmes
-écologiques complexes, notamment en ce qui a trait aux mécanismes régissant les
-interactions entre espèces, aux mesures des interactions entre espèces et à
-l'analyse de la structure des réseaux. J'explique notamment, dans les
-sous-sections suivantes, que les interactions entre espèces sont le résultat de
-nombreux mécanismes écologiques souvent difficiles à départager, que les
-interactions entre espèces sont intrinsèquement probabilistes et que la
-structure émergente des réseaux d'interactions est écologiquement et
-statistiquement contrainte. Ces observations sous-tendent la théorie proposée en
-décrivant des aspects fondamentaux de la complexité écologique.
+à partir d'un nombre limité de variables écologiques, tout en nous aidant à
+mieux comprendre les déterminants de ces réseaux complexes. Avant d'exposer
+cette théorie, il convient de passer en revue quelques caractéristiques
+importantes des systèmes écologiques complexes, notamment en ce qui a trait aux
+déterminants des interactions entre espèces, aux mesures des
+interactions entre espèces et à l'analyse de la structure des réseaux.
+J'explique notamment, dans les sous-sections suivantes, que les interactions
+entre espèces sont le résultat de nombreux mécanismes écologiques souvent
+difficiles à départager, que les interactions entre espèces sont intrinsèquement
+probabilistes et que la structure émergente des réseaux d'interactions est
+écologiquement et statistiquement contrainte. Ces observations sous-tendent la
+théorie proposée en décrivant des aspects fondamentaux de la complexité
+écologique.
 
-\subsection{Quels mécanismes écologiques sous-tendent les interactions entre espèces?} 
+\subsection{Quels sont les déterminants et mécanismes des interactions entre espèces?} 
 
 Une communauté biologique est composée d'espèces différentes interagissant entre
 elles dans un espace donné (\cite{Stroud2015Community}) lorsque les conditions
@@ -88,14 +124,17 @@ l'abondance élevée de tiques dans les chênaies (\cite{Ostfeld2006Climate}).
 Comprendre l'écologie et l'épidémiologie de la maladie de Lyme nécessite une
 compréhension approfondie des interactions entre espèces au sein des communautés
 où la tique \textit{I. scapularis} est présente. Plus généralement, il est
-important d'identifier les mécanismes écologiques sous-tendant les interactions
-entre espèces pour mieux comprendre les conditions favorisant leur réalisation.
-La théorie de l'entropie maximale des réseaux trophiques, mise de l'avant dans
-cette thèse, facilite l'identification des mécanismes importants, agissant à
-l'échelle de la communauté, à l'aide des variables utilisées et de ses erreurs
-de prédiction. Cependant, notre compréhension de ces mécanismes peut dépendre du
-type d'interaction, du niveau d'organisation taxonomique et de l'échelle
-spatiale des réseaux étudiés. 
+important d'identifier les déterminants (c.-à.-d. les variables ou facteurs
+influençant un phénomène) et mécanismes (c.-à-d. les processus ou règles qui
+expliquent un phénomène) écologiques des interactions entre espèces pour mieux
+comprendre les conditions favorisant leur réalisation. La théorie de l'entropie
+maximale des réseaux trophiques, mise de l'avant dans cette thèse, repose sur un
+ensemble restreint de variables écologiques importantes déterminant la structure
+des réseaux trophiques. Elle peut guider nos efforts d'identification des
+mécanismes écologiques importants en orientant nos recherches vers ses erreurs
+de prédiction et variables utilisées. Cependant, notre compréhension de ces
+déterminants et mécanismes peut dépendre du type d'interaction, du niveau
+d'organisation taxonomique et de l'échelle spatiale des réseaux étudiés. 
 
 \subsubsection{Les interactions entre espèces impliquent différents types d'échange} 
 
@@ -125,8 +164,9 @@ type d'interaction à un autre (p. ex. la dentition d'un prédateur pour une
 interaction trophique ou la longueur de l'étamine pour une interaction
 plante-pollinisateur). Les interactions directes sont comparables dans la mesure
 où elles sont toutes réalisées localement par des individus, ce qui nous permet
-d'aborder en parallèle leurs mécanismes écologiques (tel qu'effectué dans
-l'article~\ref{art:article1}).
+d'aborder en parallèle leurs déterminants écologiques (tel qu'effectué dans
+l'article~\ref{art:article1}, qui présente les variables déterminant différents
+types d'interactions entre espèces).
 
 Les interactions prédateurs-proies et plantes-herbivores ont toutefois une
 importance particulière et historique en écologie. Le concept de réseau
@@ -175,7 +215,7 @@ représentation adéquate du rôle écologique des espèces
 (\cite{Delmas2019Analysing}) et des propriétés émergentes des écosystèmes
 (\cite{Loreau2010Populations}, \cite{McCann2011Food},
 \cite{Bascompte2013Mutualistic}, \cite{Gonzalez2020Scalingup}). Tel que discuté
-dans l'article~\ref{art:article1}, comprendre comment les processus écologiques
+dans l'article~\ref{art:article1}, comprendre comment les facteurs écologiques
 agissant à l'échelle individuelle se combinent pour supporter les interactions
 entre espèces nous aide à mieux saisir les déterminants des réseaux
 d'interactions entre espèces.
@@ -193,38 +233,72 @@ dont il peut se nourrir dans différents contextes. Une interaction régionale
 indique si deux espèces possèdent des traits (caractéristiques biologiques
 telles que la taille corporelle) leur permettant d'interagir dans des conditions
 idéales. Les réseaux régionaux sont donc un catalogue de l'ensemble des
-interactions observées (p. ex. \cite{Maiorano2020Tetraeu}) ou prédites (p. ex.
-\cite{Strydom2022Food}) entre un groupe d'espèces données. Contrairement aux
+interactions observées (p. ex. \cite{Maiorano2020Tetraeu}) et/ou prédites (p.
+ex. \cite{Strydom2022Food}) entre un groupe d'espèces données. Contrairement aux
 réseaux locaux, les réseaux régionaux ne varient pas spatialement ni
 temporellement puisqu'ils incluent l'ensemble des interactions locales entre un
 groupe d'espèces. Les mécanismes biologiques sous-tendant les interactions
 régionales sont relativement peu nombreux et plus faciles à identifier, reposant
-presqu'exclusivement sur les traits des espèces. 
+presqu'exclusivement sur des règles de correspondance de traits entre les
+espèces. 
 
 Les réseaux locaux (\cite{Poisot2012Dissimilarity}), quant à eux, sont
-constitués d'interactions observées ou réalisées à un endroit et moment
-particuliers. Ce sont eux qui décrivent les échanges directs d'information, de
-matière ou d'énergie réalisés par les individus à l'échelle locale. Étant donné
-qu'une interaction locale ne peut être réalisée que si elle est biologiquement
-faisable, les réseaux locaux sont des sous-réseaux du \textit{metaweb}
-(\cite{Saravia2022Ecological}). Deux espèces interagissent localement si leurs
-abondances (nombres d'individus) sont suffisamment élevées pour qu'elles
-puissent se rencontrer (\cite{Canard2012Emergence}, \cite{Canard2014Empirical})
-et que leurs traits supportent une interaction lorsqu'elles se rencontrent
-(\cite{Bolnick2011Why}, \cite{Gravel2013Inferring}, \cite{Stouffer2011Role}).
-Par exemple, les habitudes alimentaires du cerf de Virginie varient localement
-selon la disponibilité saisonnière en nourriture (\cite{Short1975Nutrition}) et
-sa masse corporelle (\cite{Luna2013Influence}). Les conditions
-environnementales, comme la température (\cite{Angilletta2004Temperature}), les
-précipitations (\cite{Woodward2012Climate}) et l'utilisation du territoire
+constitués d'interactions observées et/ou prédites d'être réalisées à un endroit
+et moment particuliers. Ce sont eux qui décrivent les échanges directs
+d'information, de matière ou d'énergie réalisés par les individus à l'échelle
+locale. Étant donné qu'une interaction locale ne peut être réalisée que si elle
+est biologiquement faisable, les réseaux locaux sont des sous-réseaux du
+\textit{metaweb} (\cite{Saravia2022Ecological}). La
+Figure~\ref{fig:reseaux_concepts} compare visuellement un réseau régional fictif
+à deux réseaux locaux (réalisés et observés). Deux espèces interagissent
+localement si leurs abondances (nombres d'individus) sont suffisamment élevées
+pour qu'elles puissent se rencontrer (\cite{Canard2012Emergence},
+\cite{Canard2014Empirical}) et que leurs traits supportent une interaction
+lorsqu'elles se rencontrent (\cite{Bolnick2011Why}, \cite{Gravel2013Inferring},
+\cite{Stouffer2011Role}). Les interactions locales sont donc en partie basées
+sur des mécanismes liés à la rencontre (p. ex. mouvement, reproduction,
+mortalité) et à la correspondance de traits des individus. Par exemple, les
+habitudes alimentaires du cerf de Virginie varient localement selon la
+disponibilité saisonnière en nourriture (\cite{Short1975Nutrition}) et sa masse
+corporelle (\cite{Luna2013Influence}). Les conditions environnementales, comme
+la température (\cite{Angilletta2004Temperature}), les précipitations
+(\cite{Woodward2012Climate}) et l'utilisation du territoire
 (\cite{Tylianakis2007Habitat}), influent également sur la réalisation des
 interactions à l'échelle locale. Ces trois facteurs (abondances, traits et
 conditions environnementales) contribuent à la variation spatiale et temporelle
-des interactions locales (\cite{Poisot2015Species}). Les mécanismes sous-tendant
-les interactions locales sont nombreux, et il peut être difficile d'identifier
-lesquels contribuent le plus à la réalisation des interactions. Il peut donc
-être hasardeux de construire une théorie des réseaux trophiques basée sur des
-mécanismes particuliers.  
+des interactions locales (\cite{Poisot2015Species}, article~\ref{art:article1}).
+Les mécanismes sous-tendant les interactions locales sont nombreux, et il peut
+être difficile d'identifier lesquels contribuent le plus à la réalisation des
+interactions. Il peut donc être hasardeux de construire une théorie des réseaux
+trophiques basée sur des mécanismes particuliers.  
+
+\afterpage{\clearpage
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{figures/intro/reseaux_concepts.png}
+  \caption{\textbf{Comparaison entre les interactions régionales et locales de réseaux trophiques fictifs.}
+  Un réseau régional (gauche) est un catalogue d'interactions potentielles
+  pouvant être réalisées localement ou non. Les réseaux locaux (droite)
+  contiennent l'ensemble des interactions se produisant (réseaux locaux
+  réalisés) ou ayant été échantillonnées (réseaux locaux observés) à un endroit
+  et moment particuliers (ici, à deux endroits en Afrique subsaharienne). Les
+  réseaux locaux réalisés peuvent contenir des interactions observées et/ou
+  prédites. Puisqu'il peut y avoir des espèces ou des interactions manquantes
+  (espèces présentes ou interactions réalisées qui n'ont pas été observées) dans
+  les réseaux observés, ceux-ci sont un sous-ensemble des réseaux réalisés. De
+  même, les espèces présentes et interactions réalisées localement (prédites ou
+  observées) sont un sous-ensemble des espèces et interactions régionales. La
+  position des nœuds est la même dans les différents réseaux pour faciliter leur
+  comparaison. Deux espèces (\textit{Panthera leo} et \textit{Suricata
+  suricatta}) sont mises en évidence pour mieux comparer leurs interactions dans
+  différents réseaux. Bien que les réseaux trophiques soient des réseaux dirigés
+  (c.-à-d. des réseaux dont les flux de matière et d'énergie se font dans un
+  sens particulier), la direction des interactions n'est pas représentée
+  graphiquement pour simplifier la représentation des réseaux.}
+\label{fig:reseaux_concepts}
+\end{figure}
+}
 
 \subsection{Comment mesurer une interaction entre espèces?} 
 
@@ -314,24 +388,45 @@ l'inférence d'interactions locales à partir d'un réseau régional
 espèces offre une vision plus juste de la fiabilité des mesures d'interactions.
 
 Les interactions probabilistes, qui sont décrites en détail dans
-l'article~\ref{art:article1}, mesurent généralement la probabilité qu'une
-interaction soit présente (\cite{Poisot2016Structure}). À l'échelle locale,
-elles représentent la probabilité qu'une interaction soit réalisée à un endroit
-et moment particuliers. Par exemple, si nous n'avons pas observé d'interaction
-entre un cerf de Virginie et \textit{I. scapularis} dans une forêt donnée, nous
-pouvons évaluer la probabilité que ces deux espèces interagissent localement à
-partir de leurs abondances relatives (\cite{Canard2014Empirical}) ou de nos
-connaissances sur le cycle de vie du parasite. À l'échelle régionale, les
-interactions probabilistes représentent plutôt la probabilité qu'une interaction
-soit biologiquement ou écologiquement faisable (\cite{Strydom2023Grapha}). Cette
-probabilité d'interaction régionale est particulièrement utile lorsque deux
-espèces n'ont jamais été observées en train d'interagir, mais qu'elles
-pourraient possiblement le faire dans les bonnes circonstances. Qu'elles soient
-locales ou régionales, les interactions probabilistes sont généralement évaluées
-de manière indépendante. Cela peut introduire des biais lorsque nous propageons
-l'incertitude des interactions locales vers la structure du réseau
-(\cite{Poisot2016Structure}), à cause de l'impact que les interactions peuvent
-exercer les unes sur les autres au sein d'un réseau local
+l'article~\ref{art:article1}, mesurent généralement notre niveau de croyance
+quant à la présence d'une interaction entre espèces
+(\cite{Poisot2016Structure}). À l'échelle locale, elles représentent la
+probabilité qu'une interaction soit réalisée à un endroit et moment
+particuliers. Différents types de modèles peuvent être utilisés pour estimer la
+probabilité que deux espèces interagissent localement, tels que des modèles de
+régression logistique ou d'apprentissage automatique
+(\cite{Strydom2021Roadmapa}). Ces modèles peuvent prendre en compte différentes
+variables biologiques ou environnementales mesurées à l'échelle locale. Par
+exemple, si nous n'avons pas observé d'interaction entre un cerf de Virginie et
+\textit{I. scapularis} dans une forêt donnée, nous pouvons évaluer la
+probabilité que ces deux espèces interagissent localement à partir de leurs
+abondances relatives (\cite{Canard2014Empirical}). Nous pouvons également
+utiliser notre expertise sur la biologie des deux espèces pour choisir une
+probabilité \textit{a priori} informative (c.-à-d. une probabilité reposant sur
+nos connaissances antérieures à nos observations locales) que l'interaction soit
+réalisée localement. Cette probabilité \textit{a priori} peut ensuite être mise
+à jour à l'aide de méthodes d'inférence bayésienne en considérant les conditions
+locales. Au-delà des modèles statistiques, la probabilité d'une interaction
+locale peut aussi être estimée en comptant le nombre de fois où elle a été
+observée au cours d'un certain nombre d'essais. Par exemple, si on échantillonne
+aléatoirement un certain nombre de réseaux locaux dans une région donnée et que
+ces réseaux sont représentatifs de la région, la proportion des réseaux où deux
+espèces données interagissent est un bon estimateur de la probabilité qu'elles
+interagissent dans un autre réseau (non échantillonné) de la région. À l'échelle
+régionale, les interactions probabilistes représentent plutôt la probabilité
+qu'une interaction soit biologiquement ou écologiquement faisable
+(\cite{Strydom2023Grapha}). Cette probabilité d'interaction régionale est
+particulièrement utile lorsque deux espèces n'ont jamais été observées en train
+d'interagir, mais qu'elles pourraient possiblement le faire dans les bonnes
+circonstances sur la base de leurs traits. L'article~\ref{art:article1} présente
+de manière plus approfondie les méthodes et variables permettant d'estimer les
+interactions probabilistes locales et régionales.
+
+Qu'elles soient locales ou régionales, les interactions probabilistes sont
+généralement évaluées de manière indépendante. Cela peut introduire des biais
+lorsque nous propageons l'incertitude des interactions locales vers la structure
+du réseau (\cite{Poisot2016Structure}), à cause de l'impact que les interactions
+peuvent exercer les unes sur les autres au sein d'un réseau local
 (\cite{Golubski2011Modifying}, \cite{Ims2013Indirect}). Néanmoins, les
 interactions probabilistes demeurent le moyen le plus courant de représenter
 l'incertitude inhérente aux interactions entre espèces. Puisque l'incertitude
@@ -388,7 +483,7 @@ réseaux mutualistes lorsque l'on tient compte de la dépendance mutuelle des
 espèces et de l'importance relative de chaque interaction
 (\cite{Vieira2015Simple}). Ces descripteurs capturent tous un aspect important
 de la complexité écologique, soit la faible prédictibilité du système dans le
-temps (\cite{Strydom2021Svd}). 
+temps ou sa complexité comportementale (\cite{Strydom2021Svd}). 
 
 D'autres mesures ont été proposées pour décrire la complexité d'un réseau
 écologique, comme la distribution de degrés (\cite{Landi2018Complexity}). Le
@@ -407,17 +502,40 @@ espèces (\cite{Williams2011Biology}) et l'assemblage des réseaux
 
 \textcite{Strydom2021Svd} suggèrent plutôt l'utilisation de l'entropie SVD (de
 l'anglais \textit{Singular value decomposition}) comme descripteur de la
-complexité interne d'un réseau. Cette mesure, basée sur l'entropie de Shannon
-(\cite{Shannon1948Mathematical}), quantifie l'information contenue dans les
-rangs de la matrice d'adjacence après avoir effectué une décomposition de la
-matrice en valeurs singulières. Une entropie SVD élevée indique que les rangs de
-la matrice contiennent une quantité similaire d'information, et donc que la
-structure du réseau est peu compressible (\cite{Gu2016How}). Cette mesure
-constitue une façon plus robuste de quantifier la complexité d'un réseau que les
-autres mesures mentionnées plus haut (\cite{Strydom2021Svd}). Puisqu'elle évalue
-l'entropie d'information des réseaux, elle a été choisie comme mesure de
-complexité écologique dans les versions de la théorie de l'entropie maximale des
-réseaux trophiques développées dans l'article~\ref{art:article2} de cette thèse. 
+complexité interne d'un réseau. L'entropie est une mesure du niveau moyen
+d'incertitude (ou d'information) associée aux différentes issues d'une variable
+aléatoire. L'entropie de Shannon $H$ (\cite{Shannon1948Mathematical}) est la
+mesure d'entropie la plus courante en théorie de l'information, et est calculée
+exclusivement à partir de la distribution de probabilité $p(x)$ de la variable
+pour différentes issues $x$ : 
+
+\begin{eqnarray}
+    \label{eq:shannon_intro}
+            H = -\sum_{x} p(x) \log p(x).
+\end{eqnarray}
+
+L'entropie est maximale lorsque toutes les issues ont la même probabilité,
+c.-à-d. lorsque la distribution est uniforme et que notre incertitude sur le
+résultat de l'événement est la plus élevée. L'entropie SVD est calculée en
+appliquant l'entropie de Shannon aux valeurs singulières relatives de la matrice
+d'adjacence (obtenues par SVD). Elle quantifie l'information contenue dans les
+rangs de la matrice d'adjacence, c.-à-d. la quantité d'information requise pour
+encoder le réseau. Une entropie SVD élevée indique que les rangs de la matrice
+contiennent une quantité similaire d'information, et donc que la structure du
+réseau est peu compressible (\cite{Gu2016How}). Cette mesure constitue une façon
+plus robuste de quantifier la complexité d'un réseau que les autres mesures
+mentionnées plus haut (\cite{Strydom2021Svd}). En effet, l'entropie SVD est la
+seule de ces mesures capturant la complexité physique d'un système (c.-à-d. la
+quantité d'information nécessaire pour encoder le réseau), les autres capturant
+plutôt sa complexité comportementale (c.-à-d. sa faible prédictibilité dans le
+temps). \textcite{Adami2002What} suggère de mesurer la complexité d'un système
+par sa complexité physique plutôt que comportementale, cette dernière pouvant
+facilement émerger d'un système simple (p. ex. \cite{May1976Simple}).
+Puisqu'elle évalue la quantité d'information contenue dans un réseau (ou sa
+compressibilité), l'entropie SVD a été choisie comme mesure de complexité
+écologique dans les versions de la théorie de l'entropie maximale des réseaux
+trophiques développées dans l'article~\ref{art:article2} de cette thèse. 
+
 
 \subsubsection{Plusieurs mesures de la structure des réseaux sont corrélées entre elles} 
 
@@ -615,11 +733,11 @@ la structure des réseaux, sans avoir recours à des méthodes d'ajustement de
 modèles aux données. Ces prédictions dépendent des variables écologiques
 utilisées pour contraindre les distributions de probabilité caractérisant la
 structure des réseaux. Identifier les variables qui génèrent les meilleures
-prédictions nous permet de mieux comprendre les facteurs qui déterminent la
-structure des réseaux trophiques. Ainsi, en tant que théorie scientifique, elle
-permet à la fois de générer des prédictions vérifiables sur la structure des
-réseaux trophiques et de mieux comprendre leurs mécanismes écologiques
-sous-jacents. 
+prédictions nous permet de mieux comprendre les facteurs importants qui
+déterminent la structure des réseaux trophiques. Ainsi, en tant que théorie
+scientifique, elle permet à la fois de générer des prédictions vérifiables sur
+la structure des réseaux trophiques et de mieux comprendre leurs déterminants
+écologiques. 
 
 \subsubsection{Prédire la structure des réseaux trophiques} 
 
@@ -661,20 +779,27 @@ probabilité prédites, c.-à-d. en trouvant la distribution qui respecte le
 plus fidèlement possible les connaissances préalables représentées par les
 contraintes écologiques. 
 
-\subsubsection{Identifier les mécanismes écologiques sous-jacents aux réseaux} 
+\subsubsection{Guider notre recherche des mécanismes écologiques importants} 
 
 Bien que cette théorie ne soit pas basée sur des mécanismes écologiques
-explicites, elle permet d'identifier les mécanismes sous-jacents aux réseaux
-trophiques. Premièrement, les variables d'état capturent les mécanismes
-écologiques sous-jacents aux réseaux (\cite{White2012Characterizing},
-\cite{McGill2010Mechanisms}). Par exemple, le nombre total d'espèces, qui peut
-être utilisé comme variable d'état dans certaines versions de la théorie,
-résulte de l'effet conjoint de plusieurs mécanismes écologiques (p. ex.
-mécanismes de dispersion, d'immigration, de spéciation et d'extinction,
-\cite{Whittaker2001Scale}). Les mécanismes écologiques sont donc implicites dans
-la théorie, étant exprimés à travers les valeurs des variables d'état.
-Deuxièmement, à l'instar de METE (\cite{Harte2014Maximum}), la théorie de
-l'entropie maximale des réseaux trophiques peut être utilisée comme modèle nul
+explicites, elle peut guider nos efforts d'identification des mécanismes les
+plus importants régissant les réseaux trophiques. Premièrement, la valeur des
+variables d'état capture les mécanismes écologiques sous-jacents aux réseaux
+(\cite{White2012Characterizing}, \cite{McGill2010Mechanisms}). Par exemple, si
+une version de la théorie utilisant le nombre d'espèces et le nombre
+d'interactions comme variables d'état prédit adéquatement un réseau, cela
+suggère que sa structure est régie par les mécanismes de ces variables. Si nous
+savons que le nombre d'espèces est régi (notamment) par des mécanismes de
+dispersion, d'immigration, de spéciation et d'extinction
+(\cite{Whittaker2001Scale}), et que le nombre d'interactions est régi
+(notamment) par des mécanismes liés à la rencontre (\cite{Canard2012Emergence},
+\cite{Canard2014Empirical}) et la correspondance de traits
+(\cite{Bolnick2011Why}, \cite{Gravel2013Inferring}, \cite{Stouffer2011Role}) des
+individus, cela suggère que la structure du réseau dépend de ces mécanismes
+importants. Les mécanismes écologiques sont donc implicites dans la théorie,
+étant exprimés à travers les valeurs des variables d'état. Deuxièmement, à
+l'instar de METE (\cite{Harte2014Maximum}), la théorie de l'entropie maximale
+des réseaux trophiques peut être utilisée comme modèle nul
 (\cite{Fortuna2006Habitat}) générant des distributions de référence (c.-à-d. qui
 conservent certaines propriétés désirées, comme la forme de la distribution
 imposée par les contraintes écologiques). En calculant l'écart entre les données
@@ -684,7 +809,13 @@ variables d'état) peuvent générer la structure des réseaux observés. Des er
 systématiques de prédiction suggèrent que des mécanismes importants n'ont pas
 été capturés par les variables d'état utilisées, ce qui peut guider le
 développement de versions améliorées de la théorie qui tiennent compte de ces
-mécanismes. 
+mécanismes. Cette théorie ne permet pas d'identifier directement les mécanismes
+écologiques importants, mais peut orienter notre recherche vers ceux déterminant
+les variables d'état et les erreurs de prédiction. Nous devons utiliser nos
+connaissances préalables, effectuer des expériences écologiques et/ou développer
+de nouvelles versions de la théorie pour bien décrire et comprendre les
+mécanismes précis.
+
 
 %%%%% Objectifs 
 
@@ -692,7 +823,7 @@ mécanismes.
 
 Cette thèse, constituée de deux articles, formule les principes de base de la
 théorie de l'entropie maximale des réseaux trophiques. Pour ce faire, elle
-décrit d'abord les mécanismes écologiques et sources d'incertitude des réseaux
+décrit d'abord les déterminants écologiques et sources d'incertitude des réseaux
 d'interactions entre espèces (article~\ref{art:article1}). Puis, elle propose et
 teste deux premières versions de la théorie permettant de prédire une variété de
 mesures des réseaux trophiques (article~\ref{art:article2}). Les résultats et
@@ -706,7 +837,7 @@ structure des réseaux trophiques de manière cohérente, rigoureuse et facilit�
 
 \subsection{Article~\ref{art:article1}: Décrypter les réseaux d'interactions probabilistes} 
 
-L'article~\ref{art:article1} présente les mécanismes écologiques et sources
+L'article~\ref{art:article1} présente les déterminants écologiques et sources
 d'incertitude de différents types de réseaux écologiques. Il décrit comment les
 interactions entre espèces peuvent être représentées de manière probabiliste,
 que ce soit au sein de réseaux locaux ou régionaux. Cet article montre que ces
@@ -716,10 +847,10 @@ temporelle des interactions entre espèces et d'un manque de connaissances
 empiriques sur leur réalisation, celle des réseaux régionaux provient
 exclusivement d'un manque de connaissances sur la faisabilité des interactions.
 Il est important d'identifier ces différentes sources d'incertitude afin de les
-quantifier et, le cas échéant, de les réduire. De manière connexe, cet article
-explique également que ces deux types de réseaux diffèrent quant à leurs
-mécanismes sous-jacents, la réalisation des interactions locales étant
-conditionnelle à un plus grand nombre de facteurs, incluant leur faisabilité
+quantifier et, le cas échéant, de les réduire. Par ailleurs, cet article
+explique que ces deux types de réseaux diffèrent quant à leurs variables
+écologiques sous-jacentes, la réalisation des interactions locales étant
+conditionnelle à un plus grand nombre de variables, incluant leur faisabilité
 biologique (ou régionale). Ces constats permettent de mieux comprendre les
 champs d'application de la théorie de l'entropie maximale des réseaux
 trophiques, notamment en expliquant que ce sont les réseaux locaux qui
@@ -733,27 +864,37 @@ théorie.
 \subsection{Article~\ref{art:article2}: Des modèles d'entropie maximale prédisant la structure des réseaux trophiques} 
 
 L'article~\ref{art:article2} développe la théorie de l'entropie maximale des
-réseaux trophiques. Il met de l'avant deux versions de la théorie: la première
-utilise le nombre d'espèces et le nombre d'interactions comme variables d'état
-pour prédire la distribution jointe de degrés et la matrice d'adjacence, alors
-que la seconde utilise la distribution jointe de degrés comme variable d'état
-pour prédire la matrice d'adjacence. Dans ces deux versions, la distribution
-jointe de degrés a été prédite (le cas échéant) à l'aide d'une approche dite
-analytique, alors que la matrice d'adjacence a été prédite à l'aide d'une
-approche dite heuristique basée sur l'entropie SVD. Les deux versions ont été
-testées à l'aide de réseaux trophiques échantillonnés à l'échelle mondiale,
-autant en milieu aquatique que terrestre. La deuxième version, utilisant la
-distribution jointe de degrés comme variable d'état, prédit avec précision
-plusieurs mesures de la structure des réseaux calculées à partir de la matrice
-d'adjacence d'entropie maximale, ce qui suggère que la structure des réseaux
-trophiques est principalement déterminée par la distribution jointe de degrés.
-Cependant, aucune des deux versions n'a réussi à prédire fidèlement le niveau
-trophique maximal et le diamètre des réseaux. Pour mieux prédire ces mesures,
-une version améliorée de la théorie pourrait contraindre la longueur des chaînes
-trophiques. Pour ce faire, cet article présente, de manière précise et
-détaillée, le principe d'entropie maximale et la méthode des multiplicateurs de
-Lagrange, permettant à d'autres écologistes de développer leur propre version de
-la théorie.
+réseaux trophiques. Il peut être perçu comme un travail de traduction de la
+théorie de l'entropie maximale des graphes aléatoires aux réseaux trophiques,
+bien que les prédictions de ces théories puissent porter sur des objets quelque
+peu différents. En effet, la théorie de l'entropie maximale des graphes
+aléatoires prédit des distributions de probabilité sur des graphes en présence
+de certaines contraintes (\cite{Bianconi2007Entropy},
+\cite{Bianconi2009Entropy}, \cite{Peixoto2012Entropy},
+\cite{Coolen2017Generating}), alors que les versions de la théorie de l'entropie
+maximale des réseaux trophiques développées dans cet article prédisent les
+\textit{propriétés} d'un réseau. L'article~\ref{art:article2} met de l'avant
+deux versions de la théorie de l'entropie maximale des réseaux trophiques: la
+première utilise le nombre d'espèces et le nombre d'interactions comme variables
+d'état pour prédire la distribution jointe de degrés et la matrice d'adjacence,
+alors que la seconde utilise la distribution jointe de degrés comme variable
+d'état pour prédire la matrice d'adjacence. Dans ces deux versions, la
+distribution jointe de degrés a été prédite (le cas échéant) à l'aide d'une
+approche dite analytique, alors que la matrice d'adjacence a été prédite à
+l'aide d'une approche dite heuristique basée sur l'entropie SVD. Les deux
+versions ont été testées à l'aide de réseaux trophiques locaux échantillonnés à
+l'échelle mondiale, autant en milieu aquatique que terrestre. La deuxième
+version, utilisant la distribution jointe de degrés comme variable d'état,
+prédit avec précision plusieurs mesures de la structure des réseaux calculées à
+partir de la matrice d'adjacence d'entropie maximale, ce qui suggère que la
+structure des réseaux trophiques est principalement déterminée par la
+distribution jointe de degrés. Cependant, aucune des deux versions n'a réussi à
+prédire fidèlement le niveau trophique maximal et le diamètre des réseaux. Pour
+mieux prédire ces mesures, une version améliorée de la théorie pourrait
+contraindre la longueur des chaînes trophiques. Pour ce faire, cet article
+présente, de manière précise et détaillée, le principe d'entropie maximale et la
+méthode des multiplicateurs de Lagrange, permettant à d'autres écologistes de
+développer leur propre version de la théorie. 
 
 \endinput
 %%

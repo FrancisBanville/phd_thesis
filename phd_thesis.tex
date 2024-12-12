@@ -359,14 +359,14 @@ Pour mieux comprendre le fonctionnement et la dynamique des écosystèmes, nous
 devons approfondir nos connaissances sur les réseaux d'interactions entre
 espèces. Cependant, la difficulté d'observer les interactions prédateurs-proies
 et plantes-herbivores au sein des milieux naturels complique l'étude des
-propriétés des réseaux trophiques et de leurs mécanismes sous-jacents. Les
-modèles prédictifs peuvent pallier le manque de données, mais bien interpréter
-les caractéristiques des réseaux prédits exige une bonne compréhension de leur
-incertitude. De plus, les réseaux peuvent être reconstruits sur la base de
-différents mécanismes écologiques, de telle sorte qu'il peut être difficile de
-savoir lesquels sont les plus importants. Cette thèse jette les bases de la
-théorie de l'entropie maximale des réseaux trophiques (Trophique-METE) pour
-mieux saisir les propriétés et déterminants des réseaux trophiques sous un angle
+propriétés et déterminants des réseaux trophiques. Les modèles prédictifs
+peuvent pallier le manque de données, mais bien interpréter les caractéristiques
+des réseaux prédits exige une bonne compréhension de leur incertitude. De plus,
+les réseaux peuvent être reconstruits sur la base de différentes variables et
+mécanismes écologiques, de telle sorte qu'il peut être difficile de savoir
+lesquels sont les plus importants. Cette thèse jette les bases de la théorie de
+l'entropie maximale des réseaux trophiques (Trophique-METE) pour mieux saisir
+les propriétés et déterminants des réseaux trophiques sous un angle
 probabiliste. En reconnaissant que la structure des réseaux est écologiquement
 contrainte, cette théorie prédit, de manière cohérente et non biaisée,
 différentes distributions de probabilité caractérisant la structure des réseaux
@@ -391,7 +391,7 @@ Comprendre les propriétés des interactions probabilistes précise le champs
 d'application de la théorie, qui est mieux adaptée aux réseaux locaux.
 
 L'article~\ref{art:article2} développe les deux premières versions de la
-théorie. La première utilise le nombre d'espèces et d'interactions comme
+théorie. La première utilise les nombres d'espèces et d'interactions comme
 variables d'état pour prédire la distribution jointe de degrés et la matrice
 d'adjacence, alors que la seconde utilise le nombre de proies et de prédateurs
 par espèce pour prédire la matrice d'adjacence. Ces versions emploient deux
@@ -404,8 +404,9 @@ Cependant, elle surestime leur diamètre et niveau trophique maximal, ce qui
 suggère qu'une version subséquente de la théorie contraignant la longueur des
 chaînes trophiques pourrait s'avérer plus précise. Globalement, Trophique-METE
 facilite la prédiction des réseaux trophiques en réduisant le nombre
-d'informations requises, tout en permettant d'identifier les mécanismes
-écologiques importants à partir des erreurs de prédiction.
+d'informations requises, tout en guidant nos efforts d'identification des
+mécanismes écologiques importants à partir des variables d'état choisies et des
+erreurs de prédiction.
 
 \textbf{Mots clés} : écologie, herbivorie, incertitude, interactions entre
 espèces, modélisation mathématique, parasitisme, prédation, prédiction, théorie
@@ -422,14 +423,14 @@ To better understand ecosystem functioning and dynamics, we must deepen our
 understanding of species interaction networks. However, the difficulty of
 observing predator-prey and plant-herbivore interactions within natural
 environments complicates the study of the properties of food webs and their
-underlying mechanisms. Predictive models can compensate for the lack of data,
-but accurately interpreting the characteristics of predicted networks requires a
+underlying drivers. Predictive models can compensate for the lack of data, but
+accurately interpreting the characteristics of predicted networks requires a
 good understanding of their uncertainty. Moreover, networks can be reconstructed
-based on different ecological mechanisms, making it challenging to identify
-which are the most important. This thesis lays the groundwork for the maximum
-entropy theory of food webs (Trophic-METE) to better understand the properties
-and ecological drivers of food webs from a probabilistic perspective. By
-recognizing that food-web structure is ecologically constrained, this theory
+based on different ecological variables and mechanisms, making it challenging to
+identify which are the most important. This thesis lays the groundwork for the
+maximum entropy theory of food webs (Trophic-METE) to better understand the
+properties and ecological drivers of food webs from a probabilistic perspective.
+By recognizing that food-web structure is ecologically constrained, this theory
 predicts coherent and least-biased probability distributions characterizing
 food-web structure. Without relying on explicit ecological mechanisms, it
 predicts these distributions using the principle of maximum entropy and a
@@ -463,7 +464,8 @@ However, it overestimates their diameter and maximum trophic level, which
 suggests that a subsequent version of the theory constraining trophic chain
 lengths could prove more accurate. Overall, Trophic-METE facilitates the
 prediction of food webs by reducing the amount of required information while
-helping us identify important ecological mechanisms from prediction errors.
+guiding our efforts to identify important ecological mechanisms based on the
+chosen state variables and prediction errors.
 
 \textbf{Keywords}: ecology, herbivory, local variability, mathematical modeling,
 parasitism, predation, prediction, scientific theory, species interactions,
@@ -576,8 +578,8 @@ Poisot et Dominique Gravel pour votre soutien et participation sur ces trois
 comités.
 
 Merci à mes collègues de labo et ami.es, Alexandre Fuster-Calvo, Alice Doucet
-Beaupré, Andrew MacDonald, Ariane Bussières-Fournel, Benjamin Mercier, Camille
-Rondeau Saint-Jean, Claire-Cécile Juhasz, Cole Brookson, Cristian Cruz
+Beaupré, Andrew MacDonald, Ariane Bussières-Fournel, Ben Kaza, Benjamin Mercier,
+Camille Rondeau Saint-Jean, Claire-Cécile Juhasz, Cole Brookson, Cristian Cruz
 Rodriguez, Daphnée Lecours-Tessier, Dominique Caron, Emily Beasley, Eva Delmas,
 Gabriel Bergeron, Gabriel Dansereau, Gracielle Higino, Kari Norman, Katherine
 Hébert, Maria Isabel Arce-Plata, Mathilde Besson, Mathis Gheno, Michael Catchen,
@@ -817,7 +819,7 @@ objectif.
 \include{S_article1}
 \include{S_article2}
 
-\end{document}
+\end{document} 
 
 \endinput
 %%

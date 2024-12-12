@@ -37,7 +37,7 @@
  % Le rôle des coauteurs a été de...
 
 %% Nom de la revue de publication
-\revue{publié dans PLOS Computational Biology et est accessible via le lien suivant~: \url{https://doi.org/10.1371/journal.pcbi.1011458}}
+\revue{publiée dans PLOS Computational Biology et est accessible via le lien suivant~: \url{https://doi.org/10.1371/journal.pcbi.1011458}}
 \article{What constrains food webs? A maximum entropy framework for predicting their structure with minimal biases}\labelart{art:article2}
 %% On peut se référer aux numéros de chapitre ou d'article comme suit.
 %% Si on fait
@@ -144,7 +144,7 @@
 \begin{abstract}{ecological modelling, ecological networks, food webs, maximum entropy, null models}
   Food webs are complex ecological networks whose structure is both ecologically
   and statistically constrained, with many network properties being correlated
-  with each other. Despite the recognition of these invariable relationships in
+  with each other. Despite the recognition of these invariant relationships in
   food webs, the use of the principle of maximum entropy (MaxEnt) in network
   ecology is still rare. This is surprising considering that MaxEnt is a
   statistical tool precisely designed for understanding and predicting many
@@ -274,16 +274,17 @@ the deviation of empirical data from these reference distributions, we can
 evaluate the degree to which the processes underlying the null model can
 accurately capture the observed measures, providing a benchmark to assess the
 importance of additional factors such as the omitted properties
-(\cite{Fortuna2006Habitat}, \cite{Delmas2019Analysing}). This makes null models a
-valuable tool to identify the ecological mechanisms that drive species
+(\cite{Fortuna2006Habitat}, \cite{Delmas2019Analysing}). This makes null models
+a valuable tool to help identify the ecological mechanisms that drive species
 interactions and constrain the structure of ecological networks. The distinction
 between understanding and predicting is crucial when using statistical and
 mathematical models as this can impact how we use and interpret them. Numerous
 predictive and null models have been used to analyze ecological networks
-(\cite{Delmas2019Analysing}, \cite{Strydom2021Roadmapa}). Nevertheless, given the
-constrained nature of ecological networks, it is surprising that the principle
-of maximum entropy, a mathematical method designed for both the description and
-prediction of constrained systems, has been barely used in network ecology. 
+(\cite{Delmas2019Analysing}, \cite{Strydom2021Roadmapa}). Nevertheless, given
+the constrained nature of ecological networks, it is surprising that the
+principle of maximum entropy, a mathematical method designed for both the
+description and prediction of constrained systems, has been barely used in
+network ecology. 
 
 \subsection{The principle of maximum entropy: A primer for ecologists}
 
@@ -311,9 +312,9 @@ MaxEnt states that the least-biased probability distribution given the
 constraints used is the one with the highest entropy (a measure of the
 uncertainty of a random process) among all probability distributions that
 satisfy these constraints. Many measures of entropy have been developed in
-physics (\cite{Beck2009Generalised}), but only a fraction of them could be used as
-an optimization measure with the principle of maximum entropy. According to
-\textcite{Beck2009Generalised} and \textcite{Khinchin2013Mathematical}, a measure of entropy $H$
+physics (\cite{Beck2009Generalised}), but only a fraction of them could be used
+as an optimization measure with the principle of maximum entropy. According to
+Khinchin's axioms (\cite{Khinchin1957Mathematical}), a measure of entropy $H$
 should satisfy four properties: (1) it should be a function of a probability
 distribution $p(n)$ only; (2) it should be maximized when $p(n)$ is uniform; (3)
 it should not be influenced by outcomes with a null probability; and (4) it
@@ -685,19 +686,19 @@ structure, is the one of maximum entropy. Generating the most complex network
 that corresponds to this structure allows us to explore more easily other
 properties of food webs under MaxEnt. 
 
-Shannon's entropy can only be calculated on conventional probability
-distributions such as the joint degree distribution. This is an issue when
-working with the adjacency matrix of ecological networks. For this reason, we
-need to use another measure of entropy if we want to predict a network's
-configuration directly using MaxEnt. We used the SVD entropy as our measure of
-entropy, which is an application of Shannon's entropy to the relative non-zero
-singular values of a food web's adjacency matrix (\cite{Strydom2021Svd}).
-These values are obtained by performing singular value decomposition (SVD) on
-the matrix. SVD is a mathematical method that decomposes a matrix into three
-separate matrices, one of which contains singular values on the diagonal. We
-selected the non-zero singular values (i.e. the informative singular values that
-reflect a non-negligible contribution to the structure of the matrix) by keeping
-the largest $R$ values, where $R$ is the rank of the matrix
+Shannon's entropy can only be calculated on probability distributions such as
+the joint degree distribution. This is an issue when measuring the entropy of a
+binary adjacency matrix. For this reason, we need to use another measure of
+entropy if we want to predict a network's configuration directly using MaxEnt.
+We used the SVD entropy as our measure of entropy, which is an application of
+Shannon's entropy to the relative non-zero singular values of a food web's
+adjacency matrix (\cite{Strydom2021Svd}). These values are obtained by
+performing singular value decomposition (SVD) on the matrix. SVD is a
+mathematical method that decomposes a matrix into three separate matrices, one
+of which contains singular values on the diagonal. We selected the non-zero
+singular values (i.e. the informative singular values that reflect a
+non-negligible contribution to the structure of the matrix) by keeping the
+largest $R$ values, where $R$ is the rank of the matrix
 (\cite{Golub1987Generalization}). We measured SVD entropy as follows: 
 
 \begin{eqnarray}
@@ -714,7 +715,8 @@ above-mentioned, while being a proper measure of the internal complexity of food
 webs (\cite{Strydom2021Svd}). Following \textcite{Strydom2021Svd}, we
 standardized it with the rank of the matrix (i.e. $J / \ln(R)$) to account for
 the difference in dimensions between networks (\textit{sensu} Pielou's evenness,
-\cite{Pielou1975Ecological}).
+\cite{Pielou1975Ecological}), but SVD entropy can also be calculated without this
+standardization.
 
 \subsubsection{Types I and II heuristic MaxEnt models}
 
@@ -940,7 +942,8 @@ ended up with one null adjacency matrix for each empirical network. \\
 \textbf{Neutral model}
   
 We also compared our heuristic MaxEnt models to a neutral model of relative
-abundances, in which the probabilities of interaction are given by
+abundances (\cite{Krishna2008Neutralniche}, \cite{Canard2012Emergence}), in
+which the probabilities of interaction are given by
   
 \begin{eqnarray}
 \label{eq:neutralmodel}
@@ -1243,15 +1246,17 @@ the joint degree sequence with empirical data also supports the results depicted
 in Table~\ref{tbl:measures_all}. In Figure~\ref{fig:measures}, we show how well
 empirical measures are predicted by the type II heuristic MaxEnt model.
 Following our previous results, we found that nestedness was very well predicted
-by our model. However, the model overestimated the maximum trophic level and
-network diameter, especially when the sampled food web had intermediate values
-of these measures. In Figure~\ref{fig:measures_richness} (Appendix~\ref{supp:B}),
-we show that the pairwise relationships between the four measures in
-Figure~\ref{fig:measures} and species richness in empirical food webs are similar
-(in magnitude and sign) to the ones found in food webs generated using the type
-II heuristic MaxEnt model. This indicates that the number of species in the
-network does not seem to impact the ability of the model to reproduce food-web
-structure. 
+by our model. This is consistent with the theoretical work of
+\textcite{Payrato-Borras2019Breaking}, who show that nestedness is largely
+determined by the degree sequence in mutualistic networks. However, the model
+overestimated the maximum trophic level and network diameter, especially when
+the sampled food web had intermediate values of these measures. In
+Figure~\ref{fig:measures_richness} (Appendix~\ref{supp:B}), we show that the
+pairwise relationships between the four measures in Figure~\ref{fig:measures}
+and species richness in empirical food webs are similar (in magnitude and sign)
+to the ones found in food webs generated using the type II heuristic MaxEnt
+model. This indicates that the number of species in the network does not seem to
+impact the ability of the model to reproduce food-web structure. 
 
 Notwithstanding its difficulties in reproducing adequate measures of food-chain
 lengths, the type II heuristic MaxEnt model can predict surprisingly well the
