@@ -62,8 +62,9 @@ probability of $10\%$. This metaweb was used in Boxes~\ref{box2.3} and
 
 We built local networks of probabilistic interactions using the taxa found in
 the empirical local networks and attributing pairwise interaction probabilities
-based on the metawebs of probabilistic interactions $P(M_{i, j})$ and a constant
-value of $P(L_{i, j, k}|M_{i, j})$ across interactions:
+based on the metawebs of probabilistic interactions $P(M_{i, j})$ (short for
+$P(M_{i, j} = 1)$) and a constant value of $P(L_{i, j, k}|M_{i, j})$ (short for
+$P(L_{i, j, k} = 1|M_{i, j} = 1)$) across interactions:
 
 \begin{eqnarray}
     \label{eq:local_meta_sup}
@@ -109,16 +110,16 @@ percentile intervals.
 
 We aggregated local networks of probabilistic interactions similarly to the
 networks of binary interactions, with the distinction that we also adjusted the
-value of $P(L_{i, j, k})$ when sampling networks. The constancy of the
-probability of regional interaction across the entire study area means that any
-rise in the probability of local interaction is solely attributable to an
-increase in $P(L_{i, j, k}|M_{i, j})$. We adjusted the value of $P(L_{i, j,
-k}|M_{i, j})$ as follows. Let $L_1$ and $L_2$ be two local networks and
-$L_{1,2}$ the aggregated network. If $P(L_{i, j, 1}|M_{i, j})$ and $P(L_{i, j,
-2}|M_{i, j})$ are the probabilities that two potentially interacting taxa
-interact respectively in $L_1$ and $L_2$, the probability $P(L_{i, j, 1,2}|M_{i,
-j})$ that these taxa interact in the aggregated network $L_{1,2}$ is obtained
-by: 
+value of $P(L_{i, j, k})$ (short for $P(L_{i, j, k} = 1)$) when sampling
+networks. The constancy of the probability of regional interaction across the
+entire study area means that any rise in the probability of local interaction is
+solely attributable to an increase in $P(L_{i, j, k}|M_{i, j})$. We adjusted the
+value of $P(L_{i, j, k}|M_{i, j})$ as follows. Let $L_1$ and $L_2$ be two local
+networks and $L_{1,2}$ the aggregated network. If $P(L_{i, j, 1}|M_{i, j})$ and
+$P(L_{i, j, 2}|M_{i, j})$ are the probabilities that two potentially interacting
+taxa interact respectively in $L_1$ and $L_2$, the probability $P(L_{i, j,
+1,2}|M_{i, j})$ that these taxa interact in the aggregated network $L_{1,2}$ is
+obtained by: 
 
 \begin{eqnarray}
     \label{eq:aggregate}
@@ -184,9 +185,11 @@ Bernoulli trial for each pair of taxa based on their regional probability of
 interaction: 
 
 \begin{eqnarray}
-    \label{eq:sample1_sup}
-    M_{i, j} \sim {\rm Bernoulli}(P(M_{i, j})).
-\end{eqnarray}
+    \label{eq:sampling1}
+    M_{i, j} \sim {\rm Bernoulli}(\phi_{i,j}),
+  \end{eqnarray}
+  
+where $\phi_{i,j} = P(M_{i, j} = 1)$.
 
 Every pair of taxa predicted to interact in this metaweb was treated as
 interacting in all localized networks where they co-occurred, i.e. $L_{i, j, k}
@@ -207,9 +210,11 @@ j}) = 0.75$, and $P(L_{i, j, k}|M_{i, j}) = 0.50$. We then sampled each local
 network of probabilistic interactions independently: 
 
 \begin{eqnarray}
-    \label{eq:sample2_sup}
-    L_{i, j, k} \sim {\rm Bernoulli}(P(L_{i, j, k})).
-\end{eqnarray}
+    \label{eq:sampling2}
+    L_{i, j, k} \sim {\rm Bernoulli}(\phi_{i,j,k}),
+  \end{eqnarray}
+  
+where $\phi_{i,j,k} = P(L_{i, j, k} = 1)$.
 
 We performed between $1$ and $100$ simulations for each location to get a
 distribution of networks of binary interactions sampled using local interaction
