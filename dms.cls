@@ -537,7 +537,7 @@
         \ifx\@copyrightname\empty{..........},
     \else {\@copyrightname},
     \fi%
-        \ \@copyrightyear%
+        \@copyrightyear%
     }%fin du centerline
 }
 
